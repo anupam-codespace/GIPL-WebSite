@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Modern Light Surface Foundations */
+    --surface-page: #ffffff;
+    --surface-subtle: #f8fafc;
+    --surface-card: #ffffff;
+    --surface-raised: #f1f5f9;
+    --surface-card-hover: #ffffff;
+
+    /* Executive Slates & Neutrals */
+    --color-slate-900: #0f172a;
+    --color-slate-800: #1e293b;
+    --color-slate-700: #334155;
+    --color-slate-600: #475569;
+    --color-slate-500: #64748b;
+    --color-slate-400: #94a3b8;
+    --color-slate-300: #cbd5e1;
+    --color-slate-200: #e2e8f0;
+    --color-slate-100: #f1f5f9;
+    --color-slate-50: #f8fafc;
+
+    /* Brand Accents */
+    --color-primary: #0284c7; /* Sky / Ocean Blue */
+    --color-primary-hover: #0369a1;
+    --color-cyan: #06b6d4;
+    --color-violet: #6366f1;
+    --color-indigo: #4f46e5;
+    --color-emerald: #10b981;
+
+    /* Text Roles */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    /* Border Roles */
+    --border-subtle: #e2e8f0;
+    --border-card: #e2e8f0;
+    --border-strong: #cbd5e1;
+
+    /* Typography */
+    --font-sans: var(--font-sans), "Plus Jakarta Sans", sans-serif;
+    --font-display: var(--font-sans), "Plus Jakarta Sans", sans-serif;
+    --font-body: var(--font-sans), "Plus Jakarta Sans", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+  }
+}
+
+body {
+  background-color: var(--surface-page);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle Technical Grid for Light Theme */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Executive Card Utilities */
+.white-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.white-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.09), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+  transform: translateY(-2px);
+}
+
+.executive-header {
+  background: rgba(11, 19, 43, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* Infinite Marquee Animation for Trust Logos & Testimonials */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 45s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Continuous Marquee (Never pauses on hover) */
+.animate-marquee-continuous {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite !important;
+}
+
+.animate-marquee-continuous-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 45s linear infinite !important;
+}
+
+.animate-marquee-continuous:hover,
+.animate-marquee-continuous-reverse:hover,
+.animate-marquee-continuous *,
+.animate-marquee-continuous-reverse * {
+  animation-play-state: running !important;
+}
+
+/* Pulse animation */
+@keyframes pulse-node {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.animate-pulse-node {
+  animation: pulse-node 2s infinite ease-in-out;
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Appinventiv Rolling Text-Swap Button */
+.swap-text-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.swap-text-button .text-original {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.swap-text-button .text-hover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.swap-text-button:hover .text-original {
+  transform: translateY(-100%);
+}
+.swap-text-button:hover .text-hover {
+  transform: translateY(-100%);
+}
+.swap-text-button .button__icon-wrapper {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.swap-text-button .button__icon-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.swap-text-button .button__icon-svg--copy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-100%, 100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.swap-text-button:hover .button__icon-svg {
+  transform: translate(100%, -100%);
+}
+.swap-text-button:hover .button__icon-svg--copy {
+  transform: translate(0, 0);
+}
+
+

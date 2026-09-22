@@ -1,0 +1,42 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="libGrad1" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="libGrad2" x1="40" y1="40" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <filter id="libShadow" x="10" y="10" width="180" height="180" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#8B5CF6" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background container -->
+  <rect x="16" y="16" width="168" height="168" rx="42" fill="#0F172A" />
+  
+  <!-- Digital Knowledge Book & AI Sparkles -->
+  <g filter="url(#libShadow)">
+    <!-- Open Book Left Page -->
+    <path d="M100 142C82 134 58 134 44 140V72C58 66 82 66 100 74V142Z" fill="url(#libGrad1)"/>
+    <!-- Open Book Right Page -->
+    <path d="M100 142C118 134 142 134 156 140V72C142 66 118 66 100 74V142Z" fill="url(#libGrad2)"/>
+    
+    <!-- Spine Center Line -->
+    <path d="M100 74V146" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+    
+    <!-- AI Digital Sparkle on top right -->
+    <path d="M142 46L145 38L153 35L145 32L142 24L139 32L131 35L139 38L142 46Z" fill="#F472B6"/>
+    <path d="M70 42L72 37L77 35L72 33L70 28L68 33L63 35L68 37L70 42Z" fill="#A78BFA"/>
+    
+    <!-- Page Data Waves / Digital Lines -->
+    <path d="M58 86C68 82 82 82 90 86" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M58 100C68 96 82 96 90 100" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M58 114C68 110 82 110 90 114" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    
+    <path d="M110 86C118 82 132 82 142 86" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M110 100C118 96 132 96 142 100" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M110 114C118 110 132 110 142 114" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  </g>
+</svg>

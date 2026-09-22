@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 68" width="100%" height="100%" fill="none">
+  <!-- Outer glow / subtle background -->
+  <defs>
+    <linearGradient id="iso20000-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left IT Service Emblem (x: 4 to 64, center 34, 34) -->
+  <g transform="translate(4, 0)">
+    <!-- Outer Geared/Hex Ring -->
+    <circle cx="34" cy="34" r="29" stroke="url(#iso20000-grad)" stroke-width="1.8" stroke-dasharray="4 2"/>
+    <circle cx="34" cy="34" r="24" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.6"/>
+
+    <!-- Network Service Nodes / Cloud Hexagon -->
+    <circle cx="34" cy="20" r="4" fill="#ffffff" fill-opacity="0.9"/>
+    <circle cx="21" cy="42" r="4" fill="#ffffff" fill-opacity="0.9"/>
+    <circle cx="47" cy="42" r="4" fill="#ffffff" fill-opacity="0.9"/>
+    
+    <!-- Connecting Infrastructure Lines -->
+    <path d="M34 20 L21 42 M34 20 L47 42 M21 42 L47 42" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.75"/>
+
+    <!-- Central Core Hub -->
+    <circle cx="34" cy="34" r="5.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+    <circle cx="34" cy="34" r="2" fill="#0f172a"/>
+
+    <!-- Micro Star -->
+    <polygon points="34,1 34.8,2.8 36.8,2.8 35.2,4 35.8,5.8 34,4.6 32.2,5.8 32.8,4 31.2,2.8 33.2,2.8" fill="#ffffff" fill-opacity="0.9"/>
+  </g>
+
+  <!-- Typography Right (x: 74) -->
+  <g transform="translate(74, 0)">
+    <!-- Organization Mark -->
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="900" fill="#ffffff" letter-spacing="0.3">
+      ISO 20000-1:2018
+    </text>
+    
+    <!-- Certified Badge Pill -->
+    <rect x="0" y="31" width="62" height="13" rx="2.5" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="31" y="40.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.2">
+      CERTIFIED
+    </text>
+
+    <!-- Standard Title -->
+    <text x="68" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#94a3b8" letter-spacing="0.8">
+      SMS
+    </text>
+
+    <!-- Description Subline -->
+    <text x="0" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="500" fill="#cbd5e1" fill-opacity="0.7" letter-spacing="0.4">
+      IT Service Management
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Globizhub | Technology Intelligence & Enterprise Software Engineering</title>
+  <meta name="description" content="Globizhub architects resilient digital platforms, autonomous AI systems, and cloud infrastructure for ambitious startups and global enterprises.">
+  <meta name="keywords" content="Software Development, Enterprise AI, Autonomous Agents, Cloud Architecture, DevOps, App Development, IT Consulting">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Globizhub | Technology Intelligence & Software Engineering">
+  <meta property="og:description" content="Architecting resilient digital platforms, autonomous AI systems, and cloud infrastructure.">
+  <meta property="og:url" content="https://globizhub.com">
+
+  <!-- Google Fonts: Space Grotesk, Inter, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       GLOBAL SITE HEADER
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <!-- Brand Logo -->
+      <a href="#" class="site-logo" aria-label="Globizhub Home">
+        <div class="site-logo__mark">G</div>
+        <span class="site-logo__text">GLOBIZHUB<span class="site-logo__dot">.</span></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="site-nav" aria-label="Primary Navigation">
+        <a href="#services" class="site-nav__link">Services</a>
+        <a href="#pathways" class="site-nav__link">Solutions</a>
+        <a href="#products" class="site-nav__link">Products</a>
+        <a href="#case-studies" class="site-nav__link">Case Studies</a>
+        <a href="#process" class="site-nav__link">Process</a>
+        <a href="#tech-stack" class="site-nav__link">Technologies</a>
+        <a href="#faq" class="site-nav__link">FAQ</a>
+        <a href="#proposal" class="site-nav__link">Consultation</a>
+      </nav>
+
+      <!-- Header Utilities -->
+      <div class="site-header__actions">
+        <!-- ⌘K Search Trigger -->
+        <button class="search-trigger" id="cmdSearchBtn" aria-label="Open search dialog">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Search</span>
+          <kbd>⌘K</kbd>
+        </button>
+
+        <!-- Client Portal Link -->
+        <a href="#proposal" class="btn btn--secondary btn--sm">Client Portal</a>
+
+        <!-- Primary CTA -->
+        <a href="#proposal" class="btn btn--primary">
+          <span>Start a Project</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button class="btn btn--icon mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION
+       ========================================================================= -->
+  <section class="hero" id="hero">
+    <div class="container hero__grid">
+      <!-- Left Content -->
+      <div class="hero__content">
+        <div class="eyebrow eyebrow--violet">
+          <span class="eyebrow__marker"></span>
+          <span>// 01 TECHNOLOGY INTELLIGENCE · EST. 2019 · ISO 9001 · 27001 · 20000</span>
+        </div>
+
+        <h1 class="hero__title">
+          Architecting Resilient Digital Platforms & <span class="gradient-text">Autonomous AI Systems.</span>
+        </h1>
+
+        <p class="hero__description">
+          Globizhub India Private Limited engineers mission-critical enterprise software, proprietary SaaS products, and autonomous AI agents for ambitious startups, SMBs, and global market leaders.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#proposal" class="btn btn--primary">
+            <span>Request a Proposal</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn btn--secondary">
+            <span>Explore Capabilities</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+        </div>
+
+        <!-- Metric Rail -->
+        <div class="hero__meta">
+          <div class="hero__meta-item">
+            <span class="hero__meta-val" data-target="99.99">99.99%</span>
+            <span class="hero__meta-label">System Availability</span>
+          </div>
+          <div class="hero__meta-item">
+            <span class="hero__meta-val" data-target="350">350+</span>
+            <span class="hero__meta-label">Platforms Deployed</span>
+          </div>
+          <div class="hero__meta-item">
+            <span class="hero__meta-val">&lt; 45ms</span>
+            <span class="hero__meta-label">Global P99 Latency</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Interactive System Canvas -->
+      <div class="hero__canvas-wrapper">
+        <div class="hero-canvas" id="systemCanvasContainer">
+          <svg id="systemCanvas" width="100%" height="100%" viewBox="0 0 500 500">
+            <defs>
+              <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#20E3D2" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#20E3D2" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="violetGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- Grid Lines -->
+            <path d="M 50 0 L 50 500 M 150 0 L 150 500 M 250 0 L 250 500 M 350 0 L 350 500 M 450 0 L 450 500" stroke="rgba(184, 196, 210, 0.05)" stroke-width="1" />
+            <path d="M 0 50 L 500 50 M 0 150 L 500 150 M 0 250 L 500 250 M 0 350 L 500 350 M 0 450 L 500 450" stroke="rgba(184, 196, 210, 0.05)" stroke-width="1" />
+
+            <!-- Dynamic System Pathways -->
+            <path id="path1" d="M 80 120 C 180 80, 220 220, 380 160" fill="none" stroke="rgba(32, 227, 210, 0.3)" stroke-width="2" stroke-dasharray="4,4"/>
+            <path id="path2" d="M 120 380 C 200 320, 260 420, 420 340" fill="none" stroke="rgba(139, 92, 246, 0.35)" stroke-width="2" stroke-dasharray="6,4"/>
+            <path id="path3" d="M 250 100 L 250 400" fill="none" stroke="rgba(32, 227, 210, 0.2)" stroke-width="1.5"/>
+
+            <!-- Moving Signal Pulses -->
+            <circle r="4" fill="#20E3D2">
+              <animateMotion dur="4s" repeatCount="indefinite" path="M 80 120 C 180 80, 220 220, 380 160"/>
+            </circle>
+            <circle r="4" fill="#8B5CF6">
+              <animateMotion dur="5s" repeatCount="indefinite" path="M 120 380 C 200 320, 260 420, 420 340"/>
+            </circle>
+
+            <!-- Network System Nodes -->
+            <g id="nodesGroup">
+              <!-- Central Hub -->
+              <circle cx="250" cy="250" r="28" fill="rgba(18, 26, 38, 0.9)" stroke="#20E3D2" stroke-width="2"/>
+              <circle cx="250" cy="250" r="14" fill="#20E3D2" opacity="0.8"/>
+              <text x="250" y="295" font-family="'IBM Plex Mono'" font-size="10" fill="#20E3D2" text-anchor="middle">CORE ROUTER</text>
+
+              <!-- Node 1: AI Agent Engine -->
+              <circle cx="120" cy="180" r="18" fill="rgba(18, 26, 38, 0.9)" stroke="#8B5CF6" stroke-width="1.5"/>
+              <circle cx="120" cy="180" r="8" fill="#8B5CF6"/>
+              <text x="120" y="215" font-family="'IBM Plex Mono'" font-size="9" fill="#A78BFA" text-anchor="middle">LLM CLUSTER</text>
+
+              <!-- Node 2: Multi-Cloud Gateway -->
+              <circle cx="380" cy="160" r="18" fill="rgba(18, 26, 38, 0.9)" stroke="#20E3D2" stroke-width="1.5"/>
+              <circle cx="380" cy="160" r="7" fill="#20E3D2"/>
+              <text x="380" y="195" font-family="'IBM Plex Mono'" font-size="9" fill="#20E3D2" text-anchor="middle">K8S EDGE</text>
+
+              <!-- Node 3: Real-Time Telemetry -->
+              <circle cx="200" cy="380" r="16" fill="rgba(18, 26, 38, 0.9)" stroke="#B9F227" stroke-width="1.5"/>
+              <circle cx="200" cy="380" r="6" fill="#B9F227"/>
+              <text x="200" y="412" font-family="'IBM Plex Mono'" font-size="9" fill="#B9F227" text-anchor="middle">PIPELINE</text>
+
+              <!-- Node 4: Security Vault -->
+              <circle cx="390" cy="350" r="18" fill="rgba(18, 26, 38, 0.9)" stroke="#66A9FF" stroke-width="1.5"/>
+              <circle cx="390" cy="350" r="7" fill="#66A9FF"/>
+              <text x="390" y="385" font-family="'IBM Plex Mono'" font-size="9" fill="#66A9FF" text-anchor="middle">VAULT</text>
+            </g>
+          </svg>
+
+          <!-- Live Telemetry HUD Card -->
+          <div class="hero-hud-card">
+            <div class="hud-stat">
+              <span class="hud-stat__label">P99 Telemetry</span>
+              <span class="hud-stat__value">18.4ms</span>
+            </div>
+            <div class="hud-stat">
+              <span class="hud-stat__label">Active Nodes</span>
+              <span class="hud-stat__value">1,420</span>
+            </div>
+            <div class="hud-stat">
+              <span class="hud-stat__label">Security Guard</span>
+              <span class="hud-stat__value" style="color: var(--color-lime-400);">SECURE (0 Vuln)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TRUST STRIP & CERTIFICATIONS
+       ========================================================================= -->
+  <div class="trust-strip">
+    <div class="container trust-strip__inner">
+      <div class="trust-strip__label">Trusted by Global Tech Leaders & Certified by:</div>
+      <div class="trust-strip__logos">
+        <div class="trust-logo">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>AWS ADVANCED TIER</span>
+        </div>
+        <div class="trust-logo">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>GOOGLE CLOUD PARTNER</span>
+        </div>
+        <div class="trust-logo">
+          <svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>ISO 27001 CERTIFIED</span>
+        </div>
+        <div class="trust-logo">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>SOC2 TYPE II AUDITED</span>
+        </div>
+      </div>
+      <div class="badge badge--cyan">★ 4.9/5 Across 250+ Deployments</div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       STRATEGIC PATHWAYS (Appventurez Reference)
+       ========================================================================= -->
+  <section class="section" id="pathways">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow__marker"></span>
+          <span>// STRATEGIC ENGAGEMENT MODEL</span>
+        </div>
+        <h2 class="section-title">Tailored Execution for Your Growth Stage</h2>
+        <p class="section-subtitle">Whether building a greenfield disruptor or modernizing multi-tier enterprise systems, we calibrate our squads and architecture to match your velocity and compliance needs.</p>
+      </div>
+
+      <!-- Segment Switcher -->
+      <div class="path-nav" role="tablist">
+        <button class="path-nav__item active" data-target="startups">For High-Growth Startups</button>
+        <button class="path-nav__item" data-target="midmarket">For Mid-Market Scaleups</button>
+        <button class="path-nav__item" data-target="enterprise">For Global Enterprises</button>
+      </div>
+
+      <!-- Path 1: Startups -->
+      <div class="path-card active" id="path-startups">
+        <div>
+          <div class="badge badge--cyan">SEED TO SERIES B</div>
+          <h3 class="path-card__title">Zero-to-One Product Velocity & Investor-Grade Architecture</h3>
+          <p>Launch your production MVP in under 60 days without incurring crippling technical debt. We provide full-stack product squads equipped with modern modular templates, automated CI/CD, and scalable database foundations.</p>
+          <div class="path-card__specs">
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>60-Day MVP Delivery Sprint with automated test coverage</span>
+            </div>
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Investor-ready technical due diligence and IP handoff</span>
+            </div>
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Serverless & modular monolith architecture to keep cloud bills under $100/mo</span>
+            </div>
+          </div>
+        </div>
+        <div class="path-card__sidebar">
+          <div>
+            <span class="eyebrow eyebrow--violet">KICKOFF TIME</span>
+            <div style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 8px;">&lt; 7 Days</div>
+            <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 8px;">Dedicated team assembly with lead architect and UI/UX designer.</p>
+          </div>
+          <a href="#proposal" class="btn btn--primary" style="width: 100%;">Build Your MVP →</a>
+        </div>
+      </div>
+
+      <!-- Path 2: Midmarket -->
+      <div class="path-card" id="path-midmarket">
+        <div>
+          <div class="badge badge--violet">SCALE & EXPAND</div>
+          <h3 class="path-card__title">Accelerating Feature Velocity & AI Modernization</h3>
+          <p>Eliminate tech bottlenecks and unlock exponential growth. We integrate AI capabilities, refactor monolithic bottlenecks into resilient microservices, and augment your in-house teams with specialized engineering squads.</p>
+          <div class="path-card__specs">
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Enterprise RAG & Autonomous Agent integration in existing workflows</span>
+            </div>
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Zero-downtime database migration & API modernization</span>
+            </div>
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>3x sprint output with embedded senior engineers</span>
+            </div>
+          </div>
+        </div>
+        <div class="path-card__sidebar">
+          <div>
+            <span class="eyebrow eyebrow--violet">VELOCITY UPLIFT</span>
+            <div style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 8px;">+280%</div>
+            <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 8px;">Average increase in deployment frequency within 90 days.</p>
+          </div>
+          <a href="#proposal" class="btn btn--primary" style="width: 100%;">Scale Engineering →</a>
+        </div>
+      </div>
+
+      <!-- Path 3: Enterprise -->
+      <div class="path-card" id="path-enterprise">
+        <div>
+          <div class="badge badge--lime">ENTERPRISE GRADE</div>
+          <h3 class="path-card__title">Mission-Critical Resilience, Multi-Region & Zero-Trust</h3>
+          <p>For organizations where downtime is measured in millions. We deliver multi-region distributed systems, rigorous compliance implementations (HIPAA, SOC2, GDPR), and custom AI infrastructure deployed on private clouds.</p>
+          <div class="path-card__specs">
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>99.999% SLA with automated multi-region active-active failover</span>
+            </div>
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Private on-premise LLM fine-tuning with strict data isolation</span>
+            </div>
+            <div class="path-spec-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>24/7/365 dedicated Site Reliability Engineering (SRE) support</span>
+            </div>
+          </div>
+        </div>
+        <div class="path-card__sidebar">
+          <div>
+            <span class="eyebrow eyebrow--violet">COMPLIANCE</span>
+            <div style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-top: 8px;">SOC2 & ISO</div>
+            <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 8px;">Audit-tested zero-trust network policies and data residency.</p>
+          </div>
+          <a href="#proposal" class="btn btn--primary" style="width: 100%;">Enterprise Consultation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CAPABILITY BENTO GRID (Core Services)
+       ========================================================================= -->
+  <section class="section section--raised" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow eyebrow--violet">
+          <span class="eyebrow__marker"></span>
+          <span>// CORE CAPABILITIES & DISCIPLINES</span>
+        </div>
+        <h2 class="section-title">Built for Modern Tech Dominance</h2>
+        <p class="section-subtitle">We merge deep architectural rigor with rapid product execution across the entire digital stack.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Bento 1: AI & Agentic Systems (Featured 8-col) -->
+        <div class="bento-card bento-card--featured">
+          <div>
+            <div class="bento-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="eyebrow eyebrow--violet" style="margin-bottom: 12px;">FLAGSHIP DISCIPLINE</div>
+            <h3 class="bento-card__title">Autonomous AI Agents & Enterprise LLM Orchestration</h3>
+            <p class="bento-card__desc">
+              Transform unstructured company knowledge into high-precision autonomous action. We build domain-adapted RAG pipelines, fine-tune proprietary models with LoRA/QLoRA, and orchestrate deterministic multi-agent workflows with strict enterprise guardrails.
+            </p>
+            <div class="bento-card__tags">
+              <span class="badge badge--violet">LangGraph</span>
+              <span class="badge badge--violet">vLLM</span>
+              <span class="badge badge--violet">pgvector</span>
+              <span class="badge badge--violet">Pinecone</span>
+              <span class="badge badge--violet">Llama 3 & Claude 3.5</span>
+            </div>
+          </div>
+          <div class="bento-card__footer">
+            <span>Explore AI Engineering Architecture</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Bento 2: Cloud & DevOps (4-col) -->
+        <div class="bento-card bento-card--standard">
+          <div>
+            <div class="bento-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            </div>
+            <h3 class="bento-card__title">Cloud & Infrastructure Modernization</h3>
+            <p class="bento-card__desc">
+              Containerized multi-region deployments, automated zero-downtime Kubernetes infrastructure, and cloud cost governance that trims excess spend by 40-65%.
+            </p>
+            <div class="bento-card__tags">
+              <span class="badge">Terraform</span>
+              <span class="badge">Kubernetes</span>
+              <span class="badge">AWS / GCP</span>
+            </div>
+          </div>
+          <div class="bento-card__footer">
+            <span>Learn More</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Bento 3: Full-Stack Product Engineering (6-col) -->
+        <div class="bento-card bento-card--half">
+          <div>
+            <div class="bento-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            </div>
+            <h3 class="bento-card__title">Mission-Critical Web & Mobile Applications</h3>
+            <p class="bento-card__desc">
+              Ultra-responsive Next.js web applications and native-performance Flutter/React Native mobile solutions engineered with modular architectures and sub-second transaction times.
+            </p>
+            <div class="bento-card__tags">
+              <span class="badge">Next.js 15</span>
+              <span class="badge">React Native</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">Node.js</span>
+            </div>
+          </div>
+          <div class="bento-card__footer">
+            <span>Explore Mobile & Web</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Bento 4: Cybersecurity & Zero-Trust (6-col) -->
+        <div class="bento-card bento-card--half">
+          <div>
+            <div class="bento-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="bento-card__title">Cybersecurity & Zero-Trust Governance</h3>
+            <p class="bento-card__desc">
+              Automated code security scanning, continuous penetration testing, end-to-end payload encryption, and certified compliance with SOC2 Type II, HIPAA, and GDPR.
+            </p>
+            <div class="bento-card__tags">
+              <span class="badge">Zero-Trust</span>
+              <span class="badge">HIPAA</span>
+              <span class="badge">SOC2</span>
+              <span class="badge">AES-256</span>
+            </div>
+          </div>
+          <div class="bento-card__footer">
+            <span>Explore Security Practice</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE SERVICE MATRIX
+       ========================================================================= -->
+  <section class="section" id="matrix">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <div class="eyebrow">
+          <span class="eyebrow__marker"></span>
+          <span>// DETAILED CAPABILITY INDEX</span>
+        </div>
+        <h2 class="section-title">The Complete Technology Matrix</h2>
+        <p class="section-subtitle">Select any domain to inspect our specialized engineering modules and delivery blueprints.</p>
+      </div>
+
+      <div class="service-matrix">
+        <!-- Left Navigation Tabs -->
+        <div class="matrix-nav" role="tablist">
+          <button class="matrix-nav__btn active" data-panel="m-ai">
+            <span>AI & Autonomous Agents</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <button class="matrix-nav__btn" data-panel="m-cloud">
+            <span>Cloud & DevOps</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <button class="matrix-nav__btn" data-panel="m-software">
+            <span>Custom Software Engineering</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <button class="matrix-nav__btn" data-panel="m-mobile">
+            <span>Mobile & Cross-Platform</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <button class="matrix-nav__btn" data-panel="m-consulting">
+            <span>Dedicated Squads & CTO Advisory</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- Right Content Panels -->
+        <div class="matrix-content">
+          <!-- Panel 1: AI -->
+          <div class="matrix-content-panel active" id="m-ai">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Enterprise AI & Autonomous Agents</h3>
+            <p>From deterministic prompt engineering to fine-tuned multimodal vision models, we build production AI systems designed to operate autonomously with zero human intervention.</p>
+            <div class="matrix-subservices">
+              <div class="subservice-card">
+                <h4>Domain RAG Pipelines</h4>
+                <p>Vector search architectures over tens of millions of proprietary documents with sub-100ms retrieval times.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Multi-Agent Systems</h4>
+                <p>Collaborative autonomous agents performing complex multi-step reasoning, tool execution, and self-validation.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Fine-Tuning & Quantization</h4>
+                <p>Domain-adapted open weights (Llama, Mistral) deployed on cost-optimized private GPU instances.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Safety Guardrails</h4>
+                <p>Real-time PII redaction, prompt injection filtering, and automated output verification engines.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Cloud -->
+          <div class="matrix-content-panel" id="m-cloud">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Cloud Architecture & DevOps</h3>
+            <p>Modernize your cloud footprint with immutable infrastructure, automated Kubernetes orchestration, and 24/7 observability.</p>
+            <div class="matrix-subservices">
+              <div class="subservice-card">
+                <h4>Kubernetes Orchestration</h4>
+                <p>Multi-cluster EKS/GKE management with automated horizontal pod autoscaling and self-healing nodes.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Infrastructure as Code</h4>
+                <p>Fully codified environments using Terraform and Pulumi with automated drift detection.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>GitOps & Zero-Downtime CI/CD</h4>
+                <p>Automated canary deployments and instant rollback pipelines via ArgoCD.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>FinOps & Cost Optimization</h4>
+                <p>Spot-instance strategies and idle resource termination guaranteeing 40%+ cloud bill reduction.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: Software -->
+          <div class="matrix-content-panel" id="m-software">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Custom Software & Distributed Systems</h3>
+            <p>High-throughput backend systems, resilient event streams, and modular architectures designed to withstand intense transactional volume.</p>
+            <div class="matrix-subservices">
+              <div class="subservice-card">
+                <h4>Distributed Event Streams</h4>
+                <p>Apache Kafka and RabbitMQ pipelines processing hundreds of thousands of events per second.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>High-Performance APIs</h4>
+                <p>tRPC and gRPC microservices delivering type-safe contracts and sub-20ms response times.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Relational & NoSQL Datastores</h4>
+                <p>Sharded PostgreSQL, Redis clusters, and TiDB distributed SQL instances.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Modular Monolith Architecture</h4>
+                <p>Clean domain separation avoiding the premature operational complexity of microservices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 4: Mobile -->
+          <div class="matrix-content-panel" id="m-mobile">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Mobile & Cross-Platform Development</h3>
+            <p>Native-feeling iOS and Android experiences delivered with single-codebase velocity and 60 FPS animations.</p>
+            <div class="matrix-subservices">
+              <div class="subservice-card">
+                <h4>Flutter Development</h4>
+                <p>Pixel-perfect cross-platform applications with native C++ engine performance.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>React Native Architecture</h4>
+                <p>Shared business logic between web and mobile with Fabric new architecture renderer.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Offline-First Synchronization</h4>
+                <p>Local SQLite/WatermelonDB stores with conflict-free replicated data types (CRDT).</p>
+              </div>
+              <div class="subservice-card">
+                <h4>App Store & Play Store CI/CD</h4>
+                <p>Automated Fastlane pipelines pushing beta builds directly to TestFlight and Google Play Console.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 5: Dedicated Squads -->
+          <div class="matrix-content-panel" id="m-consulting">
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Dedicated Engineering Squads</h3>
+            <p>Pre-vetted, high-velocity engineering pods led by veteran staff architects ready to embed in your organization.</p>
+            <div class="matrix-subservices">
+              <div class="subservice-card">
+                <h4>Pod-Based Delivery</h4>
+                <p>Fully autonomous squads: 1 Lead Architect, 2 Senior Full-Stack Devs, 1 QA Engineer, 1 Product Manager.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Time-Zone Alignment</h4>
+                <p>Full 4-6 hour working overlap with North America (EST/PST) and European business hours.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>CTO Advisory</h4>
+                <p>Fractional architecture review, technology stack audits, and investor technical defense.</p>
+              </div>
+              <div class="subservice-card">
+                <h4>Zero Lock-In Guarantee</h4>
+                <p>Full IP transfer, clean Git histories, and comprehensive engineering documentation on day one.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PROPRIETARY PRODUCTS SHOWCASE (Globizhub Core SaaS)
+       ========================================================================= -->
+  <section class="section section--raised" id="products">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow eyebrow--violet">
+          <span class="eyebrow__marker"></span>
+          <span>// PROVEN PROPRIETARY PLATFORMS</span>
+        </div>
+        <h2 class="section-title">We Don't Just Consult — We Build Products</h2>
+        <p class="section-subtitle">Battle-tested SaaS solutions engineered and operated by Globizhub, serving healthcare networks, logistics fleets, and educational institutions nationwide.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Featured Product: Patholab.cloud -->
+        <div class="product-card product-card--featured">
+          <div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
+              <span class="badge badge--cyan">FEATURED PLATFORM</span>
+              <span class="badge badge--lime">v3.0 LIVE</span>
+              <span class="badge">HL7 / FHIR COMPLIANT</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(32, 227, 210, 0.15); border: 1px solid rgba(32, 227, 210, 0.3); display: flex; align-items: center; justify-content: center; color: #20E3D2;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h8M3 22h18M14 22a7 7 0 1 0 0-14h-1M9 14h2M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2ZM12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+              </div>
+              <div>
+                <h3 style="font-size: 1.6rem; margin-bottom: 2px;">Patholab.cloud</h3>
+                <span style="font-family: 'IBM Plex Mono'; font-size: 12px; color: var(--color-cyan-400);">ADVANCED LABORATORY INFORMATION MANAGEMENT SYSTEM (LIMS)</span>
+              </div>
+            </div>
+            <p style="font-size: 0.95rem; color: #B8C4D2; line-height: 1.6; margin-bottom: 1.5rem;">
+              Comprehensive diagnostic operating system featuring barcode specimen printing, real-time multi-branch sample tracking, automated pathology analyzers integration, WhatsApp report delivery, and analytics dashboards. Now powering multi-center diagnostic labs across India.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 12px 0; border-top: 1px solid rgba(184, 196, 210, 0.12); border-bottom: 1px solid rgba(184, 196, 210, 0.12); margin-bottom: 1.5rem;">
+              <div>
+                <div style="font-family: 'Space Grotesk'; font-size: 1.3rem; font-weight: 700; color: #fff;">100%</div>
+                <div style="font-family: 'IBM Plex Mono'; font-size: 10px; color: #718096;">AUDIT READY</div>
+              </div>
+              <div>
+                <div style="font-family: 'Space Grotesk'; font-size: 1.3rem; font-weight: 700; color: #20E3D2;">-70%</div>
+                <div style="font-family: 'IBM Plex Mono'; font-size: 10px; color: #718096;">REPORT DELAYS</div>
+              </div>
+              <div>
+                <div style="font-family: 'Space Grotesk'; font-size: 1.3rem; font-weight: 700; color: #B9F227;">v3.0</div>
+                <div style="font-family: 'IBM Plex Mono'; font-size: 10px; color: #718096;">MULTI-LAB SYNC</div>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="https://patholab.cloud" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size: 13px;">
+              <span>Visit patholab.cloud</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            </a>
+            <span style="font-family: 'IBM Plex Mono'; font-size: 11px; color: #718096;">SOC2 & ISO 27001 SECURED</span>
+          </div>
+        </div>
+
+        <!-- Secondary Products Column -->
+        <div class="product-subgrid">
+          <!-- Mini Product 1: Bungzo -->
+          <div class="product-mini-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <span class="badge badge--lime">LOGISTICS ENGINE</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B9F227" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            </div>
+            <h4 style="font-size: 1.15rem; color: #fff; margin-bottom: 4px;">Bungzo</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Hyperlocal food delivery, fleet routing, and automated courier dispatching infrastructure.</p>
+          </div>
+
+          <!-- Mini Product 2: GlobizLibrary -->
+          <div class="product-mini-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <span class="badge badge--violet">EDUCATION SAAS</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+            </div>
+            <h4 style="font-size: 1.15rem; color: #fff; margin-bottom: 4px;">GlobizLibrary</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Institutional library management system with RFID barcode cataloging and member access.</p>
+          </div>
+
+          <!-- Mini Product 3: IMS Core -->
+          <div class="product-mini-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <span class="badge badge--cyan">SUPPLY CHAIN</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#20E3D2" stroke-width="2"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8zM6 13h12M6 17h12"/></svg>
+            </div>
+            <h4 style="font-size: 1.15rem; color: #fff; margin-bottom: 4px;">IMS Core</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Enterprise inventory management with multi-warehouse tracking and automated replenishment triggers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       OUTCOME-DRIVEN CASE STUDIES
+       ========================================================================= -->
+  <section class="section" id="case-studies">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow__marker"></span>
+          <span>// VERIFIED OUTCOMES</span>
+        </div>
+        <h2 class="section-title">Engineering That Moves the Needle</h2>
+        <p class="section-subtitle">Real numbers from real deployments. We judge our software not by lines of code, but by the commercial results it produces.</p>
+      </div>
+
+      <div class="case-studies-grid">
+        <!-- Case 1: FinTech -->
+        <div class="case-card">
+          <div class="case-card__visual">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#20E3D2" stroke-width="1.2" opacity="0.4"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            <div class="case-card__visual-metric">+340% Throughput</div>
+          </div>
+          <div class="case-card__body">
+            <div>
+              <div class="case-card__sector">FINTECH & PAYMENTS</div>
+              <h3 class="case-card__title">Real-Time Multi-Currency Settlement Engine</h3>
+              <p class="case-card__desc">Architected a fault-tolerant transaction pipeline processing $4.2B in annualized payments with sub-15ms reconciliation.</p>
+            </div>
+            <div>
+              <div class="case-card__metrics">
+                <div>
+                  <div class="case-metric-value">99.999%</div>
+                  <div class="case-metric-title">UPTIME SLA</div>
+                </div>
+                <div>
+                  <div class="case-metric-value">&lt; 15ms</div>
+                  <div class="case-metric-title">EXECUTION TIME</div>
+                </div>
+              </div>
+              <div class="bento-card__tags">
+                <span class="badge">Go</span>
+                <span class="badge">Kafka</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">AWS EKS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2: HealthTech -->
+        <div class="case-card">
+          <div class="case-card__visual">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.2" opacity="0.4"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <div class="case-card__visual-metric">-78% Triage Latency</div>
+          </div>
+          <div class="case-card__body">
+            <div>
+              <div class="case-card__sector">HEALTHTECH & AI</div>
+              <h3 class="case-card__title">HIPAA-Compliant Clinical AI Copilot</h3>
+              <p class="case-card__desc">Deployed a private fine-tuned medical model that synthesizes EHR documentation, reducing physician charting time by 3.2 hours daily.</p>
+            </div>
+            <div>
+              <div class="case-card__metrics">
+                <div>
+                  <div class="case-metric-value">3.2 Hrs</div>
+                  <div class="case-metric-title">SAVED / DAY / DR</div>
+                </div>
+                <div>
+                  <div class="case-metric-value">100%</div>
+                  <div class="case-metric-title">HIPAA AUDIT PASS</div>
+                </div>
+              </div>
+              <div class="bento-card__tags">
+                <span class="badge badge--violet">Python</span>
+                <span class="badge badge--violet">PyTorch</span>
+                <span class="badge badge--violet">FastAPI</span>
+                <span class="badge">GCP Cloud Run</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 3: Logistics -->
+        <div class="case-card">
+          <div class="case-card__visual">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#B9F227" stroke-width="1.2" opacity="0.4"><path d="M10 17h4V5H2v12h3m10 0h2v-3.34a4 4 0 0 0-1.17-2.83L16 11V5h-2"/></svg>
+            <div class="case-card__visual-metric">$14M Cloud Savings</div>
+          </div>
+          <div class="case-card__body">
+            <div>
+              <div class="case-card__sector">ENTERPRISE LOGISTICS</div>
+              <h3 class="case-card__title">Autonomous Fleet Routing & Telematics System</h3>
+              <p class="case-card__desc">Re-architected an international shipping platform managing 85,000 trucks with real-time route optimization and IoT telematics ingestion.</p>
+            </div>
+            <div>
+              <div class="case-card__metrics">
+                <div>
+                  <div class="case-metric-value">85,000+</div>
+                  <div class="case-metric-title">LIVE CONNECTED ASSETS</div>
+                </div>
+                <div>
+                  <div class="case-metric-value">-62%</div>
+                  <div class="case-metric-title">INFRASTRUCTURE COST</div>
+                </div>
+              </div>
+              <div class="bento-card__tags">
+                <span class="badge">Rust</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">TimescaleDB</span>
+                <span class="badge">Kubernetes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5-STAGE ENGINEERING PROCESS
+       ========================================================================= -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow__marker"></span>
+          <span>// DELIVERY METHODOLOGY</span>
+        </div>
+        <h2 class="section-title">The 5-Stage Engineering Pipeline</h2>
+        <p class="section-subtitle">Predictable, transparent, and built on continuous integration. No black boxes, no surprise timelines.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="timeline-step__badge">01</div>
+          <h3 class="timeline-step__title">Discover & Architect</h3>
+          <p class="timeline-step__desc">Deep-dive technical assessment, threat modeling, schema design, and cloud architecture blueprint.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__badge">02</div>
+          <h3 class="timeline-step__title">Rapid Prototyping</h3>
+          <p class="timeline-step__desc">Clickable high-fidelity UI prototypes and proof-of-concept API stubs to validate core assumptions in days.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__badge">03</div>
+          <h3 class="timeline-step__title">High-Velocity Sprints</h3>
+          <p class="timeline-step__desc">Two-week Agile sprints with continuous deployment to staging, automated tests, and async demos.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__badge">04</div>
+          <h3 class="timeline-step__title">Security Hardening</h3>
+          <p class="timeline-step__desc">Automated penetration testing, load testing at 5x expected peak, and compliance audit validation.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__badge">05</div>
+          <h3 class="timeline-step__title">Launch & SRE Scale</h3>
+          <p class="timeline-step__desc">Zero-downtime production deployment, 24/7 monitoring alerts, and iterative feature scaling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TECHNOLOGY RADAR / STACK
+       ========================================================================= -->
+  <section class="section section--raised" id="tech-stack">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow eyebrow--violet">
+          <span class="eyebrow__marker"></span>
+          <span>// MODERN STACK</span>
+        </div>
+        <h2 class="section-title">Engineered with Battle-Tested Technologies</h2>
+        <p class="section-subtitle">We select our tools based on runtime performance, type safety, ecosystem stability, and long-term maintainability.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="path-nav" style="margin-bottom: 2rem;">
+        <button class="path-nav__item active tech-tab-btn" data-tech="all">All Stack</button>
+        <button class="path-nav__item tech-tab-btn" data-tech="ai">AI & ML</button>
+        <button class="path-nav__item tech-tab-btn" data-tech="cloud">Cloud & DevOps</button>
+        <button class="path-nav__item tech-tab-btn" data-tech="backend">Backend & DB</button>
+        <button class="path-nav__item tech-tab-btn" data-tech="frontend">Frontend & Mobile</button>
+      </div>
+
+      <div class="wizard-options-grid" id="techGrid">
+        <div class="wizard-option-card tech-card" data-cat="ai">
+          <div style="font-size: 1.5rem;">🤖</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">PyTorch & Transformers</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Deep learning framework and model architecture for custom LLMs and vision models.</p>
+          </div>
+        </div>
+        <div class="wizard-option-card tech-card" data-cat="ai">
+          <div style="font-size: 1.5rem;">⚡</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">vLLM & Triton Server</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">High-throughput, low-latency GPU inference serving engine with PagedAttention.</p>
+          </div>
+        </div>
+        <div class="wizard-option-card tech-card" data-cat="cloud">
+          <div style="font-size: 1.5rem;">☸️</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">Kubernetes (K8s)</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Container orchestration for high-availability multi-region enterprise workloads.</p>
+          </div>
+        </div>
+        <div class="wizard-option-card tech-card" data-cat="cloud">
+          <div style="font-size: 1.5rem;">🏗️</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">Terraform & GitOps</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Declarative cloud infrastructure management with automated compliance checks.</p>
+          </div>
+        </div>
+        <div class="wizard-option-card tech-card" data-cat="backend">
+          <div style="font-size: 1.5rem;">🐘</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">PostgreSQL & pgvector</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Rock-solid relational database with native high-dimensional vector search.</p>
+          </div>
+        </div>
+        <div class="wizard-option-card tech-card" data-cat="backend">
+          <div style="font-size: 1.5rem;">📨</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">Apache Kafka</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Distributed event streaming for fault-tolerant, high-volume transactional pipelines.</p>
+          </div>
+        </div>
+        <div class="wizard-option-card tech-card" data-cat="frontend">
+          <div style="font-size: 1.5rem;">▲</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">Next.js & React 19</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Server-rendered, lightning-fast web applications with modern streaming architecture.</p>
+          </div>
+        </div>
+        <div class="wizard-option-card tech-card" data-cat="frontend">
+          <div style="font-size: 1.5rem;">📱</div>
+          <div>
+            <h4 style="color: #fff; font-size: 1rem;">Flutter & React Native</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">Cross-platform mobile applications delivering 60fps native performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ENTERPRISE FREQUENTLY ASKED QUESTIONS (Appventurez Reference)
+       ========================================================================= -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow__marker"></span>
+          <span>// ENTERPRISE FAQ</span>
+        </div>
+        <h2 class="section-title">Common Questions & Technical Clarifications</h2>
+        <p class="section-subtitle">Direct answers regarding our architectural standards, security compliance, legacy integrations, and IP ownership.</p>
+      </div>
+
+      <div class="faq-list">
+        <!-- FAQ 1 -->
+        <div class="faq-item active">
+          <button class="faq-question" type="button">
+            <span>How does Globizhub support enterprise-scale digital transformation?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            Globizhub aligns deep technical architecture with commercial KPIs. Rather than acting as a task-based contractor, we deploy dedicated cross-functional squads (Lead Architect, Senior Full-Stack Engineers, DevOps/SRE, QA) to modernize legacy systems, automate critical workflows with custom AI agents, and build cloud-native platforms engineered for 99.999% uptime.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>How do you ensure security, compliance, and data governance?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            Globizhub is ISO 9001, ISO 27001, and ISO 20000 certified. All software and infrastructure we build adhere to OWASP Top 10 guidelines, zero-trust network policies, AES-256 encryption at rest and in transit, and role-based access control (RBAC). For healthcare clients, we implement full HIPAA & HL7/FHIR compliance; for financial institutions, SOC2 Type II and PCI-DSS readiness.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Can Globizhub integrate with our existing ERP, CRM, and legacy data lakes?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes. We specialize in non-disruptive integration via custom API gateways, event buses (Apache Kafka / RabbitMQ), and change-data-capture (CDC) pipelines. Whether connecting to SAP, Salesforce, legacy SQL servers, or on-premise mainframe systems, we ensure zero downtime and synchronized bi-directional data flow.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>How is Globizhub different from traditional IT agencies?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            Traditional agencies deliver static code and move on. Globizhub operates both as an enterprise engineering partner and an active SaaS software builder (operating platforms like Patholab.cloud and Bungzo). We build with modern modular monoliths, typed end-to-end procedures (TypeScript, tRPC, Go), automated CI/CD pipelines, and guarantee complete intellectual property (IP) transfer with zero vendor lock-in.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>How do you help companies adopt AI and Autonomous Agents responsibly?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            We isolate all AI models behind strict permission layers and deterministic validation engines. Your enterprise data is never used to train public foundation models. We implement domain-specific Retrieval-Augmented Generation (RAG), private model quantization (vLLM / Triton), automated prompt injection defense, and continuous hallucination monitoring.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       GUIDED 5-STEP PROPOSAL WIZARD (High-Converting Intake)
+       ========================================================================= -->
+  <section class="section section--raised" id="proposal">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow__marker"></span>
+          <span>// START YOUR ENGAGEMENT</span>
+        </div>
+        <h2 class="section-title">Interactive Project Proposal Wizard</h2>
+        <p class="section-subtitle">Answer 4 quick questions to receive a detailed architectural estimate and schedule a technical consultation with our engineering team.</p>
+      </div>
+
+      <div class="wizard-container">
+        <!-- Progress Stepper -->
+        <div class="wizard-progress">
+          <div class="wizard-progress__bar" id="wizardBar" style="width: 20%;"></div>
+          <div class="wizard-step-node active" data-step="1">
+            <div class="wizard-node-circle">01</div>
+            <span class="wizard-node-label">Need</span>
+          </div>
+          <div class="wizard-step-node" data-step="2">
+            <div class="wizard-node-circle">02</div>
+            <span class="wizard-node-label">Scope</span>
+          </div>
+          <div class="wizard-step-node" data-step="3">
+            <div class="wizard-node-circle">03</div>
+            <span class="wizard-node-label">Budget</span>
+          </div>
+          <div class="wizard-step-node" data-step="4">
+            <div class="wizard-node-circle">04</div>
+            <span class="wizard-node-label">Contact</span>
+          </div>
+          <div class="wizard-step-node" data-step="5">
+            <div class="wizard-node-circle">05</div>
+            <span class="wizard-node-label">Confirm</span>
+          </div>
+        </div>
+
+        <!-- Form Steps -->
+        <form id="proposalForm">
+          <!-- Step 1: Need -->
+          <div class="wizard-form-step active" id="step-1">
+            <h3 style="font-size: 1.35rem; margin-bottom: 8px;">What is your primary engineering objective?</h3>
+            <p style="font-size: 0.9rem; color: #94A3B8;">Select the solution that best describes what you are building.</p>
+
+            <div class="wizard-options-grid">
+              <label class="wizard-option-card selected">
+                <input type="radio" name="objective" value="AI & Autonomous Agents" checked>
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">AI & Autonomous Agents</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">LLM fine-tuning, RAG pipelines, custom workflow automation.</span>
+                </div>
+              </label>
+
+              <label class="wizard-option-card">
+                <input type="radio" name="objective" value="Custom Web / Mobile Platform">
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">Custom Web / Mobile Platform</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">Greenfield SaaS, customer portals, cross-platform apps.</span>
+                </div>
+              </label>
+
+              <label class="wizard-option-card">
+                <input type="radio" name="objective" value="Cloud Modernization & DevOps">
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">Cloud & DevOps Modernization</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">Kubernetes clusters, multi-region failover, cost reduction.</span>
+                </div>
+              </label>
+
+              <label class="wizard-option-card">
+                <input type="radio" name="objective" value="Dedicated Engineering Squad">
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">Dedicated Engineering Squad</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">Embedded pod of 3-8 senior developers and architects.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Scope -->
+          <div class="wizard-form-step" id="step-2">
+            <h3 style="font-size: 1.35rem; margin-bottom: 8px;">What is the nature and scope of this project?</h3>
+            <p style="font-size: 0.9rem; color: #94A3B8;">Choose the project stage that matches your current status.</p>
+
+            <div class="wizard-options-grid">
+              <label class="wizard-option-card selected">
+                <input type="radio" name="scope" value="Greenfield (From Scratch)" checked>
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">Greenfield (From Scratch)</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">Building an entirely new product or architecture.</span>
+                </div>
+              </label>
+
+              <label class="wizard-option-card">
+                <input type="radio" name="scope" value="Refactor / Modernize Legacy">
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">Refactor / Modernize Legacy</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">Overhauling an existing codebase for speed & scale.</span>
+                </div>
+              </label>
+
+              <label class="wizard-option-card">
+                <input type="radio" name="scope" value="Performance & Security Audit">
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">Audit & Architecture Review</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">Evaluating code quality, security posture, and bottlenecks.</span>
+                </div>
+              </label>
+
+              <label class="wizard-option-card">
+                <input type="radio" name="scope" value="Feature Expansion & Scale">
+                <div>
+                  <strong style="color: #fff; display: block; margin-bottom: 4px;">Feature Expansion & Scaling</strong>
+                  <span style="font-size: 0.8rem; color: #94A3B8;">Adding major new capabilities to an existing product.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Budget & Timeline -->
+          <div class="wizard-form-step" id="step-3">
+            <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Target Kickoff & Budget Bracket</h3>
+            <p style="font-size: 0.9rem; color: #94A3B8;">Help us prepare the right tier of senior architects for your call.</p>
+
+            <div class="form-group" style="margin-top: 20px;">
+              <label class="form-label">When do you want to begin?</label>
+              <select class="form-select" id="timelineInput">
+                <option value="Immediately (Within 2 weeks)">Immediately (Within 2 weeks)</option>
+                <option value="Within 1 month">Within 1 month</option>
+                <option value="1 - 3 months out">1 - 3 months out</option>
+                <option value="Exploratory / Research phase">Exploratory / Research phase</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Estimated Budget Bracket (USD)</label>
+              <div class="wizard-options-grid" style="margin-top: 10px;">
+                <label class="wizard-option-card">
+                  <input type="radio" name="budget" value="$25,000 - $50,000">
+                  <span style="color: #fff; font-weight: 600;">$25k – $50k</span>
+                </label>
+                <label class="wizard-option-card selected">
+                  <input type="radio" name="budget" value="$50,000 - $100,000" checked>
+                  <span style="color: #fff; font-weight: 600;">$50k – $100k</span>
+                </label>
+                <label class="wizard-option-card">
+                  <input type="radio" name="budget" value="$100,000 - $250,000">
+                  <span style="color: #fff; font-weight: 600;">$100k – $250k</span>
+                </label>
+                <label class="wizard-option-card">
+                  <input type="radio" name="budget" value="$250,000+">
+                  <span style="color: #fff; font-weight: 600;">$250k+ (Enterprise)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Contact & Project Brief -->
+          <div class="wizard-form-step" id="step-4">
+            <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Where should we send your technical proposal?</h3>
+            <p style="font-size: 0.9rem; color: #94A3B8;">All inquiries are bound by our mutual non-disclosure agreement.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px;">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Name *</label>
+                <input type="text" class="form-input" id="contactName" placeholder="e.g. Sarah Connor" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Work Email *</label>
+                <input type="email" class="form-input" id="contactEmail" placeholder="s.connor@enterprise.com" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="contactCompany">Company / Organization *</label>
+                <input type="text" class="form-input" id="contactCompany" placeholder="e.g. Cyberdyne Systems" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Phone / WhatsApp</label>
+                <input type="tel" class="form-input" id="contactPhone" placeholder="+1 (555) 019-2831">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="projectBrief">Brief Overview / Problem Statement</label>
+              <textarea class="form-textarea" id="projectBrief" rows="3" placeholder="Tell us about the key problem you are solving, tech stack preferences, or specific deliverables..."></textarea>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #94A3B8;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#20E3D2" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Protected by 256-bit AES encryption and instant mutual NDA.</span>
+            </div>
+          </div>
+
+          <!-- Step 5: Confirmation -->
+          <div class="wizard-form-step" id="step-5">
+            <div style="text-align: center; padding: 2rem 0;">
+              <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(32, 227, 210, 0.15); border: 2px solid #20E3D2; display: inline-flex; align-items: center; justify-content: center; color: #20E3D2; margin-bottom: 1.5rem;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+              </div>
+              <h3 style="font-size: 1.75rem; margin-bottom: 8px;">Proposal Request Received!</h3>
+              <p style="max-width: 540px; margin: 0 auto 1.5rem auto; color: #B8C4D2;">Thank you for reaching out. A Senior Solutions Architect has been assigned to your brief and will review your technical requirements within 24 business hours.</p>
+
+              <div id="proposalSummaryBox" style="background: rgba(12, 17, 26, 0.8); border: 1px solid rgba(184, 196, 210, 0.15); border-radius: 8px; padding: 1.25rem; max-width: 520px; margin: 0 auto; text-align: left; font-size: 0.85rem;">
+                <!-- Dynamically filled by app.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Wizard Actions -->
+          <div class="wizard-nav-actions" id="wizardActions">
+            <button type="button" class="btn btn--secondary" id="prevStepBtn" style="visibility: hidden;">← Back</button>
+            <button type="button" class="btn btn--primary" id="nextStepBtn">
+              <span>Continue</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       COMMAND-K SEARCH DIALOG MODAL
+       ========================================================================= -->
+  <div class="cmd-modal-backdrop" id="cmdModalBackdrop">
+    <div class="cmd-modal" role="dialog" aria-modal="true">
+      <div class="cmd-modal__search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#20E3D2" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" class="cmd-modal__input" id="cmdInput" placeholder="Search services, technologies, case studies..." autofocus>
+        <span class="badge">ESC to close</span>
+      </div>
+      <div class="cmd-results" id="cmdResults">
+        <div class="cmd-item" data-action="#services">
+          <div>
+            <strong>AI & Autonomous Agents</strong>
+            <span style="display: block; font-size: 11px; color: #718096;">LLM fine-tuning, RAG pipelines, agent workflows</span>
+          </div>
+          <span class="badge badge--violet">Service</span>
+        </div>
+        <div class="cmd-item" data-action="#services">
+          <div>
+            <strong>Cloud & Infrastructure Modernization</strong>
+            <span style="display: block; font-size: 11px; color: #718096;">Kubernetes, Terraform, AWS/GCP, multi-region</span>
+          </div>
+          <span class="badge badge--cyan">Service</span>
+        </div>
+        <div class="cmd-item" data-action="#case-studies">
+          <div>
+            <strong>FinTech Real-Time Payment Clearing</strong>
+            <span style="display: block; font-size: 11px; color: #718096;">+340% throughput, 99.999% uptime case study</span>
+          </div>
+          <span class="badge">Case Study</span>
+        </div>
+        <div class="cmd-item" data-action="#proposal">
+          <div>
+            <strong>Interactive Proposal Wizard</strong>
+            <span style="display: block; font-size: 11px; color: #718096;">Get instant architecture estimates & book consultations</span>
+          </div>
+          <span class="badge badge--lime">Consultation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       ENTERPRISE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Positioning -->
+        <div class="footer-brand">
+          <a href="#" class="site-logo">
+            <div class="site-logo__mark">G</div>
+            <span class="site-logo__text">GLOBIZHUB<span class="site-logo__dot">.</span></span>
+          </a>
+          <p>
+            Globizhub is a technology intelligence and software engineering firm. We design, build, and deploy resilient digital platforms and autonomous AI systems that empower market leaders worldwide.
+          </p>
+          <div style="margin-top: 1.5rem;" class="system-status">
+            <span class="status-dot"></span>
+            <span>ALL SYSTEMS OPERATIONAL (99.99%)</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Services -->
+        <div class="footer-col">
+          <h4>Capabilities</h4>
+          <div class="footer-links">
+            <a href="#services">Autonomous AI Agents</a>
+            <a href="#services">Cloud Architecture</a>
+            <a href="#services">Full-Stack Engineering</a>
+            <a href="#services">Mobile Applications</a>
+            <a href="#services">Cybersecurity & Zero-Trust</a>
+            <a href="#services">Dedicated Squads</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Pathways -->
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <div class="footer-links">
+            <a href="#pathways">For Startups (0 to 1)</a>
+            <a href="#pathways">For Mid-Market Innovators</a>
+            <a href="#pathways">For Global Enterprises</a>
+            <a href="#case-studies">FinTech Solutions</a>
+            <a href="#case-studies">HealthTech Systems</a>
+            <a href="#case-studies">Logistics & Supply Chain</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="#hero">About Globizhub</a>
+            <a href="#process">Our Delivery Process</a>
+            <a href="#tech-stack">Technology Radar</a>
+            <a href="#case-studies">Case Studies</a>
+            <a href="STITCH_PROMPTS.md" target="_blank">Stitch UI Prompts</a>
+            <a href="#proposal">Careers</a>
+          </div>
+        </div>
+
+        <!-- Col 5: Global Presence & Offices -->
+        <div class="footer-col">
+          <h4>Offices & Contact</h4>
+          <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 8px;">
+            <strong>Bengaluru (HQ):</strong><br>Karnataka, India
+          </p>
+          <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 8px;">
+            <strong>Guwahati:</strong><br>Assam, India
+          </p>
+          <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 8px;">
+            <strong>Chennai:</strong><br>Tamil Nadu, India
+          </p>
+          <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 4px;">
+            <strong>Inquiries:</strong><br>
+            <a href="mailto:sales@globizhub.com" style="color: var(--color-cyan-400);">sales@globizhub.com</a> &bull; <a href="mailto:admin@globizhub.com" style="color: var(--color-cyan-400);">admin@globizhub.com</a>
+          </p>
+          <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0;">
+            <strong>Phone:</strong><br>
+            +91-9401317482 &bull; +91-8402010207
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2019–2026 Globizhub India Private Limited. ISO 9001 · ISO 27001 · ISO 20000 Certified. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security Statement</a>
+          <a href="#">ISO Certifications</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>

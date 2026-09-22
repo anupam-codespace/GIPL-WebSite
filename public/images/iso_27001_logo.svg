@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 68" width="100%" height="100%" fill="none">
+  <!-- Outer glow / subtle background -->
+  <defs>
+    <linearGradient id="iso27001-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Security Shield Emblem (x: 4 to 64, center 34, 34) -->
+  <g transform="translate(4, 0)">
+    <!-- Outer Shield -->
+    <path d="M34 6 L58 14 C58 38, 48 54, 34 62 C20 54, 10 38, 10 14 Z" stroke="url(#iso27001-grad)" stroke-width="1.8" fill="#ffffff" fill-opacity="0.04"/>
+    <path d="M34 11 L53 18 C53 37, 44 50, 34 56 C24 50, 15 37, 15 18 Z" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.6" stroke-dasharray="3 1.5"/>
+
+    <!-- Inner Lock & Keyhole -->
+    <!-- Shackle -->
+    <path d="M28 29 V23 C28 19.7, 30.7 17, 34 17 C37.3 17, 40 19.7, 40 23 V29" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Lock Body -->
+    <rect x="25" y="29" width="18" height="15" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+    <!-- Keyhole -->
+    <circle cx="34" cy="35" r="2" fill="#0f172a"/>
+    <path d="M33 35.5 L32.5 41 H35.5 L35 35.5 Z" fill="#0f172a"/>
+
+    <!-- Micro Stars above shield -->
+    <polygon points="34,2 34.8,3.8 36.8,3.8 35.2,5 35.8,6.8 34,5.6 32.2,6.8 32.8,5 31.2,3.8 33.2,3.8" fill="#ffffff" fill-opacity="0.9"/>
+  </g>
+
+  <!-- Typography Right (x: 74) -->
+  <g transform="translate(74, 0)">
+    <!-- Organization Mark -->
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="900" fill="#ffffff" letter-spacing="0.5">
+      ISO 27001:2022
+    </text>
+    
+    <!-- Certified Badge Pill -->
+    <rect x="0" y="31" width="62" height="13" rx="2.5" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="31" y="40.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.2">
+      CERTIFIED
+    </text>
+
+    <!-- Standard Title -->
+    <text x="68" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#94a3b8" letter-spacing="0.8">
+      ISMS
+    </text>
+
+    <!-- Description Subline -->
+    <text x="0" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="500" fill="#cbd5e1" fill-opacity="0.7" letter-spacing="0.4">
+      Information Security Mgmt
+    </text>
+  </g>
+</svg>

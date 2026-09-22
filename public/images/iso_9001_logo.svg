@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 68" width="100%" height="100%" fill="none">
+  <!-- Outer glow / subtle background -->
+  <defs>
+    <linearGradient id="iso9001-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Seal Emblem (x: 6 to 62, center 34, 34) -->
+  <g transform="translate(4, 0)">
+    <!-- Outer Gear/Serrated Ring -->
+    <circle cx="34" cy="34" r="29" stroke="url(#iso9001-grad)" stroke-width="1.8" stroke-dasharray="3 1.5"/>
+    <circle cx="34" cy="34" r="25" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.6"/>
+    
+    <!-- Laurel Wreath Leaves (Left) -->
+    <path d="M20 22 C18 26, 18 36, 23 42 C20 38, 20 30, 22 25 Z" fill="#ffffff" fill-opacity="0.75"/>
+    <path d="M19 28 C16 32, 17 38, 22 41 C19 37, 19 31, 21 29 Z" fill="#ffffff" fill-opacity="0.85"/>
+    
+    <!-- Laurel Wreath Leaves (Right) -->
+    <path d="M48 22 C50 26, 50 36, 45 42 C48 38, 48 30, 46 25 Z" fill="#ffffff" fill-opacity="0.75"/>
+    <path d="M49 28 C52 32, 51 38, 46 41 C49 37, 49 31, 47 29 Z" fill="#ffffff" fill-opacity="0.85"/>
+
+    <!-- Inner Shield / Checkmark -->
+    <circle cx="34" cy="34" r="18" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-width="1.4"/>
+    <path d="M26 34 L31.5 39.5 L42 28.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Micro Stars -->
+    <polygon points="34,10 35.2,12.8 38.2,12.8 35.8,14.6 36.7,17.4 34,15.6 31.3,17.4 32.2,14.6 29.8,12.8 32.8,12.8" fill="#ffffff" fill-opacity="0.9"/>
+    <polygon points="20,15 20.8,17 22.8,17 21.2,18.2 21.8,20.2 20,19 18.2,20.2 18.8,18.2 17.2,17 19.2,17" fill="#ffffff" fill-opacity="0.7"/>
+    <polygon points="48,15 48.8,17 50.8,17 49.2,18.2 49.8,20.2 48,19 46.2,20.2 46.8,18.2 45.2,17 47.2,17" fill="#ffffff" fill-opacity="0.7"/>
+  </g>
+
+  <!-- Typography Right (x: 74) -->
+  <g transform="translate(74, 0)">
+    <!-- Organization Mark -->
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="900" fill="#ffffff" letter-spacing="0.5">
+      ISO 9001:2015
+    </text>
+    
+    <!-- Certified Badge Pill -->
+    <rect x="0" y="31" width="62" height="13" rx="2.5" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="31" y="40.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1.2">
+      CERTIFIED
+    </text>
+
+    <!-- Standard Title -->
+    <text x="68" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#94a3b8" letter-spacing="0.8">
+      QMS
+    </text>
+
+    <!-- Description Subline -->
+    <text x="0" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="500" fill="#cbd5e1" fill-opacity="0.7" letter-spacing="0.4">
+      Quality Management System
+    </text>
+  </g>
+</svg>

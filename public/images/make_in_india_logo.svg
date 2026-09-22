@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <!-- Make in India Gear-Lion Silhouette -->
+  <g transform="translate(10, 12)">
+    <!-- Lion Head & Mane composed of industrial gears -->
+    <path d="M5 28 C5 18 12 10 24 10 C32 10 38 14 42 20 C45 17 50 18 52 22 C55 26 53 32 49 35 C45 38 38 38 32 38 C28 38 24 35 20 35 C15 35 10 32 5 28 Z" fill="#FFFFFF" opacity="0.95"/>
+    
+    <!-- Gear cutouts inside the silhouette -->
+    <circle cx="20" cy="22" r="6" fill="#0A0E1A"/>
+    <circle cx="20" cy="22" r="3" fill="#FFFFFF"/>
+    <circle cx="34" cy="24" r="5" fill="#0A0E1A"/>
+    <circle cx="34" cy="24" r="2.5" fill="#FFFFFF"/>
+    <circle cx="44" cy="26" r="3.5" fill="#0A0E1A"/>
+
+    <!-- Lion Leg & Stride -->
+    <path d="M12 30 L8 45 L14 45 L17 33 Z" fill="#FFFFFF"/>
+    <path d="M26 36 L24 45 L29 45 L31 36 Z" fill="#FFFFFF"/>
+    <path d="M40 36 L39 45 L44 45 L45 35 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="72" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" letter-spacing="2" fill="#FFFFFF">
+    MAKE IN INDIA
+  </text>
+  <text x="72" y="41" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.5" fill="#38BDF8">
+    GOVERNMENT OF INDIA
+  </text>
+  <text x="72" y="53" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="500" letter-spacing="0.5" fill="#94A3B8">
+    Flagship Manufacturing &amp; Tech Initiative
+  </text>
+</svg>

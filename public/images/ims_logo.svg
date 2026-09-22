@@ -1,0 +1,42 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="imsGrad1" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="imsGrad2" x1="40" y1="40" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <filter id="imsShadow" x="10" y="10" width="180" height="180" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0284C7" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background container -->
+  <rect x="16" y="16" width="168" height="168" rx="42" fill="#0F172A" />
+  
+  <!-- Isometric Smart Warehouse / Inventory Cube -->
+  <g filter="url(#imsShadow)">
+    <!-- Top Face -->
+    <path d="M100 48L148 76L100 104L52 76L100 48Z" fill="url(#imsGrad2)" />
+    <!-- Left Face -->
+    <path d="M52 76L100 104V154L52 126V76Z" fill="#0369A1" />
+    <!-- Right Face -->
+    <path d="M100 104L148 76V126L100 154V104Z" fill="#4338CA" />
+    
+    <!-- Inner Telemetry Nodes / Grid lines -->
+    <path d="M100 104V154" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M100 48L100 104" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/>
+    <path d="M76 62L124 90" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/>
+    
+    <!-- Smart Tracking Pulse Node -->
+    <circle cx="100" cy="104" r="7" fill="#38BDF8" />
+    <circle cx="100" cy="104" r="3.5" fill="#FFFFFF" />
+    
+    <!-- Telemetry Badges / Signal Rays -->
+    <circle cx="148" cy="76" r="4" fill="#818CF8" />
+    <circle cx="52" cy="76" r="4" fill="#38BDF8" />
+    <circle cx="100" cy="154" r="4" fill="#4F46E5" />
+  </g>
+</svg>
