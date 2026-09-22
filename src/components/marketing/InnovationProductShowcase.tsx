@@ -24,9 +24,6 @@ interface ProductItem {
   metric2: { value: string; label: string };
   imageSrc: string;
   imageAlt: string;
-  badgeDotColor: string;
-  badgeText: string;
-  badgeCategory: string;
 }
 
 const PRODUCTS: ProductItem[] = [
@@ -50,9 +47,6 @@ const PRODUCTS: ProductItem[] = [
     metric2: { value: "10K+", label: "Patients Registered" },
     imageSrc: "/images/products/patholab-showcase.jpg",
     imageAlt: "Patholab.Cloud Automated Diagnostic Laboratory Intelligence",
-    badgeDotColor: "bg-emerald-400",
-    badgeText: "Patholab Core Live • Bidirectional LIMS",
-    badgeCategory: "DIAGNOSTICS CORE",
   },
   {
     id: "teamhub",
@@ -74,9 +68,6 @@ const PRODUCTS: ProductItem[] = [
     metric2: { value: "100%", label: "Automated Payroll" },
     imageSrc: "/images/products/teamhub-showcase.jpg",
     imageAlt: "TeamHub Enterprise HRMS & Workforce Operating System",
-    badgeDotColor: "bg-blue-400",
-    badgeText: "Full-Suite HRMS • Biometric & Payroll Synced",
-    badgeCategory: "ENTERPRISE HRMS",
   },
   {
     id: "bungzo",
@@ -98,9 +89,6 @@ const PRODUCTS: ProductItem[] = [
     metric2: { value: "15 Min", label: "Avg. Delivery Time" },
     imageSrc: "/images/products/bungzo-showcase.jpg",
     imageAlt: "Bungzo High-Speed Hyperlocal Food Delivery",
-    badgeDotColor: "bg-red-400",
-    badgeText: "Live Kitchen Dispatch • Real-time Tracking",
-    badgeCategory: "FOOD DELIVERY",
   },
   {
     id: "globizlibrary",
@@ -122,9 +110,6 @@ const PRODUCTS: ProductItem[] = [
     metric2: { value: "94%", label: "Faster Book Checkouts" },
     imageSrc: "/images/products/globizlibrary-showcase.jpg",
     imageAlt: "GlobizLibrary Academic RFID Repository & OPAC Catalog",
-    badgeDotColor: "bg-orange-400",
-    badgeText: "RFID Auto-Issued • Overdue Auto-Ledger",
-    badgeCategory: "OPAC DISCOVERY",
   },
   {
     id: "ims",
@@ -141,9 +126,6 @@ const PRODUCTS: ProductItem[] = [
     metric2: { value: "99.9%", label: "Stock Accuracy" },
     imageSrc: "/images/products/ims-showcase.jpg",
     imageAlt: "Enterprise IMS Multi-Node Robotic Warehouse Fulfillment",
-    badgeDotColor: "bg-indigo-400",
-    badgeText: "Dynamic Traceability • ERP Integrated",
-    badgeCategory: "ERP INTEGRATED",
   },
 ];
 
@@ -480,21 +462,8 @@ export default function InnovationProductShowcase({
                     draggable={false}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 select-none pointer-events-none"
                   />
-                  {/* Cinematic gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/25 pointer-events-none" />
-
-                  {/* Top-right category pill */}
-                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] sm:text-[11px] font-mono font-bold text-white border border-white/20 shadow-sm pointer-events-none">
-                    {prod.badgeCategory}
-                  </div>
-
-                  {/* Bottom live telemetry pill */}
-                  <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center gap-2 text-white pointer-events-none">
-                    <div className={`w-2 h-2 rounded-full ${prod.badgeDotColor} animate-pulse`} />
-                    <span className="text-[11px] sm:text-xs font-semibold tracking-wide">
-                      {prod.badgeText}
-                    </span>
-                  </div>
+                  {/* Subtle vignette gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
                 </div>
 
                 {/* Direct Action Buttons - Centered in the middle on desktop & mobile */}
@@ -569,10 +538,10 @@ export default function InnovationProductShowcase({
                     <button
                       type="button"
                       onClick={onOpenConsultation}
-                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
+                      className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-[11px] sm:text-xs md:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
                     >
                       <span>Request Proprietary Demo</span>
-                      <ArrowUpRight className="w-4 h-4 text-blue-400" />
+                      <ArrowUpRight className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-blue-400" />
                     </button>
                   )}
                 </div>
@@ -582,13 +551,13 @@ export default function InnovationProductShowcase({
         </div>
 
         {/* Bottom CTA to Discuss / Demo - Centered with Upward-Tilted Arrow */}
-        <div className="mt-14 sm:mt-16 text-center flex justify-center">
+        <div className="mt-14 sm:mt-16 text-center flex justify-center px-4">
           <button
             type="button"
             onClick={onOpenConsultation}
-            className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white text-black font-bold text-sm sm:text-base transition-all duration-300 hover:bg-slate-100 hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-9 py-3 sm:py-4 rounded-full bg-white text-black font-bold text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-slate-100 hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer overflow-hidden max-w-full"
           >
-            <div className="relative h-5 sm:h-6 overflow-hidden flex flex-col justify-center">
+            <div className="relative h-4 sm:h-5 md:h-6 overflow-hidden flex flex-col justify-center">
               <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
                 Request Proprietary Product Demo
               </span>
@@ -596,7 +565,7 @@ export default function InnovationProductShowcase({
                 Request Proprietary Product Demo
               </span>
             </div>
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="w-3.5 sm:w-4 h-3.5 sm:h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
           </button>
         </div>
       </div>
