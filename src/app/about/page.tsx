@@ -29,7 +29,9 @@ import {
   Briefcase,
   Smile,
   Shield,
-  Laptop
+  Laptop,
+  Boxes,
+  BookOpen
 } from "lucide-react";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
@@ -303,7 +305,7 @@ const ABOUT_FAQS = [
   },
   {
     q: "What proprietary products has Globizhub developed?",
-    a: "Globizhub has developed and operates several market-leading SaaS platforms including Patholab.cloud (a comprehensive cloud-based laboratory information management system processing over 500,000 specimens monthly), Bungzo (an all-in-one residential society and visitor management ERP), TeamHub (enterprise collaboration and field force automation), and GlobizLibrary (digital cataloging and automated resource management)."
+    a: "Globizhub has developed and operates 5 proprietary enterprise platforms: Patholab.Cloud (intelligent cloud diagnostic LIMS processing over 500,000 specimens monthly), TeamHub (workforce operations and sprint velocity orchestration), Bungzo (hyperlocal quick-commerce and delivery logistics engine), GlobizLibrary (digital cataloging and automated academic RFID repository), and Enterprise IMS (multi-warehouse inventory and supply chain tracking)."
   },
   {
     q: "What engagement models do you offer to enterprises?",
@@ -791,47 +793,46 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 7. OUR FLAGSHIP PRODUCTS: Patholab.cloud & Bungzo        */}
+      {/* 7. OUR PROPRIETARY PRODUCTS: The Globizhub Suite        */}
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#000000] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">
-              Proprietary SaaS Ecosystem
+              Proprietary Enterprise Ecosystem
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Products Engineered by Globizhub
             </h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              Beyond bespoke engineering, we build and operate mission-critical SaaS platforms that power daily diagnostic healthcare and community governance across India.
+              Beyond bespoke engineering, we build, scale, and operate 5 mission-critical proprietary platforms powering diagnostics, quick-commerce, workforce operations, academic research, and global supply chains.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Product 1: Patholab.cloud */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* Product 1: Patholab.Cloud */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="h-10 flex items-center gap-3">
-                    <Image
-                      src="/images/patholab_logo.png"
-                      alt="Patholab.cloud"
-                      width={140}
-                      height={40}
-                      className="object-contain h-8 w-auto"
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/90 p-1 flex items-center justify-center shrink-0 shadow-sm">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/products/patholab-cloud-logo.png"
+                      alt="Patholab.Cloud"
+                      className="w-full h-full object-contain rounded-xl"
                     />
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
-                    Healthcare LIMS
+                    Diagnostic LIMS
                   </span>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Patholab.cloud — Smart Diagnostic LIMS
+                  Patholab.Cloud — Smart Diagnostic Core
                 </h3>
 
                 <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Next-generation cloud-based Laboratory Information Management System (LIMS) automating patient registration, bidirectional analyzer interfacing, barcoding, digital report dispatch via WhatsApp/SMS, and NABL-compliant audit trails.
+                  Next-generation cloud-based Laboratory Information Management System (LIMS) automating patient diagnostics, bidirectional analyzer interfacing, barcoding, digital report dispatch via WhatsApp/SMS, and NABL-compliant audit trails.
                 </p>
 
                 <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
@@ -841,11 +842,11 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Sub-second analyzer synchronization with zero sample loss</span>
+                    <span>Sub-second analyzer sync with zero sample loss</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Automated doctor digital signatures and QR code report verification</span>
+                    <span>Automated QR verification and WhatsApp report dispatch</span>
                   </div>
                 </div>
               </div>
@@ -855,53 +856,105 @@ export default function AboutPage() {
                   href="https://patholab.cloud"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
                 >
-                  <span>Explore Patholab.cloud</span>
+                  <span>Explore Patholab.Cloud</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
                 <span className="text-xs text-slate-500 font-semibold">350+ Labs Active</span>
               </div>
             </div>
 
-            {/* Product 2: Bungzo */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
+            {/* Product 2: TeamHub */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="h-10 flex items-center gap-3">
-                    <Image
-                      src="/images/bungzo_logo.png"
-                      alt="Bungzo"
-                      width={140}
-                      height={40}
-                      className="object-contain h-8 w-auto"
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-blue-200/90 p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/products/teamhub-logo.png"
+                      alt="TeamHub"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-bold">
-                    Society ERP
+                  <span className="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-400 text-xs font-bold">
+                    Workforce OS
                   </span>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Bungzo — Gated Community &amp; Society ERP
+                  TeamHub — Workforce &amp; Sprint Platform
                 </h3>
 
                 <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Unified enterprise operating system for residential societies and gated communities. Combines real-time visitor gate pass authentication, maintenance billing with auto-reconciliation, facility booking, and resident grievance management.
+                  Centralized workforce operations platform with GPS-fenced biometric attendance, automated developer velocity analytics, milestone tracking, and seamless automated payroll processing.
                 </p>
 
                 <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span>25,000+ residents managing daily security &amp; payments</span>
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span>GPS-geofenced biometric attendance with face verification</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span>Automated UPI payment gateway integration with instant receipting</span>
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span>Automated developer velocity analytics &amp; sprint tracking</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span>Multi-guard tablet support with offline-first synchronization</span>
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span>Automated milestone payroll calculation &amp; disbursements</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                <Link
+                  href="/#products-showcase"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  <span>Explore TeamHub OS</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </Link>
+                <span className="text-xs text-slate-500 font-semibold">100% Transparency</span>
+              </div>
+            </div>
+
+            {/* Product 3: Bungzo */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-red-200/90 p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/products/bungzo-logo.png"
+                      alt="Bungzo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs font-bold">
+                    Quick-Commerce
+                  </span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                  Bungzo — Hyperlocal Delivery Engine
+                </h3>
+
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  All-in-one hyperlocal quick-commerce engine with sub-20 minute order dispatch, intelligent rider routing, live geospatial tracking, and frictionless checkout.
+                </p>
+
+                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
+                    <span>18-minute average dispatch routing &amp; live GPS telematics</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
+                    <span>99.4% order fulfillment SLA across dark stores</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
+                    <span>Automated UPI payment gateway integration &amp; instant settlement</span>
                   </div>
                 </div>
               </div>
@@ -911,12 +964,113 @@ export default function AboutPage() {
                   href="https://bungzo.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-red-400 hover:text-red-300 transition-colors"
                 >
                   <span>Explore Bungzo Platform</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
-                <span className="text-xs text-slate-500 font-semibold">Premium Gated Societies</span>
+                <span className="text-xs text-slate-500 font-semibold">18-Min Dispatch</span>
+              </div>
+            </div>
+
+            {/* Product 4: GlobizLibrary */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-orange-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-orange-200/90 p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/products/globizlibrary-logo.png"
+                      alt="GlobizLibrary"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs font-bold">
+                    Academic RFID
+                  </span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                  GlobizLibrary — Academic RFID Core
+                </h3>
+
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  Comprehensive digital academic library management system managing over 250,000 cataloged titles with RFID kiosk checkouts, digital archives, and unified OPAC discovery.
+                </p>
+
+                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />
+                    <span>250,000+ cataloged academic titles and research papers</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />
+                    <span>RFID kiosk automated book issue and return stations</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />
+                    <span>Real-time OPAC full-text discovery and overdue ledgers</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                <Link
+                  href="/#products-showcase"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  <span>Explore GlobizLibrary</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </Link>
+                <span className="text-xs text-slate-500 font-semibold">250K+ Titles</span>
+              </div>
+            </div>
+
+            {/* Product 5: Enterprise IMS */}
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-indigo-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 border border-indigo-300/80 p-2 flex items-center justify-center text-white shrink-0 shadow-sm">
+                    <Boxes className="w-7 h-7 text-white stroke-[2.2]" />
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 text-xs font-bold">
+                    Supply Chain
+                  </span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                  Enterprise IMS — Inventory OS
+                </h3>
+
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  Enterprise multi-warehouse inventory tracking system with dynamic batch traceability, real-time reorder thresholds, barcode scanning, and multi-location ERP integration.
+                </p>
+
+                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
+                    <span>1,200,000+ SKUs monitored across multi-node hubs</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
+                    <span>Dynamic safety-stock calculation &amp; automated purchase orders</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
+                    <span>99.9% physical audit stock accuracy and ERP sync</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                <Link
+                  href="/#products-showcase"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors"
+                >
+                  <span>Explore Enterprise IMS</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </Link>
+                <span className="text-xs text-slate-500 font-semibold">1.2M+ SKUs</span>
               </div>
             </div>
           </div>
