@@ -1,20 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Image from "next/image";
+import React, { useState, useRef, useEffect } from "react";
 import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
-  Activity,
-  Shield,
-  BookOpen,
   Boxes,
-  Users,
-  CheckCircle2,
-  TrendingUp,
-  Zap,
   Globe,
+  MoveHorizontal,
 } from "lucide-react";
 
 interface InnovationProductShowcaseProps {
@@ -31,7 +24,11 @@ interface ProductItem {
   description: string;
   metric1: { value: string; label: string };
   metric2: { value: string; label: string };
-  mockup: React.ReactNode;
+  imageSrc: string;
+  imageAlt: string;
+  badgeDotColor: string;
+  badgeText: string;
+  badgeCategory: string;
 }
 
 const PRODUCTS: ProductItem[] = [
@@ -55,36 +52,11 @@ const PRODUCTS: ProductItem[] = [
       "Engineered a cloud-native laboratory intelligence core handling high-throughput patient diagnostics, automated barcode routing, analyzer bidirectional sync, and instant WhatsApp report delivery.",
     metric1: { value: "500K+", label: "Reports Generated" },
     metric2: { value: "99.98%", label: "Analyzer Uptime" },
-    mockup: (
-      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">Patholab Core Live</span>
-          </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-bold">
-            BIDIRECTIONAL LIMS
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Specimen Barcode</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">#PL-8942-CBC</div>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Analyzer Sync</div>
-            <div className="text-xs font-mono font-bold text-emerald-400 mt-0.5">Mindray BC-5150 OK</div>
-          </div>
-        </div>
-        <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span className="text-xs text-slate-200">Automated Patient PDF Dispatched via WhatsApp</span>
-          </div>
-          <span className="text-[10px] font-mono text-emerald-400">1.2s</span>
-        </div>
-      </div>
-    ),
+    imageSrc: "/images/products/patholab-showcase.jpg",
+    imageAlt: "Patholab.Cloud Automated Diagnostic Laboratory Intelligence",
+    badgeDotColor: "bg-emerald-400",
+    badgeText: "Patholab Core Live • Bidirectional LIMS",
+    badgeCategory: "DIAGNOSTICS CORE",
   },
   {
     id: "teamhub",
@@ -106,36 +78,11 @@ const PRODUCTS: ProductItem[] = [
       "Centralized workforce operations platform with GPS-fenced biometric attendance, automated developer velocity analytics, and integrated milestone payroll processing.",
     metric1: { value: "3.5X", label: "Sprint Velocity" },
     metric2: { value: "100%", label: "Milestone Transparency" },
-    mockup: (
-      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">TeamHub Workforce OS</span>
-          </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono font-bold">
-            GPS GEOFENCED
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Biometric Check-in</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">Bengaluru HQ #942</div>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Sprint 42 Status</div>
-            <div className="text-xs font-mono font-bold text-blue-400 mt-0.5">24/26 Stories Done</div>
-          </div>
-        </div>
-        <div className="p-3 rounded-xl bg-blue-950/40 border border-blue-500/20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-blue-400 shrink-0" />
-            <span className="text-xs text-slate-200">Developer Sprint Velocity & Automated Payroll Synced</span>
-          </div>
-          <span className="text-[10px] font-mono text-blue-400">100% OK</span>
-        </div>
-      </div>
-    ),
+    imageSrc: "/images/products/teamhub-showcase.jpg",
+    imageAlt: "TeamHub Agile Engineering Workforce Collaboration",
+    badgeDotColor: "bg-blue-400",
+    badgeText: "Sprint Velocity Active • Geofenced Ops",
+    badgeCategory: "GPS GEOFENCED",
   },
   {
     id: "bungzo",
@@ -157,36 +104,11 @@ const PRODUCTS: ProductItem[] = [
       "All-in-one hyperlocal quick-commerce engine with sub-20 minute order dispatch, intelligent rider routing, live geospatial tracking, and frictionless checkout.",
     metric1: { value: "18 Min", label: "Avg. Dispatch Routing" },
     metric2: { value: "99.4%", label: "Order Fulfillment" },
-    mockup: (
-      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">Bungzo Dispatch Core</span>
-          </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 font-mono font-bold">
-            18-MIN DISPATCH
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Active Order</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">#BGZ-7810-EXP</div>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Rider Tracking</div>
-            <div className="text-xs font-mono font-bold text-red-400 mt-0.5">En Route (1.4 km)</div>
-          </div>
-        </div>
-        <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-red-400 shrink-0" />
-            <span className="text-xs text-slate-200">Real-time Geo-Spatial Rider Routing Active</span>
-          </div>
-          <span className="text-[10px] font-mono text-red-400">Live</span>
-        </div>
-      </div>
-    ),
+    imageSrc: "/images/products/bungzo-showcase.jpg",
+    imageAlt: "Bungzo Sub-20 Minute Hyperlocal Delivery Dispatch",
+    badgeDotColor: "bg-red-400",
+    badgeText: "18-Min Dispatch Core • Live Geospatial Routing",
+    badgeCategory: "18-MIN DISPATCH",
   },
   {
     id: "globizlibrary",
@@ -208,36 +130,11 @@ const PRODUCTS: ProductItem[] = [
       "Comprehensive digital academic library management system managing over 250,000 cataloged titles with RFID kiosk checkouts, digital archives, and unified OPAC discovery.",
     metric1: { value: "250K+", label: "Cataloged Titles" },
     metric2: { value: "94%", label: "Faster Book Checkouts" },
-    mockup: (
-      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-orange-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">GlobizLibrary RFID Core</span>
-          </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-300 font-mono font-bold">
-            OPAC DISCOVERY
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">RFID Tag ID</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">#TAG-9921-LIB</div>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Circulation State</div>
-            <div className="text-xs font-mono font-bold text-orange-400 mt-0.5">Auto-Issued to Student</div>
-          </div>
-        </div>
-        <div className="p-3 rounded-xl bg-orange-950/40 border border-orange-500/20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-orange-400 shrink-0" />
-            <span className="text-xs text-slate-200">Overdue Auto-Notification & Fine Ledger Updated</span>
-          </div>
-          <span className="text-[10px] font-mono text-orange-400">Instant</span>
-        </div>
-      </div>
-    ),
+    imageSrc: "/images/products/globizlibrary-showcase.jpg",
+    imageAlt: "GlobizLibrary Academic RFID Repository & OPAC Catalog",
+    badgeDotColor: "bg-orange-400",
+    badgeText: "RFID Auto-Issued • Overdue Auto-Ledger",
+    badgeCategory: "OPAC DISCOVERY",
   },
   {
     id: "ims",
@@ -254,43 +151,40 @@ const PRODUCTS: ProductItem[] = [
       "Enterprise inventory tracking system with dynamic batch traceability, real-time reorder thresholds, barcode scanning, and multi-location ERP integration.",
     metric1: { value: "1.2M+", label: "SKUs Monitored" },
     metric2: { value: "99.9%", label: "Stock Accuracy" },
-    mockup: (
-      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-indigo-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">Multi-Node Warehouse Cluster</span>
-          </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono font-bold">
-            ERP INTEGRATED
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Batch Number</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">#WH-GUW-4410</div>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Safety Stock</div>
-            <div className="text-xs font-mono font-bold text-indigo-400 mt-0.5">Optimal (+14.2%)</div>
-          </div>
-        </div>
-        <div className="p-3 rounded-xl bg-indigo-950/40 border border-indigo-500/20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Boxes className="w-4 h-4 text-indigo-400 shrink-0" />
-            <span className="text-xs text-slate-200">Automated Purchase Order Dispatched to Supplier</span>
-          </div>
-          <span className="text-[10px] font-mono text-indigo-400">Active</span>
-        </div>
-      </div>
-    ),
+    imageSrc: "/images/products/ims-showcase.jpg",
+    imageAlt: "Enterprise IMS Multi-Node Robotic Warehouse Fulfillment",
+    badgeDotColor: "bg-indigo-400",
+    badgeText: "Dynamic Traceability • ERP Integrated",
+    badgeCategory: "ERP INTEGRATED",
   },
 ];
+
+function getRelativeIndex(index: number, active: number, total: number): number {
+  let diff = (index - active) % total;
+  if (diff > total / 2) diff -= total;
+  if (diff < -total / 2) diff += total;
+  return diff;
+}
 
 export default function InnovationProductShowcase({
   onOpenConsultation,
 }: InnovationProductShowcaseProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(1200);
+
+  const startXRef = useRef(0);
+  const dragOffsetRef = useRef(0);
+  const isDraggingRef = useRef(false);
+  const hasMovedRef = useRef(false);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + PRODUCTS.length) % PRODUCTS.length);
@@ -300,9 +194,83 @@ export default function InnovationProductShowcase({
     setActiveIndex((prev) => (prev + 1) % PRODUCTS.length);
   };
 
-  const currentProduct = PRODUCTS[activeIndex];
-  const prevProduct = PRODUCTS[(activeIndex - 1 + PRODUCTS.length) % PRODUCTS.length];
-  const nextProduct = PRODUCTS[(activeIndex + 1) % PRODUCTS.length];
+  const handleDragStart = (clientX: number) => {
+    isDraggingRef.current = true;
+    startXRef.current = clientX;
+    dragOffsetRef.current = 0;
+    hasMovedRef.current = false;
+    setIsDragging(true);
+  };
+
+  const handleDragMove = (clientX: number) => {
+    if (!isDraggingRef.current) return;
+    const deltaX = clientX - startXRef.current;
+    if (Math.abs(deltaX) > 6) {
+      hasMovedRef.current = true;
+    }
+    dragOffsetRef.current = deltaX;
+    setDragOffset(deltaX);
+  };
+
+  const handleDragEnd = () => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    setIsDragging(false);
+
+    const threshold = 55;
+    const currentOffset = dragOffsetRef.current;
+    if (currentOffset < -threshold) {
+      handleNext();
+    } else if (currentOffset > threshold) {
+      handlePrev();
+    }
+    dragOffsetRef.current = 0;
+    setDragOffset(0);
+
+    setTimeout(() => {
+      hasMovedRef.current = false;
+    }, 120);
+  };
+
+  useEffect(() => {
+    if (!isDragging) return;
+
+    const onMouseMove = (e: MouseEvent) => {
+      handleDragMove(e.clientX);
+    };
+    const onMouseUp = () => {
+      handleDragEnd();
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleDragMove(e.touches[0].clientX);
+      }
+    };
+    const onTouchEnd = () => {
+      handleDragEnd();
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [isDragging, dragOffset]);
+
+  const safeClick = (e: React.MouseEvent, callback?: () => void) => {
+    if (hasMovedRef.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
+    callback?.();
+  };
 
   return (
     <section
@@ -370,183 +338,283 @@ export default function InnovationProductShowcase({
           </button>
         </div>
 
-        {/* 3D Tilted Cards Carousel Stage */}
-        <div className="relative flex items-center justify-center min-h-[560px] sm:min-h-[620px] max-w-6xl mx-auto overflow-hidden sm:overflow-visible">
-          {/* Left Neighboring Card (Tilted Peeking) - Desktop */}
+        {/* 3D Tilted Cards Carousel Stage with Full Drag/Swipe Gesture Engine */}
+        <div
+          className="relative flex items-center justify-center max-w-6xl mx-auto overflow-hidden select-none py-4"
+          onMouseDown={(e) => {
+            // Only start drag if left click
+            if (e.button === 0) handleDragStart(e.clientX);
+          }}
+          onTouchStart={(e) => {
+            if (e.touches.length > 0) handleDragStart(e.touches[0].clientX);
+          }}
+        >
+          {/* Invisible layout spacer reserving precise vertical height without layout jumps */}
           <div
-            onClick={handlePrev}
-            className="hidden lg:block absolute left-4 xl:left-8 w-[380px] xl:w-[420px] rounded-[32px] p-8 transition-all duration-500 transform -rotate-[16deg] scale-[0.84] opacity-50 hover:opacity-80 hover:scale-[0.87] cursor-pointer shadow-2xl -z-10 select-none"
-            style={{ backgroundColor: prevProduct.bgTint, color: "#0f172a" }}
+            className="w-full max-w-[360px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-[32px] p-6 sm:p-10 opacity-0 pointer-events-none select-none invisible"
+            aria-hidden="true"
           >
-            <div className="flex items-center gap-3 mb-6">
-              {prevProduct.logo}
-              <div className="text-xl font-bold text-slate-900">{prevProduct.name}</div>
+            <div className="flex items-center gap-3.5 mb-6">
+              <div className="w-12 h-12" />
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold">Spacer Title</div>
+                <div className="text-xs font-semibold">Spacer Subtitle</div>
+              </div>
             </div>
-            <p className="text-xs text-slate-600 line-clamp-3 mb-6 font-medium leading-relaxed">
-              {prevProduct.description}
+            <p className="text-sm sm:text-base font-medium leading-relaxed mb-8">
+              Invisible spacer paragraph for maintaining rock-solid stage height responsiveness across devices.
             </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="text-xl font-black text-slate-900">{prevProduct.metric1.value}</div>
-                <div className="text-[11px] text-slate-500 font-medium">{prevProduct.metric1.label}</div>
-              </div>
-              <div>
-                <div className="text-xl font-black text-slate-900">{prevProduct.metric2.value}</div>
-                <div className="text-[11px] text-slate-500 font-medium">{prevProduct.metric2.label}</div>
-              </div>
+            <div className="grid grid-cols-2 gap-6 mb-8 pt-6 border-t">
+              <div className="h-12" />
+              <div className="h-12" />
+            </div>
+            <div className="w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl" />
+            <div className="mt-6 pt-5 flex items-center gap-3">
+              <div className="h-10 w-32" />
+              <div className="h-10 w-32" />
             </div>
           </div>
 
-          {/* Active Center Card (Upright, Focused, Interactive) */}
-          <div
-            className="relative w-full max-w-[360px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-[32px] p-6 sm:p-10 transition-all duration-500 shadow-[0_20px_60px_rgba(0,0,0,0.6)] z-20"
-            style={{ backgroundColor: currentProduct.bgTint, color: "#0f172a" }}
-          >
-            {/* Top Logo & Title */}
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3.5">
-                {currentProduct.logo}
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                    {currentProduct.name}
-                  </h3>
-                  <div className="text-xs font-semibold text-slate-500 mt-0.5">
-                    {currentProduct.category}
+          {/* All 5 3D Stage Cards */}
+          {PRODUCTS.map((prod, idx) => {
+            const diff = getRelativeIndex(idx, activeIndex, PRODUCTS.length);
+            const isMobile = windowWidth < 640;
+            const isTablet = windowWidth >= 640 && windowWidth < 1024;
+            const baseOffset = isMobile ? 320 : isTablet ? 410 : 490;
+            const baseTilt = isMobile ? 8 : 14;
+
+            const isActive = diff === 0;
+            const isLeft = diff === -1;
+            const isRight = diff === 1;
+            const isVisible = Math.abs(diff) <= 1;
+
+            let x = diff * baseOffset + dragOffset;
+            let rotate = diff * baseTilt + dragOffset * 0.035;
+            let scale = isActive ? 1 : 0.84;
+            let opacity = isActive ? 1 : isVisible ? 0.55 : 0;
+            let zIndex = isActive ? 30 : isVisible ? 20 : 10;
+
+            if (isDragging) {
+              const dragRatio = Math.max(-1, Math.min(1, dragOffset / baseOffset));
+              if (isActive) {
+                scale = 1 - Math.abs(dragRatio) * 0.06;
+                opacity = 1 - Math.abs(dragRatio) * 0.15;
+              } else if (isRight && dragOffset < 0) {
+                // User dragging left, bringing next card into view
+                scale = 0.84 + Math.abs(dragRatio) * 0.16;
+                rotate = baseTilt - Math.abs(dragRatio) * baseTilt;
+                opacity = 0.55 + Math.abs(dragRatio) * 0.45;
+              } else if (isLeft && dragOffset > 0) {
+                // User dragging right, bringing prev card into view
+                scale = 0.84 + Math.abs(dragRatio) * 0.16;
+                rotate = -baseTilt + Math.abs(dragRatio) * baseTilt;
+                opacity = 0.55 + Math.abs(dragRatio) * 0.45;
+              }
+            }
+
+            const transform = `translateX(calc(-50% + ${x}px)) rotate(${rotate}deg) scale(${scale})`;
+            const transition = isDragging
+              ? "none"
+              : "transform 550ms cubic-bezier(0.2, 0.9, 0.3, 1), opacity 500ms ease, box-shadow 500ms ease";
+
+            return (
+              <div
+                key={prod.id}
+                onClick={(e) => {
+                  if (hasMovedRef.current) return;
+                  if (isLeft) handlePrev();
+                  if (isRight) handleNext();
+                }}
+                className={`absolute top-0 left-1/2 w-full max-w-[360px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-[32px] p-6 sm:p-10 select-none shadow-[0_20px_60px_rgba(0,0,0,0.6)] ${
+                  isActive
+                    ? "cursor-grab active:cursor-grabbing"
+                    : isVisible
+                    ? "cursor-pointer hover:opacity-80"
+                    : "pointer-events-none"
+                }`}
+                style={{
+                  backgroundColor: prod.bgTint,
+                  color: "#0f172a",
+                  transform,
+                  transition,
+                  opacity,
+                  zIndex,
+                }}
+              >
+                {/* Top Logo & Title */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3.5">
+                    {prod.logo}
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                        {prod.name}
+                      </h3>
+                      <div className="text-xs font-semibold text-slate-500 mt-0.5">
+                        {prod.category}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Drag Indicator Badge on Active Card */}
+                  {isActive && (
+                    <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/5 text-slate-500 text-[11px] font-semibold border border-slate-900/5">
+                      <MoveHorizontal className="w-3.5 h-3.5 text-slate-400" />
+                      <span>Drag or swipe</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Value Proposition Description */}
+                <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed mb-8">
+                  {prod.description}
+                </p>
+
+                {/* Metrics Grid */}
+                <div className="grid grid-cols-2 gap-6 mb-8 pt-6 border-t border-slate-200/80">
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                      {prod.metric1.value}
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                      {prod.metric1.label}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                      {prod.metric2.value}
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                      {prod.metric2.label}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Value Proposition Description */}
-            <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed mb-8">
-              {currentProduct.description}
-            </p>
+                {/* High-End Photographic Product Showcase Box */}
+                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-black/10 shadow-lg group bg-slate-950">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={prod.imageSrc}
+                    alt={prod.imageAlt}
+                    draggable={false}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 select-none pointer-events-none"
+                  />
+                  {/* Cinematic gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/25 pointer-events-none" />
 
-            {/* Metrics Grid */}
-            <div className="grid grid-cols-2 gap-6 mb-8 pt-6 border-t border-slate-200/80">
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                  {currentProduct.metric1.value}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
-                  {currentProduct.metric1.label}
-                </div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                  {currentProduct.metric2.value}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
-                  {currentProduct.metric2.label}
-                </div>
-              </div>
-            </div>
-
-            {/* Realistic UI Device Mockup Viewport */}
-            <div className="mt-4">{currentProduct.mockup}</div>
-
-            {/* Direct Action Buttons - Horizontal Row (Pinterest Reference Styled) */}
-            {currentProduct.id === "patholab" && (
-              <div className="mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center gap-3">
-                {/* 1. Visit Website Button */}
-                <a
-                  href="https://patholab.cloud"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1163FB] text-white hover:bg-blue-600 font-bold text-xs sm:text-sm transition-all duration-200 shadow-md shadow-blue-500/20 active:scale-95 shrink-0"
-                >
-                  <Globe className="w-4 h-4" />
-                  <span>Visit Website</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
-                </a>
-
-                {/* 2. Download on the App Store (Matching Pinterest Reference) */}
-                <a
-                  href="https://patholab.cloud"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Download Patholab on the Apple App Store"
-                  className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
-                >
-                  <svg className="w-5 h-5 fill-current text-slate-950 shrink-0" viewBox="0 0 24 24">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z" />
-                  </svg>
-                  <div className="text-left leading-none">
-                    <div className="text-[9px] font-medium text-slate-500 leading-none mb-0.5">Download on the</div>
-                    <div className="text-xs sm:text-[13px] font-bold text-slate-950 tracking-tight leading-none">App Store</div>
+                  {/* Top-right category pill */}
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] sm:text-[11px] font-mono font-bold text-white border border-white/20 shadow-sm pointer-events-none">
+                    {prod.badgeCategory}
                   </div>
-                </a>
 
-                {/* 3. GET IT ON Google Play (Matching Pinterest Reference) */}
-                <a
-                  href="https://patholab.cloud"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get Patholab on Google Play"
-                  className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
-                >
-                  <svg className="w-5 h-5 fill-current text-slate-950 shrink-0" viewBox="0 0 24 24">
-                    <path d="M3.609 1.814L13.793 12 3.61 22.186A2.25 2.25 0 0 1 3 20.596V3.404c0-.623.23-1.19.609-1.59zm1.464-1.02a2.23 2.23 0 0 1 1.62-.05l12.43 7.086-4.252 4.252-9.798-11.288zm9.798 13.412l4.252 4.252-12.43 7.086a2.23 2.23 0 0 1-1.62-.05l9.798-11.288zm1.06-1.06l4.735-2.7a1.69 1.69 0 0 1 0 2.9l-4.735 2.7V13.146z" />
-                  </svg>
-                  <div className="text-left leading-none">
-                    <div className="text-[8px] font-bold text-slate-500 uppercase tracking-wider leading-none mb-0.5">GET IT ON</div>
-                    <div className="text-xs sm:text-[13px] font-bold text-slate-950 tracking-tight leading-none">Google Play</div>
+                  {/* Bottom live telemetry pill */}
+                  <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center gap-2 text-white pointer-events-none">
+                    <div className={`w-2 h-2 rounded-full ${prod.badgeDotColor} animate-pulse`} />
+                    <span className="text-[11px] sm:text-xs font-semibold tracking-wide">
+                      {prod.badgeText}
+                    </span>
                   </div>
-                </a>
-              </div>
-            )}
+                </div>
 
-            {/* Direct Action Buttons for Other Products */}
-            {currentProduct.id !== "patholab" && (
-              <div className="mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={onOpenConsultation}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
+                {/* Direct Action Buttons */}
+                <div
+                  className={`mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center gap-3 ${
+                    !isActive ? "pointer-events-none" : ""
+                  }`}
                 >
-                  <span>Request Proprietary Demo</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-                {currentProduct.id === "bungzo" && (
-                  <a
-                    href="https://bungzo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm active:scale-95"
-                  >
-                    <Globe className="w-3.5 h-3.5 text-slate-600" />
-                    <span>Visit Bungzo.com</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
+                  {prod.id === "patholab" ? (
+                    <>
+                      {/* 1. Visit Website Button */}
+                      <a
+                        href="https://patholab.cloud"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => safeClick(e)}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1163FB] text-white hover:bg-blue-600 font-bold text-xs sm:text-sm transition-all duration-200 shadow-md shadow-blue-500/20 active:scale-95 shrink-0"
+                      >
+                        <Globe className="w-4 h-4" />
+                        <span>Visit Website</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
+                      </a>
 
-          {/* Right Neighboring Card (Tilted Peeking) - Desktop */}
-          <div
-            onClick={handleNext}
-            className="hidden lg:block absolute right-4 xl:right-8 w-[380px] xl:w-[420px] rounded-[32px] p-8 transition-all duration-500 transform rotate-[16deg] scale-[0.84] opacity-50 hover:opacity-80 hover:scale-[0.87] cursor-pointer shadow-2xl -z-10 select-none"
-            style={{ backgroundColor: nextProduct.bgTint, color: "#0f172a" }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              {nextProduct.logo}
-              <div className="text-xl font-bold text-slate-900">{nextProduct.name}</div>
-            </div>
-            <p className="text-xs text-slate-600 line-clamp-3 mb-6 font-medium leading-relaxed">
-              {nextProduct.description}
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="text-xl font-black text-slate-900">{nextProduct.metric1.value}</div>
-                <div className="text-[11px] text-slate-500 font-medium">{nextProduct.metric1.label}</div>
+                      {/* 2. Download on the App Store (Matching Pinterest Reference) */}
+                      <a
+                        href="https://patholab.cloud"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Download Patholab on the Apple App Store"
+                        onClick={(e) => safeClick(e)}
+                        className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
+                      >
+                        <svg
+                          className="w-5 h-5 fill-current text-slate-950 shrink-0"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z" />
+                        </svg>
+                        <div className="text-left leading-none">
+                          <div className="text-[9px] font-medium text-slate-500 leading-none mb-0.5">
+                            Download on the
+                          </div>
+                          <div className="text-xs sm:text-[13px] font-bold text-slate-950 tracking-tight leading-none">
+                            App Store
+                          </div>
+                        </div>
+                      </a>
+
+                      {/* 3. GET IT ON Google Play (Matching Pinterest Reference) */}
+                      <a
+                        href="https://patholab.cloud"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Get Patholab on Google Play"
+                        onClick={(e) => safeClick(e)}
+                        className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
+                      >
+                        <svg
+                          className="w-5 h-5 fill-current text-slate-950 shrink-0"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M3.609 1.814L13.793 12 3.61 22.186A2.25 2.25 0 0 1 3 20.596V3.404c0-.623.23-1.19.609-1.59zm1.464-1.02a2.23 2.23 0 0 1 1.62-.05l12.43 7.086-4.252 4.252-9.798-11.288zm9.798 13.412l4.252 4.252-12.43 7.086a2.23 2.23 0 0 1-1.62-.05l9.798-11.288zm1.06-1.06l4.735-2.7a1.69 1.69 0 0 1 0 2.9l-4.735 2.7V13.146z" />
+                        </svg>
+                        <div className="text-left leading-none">
+                          <div className="text-[8px] font-bold text-slate-500 uppercase tracking-wider leading-none mb-0.5">
+                            GET IT ON
+                          </div>
+                          <div className="text-xs sm:text-[13px] font-bold text-slate-950 tracking-tight leading-none">
+                            Google Play
+                          </div>
+                        </div>
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                        type="button"
+                        onClick={(e) => safeClick(e, onOpenConsultation)}
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
+                      >
+                        <span>Request Proprietary Demo</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                      {prod.id === "bungzo" && (
+                        <a
+                          href="https://bungzo.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => safeClick(e)}
+                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm active:scale-95"
+                        >
+                          <Globe className="w-3.5 h-3.5 text-slate-600" />
+                          <span>Visit Bungzo.com</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
+                        </a>
+                      )}
+                    </>
+                  )}
+                </div>
               </div>
-              <div>
-                <div className="text-xl font-black text-slate-900">{nextProduct.metric2.value}</div>
-                <div className="text-[11px] text-slate-500 font-medium">{nextProduct.metric2.label}</div>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         {/* Bottom CTA to Discuss / Demo */}
