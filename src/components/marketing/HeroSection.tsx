@@ -241,15 +241,9 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
   return (
     <section
-      className="relative min-h-[90vh] sm:min-h-[94vh] flex flex-col justify-between pt-28 sm:pt-36 lg:pt-42 pb-6 sm:pb-10 overflow-hidden bg-black text-white hero-google-sans"
+      className="relative min-h-[90vh] sm:min-h-[94vh] flex flex-col justify-between pt-28 sm:pt-36 lg:pt-42 pb-6 sm:pb-10 overflow-hidden bg-black text-white"
       id="hero"
     >
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
-        .hero-google-sans, .hero-google-sans * {
-          font-family: 'Google Sans', sans-serif !important;
-        }
-      `}</style>
       {/* ======================================================== */}
       {/* 1. CINEMATIC CONTINUOUS LOOP VIDEO BACKGROUND            */}
       {/* Alternates Video 1 (Pin 793407659399242888) & Video 2   */}

@@ -36,13 +36,20 @@ export default function TechAlignmentBanner({ onOpenConsultation }: TechAlignmen
                 engineering goes beyond code to deliver measurable ROI.
               </p>
 
-              {/* White Pill Consultation Button */}
+              {/* White Pill Consultation Button with Rolling Text Swap */}
               <button
                 onClick={onOpenConsultation}
                 type="button"
-                className="px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm tracking-tight shadow-xl hover:shadow-2xl hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer"
+                className="group relative inline-flex items-center justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm tracking-tight shadow-xl hover:shadow-2xl hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden"
               >
-                Consult our Experts for Growth Roadmap
+                <div className="relative h-5 overflow-hidden flex flex-col justify-center">
+                  <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
+                    Consult our Experts for Growth Roadmap
+                  </span>
+                  <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-slate-950 font-bold">
+                    Consult our Experts for Growth Roadmap
+                  </span>
+                </div>
               </button>
             </div>
 

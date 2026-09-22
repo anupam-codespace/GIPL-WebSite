@@ -501,10 +501,17 @@ export default function InnovationProductShowcase({
           <button
             type="button"
             onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-bold text-sm sm:text-base transition-all duration-300 hover:bg-slate-100 hover:scale-105 active:scale-95 shadow-xl cursor-pointer"
+            className="group relative inline-flex items-center gap-3 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white text-black font-bold text-sm sm:text-base transition-all duration-300 hover:bg-slate-100 hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer overflow-hidden"
           >
-            <span>Request Proprietary Product Demo</span>
-            <ArrowRight className="w-4 h-4" />
+            <div className="relative h-5 sm:h-6 overflow-hidden flex flex-col justify-center">
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
+                Request Proprietary Product Demo
+              </span>
+              <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-black font-bold">
+                Request Proprietary Product Demo
+              </span>
+            </div>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
       </div>

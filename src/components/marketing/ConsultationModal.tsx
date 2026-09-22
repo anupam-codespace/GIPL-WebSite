@@ -102,26 +102,36 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[1040px] bg-[#060A14] rounded-2xl shadow-2xl overflow-hidden border border-white/10 grid grid-cols-1 md:grid-cols-12 max-h-[95vh] overflow-y-auto"
+        className="relative w-full max-w-[1040px] bg-[#060A14] rounded-2xl shadow-2xl overflow-hidden border border-white/10 grid grid-cols-1 md:grid-cols-12 max-h-[92vh] sm:max-h-[95vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Floating White Circular Close Button with Black X - fixed in top corner across both mobile and desktop */}
+        <button
+          onClick={onClose}
+          type="button"
+          className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 z-50 w-8 h-8 rounded-full bg-white hover:bg-slate-200 text-black flex items-center justify-center font-bold transition-all cursor-pointer shadow-xl hover:scale-105 active:scale-95"
+          aria-label="Close"
+        >
+          <X className="w-4 h-4 text-black stroke-[3]" />
+        </button>
+
         {/* ======================================================== */}
         {/* LEFT COLUMN: BLUE BRANDING CARD WITH HANDSHAKE & AWARDS  */}
         {/* (Exact match to Appinventiv reference screenshot)       */}
         {/* ======================================================== */}
-        <div className="md:col-span-6 bg-gradient-to-b from-[#0D4BC4] via-[#0E54DE] to-[#0A3496] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+        <div className="md:col-span-6 bg-gradient-to-b from-[#0D4BC4] via-[#0E54DE] to-[#0A3496] p-5 sm:p-7 md:p-8 lg:p-10 text-white flex flex-col justify-between relative overflow-hidden">
           {/* Subtle Ambient Curve Background */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.15),transparent_60%)] pointer-events-none" />
 
           {/* Top Headline */}
-          <div className="relative z-10">
-            <div className="flex items-center gap-2.5 mb-3">
-              <GlobizhubLogo className="w-8 h-8" />
-              <span className="text-xs uppercase font-bold tracking-widest text-white/90">
+          <div className="relative z-10 pr-8 md:pr-0">
+            <div className="flex items-center gap-2 mb-2 sm:mb-3">
+              <GlobizhubLogo className="w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-white/90">
                 Globizhub Pvt Ltd
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight leading-[1.18] mb-3">
+            <h2 className="text-xl sm:text-2xl lg:text-[32px] font-bold text-white tracking-tight leading-[1.18] mb-1.5 sm:mb-3">
               Ready to Build Your Next Digital Product?
             </h2>
             <p className="text-white/80 text-xs sm:text-sm font-normal leading-relaxed max-w-md">
@@ -130,7 +140,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
           </div>
 
           {/* Center Handshake Graphic */}
-          <div className="relative z-10 my-5 sm:my-7 w-full h-[190px] sm:h-[230px] rounded-xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.4)] border border-white/20 bg-[#083A9B]">
+          <div className="relative z-10 my-3 sm:my-5 w-full h-[120px] sm:h-[180px] md:h-[190px] lg:h-[210px] rounded-xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.35)] border border-white/20 bg-[#083A9B]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/consultation-handshake.jpg"
@@ -144,78 +154,69 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
           {/* Bottom Recognitions Section (Assam Startup, DPIIT, MSME, Make in India) */}
           <div className="relative z-10 pt-1">
-            <div className="flex items-center justify-center mb-3">
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/90 text-center">
+            <div className="flex items-center justify-center mb-2">
+              <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/90 text-center">
                 GOVERNMENT &amp; ENTERPRISE RECOGNITIONS
               </span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
               {/* Badge 1: Assam Startup */}
-              <div className="px-2 py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[70px] transition-all">
+              <div className="px-1.5 sm:px-2 py-1 sm:py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[46px] sm:h-[62px] md:h-[68px] transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/assam_startup_logo_light.png"
                   alt="Assam Startup"
-                  className="max-h-7 max-w-[85%] object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-7 max-w-[85%] object-contain"
                 />
-                <span className="text-[7.5px] text-white/70 font-semibold mt-1">Govt of Assam</span>
+                <span className="text-[6px] sm:text-[7px] md:text-[7.5px] text-white/70 font-semibold mt-0.5 sm:mt-1">Govt of Assam</span>
               </div>
 
               {/* Badge 2: DPIIT #startupindia */}
-              <div className="px-2 py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[70px] transition-all">
+              <div className="px-1.5 sm:px-2 py-1 sm:py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[46px] sm:h-[62px] md:h-[68px] transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/dpiit_logo_clean.png"
                   alt="DPIIT Startup India"
-                  className="max-h-7 max-w-[85%] object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-7 max-w-[85%] object-contain"
                 />
-                <span className="text-[7.5px] text-white/70 font-semibold mt-1">DPIIT Recognized</span>
+                <span className="text-[6px] sm:text-[7px] md:text-[7.5px] text-white/70 font-semibold mt-0.5 sm:mt-1">DPIIT Recognized</span>
               </div>
 
               {/* Badge 3: Ministry of MSME */}
-              <div className="px-2 py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[70px] transition-all">
+              <div className="px-1.5 sm:px-2 py-1 sm:py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[46px] sm:h-[62px] md:h-[68px] transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/msme_logo.png"
                   alt="Ministry of MSME"
-                  className="max-h-7 max-w-[90%] object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-7 max-w-[90%] object-contain"
                 />
-                <span className="text-[7.5px] text-sky-400 font-semibold mt-1">Govt. of India</span>
+                <span className="text-[6px] sm:text-[7px] md:text-[7.5px] text-sky-400 font-semibold mt-0.5 sm:mt-1">Govt. of India</span>
               </div>
 
               {/* Badge 4: Make in India */}
-              <div className="px-2 py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[70px] transition-all">
+              <div className="px-1.5 sm:px-2 py-1 sm:py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[46px] sm:h-[62px] md:h-[68px] transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/make_in_india_lion.png"
                   alt="Make in India"
-                  className="max-h-7 max-w-[85%] object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-7 max-w-[85%] object-contain"
                 />
-                <span className="text-[7.5px] text-amber-300 font-bold mt-1">Make in India</span>
+                <span className="text-[6px] sm:text-[7px] md:text-[7.5px] text-amber-300 font-bold mt-0.5 sm:mt-1">Make in India</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* ======================================================== */}
-        {/* RIGHT COLUMN: CONSULTATION FORM + GLOBAL BRANDS BAR      */}
+        {/* RIGHT COLUMN: CONSULTATION FORM                          */}
         {/* (Exact match to Appinventiv reference screenshot)       */}
         {/* ======================================================== */}
-        <div className="md:col-span-6 bg-[#0B0F19] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between relative">
-          {/* Floating White Circular Close Button with Black X */}
-          <button
-            onClick={onClose}
-            type="button"
-            className="absolute top-5 right-5 z-30 w-8 h-8 rounded-full bg-white hover:bg-slate-200 text-black flex items-center justify-center font-bold transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95"
-            aria-label="Close"
-          >
-            <X className="w-4 h-4 text-black stroke-[3]" />
-          </button>
+        <div className="md:col-span-6 bg-[#0B0F19] p-5 sm:p-7 md:p-8 lg:p-10 text-white flex flex-col justify-between relative">
 
           {/* Form Content */}
           <div className="w-full">
-            <div className="text-center max-w-md mx-auto mb-6 px-2 sm:px-4">
+            <div className="text-center max-w-md mx-auto mb-5 sm:mb-6 pr-8 sm:pr-0">
               <p className="text-xs sm:text-[13.5px] text-slate-300 font-normal leading-relaxed">
                 <strong className="text-white font-bold">Share a few details</strong> about your idea, and our team will come back with technical insights, timelines, and next steps.
               </p>
@@ -250,7 +251,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       required
-                      className="w-full bg-transparent border-b border-white/20 focus:border-blue-500 text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-white/20 focus:border-[#1163FB] text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
@@ -260,34 +261,24 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full bg-transparent border-b border-white/20 focus:border-blue-500 text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-white/20 focus:border-[#1163FB] text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 {/* Row 2: Phone with Country Code & Company Name */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2 border-b border-white/20 focus-within:border-blue-500 transition-colors">
+                  <div className="flex items-center gap-2 border-b border-white/20 focus-within:border-[#1163FB] transition-colors">
                     <select
                       value={countryCode}
                       onChange={(e) => setCountryCode(e.target.value)}
                       className="bg-transparent text-white text-xs sm:text-sm py-2 pr-1 focus:outline-none cursor-pointer"
                     >
-                      <option value="+91" className="bg-[#0B0F19] text-white">
-                        +91
-                      </option>
-                      <option value="+1" className="bg-[#0B0F19] text-white">
-                        +1
-                      </option>
-                      <option value="+44" className="bg-[#0B0F19] text-white">
-                        +44
-                      </option>
-                      <option value="+971" className="bg-[#0B0F19] text-white">
-                        +971
-                      </option>
-                      <option value="+65" className="bg-[#0B0F19] text-white">
-                        +65
-                      </option>
+                      <option value="+91" className="bg-[#0B0F19] text-white">+91</option>
+                      <option value="+1" className="bg-[#0B0F19] text-white">+1</option>
+                      <option value="+44" className="bg-[#0B0F19] text-white">+44</option>
+                      <option value="+971" className="bg-[#0B0F19] text-white">+971</option>
+                      <option value="+65" className="bg-[#0B0F19] text-white">+65</option>
                     </select>
                     <input
                       type="tel"
@@ -304,7 +295,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       placeholder="Company Name"
                       value={companyName}
                       onChange={(e) => setCompanyName(e.target.value)}
-                      className="w-full bg-transparent border-b border-white/20 focus:border-blue-500 text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-white/20 focus:border-[#1163FB] text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -316,13 +307,13 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                     placeholder="Describe your project (Help us come back better prepared)"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="w-full bg-transparent border-b border-white/20 focus:border-blue-500 text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none resize-none transition-colors"
+                    className="w-full bg-transparent border-b border-white/20 focus:border-[#1163FB] text-white placeholder:text-slate-400 text-xs sm:text-sm py-2 px-0 focus:outline-none resize-none transition-colors"
                   />
                 </div>
 
                 {/* NDA Trust Bullet */}
                 <p className="text-[11px] text-slate-300 flex items-center gap-1.5 pt-1">
-                  <span className="text-white font-bold">•</span>
+                  <span className="text-[#1163FB] font-bold">•</span>
                   <span>
                     Fast 2-minute response, fully{" "}
                     <strong className="text-white font-semibold">NDA-protected</strong>.
@@ -374,17 +365,24 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       onChange={(e) => setCaptchaAnswer(e.target.value)}
                       placeholder=""
                       required
-                      className="w-12 h-8 rounded border border-white/20 bg-black/40 text-center text-white text-xs font-bold focus:border-blue-500 focus:outline-none"
+                      className="w-12 h-8 rounded border border-white/20 bg-black/40 text-center text-white text-xs font-bold focus:border-[#1163FB] focus:outline-none"
                     />
                   </div>
 
-                  {/* Submit Button */}
+                  {/* Submit Button with Rolling Text Swap */}
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-8 py-2.5 rounded-full bg-[#1163FB] hover:bg-blue-600 text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer disabled:opacity-50"
+                    className="group relative inline-flex items-center justify-center px-8 sm:px-9 py-2.5 sm:py-3 rounded-full bg-[#1163FB] hover:bg-blue-600 text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer overflow-hidden disabled:opacity-50"
                   >
-                    {loading ? "Submitting..." : "Submit"}
+                    <div className="relative h-5 overflow-hidden flex flex-col justify-center">
+                      <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
+                        {loading ? "Submitting..." : "Submit"}
+                      </span>
+                      <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-white">
+                        {loading ? "Submitting..." : "Submit"}
+                      </span>
+                    </div>
                   </button>
                 </div>
               </form>

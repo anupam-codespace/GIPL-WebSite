@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 @import "tailwindcss";
+
+body, h1, h2, h3, h4, h5, h6, p, a:not(button a), span:not(button span):not([role="button"] span), div:not(button div):not([role="button"] div), input, textarea, select, label, li, dt, dd, blockquote {
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+button, button *, [role="button"], [role="button"] * {
+  font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
 
 @layer base {
   :root {

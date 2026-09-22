@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 interface IndustrySectorsSectionProps {
   onOpenConsultation?: () => void;
@@ -135,45 +137,30 @@ export default function IndustrySectorsSection({
           </div>
 
           <div className="hidden md:block">
-            <button
-              onClick={onOpenConsultation}
-              className="swap-text-button px-7 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-black/40 backdrop-blur-sm transition-all duration-300 group"
+            <Link
+              href="/industries"
+              className="group relative inline-flex items-center gap-2.5 px-6 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-black/40 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
             >
-              <span className="text-original flex items-center">
-                <span>Check All Industries</span>
-              </span>
-              <span className="text-hover flex items-center">
-                <span>Check All Industries</span>
-              </span>
-              <div className="button__icon-wrapper">
-                <svg
-                  className="button__icon-svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 14 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                    fill="#ffffff"
-                  />
-                </svg>
-                <svg
-                  className="button__icon-svg--copy"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 14 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                    fill="#ffffff"
-                  />
-                </svg>
+              <div className="relative h-5 overflow-hidden flex flex-col justify-center">
+                <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
+                  Check All Industries
+                </span>
+                <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-white font-semibold">
+                  Check All Industries
+                </span>
               </div>
-            </button>
+              <svg
+                viewBox="0 0 14 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-2.5 h-2.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0"
+              >
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
 
@@ -267,90 +254,60 @@ export default function IndustrySectorsSection({
             </div>
 
             <div>
-              <button
-                onClick={onOpenConsultation}
-                className="swap-text-button px-7 py-3 border border-white/60 hover:border-white text-white text-sm font-semibold rounded-full bg-transparent transition-all duration-300 group"
+              <Link
+                href={`/industries#${industries[activeIndex]?.id || "sectors"}`}
+                className="group relative inline-flex items-center gap-2.5 px-6 py-3 border border-white/60 hover:border-white text-white text-sm font-semibold rounded-full bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
               >
-                <span className="text-original flex items-center">
-                  <span>Know More</span>
-                </span>
-                <span className="text-hover flex items-center">
-                  <span>Know More</span>
-                </span>
-                <div className="button__icon-wrapper">
-                  <svg
-                    className="button__icon-svg"
-                    width="10"
-                    height="10"
-                    viewBox="0 0 14 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                      fill="#ffffff"
-                    />
-                  </svg>
-                  <svg
-                    className="button__icon-svg--copy"
-                    width="10"
-                    height="10"
-                    viewBox="0 0 14 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                      fill="#ffffff"
-                    />
-                  </svg>
+                <div className="relative h-5 overflow-hidden flex flex-col justify-center">
+                  <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
+                    Know More
+                  </span>
+                  <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-white font-semibold">
+                    Know More
+                  </span>
                 </div>
-              </button>
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-2.5 h-2.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Mobile bottom CTA button */}
         <div className="block md:hidden pt-10 text-center">
-          <button
-            onClick={onOpenConsultation}
-            className="swap-text-button w-full py-3.5 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-white/5 backdrop-blur-sm transition-all duration-300 group"
+          <Link
+            href="/industries"
+            className="group relative inline-flex items-center justify-center gap-2.5 w-full py-3.5 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-white/5 backdrop-blur-sm transition-all duration-300 overflow-hidden"
           >
-            <span className="text-original flex items-center justify-center">
-              <span>Check All Industries</span>
-            </span>
-            <span className="text-hover flex items-center justify-center">
-              <span>Check All Industries</span>
-            </span>
-            <div className="button__icon-wrapper">
-              <svg
-                className="button__icon-svg"
-                width="10"
-                height="10"
-                viewBox="0 0 14 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                  fill="#ffffff"
-                />
-              </svg>
-              <svg
-                className="button__icon-svg--copy"
-                width="10"
-                height="10"
-                viewBox="0 0 14 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                  fill="#ffffff"
-                />
-              </svg>
+            <div className="relative h-5 overflow-hidden flex flex-col justify-center">
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
+                Check All Industries
+              </span>
+              <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-white font-semibold">
+                Check All Industries
+              </span>
             </div>
-          </button>
+            <svg
+              viewBox="0 0 14 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-2.5 h-2.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0"
+            >
+              <path
+                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                fill="currentColor"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
