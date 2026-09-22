@@ -56,15 +56,15 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
       className="text-white pt-20 pb-12 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif] border-t border-white/[0.08]"
       style={{
         background:
-          "linear-gradient(180deg, #000000 0%, #010410 16%, #030f2d 34%, #061d5a 52%, #0a2f8d 70%, #0d46c8 86%, #1153df 100%)",
+          "linear-gradient(180deg, #000000 0%, #02040a 40%, #050a18 75%, #070f24 100%)",
       }}
     >
-      {/* Radiant ambient bottom glow matching Appinventiv screenshot */}
+      {/* Subtle deep ambient tone - no aggressive blue glow */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-[700px] pointer-events-none -z-10"
+        className="absolute bottom-0 left-0 right-0 h-[500px] pointer-events-none -z-10"
         style={{
           background:
-            "radial-gradient(140% 90% at 50% 100%, rgba(20, 95, 255, 0.5) 0%, rgba(13, 70, 222, 0.32) 40%, rgba(5, 25, 95, 0.15) 70%, transparent 100%)",
+            "radial-gradient(120% 80% at 50% 100%, rgba(10, 35, 90, 0.25) 0%, rgba(5, 15, 45, 0.1) 60%, transparent 100%)",
         }}
       />
 
@@ -541,11 +541,11 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 </li>
               </ul>
 
-              {/* Appinventiv Style Rolling Swap-Text White Button */}
+              {/* Appinventiv Style Rolling Swap-Text White Button - Desktop Only (Contact Us already in mobile header) */}
               <button
                 type="button"
                 onClick={onOpenConsultation}
-                className="group/btn relative w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] cursor-pointer overflow-hidden"
+                className="hidden lg:inline-flex group/btn relative w-auto items-center justify-center px-7 py-3 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] cursor-pointer overflow-hidden"
               >
                 <span className="relative inline-flex flex-col h-[1.35em] overflow-hidden leading-[1.35em] whitespace-nowrap">
                   <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">

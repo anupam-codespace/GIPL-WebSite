@@ -49,20 +49,20 @@ const PRODUCTS: ProductItem[] = [
       </div>
     ),
     description:
-      "Engineered a cloud-native laboratory intelligence core handling high-throughput patient diagnostics, automated barcode routing, analyzer bidirectional sync, and instant WhatsApp report delivery.",
-    metric1: { value: "500K+", label: "Reports Generated" },
-    metric2: { value: "99.98%", label: "Analyzer Uptime" },
+      "Cloud-native diagnostic laboratory intelligence core handling high-throughput patient diagnostics, automated barcode routing, analyzer bidirectional sync, and instant WhatsApp report delivery.",
+    metric1: { value: "100+", label: "Labs Onboard" },
+    metric2: { value: "10K+", label: "Patients Registered" },
     imageSrc: "/images/products/patholab-showcase.jpg",
     imageAlt: "Patholab.Cloud Automated Diagnostic Laboratory Intelligence",
     badgeDotColor: "bg-emerald-400",
-    badgeText: "Patholab Core Live • Bidirectional LIMS",
+    badgeText: "100+ Labs Onboard • WhatsApp Delivery",
     badgeCategory: "DIAGNOSTICS CORE",
   },
   {
     id: "teamhub",
     name: "TeamHub",
     navName: "TeamHub",
-    category: "Workforce & Sprint Orchestration Platform",
+    category: "Advanced Enterprise HRMS & Workforce OS",
     bgTint: "#F4F8FD",
     logo: (
       <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-blue-200/90 bg-white p-1.5 flex items-center justify-center shrink-0">
@@ -75,20 +75,20 @@ const PRODUCTS: ProductItem[] = [
       </div>
     ),
     description:
-      "Centralized workforce operations platform with GPS-fenced biometric attendance, automated developer velocity analytics, and integrated milestone payroll processing.",
-    metric1: { value: "3.5X", label: "Sprint Velocity" },
-    metric2: { value: "100%", label: "Milestone Transparency" },
+      "Advanced full-suite HRMS and workforce operating system engineered with biometric GPS attendance, automated multi-tier payroll, leave tracking, and real-time talent performance analytics for any modern workspace.",
+    metric1: { value: "50K+", label: "Active Employees" },
+    metric2: { value: "100%", label: "Automated Payroll" },
     imageSrc: "/images/products/teamhub-showcase.jpg",
-    imageAlt: "TeamHub Agile Engineering Workforce Collaboration",
+    imageAlt: "TeamHub Enterprise HRMS & Workforce Operating System",
     badgeDotColor: "bg-blue-400",
-    badgeText: "Sprint Velocity Active • Geofenced Ops",
-    badgeCategory: "GPS GEOFENCED",
+    badgeText: "Full-Suite HRMS • Biometric & Payroll Synced",
+    badgeCategory: "ENTERPRISE HRMS",
   },
   {
     id: "bungzo",
     name: "Bungzo",
     navName: "Bungzo",
-    category: "Hyperlocal Quick-Commerce & Delivery Engine",
+    category: "On-Demand Food Delivery & Convenience Platform",
     bgTint: "#FFF5F5",
     logo: (
       <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-red-200/90 bg-white p-1.5 flex items-center justify-center shrink-0">
@@ -101,14 +101,14 @@ const PRODUCTS: ProductItem[] = [
       </div>
     ),
     description:
-      "All-in-one hyperlocal quick-commerce engine with sub-20 minute order dispatch, intelligent rider routing, live geospatial tracking, and frictionless checkout.",
-    metric1: { value: "18 Min", label: "Avg. Dispatch Routing" },
-    metric2: { value: "99.4%", label: "Order Fulfillment" },
+      "Modern food delivery and quick-commerce platform delivering the highest level of speed and convenience in the food market, featuring smart culinary discovery, live kitchen dispatch, and real-time rider tracking.",
+    metric1: { value: "500K+", label: "Meals Delivered" },
+    metric2: { value: "15 Min", label: "Avg. Delivery Time" },
     imageSrc: "/images/products/bungzo-showcase.jpg",
-    imageAlt: "Bungzo Sub-20 Minute Hyperlocal Delivery Dispatch",
+    imageAlt: "Bungzo High-Speed Hyperlocal Food Delivery",
     badgeDotColor: "bg-red-400",
-    badgeText: "18-Min Dispatch Core • Live Geospatial Routing",
-    badgeCategory: "18-MIN DISPATCH",
+    badgeText: "Live Kitchen Dispatch • Real-time Tracking",
+    badgeCategory: "FOOD DELIVERY",
   },
   {
     id: "globizlibrary",
@@ -194,6 +194,17 @@ export default function InnovationProductShowcase({
     setActiveIndex((prev) => (prev + 1) % PRODUCTS.length);
   };
 
+  // Auto-advance loop every 5 seconds (especially active on mobile/small screens, pauses while dragging)
+  useEffect(() => {
+    if (isDragging) return;
+
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % PRODUCTS.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isDragging, activeIndex]);
+
   const handleDragStart = (clientX: number) => {
     isDraggingRef.current = true;
     startXRef.current = clientX;
@@ -217,7 +228,7 @@ export default function InnovationProductShowcase({
     isDraggingRef.current = false;
     setIsDragging(false);
 
-    const threshold = 55;
+    const threshold = 50;
     const currentOffset = dragOffsetRef.current;
     if (currentOffset < -threshold) {
       handleNext();
@@ -338,11 +349,11 @@ export default function InnovationProductShowcase({
           </button>
         </div>
 
-        {/* 3D Tilted Cards Carousel Stage with Full Drag/Swipe Gesture Engine */}
+        {/* 3D Book Page Flip Carousel Stage with Full Drag/Swipe Gesture Engine */}
         <div
           className="relative flex items-center justify-center max-w-6xl mx-auto overflow-hidden select-none py-4"
+          style={{ perspective: "1600px", perspectiveOrigin: "center center" }}
           onMouseDown={(e) => {
-            // Only start drag if left click
             if (e.button === 0) handleDragStart(e.clientX);
           }}
           onTouchStart={(e) => {
@@ -369,58 +380,72 @@ export default function InnovationProductShowcase({
               <div className="h-12" />
             </div>
             <div className="w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl" />
-            <div className="mt-6 pt-5 flex items-center gap-3">
+            <div className="mt-6 pt-5 flex items-center justify-center gap-3">
               <div className="h-10 w-32" />
               <div className="h-10 w-32" />
             </div>
           </div>
 
-          {/* All 5 3D Stage Cards */}
+          {/* All 5 3D Book-Page Stage Cards */}
           {PRODUCTS.map((prod, idx) => {
             const diff = getRelativeIndex(idx, activeIndex, PRODUCTS.length);
             const isMobile = windowWidth < 640;
             const isTablet = windowWidth >= 640 && windowWidth < 1024;
-            const baseOffset = isMobile ? 320 : isTablet ? 410 : 490;
-            const baseTilt = isMobile ? 8 : 14;
+            const baseOffset = isMobile ? 300 : isTablet ? 380 : 440;
 
             const isActive = diff === 0;
             const isLeft = diff === -1;
             const isRight = diff === 1;
             const isVisible = Math.abs(diff) <= 1;
 
-            let x = diff * baseOffset + dragOffset;
-            let rotate = diff * baseTilt + dragOffset * 0.035;
-            let scale = isActive ? 1 : 0.84;
-            let opacity = isActive ? 1 : isVisible ? 0.55 : 0;
-            let zIndex = isActive ? 30 : isVisible ? 20 : 10;
+            // 3D Book-page turn dynamics:
+            // The active card flips along its Y axis (transform-origin: left center)
+            let rotateY = 0;
+            let rotateZ = 0;
+            let scale = 1;
+            let opacity = 1;
+            let zIndex = 30;
+            let x = 0;
 
-            if (isDragging) {
-              const dragRatio = Math.max(-1, Math.min(1, dragOffset / baseOffset));
-              if (isActive) {
-                scale = 1 - Math.abs(dragRatio) * 0.06;
-                opacity = 1 - Math.abs(dragRatio) * 0.15;
-              } else if (isRight && dragOffset < 0) {
-                // User dragging left, bringing next card into view
-                scale = 0.84 + Math.abs(dragRatio) * 0.16;
-                rotate = baseTilt - Math.abs(dragRatio) * baseTilt;
-                opacity = 0.55 + Math.abs(dragRatio) * 0.45;
-              } else if (isLeft && dragOffset > 0) {
-                // User dragging right, bringing prev card into view
-                scale = 0.84 + Math.abs(dragRatio) * 0.16;
-                rotate = -baseTilt + Math.abs(dragRatio) * baseTilt;
-                opacity = 0.55 + Math.abs(dragRatio) * 0.45;
-              }
+            if (isActive) {
+              x = dragOffset * 0.45;
+              rotateY = (dragOffset / baseOffset) * -42;
+              rotateZ = (dragOffset / baseOffset) * -3;
+              scale = 1 - Math.abs(dragOffset / baseOffset) * 0.04;
+              opacity = 1 - Math.abs(dragOffset / baseOffset) * 0.15;
+              zIndex = 30;
+            } else if (isRight) {
+              // Next card waiting right behind like the next page
+              const dragRatio = Math.max(-1, Math.min(0, dragOffset / baseOffset));
+              const reveal = Math.abs(dragRatio);
+              x = (isMobile ? 18 : 28) * (1 - reveal);
+              rotateY = -7 * (1 - reveal);
+              scale = 0.95 + reveal * 0.05;
+              opacity = 0.65 + reveal * 0.35;
+              zIndex = 20;
+            } else if (isLeft) {
+              // Previous card turned back to the left
+              const dragRatio = Math.max(0, Math.min(1, dragOffset / baseOffset));
+              const turnBack = dragRatio;
+              x = -(isMobile ? 260 : 360) * (1 - turnBack);
+              rotateY = -55 * (1 - turnBack);
+              scale = 0.88 + turnBack * 0.12;
+              opacity = 0.25 + turnBack * 0.75;
+              zIndex = 15;
+            } else {
+              opacity = 0;
+              zIndex = 5;
             }
 
-            const transform = `translateX(calc(-50% + ${x}px)) rotate(${rotate}deg) scale(${scale})`;
+            const transform = `translateX(calc(-50% + ${x}px)) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`;
             const transition = isDragging
               ? "none"
-              : "transform 550ms cubic-bezier(0.2, 0.9, 0.3, 1), opacity 500ms ease, box-shadow 500ms ease";
+              : "transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease, box-shadow 500ms ease";
 
             return (
               <div
                 key={prod.id}
-                onClick={(e) => {
+                onClick={() => {
                   if (hasMovedRef.current) return;
                   if (isLeft) handlePrev();
                   if (isRight) handleNext();
@@ -436,6 +461,8 @@ export default function InnovationProductShowcase({
                   backgroundColor: prod.bgTint,
                   color: "#0f172a",
                   transform,
+                  transformOrigin: "left center",
+                  transformStyle: "preserve-3d",
                   transition,
                   opacity,
                   zIndex,
@@ -455,11 +482,11 @@ export default function InnovationProductShowcase({
                     </div>
                   </div>
 
-                  {/* Drag Indicator Badge on Active Card */}
+                  {/* Drag / Swipe Indicator Badge on Active Card */}
                   {isActive && (
-                    <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/5 text-slate-500 text-[11px] font-semibold border border-slate-900/5">
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/5 text-slate-500 text-[11px] font-semibold border border-slate-900/5">
                       <MoveHorizontal className="w-3.5 h-3.5 text-slate-400" />
-                      <span>Drag or swipe</span>
+                      <span>Swipe or slide</span>
                     </div>
                   )}
                 </div>
@@ -515,9 +542,9 @@ export default function InnovationProductShowcase({
                   </div>
                 </div>
 
-                {/* Direct Action Buttons */}
+                {/* Direct Action Buttons - Centered with Upward-Tilted Arrow */}
                 <div
-                  className={`mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center gap-3 ${
+                  className={`mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center justify-center gap-3 ${
                     !isActive ? "pointer-events-none" : ""
                   }`}
                 >
@@ -536,7 +563,7 @@ export default function InnovationProductShowcase({
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
                       </a>
 
-                      {/* 2. Download on the App Store (Matching Pinterest Reference) */}
+                      {/* 2. Download on the App Store */}
                       <a
                         href="https://patholab.cloud"
                         target="_blank"
@@ -561,7 +588,7 @@ export default function InnovationProductShowcase({
                         </div>
                       </a>
 
-                      {/* 3. GET IT ON Google Play (Matching Pinterest Reference) */}
+                      {/* 3. GET IT ON Google Play */}
                       <a
                         href="https://patholab.cloud"
                         target="_blank"
@@ -587,29 +614,14 @@ export default function InnovationProductShowcase({
                       </a>
                     </>
                   ) : (
-                    <>
-                      <button
-                        type="button"
-                        onClick={(e) => safeClick(e, onOpenConsultation)}
-                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
-                      >
-                        <span>Request Proprietary Demo</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                      {prod.id === "bungzo" && (
-                        <a
-                          href="https://bungzo.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => safeClick(e)}
-                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm active:scale-95"
-                        >
-                          <Globe className="w-3.5 h-3.5 text-slate-600" />
-                          <span>Visit Bungzo.com</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
-                        </a>
-                      )}
-                    </>
+                    <button
+                      type="button"
+                      onClick={(e) => safeClick(e, onOpenConsultation)}
+                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
+                    >
+                      <span>Request Proprietary Demo</span>
+                      <ArrowUpRight className="w-4 h-4 text-blue-400" />
+                    </button>
                   )}
                 </div>
               </div>
@@ -617,12 +629,12 @@ export default function InnovationProductShowcase({
           })}
         </div>
 
-        {/* Bottom CTA to Discuss / Demo */}
-        <div className="mt-14 sm:mt-16 text-center">
+        {/* Bottom CTA to Discuss / Demo - Centered with Upward-Tilted Arrow */}
+        <div className="mt-14 sm:mt-16 text-center flex justify-center">
           <button
             type="button"
             onClick={onOpenConsultation}
-            className="group relative inline-flex items-center gap-3 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white text-black font-bold text-sm sm:text-base transition-all duration-300 hover:bg-slate-100 hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white text-black font-bold text-sm sm:text-base transition-all duration-300 hover:bg-slate-100 hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer overflow-hidden"
           >
             <div className="relative h-5 sm:h-6 overflow-hidden flex flex-col justify-center">
               <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
@@ -632,7 +644,7 @@ export default function InnovationProductShowcase({
                 Request Proprietary Product Demo
               </span>
             </div>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
         </div>
       </div>
