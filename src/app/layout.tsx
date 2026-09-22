@@ -26,8 +26,14 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://gipl-website.vercel.app");
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://globizhub.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Globizhub | Technology Intelligence & Enterprise Software Engineering",
     template: "%s | Globizhub",
@@ -41,15 +47,17 @@ export const metadata: Metadata = {
     "Autonomous Agents",
     "Custom Software",
     "Patholab.cloud",
-    "LIMS",
+    "TeamHub",
     "Bungzo",
+    "GlobizLibrary",
+    "Enterprise IMS",
     "Cloud Architecture",
     "DevOps",
     "Bengaluru IT company",
   ],
   authors: [{ name: "Globizhub India Private Limited" }],
   alternates: {
-    canonical: "https://globizhub.com",
+    canonical: siteUrl,
   },
   icons: {
     icon: [
@@ -60,19 +68,29 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
-    title: "Globizhub | Technology Intelligence & Software Engineering",
+    title: "Globizhub | Technology Intelligence & Enterprise Software Engineering",
     description:
-      "Architecting resilient digital platforms, autonomous AI systems, and cloud infrastructure.",
-    url: "https://globizhub.com",
+      "Architecting resilient digital platforms, autonomous AI systems, and cloud infrastructure. ISO 9001, ISO 27001 & ISO 20000 certified.",
+    url: siteUrl,
     siteName: "Globizhub India Private Limited",
     locale: "en_IN",
     type: "website",
     images: [
       {
         url: "/images/og-social-preview.jpg",
+        secureUrl: `${siteUrl}/images/og-social-preview.jpg`,
         width: 1200,
         height: 630,
-        alt: "Globizhub Enterprise Engineering",
+        type: "image/jpeg",
+        alt: "Innovation, Engineered by Globizhub",
+      },
+      {
+        url: "/images/og-social-preview.png",
+        secureUrl: `${siteUrl}/images/og-social-preview.png`,
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "Innovation, Engineered by Globizhub",
       },
     ],
   },
@@ -81,7 +99,7 @@ export const metadata: Metadata = {
     title: "Globizhub | Technology Intelligence & Enterprise Software Engineering",
     description:
       "Architecting resilient digital platforms, autonomous AI systems, and cloud infrastructure.",
-    images: ["/images/og-social-preview.jpg"],
+    images: [`${siteUrl}/images/og-social-preview.jpg`],
   },
   robots: {
     index: true,
@@ -116,6 +134,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
           rel="stylesheet"
         />
+        <meta property="og:image:secure_url" content={`${siteUrl}/images/og-social-preview.jpg`} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
       </head>
       <body className="min-h-screen bg-white text-slate-700 antialiased selection:bg-slate-900 selection:text-white font-['Google_Sans',sans-serif]">
         <Suspense fallback={null}>
