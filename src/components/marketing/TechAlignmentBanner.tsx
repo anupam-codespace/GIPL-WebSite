@@ -16,8 +16,8 @@ export default function TechAlignmentBanner({ onOpenConsultation }: TechAlignmen
           <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
-            {/* Left Content Column (6.5 cols on lg) */}
-            <div className="lg:col-span-6 xl:col-span-6 p-8 sm:p-12 lg:p-14 xl:p-16 flex flex-col items-start justify-center">
+            {/* Left Content Column (6 cols on lg) */}
+            <div className="lg:col-span-6 xl:col-span-6 p-8 sm:p-12 lg:p-14 xl:p-16 flex flex-col items-center lg:items-start text-center lg:text-left justify-center">
               {/* Globizhub Growth Roadmap Headline */}
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-normal text-white tracking-tight leading-[1.22] mb-5">
                 You’ve seen how we helped
@@ -40,7 +40,7 @@ export default function TechAlignmentBanner({ onOpenConsultation }: TechAlignmen
               <button
                 onClick={onOpenConsultation}
                 type="button"
-                className="group relative inline-flex items-center justify-center px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm tracking-tight shadow-xl hover:shadow-2xl hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden"
+                className="group relative inline-flex items-center justify-center mx-auto lg:mx-0 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm tracking-tight shadow-xl hover:shadow-2xl hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden"
               >
                 <div className="relative h-5 overflow-hidden flex flex-col justify-center">
                   <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">

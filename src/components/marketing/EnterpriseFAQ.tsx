@@ -47,7 +47,7 @@ export default function EnterpriseFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
@@ -79,18 +79,23 @@ export default function EnterpriseFAQ() {
             return (
               <div
                 key={faq.id}
-                className={`rounded-2xl transition-all duration-300 backdrop-blur-md overflow-hidden border ${
+                onClick={() => toggleFAQ(index)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    toggleFAQ(index);
+                  }
+                }}
+                className={`rounded-2xl transition-all duration-300 backdrop-blur-md overflow-hidden border cursor-pointer select-none ${
                   isOpen
                     ? "bg-white/[0.08] border-white/20 shadow-xl shadow-cyan-950/40"
                     : "bg-white/[0.05] hover:bg-white/[0.07] border-white/10 hover:border-white/15"
                 }`}
               >
-                {/* Header Button */}
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 cursor-pointer select-none transition-colors"
-                  aria-expanded={isOpen}
-                >
+                {/* Header Row */}
+                <div className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 transition-colors">
                   <span className="text-sm sm:text-base font-normal text-white tracking-tight">
                     {faq.question}
                   </span>
@@ -100,7 +105,7 @@ export default function EnterpriseFAQ() {
                     className={`w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-300 ${
                       isOpen
                         ? "bg-white/[0.12] border-white/25 text-[#86EFAC]"
-                        : "bg-white/[0.06] border-white/10 text-white/80 group-hover:text-white"
+                        : "bg-white/[0.06] border-white/10 text-white/80"
                     }`}
                   >
                     {isOpen ? (
@@ -109,7 +114,7 @@ export default function EnterpriseFAQ() {
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-300" />
                     )}
                   </div>
-                </button>
+                </div>
 
                 {/* Animated Expandable Answer Content */}
                 <div

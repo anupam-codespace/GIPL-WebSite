@@ -7,7 +7,6 @@ import {
   ArrowUpRight,
   Boxes,
   Globe,
-  MoveHorizontal,
 } from "lucide-react";
 
 interface InnovationProductShowcaseProps {
@@ -21,7 +20,6 @@ interface ProductItem {
   category: string;
   bgTint: string;
   logo: React.ReactNode;
-  description: string;
   metric1: { value: string; label: string };
   metric2: { value: string; label: string };
   imageSrc: string;
@@ -48,14 +46,12 @@ const PRODUCTS: ProductItem[] = [
         />
       </div>
     ),
-    description:
-      "Cloud-native diagnostic laboratory intelligence core handling high-throughput patient diagnostics, automated barcode routing, analyzer bidirectional sync, and instant WhatsApp report delivery.",
     metric1: { value: "100+", label: "Labs Onboard" },
     metric2: { value: "10K+", label: "Patients Registered" },
     imageSrc: "/images/products/patholab-showcase.jpg",
     imageAlt: "Patholab.Cloud Automated Diagnostic Laboratory Intelligence",
     badgeDotColor: "bg-emerald-400",
-    badgeText: "100+ Labs Onboard • WhatsApp Delivery",
+    badgeText: "Patholab Core Live • Bidirectional LIMS",
     badgeCategory: "DIAGNOSTICS CORE",
   },
   {
@@ -74,8 +70,6 @@ const PRODUCTS: ProductItem[] = [
         />
       </div>
     ),
-    description:
-      "Advanced full-suite HRMS and workforce operating system engineered with biometric GPS attendance, automated multi-tier payroll, leave tracking, and real-time talent performance analytics for any modern workspace.",
     metric1: { value: "50K+", label: "Active Employees" },
     metric2: { value: "100%", label: "Automated Payroll" },
     imageSrc: "/images/products/teamhub-showcase.jpg",
@@ -100,8 +94,6 @@ const PRODUCTS: ProductItem[] = [
         />
       </div>
     ),
-    description:
-      "Modern food delivery and quick-commerce platform delivering the highest level of speed and convenience in the food market, featuring smart culinary discovery, live kitchen dispatch, and real-time rider tracking.",
     metric1: { value: "500K+", label: "Meals Delivered" },
     metric2: { value: "15 Min", label: "Avg. Delivery Time" },
     imageSrc: "/images/products/bungzo-showcase.jpg",
@@ -126,8 +118,6 @@ const PRODUCTS: ProductItem[] = [
         />
       </div>
     ),
-    description:
-      "Comprehensive digital academic library management system managing over 250,000 cataloged titles with RFID kiosk checkouts, digital archives, and unified OPAC discovery.",
     metric1: { value: "250K+", label: "Cataloged Titles" },
     metric2: { value: "94%", label: "Faster Book Checkouts" },
     imageSrc: "/images/products/globizlibrary-showcase.jpg",
@@ -147,8 +137,6 @@ const PRODUCTS: ProductItem[] = [
         <Boxes className="w-7 h-7 text-white stroke-[2.2]" />
       </div>
     ),
-    description:
-      "Enterprise inventory tracking system with dynamic batch traceability, real-time reorder thresholds, barcode scanning, and multi-location ERP integration.",
     metric1: { value: "1.2M+", label: "SKUs Monitored" },
     metric2: { value: "99.9%", label: "Stock Accuracy" },
     imageSrc: "/images/products/ims-showcase.jpg",
@@ -172,12 +160,12 @@ export default function InnovationProductShowcase({
   const [activeIndex, setActiveIndex] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [windowWidth, setWindowWidth] = useState(1200);
 
   const startXRef = useRef(0);
   const dragOffsetRef = useRef(0);
   const isDraggingRef = useRef(false);
-  const hasMovedRef = useRef(false);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -194,31 +182,27 @@ export default function InnovationProductShowcase({
     setActiveIndex((prev) => (prev + 1) % PRODUCTS.length);
   };
 
-  // Auto-advance loop every 5 seconds (especially active on mobile/small screens, pauses while dragging)
+  // Auto-advance loop every 5 seconds on desktop/all screens, PAUSED when hovered or dragging
   useEffect(() => {
-    if (isDragging) return;
+    if (isDragging || isHovered) return;
 
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % PRODUCTS.length);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [isDragging, activeIndex]);
+  }, [isDragging, isHovered]);
 
   const handleDragStart = (clientX: number) => {
     isDraggingRef.current = true;
     startXRef.current = clientX;
     dragOffsetRef.current = 0;
-    hasMovedRef.current = false;
     setIsDragging(true);
   };
 
   const handleDragMove = (clientX: number) => {
     if (!isDraggingRef.current) return;
     const deltaX = clientX - startXRef.current;
-    if (Math.abs(deltaX) > 6) {
-      hasMovedRef.current = true;
-    }
     dragOffsetRef.current = deltaX;
     setDragOffset(deltaX);
   };
@@ -228,7 +212,7 @@ export default function InnovationProductShowcase({
     isDraggingRef.current = false;
     setIsDragging(false);
 
-    const threshold = 50;
+    const threshold = 40;
     const currentOffset = dragOffsetRef.current;
     if (currentOffset < -threshold) {
       handleNext();
@@ -237,10 +221,6 @@ export default function InnovationProductShowcase({
     }
     dragOffsetRef.current = 0;
     setDragOffset(0);
-
-    setTimeout(() => {
-      hasMovedRef.current = false;
-    }, 120);
   };
 
   useEffect(() => {
@@ -272,16 +252,7 @@ export default function InnovationProductShowcase({
       window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchend", onTouchEnd);
     };
-  }, [isDragging, dragOffset]);
-
-  const safeClick = (e: React.MouseEvent, callback?: () => void) => {
-    if (hasMovedRef.current) {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
-    callback?.();
-  };
+  }, [isDragging]);
 
   return (
     <section
@@ -298,7 +269,7 @@ export default function InnovationProductShowcase({
       />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Heading (Appinventiv Benchmark) */}
+        {/* Section Heading */}
         <div className="text-center w-full max-w-5xl mx-auto mb-10 sm:mb-14 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[46px] xl:text-[48px] font-bold text-white tracking-tight leading-tight sm:whitespace-nowrap">
             Innovation, Engineered by Globizhub
@@ -306,7 +277,7 @@ export default function InnovationProductShowcase({
         </div>
 
         {/* Navigation Track with Arrows & Product Pills */}
-        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-16 sm:mb-20 max-w-5xl mx-auto px-2">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-14 sm:mb-16 max-w-5xl mx-auto px-2">
           {/* Left Arrow */}
           <button
             type="button"
@@ -349,10 +320,12 @@ export default function InnovationProductShowcase({
           </button>
         </div>
 
-        {/* 3D Book Page Flip Carousel Stage with Full Drag/Swipe Gesture Engine */}
+        {/* 3D Showcase Stage with Pausable Hover Engine & Visible Flanking Cards */}
         <div
-          className="relative flex items-center justify-center max-w-6xl mx-auto overflow-hidden select-none py-4"
-          style={{ perspective: "1600px", perspectiveOrigin: "center center" }}
+          className="relative flex items-center justify-center max-w-6xl mx-auto overflow-visible select-none py-4"
+          style={{ perspective: "1800px", perspectiveOrigin: "center center" }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           onMouseDown={(e) => {
             if (e.button === 0) handleDragStart(e.clientX);
           }}
@@ -360,22 +333,19 @@ export default function InnovationProductShowcase({
             if (e.touches.length > 0) handleDragStart(e.touches[0].clientX);
           }}
         >
-          {/* Invisible layout spacer reserving precise vertical height without layout jumps */}
+          {/* Invisible layout spacer reserving precise vertical height */}
           <div
             className="w-full max-w-[360px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-[32px] p-6 sm:p-10 opacity-0 pointer-events-none select-none invisible"
             aria-hidden="true"
           >
-            <div className="flex items-center gap-3.5 mb-6">
+            <div className="flex items-center gap-3.5 mb-4">
               <div className="w-12 h-12" />
               <div>
                 <div className="text-2xl sm:text-3xl font-extrabold">Spacer Title</div>
                 <div className="text-xs font-semibold">Spacer Subtitle</div>
               </div>
             </div>
-            <p className="text-sm sm:text-base font-medium leading-relaxed mb-8">
-              Invisible spacer paragraph for maintaining rock-solid stage height responsiveness across devices.
-            </p>
-            <div className="grid grid-cols-2 gap-6 mb-8 pt-6 border-t">
+            <div className="grid grid-cols-2 gap-6 mb-6 pt-5 border-t">
               <div className="h-12" />
               <div className="h-12" />
             </div>
@@ -386,20 +356,18 @@ export default function InnovationProductShowcase({
             </div>
           </div>
 
-          {/* All 5 3D Book-Page Stage Cards */}
+          {/* 3D Flanking Stage Cards */}
           {PRODUCTS.map((prod, idx) => {
             const diff = getRelativeIndex(idx, activeIndex, PRODUCTS.length);
             const isMobile = windowWidth < 640;
             const isTablet = windowWidth >= 640 && windowWidth < 1024;
-            const baseOffset = isMobile ? 300 : isTablet ? 380 : 440;
+            const baseOffset = isMobile ? 260 : isTablet ? 360 : 440;
 
             const isActive = diff === 0;
             const isLeft = diff === -1;
             const isRight = diff === 1;
             const isVisible = Math.abs(diff) <= 1;
 
-            // 3D Book-page turn dynamics:
-            // The active card flips along its Y axis (transform-origin: left center)
             let rotateY = 0;
             let rotateZ = 0;
             let scale = 1;
@@ -408,60 +376,60 @@ export default function InnovationProductShowcase({
             let x = 0;
 
             if (isActive) {
-              x = dragOffset * 0.45;
-              rotateY = (dragOffset / baseOffset) * -42;
-              rotateZ = (dragOffset / baseOffset) * -3;
-              scale = 1 - Math.abs(dragOffset / baseOffset) * 0.04;
-              opacity = 1 - Math.abs(dragOffset / baseOffset) * 0.15;
+              x = dragOffset * 0.5;
+              rotateY = (dragOffset / baseOffset) * -16;
+              rotateZ = (dragOffset / baseOffset) * -2;
+              scale = 1 - Math.abs(dragOffset / baseOffset) * 0.05;
+              opacity = 1;
               zIndex = 30;
             } else if (isRight) {
-              // Next card waiting right behind like the next page
-              const dragRatio = Math.max(-1, Math.min(0, dragOffset / baseOffset));
-              const reveal = Math.abs(dragRatio);
-              x = (isMobile ? 18 : 28) * (1 - reveal);
-              rotateY = -7 * (1 - reveal);
-              scale = 0.95 + reveal * 0.05;
-              opacity = 0.65 + reveal * 0.35;
+              // Right card visible at +baseOffset, tilted slightly inward
+              const shift = dragOffset * 0.45;
+              x = baseOffset + shift;
+              rotateY = -14 + (dragOffset / baseOffset) * 12;
+              scale = 0.88;
+              opacity = 0.9;
               zIndex = 20;
             } else if (isLeft) {
-              // Previous card turned back to the left
-              const dragRatio = Math.max(0, Math.min(1, dragOffset / baseOffset));
-              const turnBack = dragRatio;
-              x = -(isMobile ? 260 : 360) * (1 - turnBack);
-              rotateY = -55 * (1 - turnBack);
-              scale = 0.88 + turnBack * 0.12;
-              opacity = 0.25 + turnBack * 0.75;
-              zIndex = 15;
+              // Left card visible at -baseOffset, tilted slightly inward
+              const shift = dragOffset * 0.45;
+              x = -baseOffset + shift;
+              rotateY = 14 + (dragOffset / baseOffset) * 12;
+              scale = 0.88;
+              opacity = 0.9;
+              zIndex = 20;
             } else {
               opacity = 0;
               zIndex = 5;
+              x = diff > 0 ? baseOffset * 1.5 : -baseOffset * 1.5;
+              scale = 0.75;
             }
 
             const transform = `translateX(calc(-50% + ${x}px)) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`;
             const transition = isDragging
               ? "none"
-              : "transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease, box-shadow 500ms ease";
+              : "transform 650ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease, box-shadow 500ms ease";
 
             return (
               <div
                 key={prod.id}
                 onClick={() => {
-                  if (hasMovedRef.current) return;
+                  if (Math.abs(dragOffsetRef.current) > 20) return;
                   if (isLeft) handlePrev();
                   if (isRight) handleNext();
                 }}
-                className={`absolute top-0 left-1/2 w-full max-w-[360px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-[32px] p-6 sm:p-10 select-none shadow-[0_20px_60px_rgba(0,0,0,0.6)] ${
+                className={`absolute top-0 left-1/2 w-full max-w-[360px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-[32px] p-6 sm:p-10 select-none shadow-[0_20px_60px_rgba(0,0,0,0.65)] ${
                   isActive
                     ? "cursor-grab active:cursor-grabbing"
                     : isVisible
-                    ? "cursor-pointer hover:opacity-80"
+                    ? "cursor-pointer hover:opacity-95"
                     : "pointer-events-none"
                 }`}
                 style={{
                   backgroundColor: prod.bgTint,
                   color: "#0f172a",
                   transform,
-                  transformOrigin: "left center",
+                  transformOrigin: "center center",
                   transformStyle: "preserve-3d",
                   transition,
                   opacity,
@@ -469,7 +437,7 @@ export default function InnovationProductShowcase({
                 }}
               >
                 {/* Top Logo & Title */}
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3.5">
                     {prod.logo}
                     <div>
@@ -481,23 +449,10 @@ export default function InnovationProductShowcase({
                       </div>
                     </div>
                   </div>
-
-                  {/* Drag / Swipe Indicator Badge on Active Card */}
-                  {isActive && (
-                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/5 text-slate-500 text-[11px] font-semibold border border-slate-900/5">
-                      <MoveHorizontal className="w-3.5 h-3.5 text-slate-400" />
-                      <span>Swipe or slide</span>
-                    </div>
-                  )}
                 </div>
 
-                {/* Value Proposition Description */}
-                <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed mb-8">
-                  {prod.description}
-                </p>
-
-                {/* Metrics Grid */}
-                <div className="grid grid-cols-2 gap-6 mb-8 pt-6 border-t border-slate-200/80">
+                {/* Key Metrics Grid */}
+                <div className="grid grid-cols-2 gap-6 mb-6 pt-5 border-t border-slate-200/80">
                   <div>
                     <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                       {prod.metric1.value}
@@ -542,9 +497,9 @@ export default function InnovationProductShowcase({
                   </div>
                 </div>
 
-                {/* Direct Action Buttons - Centered with Upward-Tilted Arrow */}
+                {/* Direct Action Buttons - Centered in the middle on desktop & mobile */}
                 <div
-                  className={`mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center justify-center gap-3 ${
+                  className={`mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center justify-center gap-3 w-full ${
                     !isActive ? "pointer-events-none" : ""
                   }`}
                 >
@@ -555,7 +510,6 @@ export default function InnovationProductShowcase({
                         href="https://patholab.cloud"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => safeClick(e)}
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1163FB] text-white hover:bg-blue-600 font-bold text-xs sm:text-sm transition-all duration-200 shadow-md shadow-blue-500/20 active:scale-95 shrink-0"
                       >
                         <Globe className="w-4 h-4" />
@@ -569,7 +523,6 @@ export default function InnovationProductShowcase({
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Download Patholab on the Apple App Store"
-                        onClick={(e) => safeClick(e)}
                         className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
                       >
                         <svg
@@ -594,7 +547,6 @@ export default function InnovationProductShowcase({
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Get Patholab on Google Play"
-                        onClick={(e) => safeClick(e)}
                         className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
                       >
                         <svg
@@ -616,7 +568,7 @@ export default function InnovationProductShowcase({
                   ) : (
                     <button
                       type="button"
-                      onClick={(e) => safeClick(e, onOpenConsultation)}
+                      onClick={onOpenConsultation}
                       className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
                     >
                       <span>Request Proprietary Demo</span>

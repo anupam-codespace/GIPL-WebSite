@@ -124,9 +124,9 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
               </div>
             </div>
 
-            {/* Right: Trust & Recognized Badges (Appinventiv Rating / Deloitte Style) */}
-            <div className="hidden lg:flex items-center justify-end gap-6">
-              <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all">
+            {/* Right: Trust & Recognized Badges (DPIIT & Official ISO 27001 Certified) */}
+            <div className="flex flex-wrap items-center gap-4 lg:gap-6 mt-4 lg:mt-0">
+              <div className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/dpiit_logo_clean.png"
@@ -135,21 +135,13 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 />
               </div>
 
-              <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all">
+              <div className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/iso_9001_logo.svg"
-                  alt="ISO Certified"
-                  className="h-7 w-auto object-contain"
+                  src="/images/iso_27001_certified.png"
+                  alt="ISO/IEC 27001 Information Security Management Certified"
+                  className="h-7 sm:h-8 w-auto object-contain"
                 />
-                <div className="text-left">
-                  <span className="block text-[11px] font-bold text-white leading-tight">
-                    ISO 9001 &amp; 27001
-                  </span>
-                  <span className="block text-[9px] text-slate-300 font-medium">
-                    Certified Security &amp; Quality
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -541,21 +533,54 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 </li>
               </ul>
 
-              {/* Appinventiv Style Rolling Swap-Text White Button - Desktop Only (Contact Us already in mobile header) */}
-              <button
-                type="button"
-                onClick={onOpenConsultation}
-                className="hidden lg:inline-flex group/btn relative w-auto items-center justify-center px-7 py-3 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] cursor-pointer overflow-hidden"
-              >
-                <span className="relative inline-flex flex-col h-[1.35em] overflow-hidden leading-[1.35em] whitespace-nowrap">
-                  <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
-                    Get In Touch
+              {/* Contact Us Section with Company Emails */}
+              <div className="mt-6 pt-5 border-t border-white/[0.08]">
+                <h4 className="text-sm font-bold text-white tracking-tight uppercase mb-3">
+                  Contact Us
+                </h4>
+                <div className="space-y-2.5 text-xs sm:text-[13px] text-slate-300">
+                  <div>
+                    <span className="block text-slate-400 font-normal text-[11px] mb-0.5">
+                      General Enquiries:
+                    </span>
+                    <a
+                      href="mailto:admin@globizhub.com"
+                      className="text-white hover:text-sky-300 font-semibold transition-colors break-all"
+                    >
+                      admin@globizhub.com
+                    </a>
+                  </div>
+                  <div>
+                    <span className="block text-slate-400 font-normal text-[11px] mb-0.5">
+                      Business Enquiries:
+                    </span>
+                    <a
+                      href="mailto:sales@patholab.cloud"
+                      className="text-white hover:text-sky-300 font-semibold transition-colors break-all"
+                    >
+                      sales@patholab.cloud
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Appinventiv Style Rolling Swap-Text White Button - Desktop Only */}
+              <div className="mt-6">
+                <button
+                  type="button"
+                  onClick={onOpenConsultation}
+                  className="hidden lg:inline-flex group/btn relative w-auto items-center justify-center px-7 py-3 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm tracking-tight transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] cursor-pointer overflow-hidden"
+                >
+                  <span className="relative inline-flex flex-col h-[1.35em] overflow-hidden leading-[1.35em] whitespace-nowrap">
+                    <span className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                      Get In Touch
+                    </span>
+                    <span className="absolute top-full left-0 w-full text-center inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                      Get In Touch
+                    </span>
                   </span>
-                  <span className="absolute top-full left-0 w-full text-center inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
-                    Get In Touch
-                  </span>
-                </span>
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -137,9 +137,10 @@ export default function IndustrySectorsSection({
           </div>
 
           <div className="hidden md:block">
-            <Link
-              href="/industries"
-              className="group relative inline-flex items-center gap-2.5 px-6 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-black/40 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
+            <button
+              type="button"
+              onClick={onOpenConsultation}
+              className="group relative inline-flex items-center gap-2.5 px-6 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-black/40 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] overflow-hidden cursor-pointer"
             >
               <div className="relative h-5 overflow-hidden flex flex-col justify-center">
                 <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
@@ -160,7 +161,7 @@ export default function IndustrySectorsSection({
                   fill="currentColor"
                 />
               </svg>
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -254,9 +255,10 @@ export default function IndustrySectorsSection({
             </div>
 
             <div>
-              <Link
-                href={`/industries#${industries[activeIndex]?.id || "sectors"}`}
-                className="group relative inline-flex items-center gap-2.5 px-6 py-3 border border-white/60 hover:border-white text-white text-sm font-semibold rounded-full bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
+              <button
+                type="button"
+                onClick={onOpenConsultation}
+                className="group relative inline-flex items-center gap-2.5 px-6 py-3 border border-white/60 hover:border-white text-white text-sm font-semibold rounded-full bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] overflow-hidden cursor-pointer"
               >
                 <div className="relative h-5 overflow-hidden flex flex-col justify-center">
                   <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
@@ -277,16 +279,17 @@ export default function IndustrySectorsSection({
                     fill="currentColor"
                   />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
 
         {/* Mobile bottom CTA button */}
         <div className="block md:hidden pt-10 text-center">
-          <Link
-            href="/industries"
-            className="group relative inline-flex items-center justify-center gap-2.5 w-full py-3.5 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-white/5 backdrop-blur-sm transition-all duration-300 overflow-hidden"
+          <button
+            type="button"
+            onClick={onOpenConsultation}
+            className="group relative inline-flex items-center justify-center gap-2.5 w-full py-3.5 border border-white/30 hover:border-white text-white text-sm font-semibold rounded-full bg-white/5 backdrop-blur-sm transition-all duration-300 overflow-hidden cursor-pointer"
           >
             <div className="relative h-5 overflow-hidden flex flex-col justify-center">
               <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">
@@ -307,7 +310,7 @@ export default function IndustrySectorsSection({
                 fill="currentColor"
               />
             </svg>
-          </Link>
+          </button>
         </div>
       </div>
     </section>
