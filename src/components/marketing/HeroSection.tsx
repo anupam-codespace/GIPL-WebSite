@@ -24,29 +24,6 @@ const HERO_VIDEOS = [
   },
 ];
 
-// Rotating dynamic capabilities
-const rotatingCapabilities = [
-  {
-    keyword: "Digital Systems with AI",
-    description:
-      "Globizhub engineers secure, scalable digital systems by combining strong architecture, data engineering, and AI capabilities, helping organizations move from strategy to reliable systems in production.",
-  },
-  {
-    keyword: "Autonomous AI Infrastructure",
-    description:
-      "Deploying multi-agent orchestrations, private RAG pipelines, and deterministic LLM inference with sub-15ms edge latency and zero data leakage.",
-  },
-  {
-    keyword: "Enterprise Cloud Platforms",
-    description:
-      "Engineering high-throughput digital platforms including Patholab.cloud (LIMS) and Bungzo delivery logistics across 25+ global enterprise markets.",
-  },
-  {
-    keyword: "Next-Gen Software Architectures",
-    description:
-      "Active-active Kubernetes clustering, automated multi-region failover, and zero-downtime microservice modernizations backed by ISO 27001.",
-  },
-];
 
 // Official Recognitions & Certifications
 interface RecognitionItem {
@@ -185,7 +162,6 @@ const officialRecognitions: RecognitionItem[] = [
 ];
 
 export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
-  const [capabilityIndex, setCapabilityIndex] = useState(0);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const [isBlurTransitioning, setIsBlurTransitioning] = useState(false);
@@ -228,16 +204,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
     return () => clearTimeout(timer);
   }, [activeVideoIndex, transitionToNextVideo]);
 
-  // Cycle capability headline highlight silently every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCapabilityIndex((prev) => (prev + 1) % rotatingCapabilities.length);
-    }, 5000);
 
-    return () => clearInterval(timer);
-  }, []);
-
-  const currentCap = rotatingCapabilities[capabilityIndex];
 
   return (
     <section
@@ -320,17 +287,17 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
       {/* ======================================================== */}
       <div className="max-w-[1360px] w-full mx-auto px-5 sm:px-8 lg:px-12 relative z-10 my-auto">
         <div className="max-w-3xl">
-          {/* Main Headline (Exact Appinventiv Typography & Scale) */}
+          {/* Main Headline (Fixed, Stable & Authoritative) */}
           <h1 className="text-[32px] xs:text-[38px] sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white tracking-tight leading-[1.1] sm:leading-[1.06] break-words mb-5 sm:mb-7">
             Engineering the Next Generation of{" "}
             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#00D4FF] via-[#38BDF8] to-[#60A5FA]">
-              {currentCap.keyword}
+              Digital Systems with AI
             </span>
           </h1>
 
-          {/* Subtitle Description */}
+          {/* Subtitle Description (Fixed & Stable) */}
           <p className="text-white/80 text-sm sm:text-base lg:text-[19px] leading-relaxed font-normal mb-8 sm:mb-10 max-w-2xl">
-            {currentCap.description}
+            Globizhub engineers secure, scalable digital systems by combining strong architecture, data engineering, and AI capabilities, helping organizations move from strategy to reliable systems in production.
           </p>
 
           {/* Buttons Group with Generous Bottom Gap */}
