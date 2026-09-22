@@ -1,18 +1,20 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUpRight,
   Activity,
   Shield,
   BookOpen,
   Boxes,
   Users,
-  Sparkles,
   CheckCircle2,
   TrendingUp,
   Zap,
+  Globe,
 } from "lucide-react";
 
 interface InnovationProductShowcaseProps {
@@ -35,17 +37,22 @@ interface ProductItem {
 const PRODUCTS: ProductItem[] = [
   {
     id: "patholab",
-    name: "Patholab.cloud",
-    navName: "Patholab.cloud",
-    category: "Cloud Diagnostic LIMS",
+    name: "Patholab.Cloud",
+    navName: "Patholab.Cloud",
+    category: "Cloud Diagnostic LIMS Intelligence",
     bgTint: "#FFFDF5",
     logo: (
-      <div className="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-600 font-black text-xl">
-        P
+      <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-slate-200/90 bg-white p-1 flex items-center justify-center shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/products/patholab-cloud-logo.png"
+          alt="Patholab.Cloud Logo"
+          className="w-full h-full object-contain rounded-xl"
+        />
       </div>
     ),
     description:
-      "Engineered a cloud-native laboratory intelligence core handling high-throughput patient diagnostics, automated barcode routing, and instant WhatsApp report delivery.",
+      "Engineered a cloud-native laboratory intelligence core handling high-throughput patient diagnostics, automated barcode routing, analyzer bidirectional sync, and instant WhatsApp report delivery.",
     metric1: { value: "500K+", label: "Reports Generated" },
     metric2: { value: "99.98%", label: "Analyzer Uptime" },
     mockup: (
@@ -80,47 +87,103 @@ const PRODUCTS: ProductItem[] = [
     ),
   },
   {
-    id: "bungzo",
-    name: "Bungzo",
-    navName: "Bungzo",
-    category: "Smart Gated Society OS",
-    bgTint: "#FAF8F5",
+    id: "teamhub",
+    name: "TeamHub",
+    navName: "TeamHub",
+    category: "Workforce & Sprint Orchestration Platform",
+    bgTint: "#F4F8FD",
     logo: (
-      <div className="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-600 font-black text-xl">
-        B
+      <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-blue-200/90 bg-white p-1.5 flex items-center justify-center shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/products/teamhub-logo.png"
+          alt="TeamHub Logo"
+          className="w-full h-full object-contain"
+        />
       </div>
     ),
     description:
-      "All-in-one gated living operating system featuring real-time visitor authorization, automated maintenance billing, and instantaneous emergency SOS dispatch.",
-    metric1: { value: "100+", label: "Societies Managed" },
-    metric2: { value: "85%", label: "Gate Queue Reduction" },
+      "Centralized workforce operations platform with GPS-fenced biometric attendance, automated developer velocity analytics, and integrated milestone payroll processing.",
+    metric1: { value: "3.5X", label: "Sprint Velocity" },
+    metric2: { value: "100%", label: "Milestone Transparency" },
     mockup: (
       <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
         <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">Bungzo Resident Gate OS</span>
+            <div className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
+            <span className="text-xs font-bold tracking-wide">TeamHub Workforce OS</span>
           </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono font-bold">
-            SECURE ACCESS
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono font-bold">
+            GPS GEOFENCED
           </span>
         </div>
         <div className="grid grid-cols-2 gap-3 mb-3">
           <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Visitor Pass</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">Approved (Flat 402-B)</div>
+            <div className="text-[10px] text-slate-400">Biometric Check-in</div>
+            <div className="text-xs font-mono font-bold text-white mt-0.5">Bengaluru HQ #942</div>
           </div>
           <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Gate Kiosk Status</div>
-            <div className="text-xs font-mono font-bold text-amber-400 mt-0.5">Boom Barrier Open</div>
+            <div className="text-[10px] text-slate-400">Sprint 42 Status</div>
+            <div className="text-xs font-mono font-bold text-blue-400 mt-0.5">24/26 Stories Done</div>
           </div>
         </div>
-        <div className="p-3 rounded-xl bg-amber-950/40 border border-amber-500/20 flex items-center justify-between">
+        <div className="p-3 rounded-xl bg-blue-950/40 border border-blue-500/20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-amber-400 shrink-0" />
-            <span className="text-xs text-slate-200">Biometric & Number-Plate OCR Match Verified</span>
+            <Users className="w-4 h-4 text-blue-400 shrink-0" />
+            <span className="text-xs text-slate-200">Developer Sprint Velocity & Automated Payroll Synced</span>
           </div>
-          <span className="text-[10px] font-mono text-amber-400">0.8s</span>
+          <span className="text-[10px] font-mono text-blue-400">100% OK</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: "bungzo",
+    name: "Bungzo",
+    navName: "Bungzo",
+    category: "Hyperlocal Quick-Commerce & Delivery Engine",
+    bgTint: "#FFF5F5",
+    logo: (
+      <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-red-200/90 bg-white p-1.5 flex items-center justify-center shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/products/bungzo-logo.png"
+          alt="Bungzo Logo"
+          className="w-full h-full object-contain"
+        />
+      </div>
+    ),
+    description:
+      "All-in-one hyperlocal quick-commerce engine with sub-20 minute order dispatch, intelligent rider routing, live geospatial tracking, and frictionless checkout.",
+    metric1: { value: "18 Min", label: "Avg. Dispatch Routing" },
+    metric2: { value: "99.4%", label: "Order Fulfillment" },
+    mockup: (
+      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
+        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+          <div className="flex items-center gap-2">
+            <div className="w-2.5 h-2.5 rounded-full bg-red-400 animate-pulse" />
+            <span className="text-xs font-bold tracking-wide">Bungzo Dispatch Core</span>
+          </div>
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 font-mono font-bold">
+            18-MIN DISPATCH
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+            <div className="text-[10px] text-slate-400">Active Order</div>
+            <div className="text-xs font-mono font-bold text-white mt-0.5">#BGZ-7810-EXP</div>
+          </div>
+          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+            <div className="text-[10px] text-slate-400">Rider Tracking</div>
+            <div className="text-xs font-mono font-bold text-red-400 mt-0.5">En Route (1.4 km)</div>
+          </div>
+        </div>
+        <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/20 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Shield className="w-4 h-4 text-red-400 shrink-0" />
+            <span className="text-xs text-slate-200">Real-time Geo-Spatial Rider Routing Active</span>
+          </div>
+          <span className="text-[10px] font-mono text-red-400">Live</span>
         </div>
       </div>
     ),
@@ -129,25 +192,30 @@ const PRODUCTS: ProductItem[] = [
     id: "globizlibrary",
     name: "GlobizLibrary",
     navName: "GlobizLibrary",
-    category: "Academic RFID Repository",
-    bgTint: "#F4F8FC",
+    category: "Academic RFID Repository Core",
+    bgTint: "#FFF8F2",
     logo: (
-      <div className="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-600 font-black text-xl">
-        GL
+      <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-orange-200/90 bg-white p-1.5 flex items-center justify-center shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/products/globizlibrary-logo.png"
+          alt="GlobizLibrary Logo"
+          className="w-full h-full object-contain"
+        />
       </div>
     ),
     description:
-      "Comprehensive digital academic library management system managing over 250,000 cataloged titles with RFID kiosk checkouts and unified OPAC discovery.",
+      "Comprehensive digital academic library management system managing over 250,000 cataloged titles with RFID kiosk checkouts, digital archives, and unified OPAC discovery.",
     metric1: { value: "250K+", label: "Cataloged Titles" },
     metric2: { value: "94%", label: "Faster Book Checkouts" },
     mockup: (
       <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
         <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse" />
+            <div className="w-2.5 h-2.5 rounded-full bg-orange-400 animate-pulse" />
             <span className="text-xs font-bold tracking-wide">GlobizLibrary RFID Core</span>
           </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-mono font-bold">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-300 font-mono font-bold">
             OPAC DISCOVERY
           </span>
         </div>
@@ -158,15 +226,15 @@ const PRODUCTS: ProductItem[] = [
           </div>
           <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
             <div className="text-[10px] text-slate-400">Circulation State</div>
-            <div className="text-xs font-mono font-bold text-sky-400 mt-0.5">Auto-Issued to Student</div>
+            <div className="text-xs font-mono font-bold text-orange-400 mt-0.5">Auto-Issued to Student</div>
           </div>
         </div>
-        <div className="p-3 rounded-xl bg-sky-950/40 border border-sky-500/20 flex items-center justify-between">
+        <div className="p-3 rounded-xl bg-orange-950/40 border border-orange-500/20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-sky-400 shrink-0" />
+            <BookOpen className="w-4 h-4 text-orange-400 shrink-0" />
             <span className="text-xs text-slate-200">Overdue Auto-Notification & Fine Ledger Updated</span>
           </div>
-          <span className="text-[10px] font-mono text-sky-400">Instant</span>
+          <span className="text-[10px] font-mono text-orange-400">Instant</span>
         </div>
       </div>
     ),
@@ -175,11 +243,11 @@ const PRODUCTS: ProductItem[] = [
     id: "ims",
     name: "Enterprise IMS",
     navName: "Enterprise IMS",
-    category: "Supply Chain & Warehouse Hub",
-    bgTint: "#F6F5FE",
+    category: "Multi-Warehouse Inventory & Supply Chain OS",
+    bgTint: "#F7F7FD",
     logo: (
-      <div className="w-11 h-11 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-600 font-black text-xl">
-        IMS
+      <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-indigo-300/80 bg-gradient-to-br from-indigo-500 to-blue-600 p-2 flex items-center justify-center text-white shrink-0">
+        <Boxes className="w-7 h-7 text-white stroke-[2.2]" />
       </div>
     ),
     description:
@@ -213,98 +281,6 @@ const PRODUCTS: ProductItem[] = [
             <span className="text-xs text-slate-200">Automated Purchase Order Dispatched to Supplier</span>
           </div>
           <span className="text-[10px] font-mono text-indigo-400">Active</span>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: "teamhub",
-    name: "TeamHub",
-    navName: "TeamHub",
-    category: "Workforce & Sprint Orchestrator",
-    bgTint: "#FFF5F7",
-    logo: (
-      <div className="w-11 h-11 rounded-xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-600 font-black text-xl">
-        TH
-      </div>
-    ),
-    description:
-      "Centralized internal operations platform with real-time sprint tracking, automated developer velocity analytics, and integrated client milestone billing.",
-    metric1: { value: "3.5X", label: "Sprint Velocity" },
-    metric2: { value: "100%", label: "Milestone Transparency" },
-    mockup: (
-      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-rose-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">TeamHub Sprint Tracker</span>
-          </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 font-mono font-bold">
-            VELOCITY ENGINE
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Sprint 42 Status</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">24/26 Stories Done</div>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">CI/CD Build Health</div>
-            <div className="text-xs font-mono font-bold text-emerald-400 mt-0.5">100% Passing</div>
-          </div>
-        </div>
-        <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-500/20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-rose-400 shrink-0" />
-            <span className="text-xs text-slate-200">Milestone Payment Verified & Escrow Released</span>
-          </div>
-          <span className="text-[10px] font-mono text-rose-400">Approved</span>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: "ai-suite",
-    name: "Enterprise AI Suite",
-    navName: "Enterprise AI Suite",
-    category: "Autonomous Agentic Platform",
-    bgTint: "#F8F5FF",
-    logo: (
-      <div className="w-11 h-11 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-600 font-black text-xl">
-        AI
-      </div>
-    ),
-    description:
-      "Enterprise agentic intelligence framework coordinating vector stores, multi-agent reasoning graphs, and confidential on-premise LLM inference.",
-    metric1: { value: "10X", label: "Knowledge Retrieval Speed" },
-    metric2: { value: "Zero", label: "Data Leakage" },
-    mockup: (
-      <div className="w-full bg-[#080D1A] rounded-2xl p-4 sm:p-5 border border-white/10 text-white shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-pulse" />
-            <span className="text-xs font-bold tracking-wide">Multi-Agent Reasoning Graph</span>
-          </div>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-mono font-bold">
-            CONFIDENTIAL RAG
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Context Query</div>
-            <div className="text-xs font-mono font-bold text-white mt-0.5">Compliance Matrix v4</div>
-          </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-            <div className="text-[10px] text-slate-400">Embedding Match</div>
-            <div className="text-xs font-mono font-bold text-purple-400 mt-0.5">0.962 Similarity</div>
-          </div>
-        </div>
-        <div className="p-3 rounded-xl bg-purple-950/40 border border-purple-500/20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-purple-400 shrink-0" />
-            <span className="text-xs text-slate-200">Synthesized Executive Summary Generated</span>
-          </div>
-          <span className="text-[10px] font-mono text-purple-400">420ms</span>
         </div>
       </div>
     ),
@@ -468,6 +444,83 @@ export default function InnovationProductShowcase({
 
             {/* Realistic UI Device Mockup Viewport */}
             <div className="mt-4">{currentProduct.mockup}</div>
+
+            {/* Direct Action Buttons - Horizontal Row (Pinterest Reference Styled) */}
+            {currentProduct.id === "patholab" && (
+              <div className="mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center gap-3">
+                {/* 1. Visit Website Button */}
+                <a
+                  href="https://patholab.cloud"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1163FB] text-white hover:bg-blue-600 font-bold text-xs sm:text-sm transition-all duration-200 shadow-md shadow-blue-500/20 active:scale-95 shrink-0"
+                >
+                  <Globe className="w-4 h-4" />
+                  <span>Visit Website</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
+                </a>
+
+                {/* 2. Download on the App Store (Matching Pinterest Reference) */}
+                <a
+                  href="https://patholab.cloud"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download Patholab on the Apple App Store"
+                  className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
+                >
+                  <svg className="w-5 h-5 fill-current text-slate-950 shrink-0" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z" />
+                  </svg>
+                  <div className="text-left leading-none">
+                    <div className="text-[9px] font-medium text-slate-500 leading-none mb-0.5">Download on the</div>
+                    <div className="text-xs sm:text-[13px] font-bold text-slate-950 tracking-tight leading-none">App Store</div>
+                  </div>
+                </a>
+
+                {/* 3. GET IT ON Google Play (Matching Pinterest Reference) */}
+                <a
+                  href="https://patholab.cloud"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get Patholab on Google Play"
+                  className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 transition-all duration-200 shadow-sm hover:shadow active:scale-95 group shrink-0"
+                >
+                  <svg className="w-5 h-5 fill-current text-slate-950 shrink-0" viewBox="0 0 24 24">
+                    <path d="M3.609 1.814L13.793 12 3.61 22.186A2.25 2.25 0 0 1 3 20.596V3.404c0-.623.23-1.19.609-1.59zm1.464-1.02a2.23 2.23 0 0 1 1.62-.05l12.43 7.086-4.252 4.252-9.798-11.288zm9.798 13.412l4.252 4.252-12.43 7.086a2.23 2.23 0 0 1-1.62-.05l9.798-11.288zm1.06-1.06l4.735-2.7a1.69 1.69 0 0 1 0 2.9l-4.735 2.7V13.146z" />
+                  </svg>
+                  <div className="text-left leading-none">
+                    <div className="text-[8px] font-bold text-slate-500 uppercase tracking-wider leading-none mb-0.5">GET IT ON</div>
+                    <div className="text-xs sm:text-[13px] font-bold text-slate-950 tracking-tight leading-none">Google Play</div>
+                  </div>
+                </a>
+              </div>
+            )}
+
+            {/* Direct Action Buttons for Other Products */}
+            {currentProduct.id !== "patholab" && (
+              <div className="mt-6 pt-5 border-t border-slate-200/90 flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={onOpenConsultation}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
+                >
+                  <span>Request Proprietary Demo</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+                {currentProduct.id === "bungzo" && (
+                  <a
+                    href="https://bungzo.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm active:scale-95"
+                  >
+                    <Globe className="w-3.5 h-3.5 text-slate-600" />
+                    <span>Visit Bungzo.com</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Right Neighboring Card (Tilted Peeking) - Desktop */}

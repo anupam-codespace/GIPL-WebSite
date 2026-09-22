@@ -341,36 +341,31 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 }`}
               >
                 <li>
-                  <Link href="#products" className="hover:text-white transition-colors flex items-center gap-1.5">
-                    <span>Patholab.cloud</span>
+                  <Link href="/#products-showcase" className="hover:text-white transition-colors flex items-center gap-1.5">
+                    <span>Patholab.Cloud</span>
                     <span className="px-1.5 py-0.5 text-[9px] font-bold bg-emerald-500/20 text-emerald-300 rounded">
                       Live
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#products" className="hover:text-white transition-colors">
-                    Bungzo Smart Living
+                  <Link href="/#products-showcase" className="hover:text-white transition-colors">
+                    TeamHub
                   </Link>
                 </li>
                 <li>
-                  <Link href="#products" className="hover:text-white transition-colors">
+                  <Link href="/#products-showcase" className="hover:text-white transition-colors">
+                    Bungzo
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#products-showcase" className="hover:text-white transition-colors">
                     GlobizLibrary
                   </Link>
                 </li>
                 <li>
-                  <Link href="#products" className="hover:text-white transition-colors">
-                    IMS Enterprise Inventory
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
-                    Americana QSR
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
-                    EdTech Cloud Core
+                  <Link href="/#products-showcase" className="hover:text-white transition-colors">
+                    Enterprise IMS
                   </Link>
                 </li>
                 <li className="pt-1">

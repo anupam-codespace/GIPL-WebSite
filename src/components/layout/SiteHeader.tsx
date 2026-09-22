@@ -406,137 +406,145 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               </Link>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
-              {/* Product 1: Patholab.cloud */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+              {/* Product 1: Patholab.Cloud */}
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-4 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group"
+                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-600 font-bold flex items-center justify-center text-sm">
-                    P
-                  </span>
-                  <span className="px-2 py-0.5 text-[9px] font-bold bg-emerald-100 text-emerald-700 rounded-full">
-                    Healthcare LIMS
-                  </span>
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-slate-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/products/patholab-cloud-logo.png"
+                        alt="Patholab.Cloud"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="px-2 py-0.5 text-[9px] font-bold bg-emerald-100 text-emerald-700 rounded-full">
+                      Diagnostic LIMS
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    Patholab.Cloud
+                  </div>
+                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
+                    Cloud diagnostic intelligence with bidirectional analyzer sync &amp; WhatsApp reports.
+                  </p>
                 </div>
-                <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  Patholab.cloud
-                </div>
-                <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                  Cloud diagnostic intelligence with bidirectional Mindray sync &amp; WhatsApp delivery.
-                </p>
               </Link>
 
-              {/* Product 2: Bungzo */}
+              {/* Product 2: TeamHub */}
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-4 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group"
+                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="w-8 h-8 rounded-lg bg-amber-500/15 text-amber-600 font-bold flex items-center justify-center text-sm">
-                    B
-                  </span>
-                  <span className="px-2 py-0.5 text-[9px] font-bold bg-amber-100 text-amber-700 rounded-full">
-                    Quick-Commerce
-                  </span>
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-blue-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/products/teamhub-logo.png"
+                        alt="TeamHub"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="px-2 py-0.5 text-[9px] font-bold bg-blue-100 text-blue-700 rounded-full">
+                      Workforce OS
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    TeamHub
+                  </div>
+                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
+                    GPS-fenced biometric attendance, sprint tracking, and automated milestone payroll.
+                  </p>
                 </div>
-                <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  Bungzo
-                </div>
-                <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                  Hyperlocal delivery engine with 18-min dispatch routing &amp; live rider tracking.
-                </p>
               </Link>
 
-              {/* Product 3: GlobizLibrary */}
+              {/* Product 3: Bungzo */}
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-4 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group"
+                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="w-8 h-8 rounded-lg bg-sky-500/15 text-sky-600 font-bold flex items-center justify-center text-sm">
-                    G
-                  </span>
-                  <span className="px-2 py-0.5 text-[9px] font-bold bg-sky-100 text-sky-700 rounded-full">
-                    EdTech
-                  </span>
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-red-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/products/bungzo-logo.png"
+                        alt="Bungzo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="px-2 py-0.5 text-[9px] font-bold bg-red-100 text-red-700 rounded-full">
+                      Quick-Commerce
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    Bungzo
+                  </div>
+                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
+                    Hyperlocal dispatch engine with sub-20 min routing &amp; live geospatial tracking.
+                  </p>
                 </div>
-                <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  GlobizLibrary
-                </div>
-                <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                  Academic repository core with DOI indexing and full-text instant query search.
-                </p>
               </Link>
 
-              {/* Product 4: Enterprise IMS */}
+              {/* Product 4: GlobizLibrary */}
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-4 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group"
+                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="w-8 h-8 rounded-lg bg-indigo-500/15 text-indigo-600 font-bold flex items-center justify-center text-sm">
-                    I
-                  </span>
-                  <span className="px-2 py-0.5 text-[9px] font-bold bg-indigo-100 text-indigo-700 rounded-full">
-                    Supply Chain
-                  </span>
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-orange-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/products/globizlibrary-logo.png"
+                        alt="GlobizLibrary"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="px-2 py-0.5 text-[9px] font-bold bg-orange-100 text-orange-700 rounded-full">
+                      Academic RFID
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    GlobizLibrary
+                  </div>
+                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
+                    Digital academic repository managing 250,000+ titles with RFID kiosk checkouts.
+                  </p>
                 </div>
-                <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  Enterprise IMS
-                </div>
-                <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                  Multi-warehouse inventory OS with automated reorder triggers and SKU auditing.
-                </p>
               </Link>
 
-              {/* Product 5: TeamHub */}
+              {/* Product 5: Enterprise IMS */}
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-4 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group"
+                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="w-8 h-8 rounded-lg bg-rose-500/15 text-rose-600 font-bold flex items-center justify-center text-sm">
-                    T
-                  </span>
-                  <span className="px-2 py-0.5 text-[9px] font-bold bg-rose-100 text-rose-700 rounded-full">
-                    HR &amp; Workforce
-                  </span>
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 border border-indigo-400 p-1 flex items-center justify-center text-white shrink-0 shadow-xs">
+                      <Boxes className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="px-2 py-0.5 text-[9px] font-bold bg-indigo-100 text-indigo-700 rounded-full">
+                      Supply Chain
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    Enterprise IMS
+                  </div>
+                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
+                    Multi-warehouse inventory OS with automated reorder triggers and SKU auditing.
+                  </p>
                 </div>
-                <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  TeamHub
-                </div>
-                <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                  Workforce attendance, GPS geofencing, and automated salary payroll processing.
-                </p>
-              </Link>
-
-              {/* Product 6: Enterprise AI Suite */}
-              <Link
-                href="/#products-showcase"
-                onClick={() => setActiveMenu(null)}
-                className="p-4 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="w-8 h-8 rounded-lg bg-purple-500/15 text-purple-600 font-bold flex items-center justify-center text-sm">
-                    AI
-                  </span>
-                  <span className="px-2 py-0.5 text-[9px] font-bold bg-purple-100 text-purple-700 rounded-full">
-                    Multi-Agent RAG
-                  </span>
-                </div>
-                <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  Enterprise AI Suite
-                </div>
-                <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                  Sovereign multi-agent reasoning, pgvector RAG, and on-premise LLM inference.
-                </p>
               </Link>
             </div>
           </div>
@@ -1019,12 +1027,11 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
             </button>
             {mobileAccordion === "products" && (
               <div className="pl-4 py-2 space-y-2 text-sm text-slate-600 border-l border-slate-200 ml-2">
-                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Patholab.cloud (LIMS)</Link>
-                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Bungzo Quick-Commerce</Link>
+                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Patholab.Cloud</Link>
+                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">TeamHub</Link>
+                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Bungzo</Link>
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">GlobizLibrary</Link>
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Enterprise IMS</Link>
-                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">TeamHub HRMS</Link>
-                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Enterprise AI Suite</Link>
               </div>
             )}
           </div>

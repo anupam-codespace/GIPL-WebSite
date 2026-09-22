@@ -18,8 +18,11 @@ interface SearchItem {
 const searchItems: SearchItem[] = [
   { title: "Autonomous AI Agents & LLM Fine-Tuning", category: "Service", href: "#services", desc: "Enterprise RAG, multi-agent workflows, vLLM" },
   { title: "Cloud Architecture & DevOps Modernization", category: "Service", href: "#services", desc: "Kubernetes, Terraform, multi-region failover" },
-  { title: "Patholab.cloud (LIMS v3.0)", category: "Product", href: "#products", desc: "Laboratory information management system" },
-  { title: "Bungzo Logistics Engine", category: "Product", href: "#products", desc: "Hyperlocal delivery & fleet routing" },
+  { title: "Patholab.Cloud (Diagnostic LIMS)", category: "Product", href: "/#products-showcase", desc: "Cloud diagnostic intelligence with analyzer sync & WhatsApp reports" },
+  { title: "TeamHub (Workforce OS)", category: "Product", href: "/#products-showcase", desc: "GPS-fenced biometric attendance, sprint tracking & automated payroll" },
+  { title: "Bungzo (Quick-Commerce)", category: "Product", href: "/#products-showcase", desc: "Hyperlocal delivery engine with 18-min dispatch routing" },
+  { title: "GlobizLibrary (Academic RFID)", category: "Product", href: "/#products-showcase", desc: "Digital academic repository managing 250,000+ titles with RFID kiosks" },
+  { title: "Enterprise IMS (Inventory OS)", category: "Product", href: "/#products-showcase", desc: "Multi-warehouse inventory OS with automated reorder triggers" },
   { title: "FinTech Real-Time Settlement Engine", category: "Case Study", href: "#case-studies", desc: "+340% throughput, 99.999% SLA" },
   { title: "HealthTech Clinical AI Copilot", category: "Case Study", href: "#case-studies", desc: "-78% triage latency, HIPAA compliant" },
   { title: "Interactive Project Proposal Wizard", category: "Consultation", href: "#proposal", desc: "Instant architecture estimate & call scheduling" },
