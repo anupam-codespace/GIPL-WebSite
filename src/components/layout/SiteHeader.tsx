@@ -229,7 +229,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={onOpenConsultation}
-            className="rounded-full bg-[#1163fb] hover:bg-[#0c51d6] text-white font-semibold text-[13px] sm:text-[14px] px-4 sm:px-6 py-2 sm:py-2.5 transition-all duration-200 shadow-[0_4px_14px_rgba(17,99,251,0.35)] cursor-pointer shrink-0 active:scale-[0.98] flex items-center gap-2"
+            className="rounded-full bg-[#1163fb] hover:bg-[#0c51d6] text-white font-semibold text-[13px] sm:text-[14px] px-4 sm:px-6 py-2 sm:py-2.5 transition-all duration-200 cursor-pointer shrink-0 active:scale-[0.98] flex items-center gap-2"
           >
             <PhoneCall className="w-3.5 h-3.5 shrink-0" />
             <span>Contact Us</span>
