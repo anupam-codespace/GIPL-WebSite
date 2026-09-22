@@ -82,13 +82,13 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                   <span className="text-2xl font-bold tracking-tight text-white leading-none">
                     Globizhub
                   </span>
-                  <span className="text-[10px] text-slate-400 font-semibold tracking-widest uppercase mt-1">
+                  <span className="text-[10px] text-slate-300 font-semibold tracking-widest uppercase mt-1">
                     India Pvt Ltd.
                   </span>
                 </div>
               </Link>
 
-              <p className="text-sm sm:text-base text-slate-400 font-normal leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mb-6">
                 Digital product consulting, engineering, and enterprise transformation company.
               </p>
 
@@ -146,7 +146,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                   <span className="block text-[11px] font-bold text-white leading-tight">
                     ISO 9001 &amp; 27001
                   </span>
-                  <span className="block text-[9px] text-slate-400 font-medium">
+                  <span className="block text-[9px] text-slate-300 font-medium">
                     Certified Security &amp; Quality
                   </span>
                 </div>
@@ -156,7 +156,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
 
           {/* Global Delivery Centers & Offices (4 Verified Locations) */}
           <div className="mt-14">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-6">
               Global Delivery Centers & Offices
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -180,7 +180,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-400 font-normal leading-relaxed">
+                    <p className="text-xs text-slate-300 font-medium leading-relaxed">
                       {loc.address}
                     </p>
                   </div>
@@ -211,7 +211,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 />
               </div>
               <ul
-                className={`space-y-3 text-xs sm:text-[13px] text-slate-400 font-normal mt-4 lg:mt-0 ${
+                className={`space-y-3 text-xs sm:text-[13px] text-slate-300 font-medium mt-4 lg:mt-0 ${
                   openAccordion === "company" ? "block" : "hidden lg:block"
                 }`}
               >
@@ -274,7 +274,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 />
               </div>
               <ul
-                className={`space-y-3 text-xs sm:text-[13px] text-slate-400 font-normal mt-4 lg:mt-0 ${
+                className={`space-y-3 text-xs sm:text-[13px] text-slate-300 font-medium mt-4 lg:mt-0 ${
                   openAccordion === "services" ? "block" : "hidden lg:block"
                 }`}
               >
@@ -311,7 +311,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 <li className="pt-1">
                   <Link
                     href="#bento"
-                    className="text-[#1163FB] hover:text-blue-300 font-medium inline-flex items-center gap-1 transition-colors group"
+                    className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
                     <span>View More</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -336,7 +336,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 />
               </div>
               <ul
-                className={`space-y-3 text-xs sm:text-[13px] text-slate-400 font-normal mt-4 lg:mt-0 ${
+                className={`space-y-3 text-xs sm:text-[13px] text-slate-300 font-medium mt-4 lg:mt-0 ${
                   openAccordion === "products" ? "block" : "hidden lg:block"
                 }`}
               >
@@ -371,7 +371,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 <li className="pt-1">
                   <Link
                     href="#products"
-                    className="text-[#1163FB] hover:text-blue-300 font-medium inline-flex items-center gap-1 transition-colors group"
+                    className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
                     <span>View More</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -396,7 +396,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 />
               </div>
               <ul
-                className={`space-y-3 text-xs sm:text-[13px] text-slate-400 font-normal mt-4 lg:mt-0 ${
+                className={`space-y-3 text-xs sm:text-[13px] text-slate-300 font-medium mt-4 lg:mt-0 ${
                   openAccordion === "technologies" ? "block" : "hidden lg:block"
                 }`}
               >
@@ -433,7 +433,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 <li className="pt-1">
                   <Link
                     href="#tech-stack"
-                    className="text-[#1163FB] hover:text-blue-300 font-medium inline-flex items-center gap-1 transition-colors group"
+                    className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
                     <span>View More</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -458,7 +458,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 />
               </div>
               <ul
-                className={`space-y-3 text-xs sm:text-[13px] text-slate-400 font-normal mt-4 lg:mt-0 ${
+                className={`space-y-3 text-xs sm:text-[13px] text-slate-300 font-medium mt-4 lg:mt-0 ${
                   openAccordion === "industries" ? "block" : "hidden lg:block"
                 }`}
               >
@@ -495,7 +495,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 <li className="pt-1">
                   <Link
                     href="#case-studies"
-                    className="text-[#1163FB] hover:text-blue-300 font-medium inline-flex items-center gap-1 transition-colors group"
+                    className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
                     <span>View More</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -520,7 +520,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 />
               </div>
               <ul
-                className={`space-y-3 text-xs sm:text-[13px] text-slate-400 font-normal mt-4 lg:mt-0 mb-8 ${
+                className={`space-y-3 text-xs sm:text-[13px] text-slate-300 font-medium mt-4 lg:mt-0 mb-8 ${
                   openAccordion === "resources" ? "block" : "hidden lg:block"
                 }`}
               >
@@ -561,77 +561,36 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
         </div>
 
         {/* ======================================================== */}
-        {/* 3. BUSINESS UNITS UNDER GLOBIZHUB GROUP                  */}
-        {/* (Exact match to Appinventiv reference screenshot)        */}
-        {/* ======================================================== */}
-        <div className="py-12 border-b border-white/[0.08]">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-6">
-            Business Units Under Globizhub Group
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            {/* Card 1: Globizhub AI */}
-            <div className="h-16 sm:h-20 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 group cursor-pointer">
-              <span className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:text-blue-300 transition-colors flex items-center gap-1.5">
-                <span>Globizhub</span>
-                <span className="text-blue-400 font-extrabold text-xl">AI</span>
-              </span>
-            </div>
-
-            {/* Card 2: Globizhub Digital */}
-            <div className="h-16 sm:h-20 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 group cursor-pointer">
-              <span className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:text-blue-300 transition-colors flex items-center gap-2">
-                <GlobizhubLogo className="w-5 h-5 shrink-0" />
-                <span className="font-bold">globizhub</span>
-                <span className="text-[10px] tracking-widest uppercase font-extrabold px-1.5 py-0.5 rounded bg-blue-600/30 text-blue-300 border border-blue-500/30">
-                  digital
-                </span>
-              </span>
-            </div>
-
-            {/* Card 3: Globizhub Foundation */}
-            <div className="h-16 sm:h-20 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 group cursor-pointer">
-              <span className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:text-blue-300 transition-colors flex items-center gap-2">
-                <GlobizhubLogo className="w-5 h-5 shrink-0 opacity-80" />
-                <span className="font-bold">globizhub</span>
-                <span className="text-[10px] tracking-widest uppercase font-extrabold text-slate-300">
-                  foundation
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* ======================================================== */}
-        {/* 4. BOTTOM BAR: SITEMAP, PRIVACY, TERMS, COPYRIGHT, DMCA  */}
+        {/* 3. BOTTOM BAR: SITEMAP, PRIVACY, TERMS, COPYRIGHT        */}
         {/* ======================================================== */}
         <div className="pt-10 flex flex-col gap-6">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-xs text-slate-400">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-xs text-slate-300 font-medium">
             {/* Left: Legal Links + Statutory Toggle */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 order-2 lg:order-1 text-center sm:text-left">
               <Link href="/sitemap.xml" className="hover:text-white transition-colors">
                 Sitemap
               </Link>
-              <span className="text-slate-600">|</span>
+              <span className="text-slate-500">|</span>
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <span className="text-slate-600">|</span>
+              <span className="text-slate-500">|</span>
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Use
               </Link>
-              <span className="text-slate-600">|</span>
+              <span className="text-slate-500">|</span>
               <Link href="/refund" className="hover:text-white transition-colors">
                 Refund Policy
               </Link>
-              <span className="text-slate-600">|</span>
+              <span className="text-slate-500">|</span>
               <Link href="/data-security" className="hover:text-white transition-colors">
                 Data Security
               </Link>
-              <span className="text-slate-600">|</span>
+              <span className="text-slate-500">|</span>
               <Link href="/corporate-policies" className="hover:text-white transition-colors">
                 Corporate Policies
               </Link>
-              <span className="text-slate-600">|</span>
+              <span className="text-slate-500">|</span>
               <button
                 type="button"
                 onClick={() => setShowStatutory(!showStatutory)}
@@ -641,25 +600,17 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
               </button>
             </div>
 
-            {/* Right: Copyright + DMCA Badge */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 order-1 lg:order-2">
-              <div className="text-center lg:text-right font-normal text-slate-400">
+            {/* Right: Copyright */}
+            <div className="flex items-center gap-3 sm:gap-4 order-1 lg:order-2">
+              <div className="text-center lg:text-right font-medium text-slate-300">
                 Copyright &copy; 2018 - 2026 Globizhub India Pvt Ltd. All rights reserved.
-              </div>
-              <div className="px-2.5 py-1 rounded-md bg-[#0A2668]/80 border border-blue-400/30 flex items-center gap-1.5 text-[10px] font-bold text-white tracking-wider select-none shrink-0 shadow-sm">
-                <svg className="w-3 h-3 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
-                <span>DMCA</span>
-                <span className="text-[8px] uppercase tracking-normal text-blue-300 font-medium">PROTECTED</span>
               </div>
             </div>
           </div>
 
           {/* Expandable Statutory Legal Information Panel (Exact Appinventiv Feature) */}
           {showStatutory && (
-            <div className="mt-2 p-6 rounded-2xl bg-[#11141c]/95 border border-white/10 text-xs text-slate-400 leading-relaxed space-y-3 transition-all duration-300 animate-fadeIn">
+            <div className="mt-2 p-6 rounded-2xl bg-[#11141c]/95 border border-white/10 text-xs text-slate-300 leading-relaxed space-y-3 transition-all duration-300 animate-fadeIn">
               <p>
                 <strong className="text-white">Globizhub</strong> is the registered trading brand of{" "}
                 <strong className="text-white">Globizhub India Pvt Ltd. (GHPL)</strong>, an enterprise digital
