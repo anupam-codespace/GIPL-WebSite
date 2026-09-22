@@ -339,7 +339,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
             <button
               id="hero-consult-btn"
               onClick={onOpenConsultation}
-              className="group relative inline-flex items-center gap-3 rounded-full bg-[#2563EB] hover:bg-blue-600 text-white font-semibold text-sm sm:text-base px-7 sm:px-8 py-3.5 sm:py-4 shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden"
+              className="group relative inline-flex items-center gap-3 rounded-full bg-[#0D62FE] hover:bg-blue-600 text-white font-semibold text-sm sm:text-base px-7 sm:px-8 py-3.5 sm:py-4 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden shadow-none"
             >
               <div className="relative h-5 sm:h-6 overflow-hidden flex flex-col justify-center">
                 <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">

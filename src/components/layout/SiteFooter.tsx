@@ -52,13 +52,19 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
   };
 
   return (
-    <footer className="bg-[#000000] text-white pt-20 pb-12 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif] border-t border-white/[0.08]">
-      {/* Background ambient lighting */}
+    <footer
+      className="text-white pt-20 pb-12 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif] border-t border-white/[0.08]"
+      style={{
+        background:
+          "linear-gradient(180deg, #000000 0%, #010410 16%, #030f2d 34%, #061d5a 52%, #0a2f8d 70%, #0d46c8 86%, #1153df 100%)",
+      }}
+    >
+      {/* Radiant ambient bottom glow matching Appinventiv screenshot */}
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1100px] h-[500px] pointer-events-none rounded-full blur-[160px] opacity-10 -z-10"
+        className="absolute bottom-0 left-0 right-0 h-[700px] pointer-events-none -z-10"
         style={{
           background:
-            "radial-gradient(circle, rgba(17, 99, 251, 0.5) 0%, rgba(37, 99, 235, 0.2) 60%, transparent 80%)",
+            "radial-gradient(140% 90% at 50% 100%, rgba(20, 95, 255, 0.5) 0%, rgba(13, 70, 222, 0.32) 40%, rgba(5, 25, 95, 0.15) 70%, transparent 100%)",
         }}
       />
 
@@ -560,7 +566,48 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
         </div>
 
         {/* ======================================================== */}
-        {/* 3. BOTTOM BAR: SITEMAP, PRIVACY, TERMS, COPYRIGHT        */}
+        {/* 3. BUSINESS UNITS UNDER GLOBIZHUB GROUP                  */}
+        {/* (Exact match to Appinventiv reference screenshot)        */}
+        {/* ======================================================== */}
+        <div className="py-12 border-b border-white/[0.08]">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-6">
+            Business Units Under Globizhub Group
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            {/* Card 1: Globizhub AI */}
+            <div className="h-16 sm:h-20 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 group cursor-pointer">
+              <span className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:text-blue-300 transition-colors flex items-center gap-1.5">
+                <span>Globizhub</span>
+                <span className="text-blue-400 font-extrabold text-xl">AI</span>
+              </span>
+            </div>
+
+            {/* Card 2: Globizhub Digital */}
+            <div className="h-16 sm:h-20 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 group cursor-pointer">
+              <span className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:text-blue-300 transition-colors flex items-center gap-2">
+                <GlobizhubLogo className="w-5 h-5 shrink-0" />
+                <span className="font-bold">globizhub</span>
+                <span className="text-[10px] tracking-widest uppercase font-extrabold px-1.5 py-0.5 rounded bg-blue-600/30 text-blue-300 border border-blue-500/30">
+                  digital
+                </span>
+              </span>
+            </div>
+
+            {/* Card 3: Globizhub Foundation */}
+            <div className="h-16 sm:h-20 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/25 backdrop-blur-md flex items-center justify-center transition-all duration-300 group cursor-pointer">
+              <span className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:text-blue-300 transition-colors flex items-center gap-2">
+                <GlobizhubLogo className="w-5 h-5 shrink-0 opacity-80" />
+                <span className="font-bold">globizhub</span>
+                <span className="text-[10px] tracking-widest uppercase font-extrabold text-slate-300">
+                  foundation
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* ======================================================== */}
+        {/* 4. BOTTOM BAR: SITEMAP, PRIVACY, TERMS, COPYRIGHT, DMCA  */}
         {/* ======================================================== */}
         <div className="pt-10 flex flex-col gap-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-xs text-slate-400">
@@ -599,9 +646,19 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
               </button>
             </div>
 
-            {/* Center/Right: Copyright */}
-            <div className="text-center lg:text-right order-1 lg:order-2 font-normal text-slate-400">
-              Copyright &copy; 2018 - 2026 Globizhub India Pvt Ltd. All rights reserved.
+            {/* Right: Copyright + DMCA Badge */}
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 order-1 lg:order-2">
+              <div className="text-center lg:text-right font-normal text-slate-400">
+                Copyright &copy; 2018 - 2026 Globizhub India Pvt Ltd. All rights reserved.
+              </div>
+              <div className="px-2.5 py-1 rounded-md bg-[#0A2668]/80 border border-blue-400/30 flex items-center gap-1.5 text-[10px] font-bold text-white tracking-wider select-none shrink-0 shadow-sm">
+                <svg className="w-3 h-3 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <span>DMCA</span>
+                <span className="text-[8px] uppercase tracking-normal text-blue-300 font-medium">PROTECTED</span>
+              </div>
             </div>
           </div>
 
