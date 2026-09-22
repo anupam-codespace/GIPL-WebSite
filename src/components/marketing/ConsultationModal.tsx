@@ -118,7 +118,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
             <div className="flex items-center gap-2.5 mb-3">
               <GlobizhubLogo className="w-8 h-8" />
               <span className="text-xs uppercase font-bold tracking-widest text-white/90">
-                Globizhub Enterprise
+                Globizhub Pvt Ltd
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight leading-[1.18] mb-3">
@@ -144,12 +144,10 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
           {/* Bottom Recognitions Section (Assam Startup, DPIIT, MSME, Make in India) */}
           <div className="relative z-10 pt-1">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <span className="text-amber-300 text-xs select-none">🌿</span>
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/90">
+            <div className="flex items-center justify-center mb-3">
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/90 text-center">
                 GOVERNMENT &amp; ENTERPRISE RECOGNITIONS
               </span>
-              <span className="text-amber-300 text-xs select-none">🌿</span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -216,11 +214,12 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
           </button>
 
           {/* Form Content */}
-          <div className="pr-6 sm:pr-8">
-            <p className="text-xs sm:text-[13px] text-slate-300 font-normal leading-relaxed mb-6">
-              <strong className="text-white font-bold">Share a few details</strong> about your idea, and our
-              team will come back with technical insights, timelines, and next steps.
-            </p>
+          <div className="w-full">
+            <div className="text-center max-w-md mx-auto mb-6 px-2 sm:px-4">
+              <p className="text-xs sm:text-[13.5px] text-slate-300 font-normal leading-relaxed">
+                <strong className="text-white font-bold">Share a few details</strong> about your idea, and our team will come back with technical insights, timelines, and next steps.
+              </p>
+            </div>
 
             {submitted ? (
               <div className="py-12 text-center space-y-4 animate-in fade-in">

@@ -241,9 +241,15 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
   return (
     <section
-      className="relative min-h-[90vh] sm:min-h-[94vh] flex flex-col justify-between pt-28 sm:pt-36 lg:pt-42 pb-6 sm:pb-10 overflow-hidden bg-black text-white font-['Plus_Jakarta_Sans',sans-serif]"
+      className="relative min-h-[90vh] sm:min-h-[94vh] flex flex-col justify-between pt-28 sm:pt-36 lg:pt-42 pb-6 sm:pb-10 overflow-hidden bg-black text-white hero-google-sans"
       id="hero"
     >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+        .hero-google-sans, .hero-google-sans * {
+          font-family: 'Google Sans', sans-serif !important;
+        }
+      `}</style>
       {/* ======================================================== */}
       {/* 1. CINEMATIC CONTINUOUS LOOP VIDEO BACKGROUND            */}
       {/* Alternates Video 1 (Pin 793407659399242888) & Video 2   */}
@@ -337,6 +343,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
           <div className="flex flex-wrap items-center gap-4 sm:gap-5 mb-14 sm:mb-20 lg:mb-24">
             {/* Button 1: Appinventiv Rolling Text-Swap CTA Button (Fixed Single-Line Container) */}
             <button
+              id="hero-consult-btn"
               onClick={onOpenConsultation}
               className="group relative inline-flex items-center gap-3 rounded-full bg-[#2563EB] hover:bg-blue-600 text-white font-semibold text-sm sm:text-base px-7 sm:px-8 py-3.5 sm:py-4 shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden"
             >
