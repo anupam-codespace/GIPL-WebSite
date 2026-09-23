@@ -187,7 +187,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               <div className="px-1.5 sm:px-2 py-1 sm:py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/25 flex flex-col items-center justify-center text-center h-[46px] sm:h-[62px] md:h-[68px] transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/msme_logo.png"
+                  src="/images/msme_official_white.png"
                   alt="Ministry of MSME"
                   className="max-h-4 sm:max-h-6 md:max-h-7 max-w-[90%] object-contain"
                 />

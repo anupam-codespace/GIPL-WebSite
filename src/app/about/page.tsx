@@ -250,7 +250,7 @@ const RECOGNITIONS = [
     badge: "Govt of India",
     authority: "Ministry of Micro, Small and Medium Enterprises",
     desc: "Formally registered enterprise fostering indigenous intellectual property, digital inclusion, and skilled tech employment.",
-    logo: "/images/msme_logo_official.svg",
+    logo: "/images/msme_official_white.png",
     type: "Statutory Recognition"
   },
   {
@@ -266,7 +266,7 @@ const RECOGNITIONS = [
     badge: "Quality Management",
     authority: "International Organization for Standardization",
     desc: "Certified for maintaining standardized, audit-proven software design, rigorous testing, and continuous delivery pipelines.",
-    logo: "/images/iso_9001_logo.svg",
+    logo: "/images/iso_9001_certified_badge.png",
     type: "International Standard"
   },
   {
@@ -282,7 +282,7 @@ const RECOGNITIONS = [
     badge: "IT Service Management",
     authority: "International Organization for Standardization",
     desc: "Certified for world-class IT service delivery, incident response SLA governance, and mission-critical cloud system availability.",
-    logo: "/images/iso_20000_logo.svg",
+    logo: "/images/iso_20000_certified_badge.png",
     type: "Service Excellence"
   }
 ];

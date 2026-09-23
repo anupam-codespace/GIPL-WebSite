@@ -17,20 +17,18 @@ export default function TechAlignmentBanner({ onOpenConsultation }: TechAlignmen
 
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
             {/* Left Content Column (6 cols on lg) */}
-            <div className="lg:col-span-6 xl:col-span-6 p-8 sm:p-12 lg:p-14 xl:p-16 flex flex-col items-center lg:items-start text-center lg:text-left justify-center">
+            <div className="lg:col-span-6 xl:col-span-6 p-6 sm:p-10 lg:p-14 xl:p-16 flex flex-col items-start text-left justify-center">
               {/* Globizhub Growth Roadmap Headline */}
-              <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-normal text-white tracking-tight leading-[1.22] mb-5">
-                You’ve seen how we helped
-                <br />
+              <h2 className="text-left text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-normal text-white tracking-tight leading-[1.25] mb-5">
+                You’ve seen how we helped{" "}
                 <strong className="font-extrabold text-white">Patholab.cloud</strong>,{" "}
                 <strong className="font-extrabold text-white">Bungzo</strong>, and{" "}
-                <strong className="font-extrabold text-white">Enterprise Leaders</strong>
-                <br />
+                <strong className="font-extrabold text-white">Enterprise Leaders</strong>{" "}
                 reclaim their market edge.
               </h2>
 
               {/* Subtitle with bold 4x operational improvements */}
-              <p className="text-white/80 text-xs sm:text-sm lg:text-[15px] leading-relaxed mb-8 max-w-xl font-normal">
+              <p className="text-left text-white/80 text-xs sm:text-sm lg:text-[15px] leading-relaxed mb-8 max-w-xl font-normal">
                 From 70% faster turnaround times to{" "}
                 <strong className="font-bold text-white">4× operational improvements</strong>, our
                 engineering goes beyond code to deliver measurable ROI.
@@ -40,7 +38,7 @@ export default function TechAlignmentBanner({ onOpenConsultation }: TechAlignmen
               <button
                 onClick={onOpenConsultation}
                 type="button"
-                className="group relative inline-flex items-center justify-center mx-auto lg:mx-0 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm tracking-tight shadow-xl hover:shadow-2xl hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden"
+                className="group relative inline-flex items-center justify-center self-center lg:self-start mx-auto lg:mx-0 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm tracking-tight shadow-xl hover:shadow-2xl hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden"
               >
                 <div className="relative h-5 overflow-hidden flex flex-col justify-center">
                   <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap">

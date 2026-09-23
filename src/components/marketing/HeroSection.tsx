@@ -89,7 +89,7 @@ const officialRecognitions: RecognitionItem[] = [
       "Continual process improvement & client satisfaction metrics",
       "Audited software development lifecycle (SDLC) standards",
     ],
-    logoSrc: "/images/iso_9001_logo.svg",
+    logoSrc: "/images/iso_9001_certified_badge.png",
   },
   {
     id: "iso-27001",
@@ -123,7 +123,7 @@ const officialRecognitions: RecognitionItem[] = [
       "Government of India verified enterprise credentials",
       "National priority enterprise engineering initiative",
     ],
-    logoSrc: "/images/msme_logo.png",
+    logoSrc: "/images/msme_official_white.png",
   },
   {
     id: "make-in-india",
@@ -157,7 +157,7 @@ const officialRecognitions: RecognitionItem[] = [
       "Strict SLA monitoring with sub-15min critical response",
       "Standardized release, incident & problem management frameworks",
     ],
-    logoSrc: "/images/iso_20000_logo.svg",
+    logoSrc: "/images/iso_20000_certified_badge.png",
   },
 ];
 
