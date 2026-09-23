@@ -31,7 +31,7 @@ const PRODUCTS: ProductItem[] = [
     id: "patholab",
     name: "Patholab.Cloud",
     navName: "Patholab.Cloud",
-    category: "Cloud Diagnostic LIMS Intelligence",
+    category: "Clinical Diagnostic Laboratory Intelligence",
     bgTint: "#FFFDF5",
     logo: (
       <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-slate-200/90 bg-white p-1 flex items-center justify-center shrink-0">

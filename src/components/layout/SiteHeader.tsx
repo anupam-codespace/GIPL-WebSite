@@ -968,7 +968,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                       className="block p-3 rounded-2xl bg-slate-50 hover:bg-blue-50/50 border border-slate-200/80 transition-all group"
                     >
                       <div className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
-                        High-Throughput Diagnostic LIMS Engineering Standards
+                        High-Throughput Clinical Diagnostic Engineering Standards
                       </div>
                       <p className="text-[11px] text-slate-500 line-clamp-2">
                         How Patholab.cloud processes 500,000+ laboratory specimens with sub-second analyzer synchronization.

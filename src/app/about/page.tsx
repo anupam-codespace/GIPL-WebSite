@@ -133,7 +133,7 @@ const MILESTONES: Milestone[] = [
       "Certified ISO/IEC 20000-1:2018 (IT Service Management)"
     ],
     stats: "Triple ISO Certified • Zero Security Non-Conformances",
-    image: "/images/iso_27001_logo.svg"
+    image: "/images/iso_27001_certified_badge.png"
   },
   {
     year: "2024",
@@ -274,7 +274,7 @@ const RECOGNITIONS = [
     badge: "Information Security",
     authority: "International Organization for Standardization",
     desc: "Certified for zero-trust information security management systems (ISMS), data encryption at rest and in transit, and vulnerability defense.",
-    logo: "/images/iso_27001_logo.svg",
+    logo: "/images/iso_27001_certified_badge.png",
     type: "Security Benchmark"
   },
   {
@@ -822,9 +822,7 @@ export default function AboutPage() {
                       className="w-full h-full object-contain rounded-xl"
                     />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
-                    Diagnostic LIMS
-                  </span>
+
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
@@ -877,9 +875,7 @@ export default function AboutPage() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-400 text-xs font-bold">
-                    Workforce OS
-                  </span>
+
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
@@ -930,9 +926,7 @@ export default function AboutPage() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs font-bold">
-                    Quick-Commerce
-                  </span>
+
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
@@ -985,9 +979,7 @@ export default function AboutPage() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs font-bold">
-                    Academic RFID
-                  </span>
+
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
@@ -1033,9 +1025,7 @@ export default function AboutPage() {
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 border border-indigo-300/80 p-2 flex items-center justify-center text-white shrink-0 shadow-sm">
                     <Boxes className="w-7 h-7 text-white stroke-[2.2]" />
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 text-xs font-bold">
-                    Supply Chain
-                  </span>
+
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">

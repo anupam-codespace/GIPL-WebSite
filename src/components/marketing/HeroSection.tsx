@@ -106,7 +106,7 @@ const officialRecognitions: RecognitionItem[] = [
       "Zero-trust network architecture & data encryption at rest/transit",
       "Strict confidentiality, integrity & availability (CIA) governance",
     ],
-    logoSrc: "/images/iso_27001_logo.svg",
+    logoSrc: "/images/iso_27001_certified_badge.png",
   },
   {
     id: "msme",

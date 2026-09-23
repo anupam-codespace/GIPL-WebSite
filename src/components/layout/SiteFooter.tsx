@@ -333,11 +333,8 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 }`}
               >
                 <li>
-                  <Link href="/#products-showcase" className="hover:text-white transition-colors flex items-center gap-1.5">
-                    <span>Patholab.Cloud</span>
-                    <span className="px-1.5 py-0.5 text-[9px] font-bold bg-emerald-500/20 text-emerald-300 rounded">
-                      Live
-                    </span>
+                  <Link href="/#products-showcase" className="hover:text-white transition-colors">
+                    Patholab.Cloud
                   </Link>
                 </li>
                 <li>
@@ -361,11 +358,8 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#products-showcase" className="hover:text-white transition-colors flex items-center gap-1.5">
-                    <span>Listing</span>
-                    <span className="px-1.5 py-0.5 text-[9px] font-bold bg-amber-500/20 text-amber-300 rounded">
-                      Live
-                    </span>
+                  <Link href="https://listing.globizhub.com/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+                    Globizhub Listing
                   </Link>
                 </li>
                 <li className="pt-1">

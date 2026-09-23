@@ -30,49 +30,80 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "https://gipl-website.vercel.app");
+    : "https://globizhub.com");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Globizhub | Technology Intelligence & Enterprise Software Engineering",
+    default: "Globizhub | Enterprise Software Engineering & Technology Intelligence",
     template: "%s | Globizhub",
   },
   description:
-    "Globizhub India Private Limited engineers resilient digital platforms, autonomous AI systems, and cloud infrastructure. ISO 9001, ISO 27001 & ISO 20000 certified.",
+    "Globizhub India Private Limited — a DPIIT-recognized, ISO 9001 / 27001 / 20000 certified enterprise technology company engineering AI platforms, SaaS products, and cloud infrastructure for healthcare, logistics, workforce, and global trade industries.",
   keywords: [
     "Globizhub",
-    "IT services India",
-    "Enterprise AI",
-    "Autonomous Agents",
-    "Custom Software",
+    "Globizhub India",
+    "Globizhub India Private Limited",
+    "IT company India",
+    "best IT company India",
+    "top IT companies in India",
+    "enterprise software company India",
+    "software development company India",
+    "custom software development India",
+    "AI development company India",
+    "artificial intelligence company India",
+    "cloud infrastructure India",
+    "enterprise AI solutions India",
+    "autonomous AI agents India",
+    "HRMS software India",
+    "diagnostic laboratory software",
+    "LIMS software India",
+    "food delivery app development",
+    "quick commerce platform India",
+    "B2B marketplace India",
+    "library management system India",
+    "RFID library management",
+    "inventory management software India",
     "Patholab.cloud",
-    "TeamHub",
-    "Bungzo",
-    "GlobizLibrary",
-    "Enterprise IMS",
-    "Globizhub Listing",
-    "B2B marketplace",
-    "Cloud Architecture",
-    "DevOps",
-    "Bengaluru IT company",
+    "TeamHub HRMS",
+    "Bungzo delivery platform",
+    "GlobizLibrary RFID",
+    "Enterprise IMS inventory",
+    "Globizhub Listing B2B",
+    "cloud architecture company",
+    "DevOps consulting India",
+    "ISO 27001 certified IT company",
+    "ISO 9001 certified software company",
+    "Startup India recognized company",
+    "DPIIT recognized startup India",
+    "MSME registered IT company",
+    "Assam startup company",
+    "SaaS company India",
+    "healthcare technology India",
+    "fintech development India",
+    "enterprise engineering India",
+    "IT consulting company India",
+    "proprietary software products India",
   ],
-  authors: [{ name: "Globizhub India Private Limited" }],
+  authors: [{ name: "Globizhub India Private Limited", url: siteUrl }],
+  creator: "Globizhub India Private Limited",
+  publisher: "Globizhub India Private Limited",
+  category: "Technology",
   alternates: {
     canonical: siteUrl,
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: "/favicon.png",
   },
   openGraph: {
-    title: "Globizhub | Technology Intelligence & Enterprise Software Engineering",
+    title: "Globizhub | Enterprise Software Engineering & Technology Intelligence",
     description:
-      "Architecting resilient digital platforms, autonomous AI systems, and cloud infrastructure. ISO 9001, ISO 27001 & ISO 20000 certified.",
+      "Globizhub India Private Limited is a DPIIT-recognized, ISO 9001 / 27001 / 20000 certified enterprise technology company building AI platforms, healthcare software, workforce management, and B2B commerce solutions. Proudly Made in India.",
     url: siteUrl,
     siteName: "Globizhub India Private Limited",
     locale: "en_IN",
@@ -84,24 +115,18 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Innovation, Engineered by Globizhub",
-      },
-      {
-        url: "/images/og-social-preview.png",
-        secureUrl: `${siteUrl}/images/og-social-preview.png`,
-        width: 1200,
-        height: 630,
-        type: "image/png",
-        alt: "Innovation, Engineered by Globizhub",
+        alt: "Globizhub — Innovation, Engineered for Enterprise India",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Globizhub | Technology Intelligence & Enterprise Software Engineering",
+    title: "Globizhub | Enterprise Software Engineering & Technology Intelligence",
     description:
-      "Architecting resilient digital platforms, autonomous AI systems, and cloud infrastructure.",
+      "ISO 9001, ISO 27001 & ISO 20000 certified enterprise tech company — AI, cloud, healthcare, workforce and B2B platforms. DPIIT recognized. Made in India.",
     images: [`${siteUrl}/images/og-social-preview.jpg`],
+    creator: "@GlobizHub",
+    site: "@GlobizHub",
   },
   robots: {
     index: true,
@@ -113,6 +138,74 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? undefined,
+  },
+  other: {
+    "geo.region": "IN",
+    "geo.country": "India",
+    "og:locale:alternate": "en_US",
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Globizhub India Private Limited",
+  alternateName: "Globizhub",
+  url: siteUrl,
+  logo: `${siteUrl}/images/globizhub_logo.png`,
+  sameAs: [
+    "https://linkedin.com/company/globizhub",
+    "https://twitter.com/GlobizHub",
+  ],
+  description:
+    "Globizhub India Private Limited is a DPIIT-recognized, ISO 9001 / 27001 / 20000 certified enterprise technology company engineering AI platforms, proprietary SaaS products, cloud infrastructure, and digital transformation solutions for healthcare, logistics, workforce management, and global trade industries.",
+  foundingDate: "2021",
+  foundingLocation: {
+    "@type": "Place",
+    addressCountry: "IN",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "IN",
+    addressRegion: "Assam",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Sales & Consulting",
+    email: "hello@globizhub.com",
+    availableLanguage: "English",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Enterprise Technology Services & Proprietary Products",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "Patholab.Cloud — Diagnostic Laboratory Intelligence" } },
+      { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "TeamHub — Enterprise HRMS & Workforce OS" } },
+      { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "Bungzo — Hyperlocal Food Delivery Platform" } },
+      { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "GlobizLibrary — Academic RFID Repository" } },
+      { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "Enterprise IMS — Inventory & Supply Chain OS" } },
+      { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "Globizhub Listing — B2B Trade Marketplace" } },
+    ],
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Globizhub India Private Limited",
+  url: siteUrl,
+  description:
+    "Enterprise Software Engineering, AI Platforms, and Proprietary SaaS Products by Globizhub India.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteUrl}/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
   },
 };
 
@@ -140,6 +233,14 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
       </head>
       <body className="min-h-screen bg-white text-slate-700 antialiased selection:bg-slate-900 selection:text-white font-['Google_Sans',sans-serif]">
         <Suspense fallback={null}>
