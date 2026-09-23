@@ -604,32 +604,32 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                 </div>
                 <ul className="space-y-2 text-[13px] text-slate-600">
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Product Design &amp; UI/UX
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Web Application Development (Next.js)
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Mobile Apps (iOS &amp; Android)
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Enterprise Software &amp; ERP
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Quality Assurance &amp; Testing
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       DevOps &amp; SRE Infrastructure
                     </Link>
                   </li>
@@ -648,32 +648,32 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                 </div>
                 <ul className="space-y-2 text-[13px] text-slate-600">
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Autonomous AI Agents &amp; LangGraph
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Generative AI &amp; Enterprise LLMs
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Legacy Application Modernization
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Cloud Architecture &amp; Migration
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Cybersecurity &amp; Zero Trust
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       IoT &amp; Connected Devices
                     </Link>
                   </li>
@@ -692,32 +692,32 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                 </div>
                 <ul className="space-y-2 text-[13px] text-slate-600">
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Strategic Technology Consulting
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Big Data Engineering &amp; ETL
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Business Intelligence &amp; Analytics
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Dedicated Engineering Squads
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       Cloud Cost Optimization (FinOps)
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                    <Link href="/services" onClick={() => setActiveMenu(null)} className="block p-1.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors">
                       IT Audit &amp; System Architecture
                     </Link>
                   </li>
@@ -730,15 +730,24 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               <span className="text-[13.5px] font-bold text-[#0f0f0f]">
                 Didn&apos;t find what you&apos;re looking for? Let us know your technical requirements.
               </span>
-              <button
-                onClick={() => {
-                  setActiveMenu(null);
-                  onOpenConsultation?.();
-                }}
-                className="px-5 py-2.5 rounded-xl bg-[#1163fb] hover:bg-[#0c51d6] text-white text-xs font-bold transition-all shrink-0 active:scale-95"
-              >
-                Schedule Free Consultations
-              </button>
+              <div className="flex items-center gap-3 shrink-0">
+                <Link
+                  href="/services"
+                  onClick={() => setActiveMenu(null)}
+                  className="px-4 py-2.5 rounded-xl border border-amber-300 hover:border-amber-400 bg-white hover:bg-amber-50 text-slate-800 text-xs font-bold transition-all shrink-0"
+                >
+                  View All Services →
+                </Link>
+                <button
+                  onClick={() => {
+                    setActiveMenu(null);
+                    onOpenConsultation?.();
+                  }}
+                  className="px-5 py-2.5 rounded-xl bg-[#1163fb] hover:bg-[#0c51d6] text-white text-xs font-bold transition-all shrink-0 active:scale-95"
+                >
+                  Schedule Free Consultations
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -1084,11 +1093,12 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
             </button>
             {mobileAccordion === "services" && (
               <div className="pl-4 py-2 space-y-2 text-sm text-slate-600 border-l border-slate-200 ml-2">
-                <Link href="/#services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Product &amp; Engineering</Link>
-                <Link href="/#services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Digital Transformation &amp; AI</Link>
-                <Link href="/#services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Cloud Architecture &amp; DevOps</Link>
-                <Link href="/#services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Cybersecurity &amp; Zero Trust</Link>
-                <Link href="/#services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Consulting &amp; Data Services</Link>
+                <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-1 font-semibold text-blue-600 hover:underline">View All Services →</Link>
+                <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Product &amp; Engineering</Link>
+                <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Digital Transformation &amp; AI</Link>
+                <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Cloud Architecture &amp; DevOps</Link>
+                <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Cybersecurity &amp; Zero Trust</Link>
+                <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Consulting &amp; Data Services</Link>
               </div>
             )}
           </div>

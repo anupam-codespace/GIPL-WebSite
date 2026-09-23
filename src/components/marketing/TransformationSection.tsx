@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 interface TransformationSectionProps {
   onOpenConsultation?: () => void;
@@ -333,9 +334,8 @@ export default function TransformationSection({
 
         {/* Centered Bottom CTA: View All Services ↗ with Dual-Arrow Rolling Effect */}
         <div className="mt-14 sm:mt-16 text-center">
-          <button
-            type="button"
-            onClick={onOpenConsultation}
+          <Link
+            href="/services"
             className="group/all relative inline-flex items-center gap-2.5 px-8 py-3 rounded-full border border-[#1163FB] bg-white text-[#1163FB] text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-[#1163FB] hover:text-white hover:shadow-[0_8px_25px_rgba(17,99,251,0.25)] overflow-hidden"
           >
             {/* Rolling Text */}
@@ -373,7 +373,7 @@ export default function TransformationSection({
                 <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
               </svg>
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

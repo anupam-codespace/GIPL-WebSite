@@ -271,41 +271,41 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 }`}
               >
                 <li>
-                  <Link href="#bento" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Digital Transformation
                   </Link>
                 </li>
                 <li>
-                  <Link href="#bento" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Strategic Consulting
                   </Link>
                 </li>
                 <li>
-                  <Link href="#bento" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Mobile App Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#bento" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Software Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#bento" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Cloud & DevOps
                   </Link>
                 </li>
                 <li>
-                  <Link href="#bento" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Managed IT Services
                   </Link>
                 </li>
                 <li className="pt-1">
                   <Link
-                    href="#bento"
+                    href="/services"
                     className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
-                    <span>View More</span>
+                    <span>View All Services</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </li>
