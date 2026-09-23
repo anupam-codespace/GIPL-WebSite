@@ -443,12 +443,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Hero Rolling Text-Swap CTA Button with Animated Glow */}
+          {/* Hero Rolling Text-Swap CTA Button */}
           <div className="flex justify-center">
             <button
               onClick={() => setConsultationOpen(true)}
               type="button"
-              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(17,99,251,0.4)] transition-all group animate-btn-glow cursor-pointer"
+              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm sm:text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] transition-all group cursor-pointer"
             >
               <span className="text-original flex items-center gap-2">
                 <span>Consult Our Experts</span>
@@ -859,7 +859,7 @@ export default function AboutPage() {
             <button
               onClick={() => setConsultationOpen(true)}
               type="button"
-              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(17,99,251,0.4)] transition-all group animate-btn-glow cursor-pointer"
+              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] transition-all group cursor-pointer"
             >
               <span className="text-original flex items-center gap-2">
                 <span>Discuss Your Technology Strategy</span>
