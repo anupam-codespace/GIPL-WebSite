@@ -30,7 +30,7 @@ Globizhub India Private Limited engineers resilient digital platforms, autonomou
 
 ## Core Product Portfolio
 
-Globizhub develops and maintains five proprietary enterprise platforms:
+Globizhub develops and maintains six proprietary enterprise platforms:
 
 ### 1. Patholab.Cloud
 - **Category**: Cloud Diagnostic LIMS Intelligence
@@ -60,6 +60,13 @@ Globizhub develops and maintains five proprietary enterprise platforms:
 - **Focus**: Real-time inventory tracking, procurement automation, and warehouse lifecycle operations.
 - **Key Metrics**: 1.2M+ SKUs Monitored, 99.9% Stock Accuracy.
 - **Capabilities**: Multi-location batch tracking, automated reorder thresholds, audit logging, and ERP integration adapters.
+
+### 6. Globizhub Listing
+- **Category**: Global B2B Trade & Sourcing Directory
+- **Focus**: High-efficiency B2B trade marketplace, supplier discovery platform, and manufacturing procurement directory connecting verified enterprises with global buyers.
+- **Key Metrics**: 50K+ Verified Suppliers, 150+ Product Categories, Multi-Region Trade Networks.
+- **Capabilities**: Category-wise RFQ submissions, verified seller cataloging, international trade matchmaking, and direct supplier inquiry dispatch.
+- **Platform URL**: https://listing.globizhub.com/
 
 ---
 

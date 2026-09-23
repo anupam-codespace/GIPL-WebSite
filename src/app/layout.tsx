@@ -51,6 +51,8 @@ export const metadata: Metadata = {
     "Bungzo",
     "GlobizLibrary",
     "Enterprise IMS",
+    "Globizhub Listing",
+    "B2B marketplace",
     "Cloud Architecture",
     "DevOps",
     "Bengaluru IT company",

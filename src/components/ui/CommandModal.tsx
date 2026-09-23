@@ -23,6 +23,7 @@ const searchItems: SearchItem[] = [
   { title: "Bungzo (Quick-Commerce)", category: "Product", href: "/#products-showcase", desc: "Hyperlocal delivery engine with 18-min dispatch routing" },
   { title: "GlobizLibrary (Academic RFID)", category: "Product", href: "/#products-showcase", desc: "Digital academic repository managing 250,000+ titles with RFID kiosks" },
   { title: "Enterprise IMS (Inventory OS)", category: "Product", href: "/#products-showcase", desc: "Multi-warehouse inventory OS with automated reorder triggers" },
+  { title: "Globizhub Listing (B2B Trade & Sourcing)", category: "Product", href: "https://listing.globizhub.com/", desc: "Global B2B trade marketplace & supplier directory connecting verified businesses" },
   { title: "FinTech Real-Time Settlement Engine", category: "Case Study", href: "#case-studies", desc: "+340% throughput, 99.999% SLA" },
   { title: "HealthTech Clinical AI Copilot", category: "Case Study", href: "#case-studies", desc: "-78% triage latency, HIPAA compliant" },
   { title: "Interactive Project Proposal Wizard", category: "Consultation", href: "#proposal", desc: "Instant architecture estimate & call scheduling" },

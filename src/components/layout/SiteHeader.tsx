@@ -383,7 +383,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
         {/* ======================================================== */}
         {activeMenu === "products" && (
           <div
-            className="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-[880px] max-w-[95vw] bg-white rounded-3xl border border-slate-200 shadow-2xl p-7 animate-in fade-in slide-in-from-top-2 duration-200 z-50"
+            className="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-[1040px] max-w-[96vw] bg-white rounded-3xl border border-slate-200 shadow-2xl p-7 animate-in fade-in slide-in-from-top-2 duration-200 z-50"
             onMouseEnter={() => handleMouseEnter("products")}
             onMouseLeave={handleMouseLeave}
           >
@@ -406,7 +406,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
               {/* Product 1: Patholab.Cloud */}
               <Link
                 href="/#products-showcase"
@@ -543,6 +543,35 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                   </div>
                   <p className="text-xs text-slate-500 line-clamp-2 mt-1">
                     Multi-warehouse inventory OS with automated reorder triggers and SKU auditing.
+                  </p>
+                </div>
+              </Link>
+
+              {/* Product 6: Listing */}
+              <Link
+                href="/#products-showcase"
+                onClick={() => setActiveMenu(null)}
+                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-slate-950 border border-slate-800 p-1 flex items-center justify-center shrink-0 shadow-xs">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/products/listing-logo-transparent.png"
+                        alt="Globizhub Listing"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="px-2 py-0.5 text-[9px] font-bold bg-amber-100 text-amber-800 rounded-full">
+                      B2B Trade
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    Listing
+                  </div>
+                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
+                    Global B2B trade marketplace &amp; supplier directory connecting verified businesses.
                   </p>
                 </div>
               </Link>
@@ -1032,6 +1061,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Bungzo</Link>
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">GlobizLibrary</Link>
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Enterprise IMS</Link>
+                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Listing</Link>
               </div>
             )}
           </div>

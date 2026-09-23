@@ -127,6 +127,27 @@ const PRODUCTS: ProductItem[] = [
     imageSrc: "/images/products/ims-showcase.jpg",
     imageAlt: "Enterprise IMS Multi-Node Robotic Warehouse Fulfillment",
   },
+  {
+    id: "listing",
+    name: "Globizhub Listing",
+    navName: "Listing",
+    category: "Global B2B Trade & Sourcing Directory",
+    bgTint: "#F8FAFD",
+    logo: (
+      <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-sm border border-slate-800 bg-slate-950 p-2 flex items-center justify-center shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/products/listing-logo-transparent.png"
+          alt="Globizhub Listing Logo"
+          className="w-full h-full object-contain"
+        />
+      </div>
+    ),
+    metric1: { value: "50K+", label: "Verified Suppliers" },
+    metric2: { value: "150+", label: "Product Sectors" },
+    imageSrc: "/images/products/listing-showcase.jpg",
+    imageAlt: "Globizhub Listing Global B2B Marketplace & Supplier Sourcing Platform",
+  },
 ];
 
 function getRelativeIndex(index: number, active: number, total: number): number {
@@ -533,6 +554,30 @@ export default function InnovationProductShowcase({
                           </div>
                         </div>
                       </a>
+                    </>
+                  ) : prod.id === "listing" ? (
+                    <>
+                      {/* Visit Website Button */}
+                      <a
+                        href="https://listing.globizhub.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#1163FB] text-white hover:bg-blue-600 font-bold text-xs sm:text-sm transition-all duration-200 shadow-md shadow-blue-500/20 active:scale-95 shrink-0"
+                      >
+                        <Globe className="w-4 h-4" />
+                        <span>Visit Website</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
+                      </a>
+
+                      {/* Request Proprietary Demo */}
+                      <button
+                        type="button"
+                        onClick={onOpenConsultation}
+                        className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-[11px] sm:text-xs md:text-sm transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
+                      >
+                        <span>Request Proprietary Demo</span>
+                        <ArrowUpRight className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-blue-400" />
+                      </button>
                     </>
                   ) : (
                     <button
