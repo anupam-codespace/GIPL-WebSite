@@ -11,27 +11,10 @@ import {
   ChevronDown,
   Building2,
   MapPin,
-  Award,
-  Globe2,
-  Cpu,
-  Layers,
-  HeartPulse,
-  ShoppingBag,
-  Zap,
   TrendingUp,
-  Clock,
-  Users,
-  Code2,
-  ChevronRight,
-  ExternalLink,
   Target,
-  Compass,
-  Briefcase,
-  Smile,
-  Shield,
-  Laptop,
-  Boxes,
-  BookOpen
+  Cpu,
+  Boxes
 } from "lucide-react";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
@@ -95,16 +78,16 @@ const MILESTONES: Milestone[] = [
   },
   {
     year: "2021",
-    title: "Startup India & Assam Startup Recognition",
-    badge: "Government Recognition",
+    title: "Startup India & Technology Recognition",
+    badge: "Accreditation",
     description:
       "Formally recognized and accredited by Startup India (#startupindia) under the Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry, Govt of India, and incubated at Assam Startup Nest under the flagship Advantage Assam initiative.",
     highlights: [
       "Awarded DPIIT #startupindia Certification (DIPP33507)",
-      "Incubated & recognized by Assam Startup (Govt of Assam)",
+      "Incubated & recognized by Assam Startup Nest",
       "Ministry of MSME Enterprise Accreditation"
     ],
-    stats: "Official DPIIT Recognition • Govt of Assam Incubated",
+    stats: "DPIIT Certified • MSME Registered",
     image: "/images/assam_startup_logo_transparent.png"
   },
   {
@@ -138,7 +121,7 @@ const MILESTONES: Milestone[] = [
   {
     year: "2024",
     title: "Delivery Expansion: Chennai & Delhi-NCR",
-    badge: "National Delivery Grid",
+    badge: "Delivery Expansion",
     description:
       "Inaugurated dedicated Cloud & DevOps delivery center in Chennai's OMR IT corridor and our Corporate Strategy & Enterprise office in Sector 62, Noida (Delhi-NCR). Team expanded to 150+ engineers, data architects, and certified cloud professionals.",
     highlights: [
@@ -180,7 +163,7 @@ const MILESTONES: Milestone[] = [
 ];
 
 // -------------------------------------------------------------
-// Delivery Centers Data
+// Delivery Centers Data (Cleaned of Global HQ and Coordinates)
 // -------------------------------------------------------------
 const DELIVERY_CENTERS = [
   {
@@ -189,19 +172,15 @@ const DELIVERY_CENTERS = [
     state: "Karnataka, India",
     address: "HSR Layout & Koramangala Tech Corridor, Bengaluru - 560102",
     details:
-      "Our flagship research and engineering headquarters, housing our core architecture squad, AI/ML laboratory, and high-throughput cloud systems engineers.",
-    badge: "Global HQ",
-    coordinates: "12.9141° N, 77.6411° E"
+      "Our flagship research and engineering headquarters, housing our core architecture squad, AI/ML laboratory, and high-throughput cloud systems engineers."
   },
   {
     city: "Guwahati",
-    role: "Regional Hub & Assam Startup Nest",
+    role: "Regional Hub & Incubation Center",
     state: "Assam, India",
     address: "Assam Startup Nest, Ambari / Tech City, Guwahati - 781001",
     details:
-      "Incubated and recognized by the Government of Assam. Drives public sector digital transformation, healthcare informatics, and regional engineering talent incubation.",
-    badge: "Incubated Hub",
-    coordinates: "26.1445° N, 91.7362° E"
+      "Incubated and accredited center driving public sector digital transformation, healthcare informatics, and regional engineering talent incubation."
   },
   {
     city: "Chennai",
@@ -209,9 +188,7 @@ const DELIVERY_CENTERS = [
     state: "Tamil Nadu, India",
     address: "Old Mahabalipuram Road (OMR) IT Expressway, Chennai - 600096",
     details:
-      "Dedicated 24/7 Site Reliability Engineering (SRE), Kubernetes orchestration, SOC operations, and enterprise zero-trust cloud infrastructure teams.",
-    badge: "Cloud & SRE",
-    coordinates: "12.9716° N, 80.2459° E"
+      "Dedicated 24/7 Site Reliability Engineering (SRE), Kubernetes orchestration, SOC operations, and enterprise zero-trust cloud infrastructure teams."
   },
   {
     city: "Delhi-NCR",
@@ -219,23 +196,21 @@ const DELIVERY_CENTERS = [
     state: "Uttar Pradesh, India",
     address: "Sector 62, Institutional Area, Noida, Delhi-NCR - 201309",
     details:
-      "Focuses on enterprise client partnerships, corporate technology strategy, legal compliance, and North India enterprise program delivery.",
-    badge: "Corporate Office",
-    coordinates: "28.6280° N, 77.3649° E"
+      "Focuses on enterprise client partnerships, corporate technology strategy, legal compliance, and North India enterprise program delivery."
   }
 ];
 
 // -------------------------------------------------------------
-// Recognitions & Accreditations Data
+// Recognitions & Accreditations Data (Cleaned)
 // -------------------------------------------------------------
 const RECOGNITIONS = [
   {
     name: "Assam Startup",
-    badge: "Govt of Assam",
-    authority: "Department of Industries & Commerce, Govt of Assam",
+    badge: "Incubation",
+    authority: "Department of Industries & Commerce",
     desc: "Recognized and incubated under the flagship Advantage Assam initiative, driving digital healthcare and regional technological innovation.",
     logo: "/images/assam_startup_logo_transparent.png",
-    type: "Government Accreditation"
+    type: "Enterprise Accreditation"
   },
   {
     name: "DPIIT #startupindia",
@@ -247,7 +222,7 @@ const RECOGNITIONS = [
   },
   {
     name: "Ministry of MSME",
-    badge: "Govt of India",
+    badge: "MSME Registered",
     authority: "Ministry of Micro, Small and Medium Enterprises",
     desc: "Formally registered enterprise fostering indigenous intellectual property, digital inclusion, and skilled tech employment.",
     logo: "/images/msme_official_white.png",
@@ -288,6 +263,54 @@ const RECOGNITIONS = [
 ];
 
 // -------------------------------------------------------------
+// Proprietary Products (6 Products)
+// -------------------------------------------------------------
+const PROPRIETARY_PRODUCTS = [
+  {
+    id: "patholab",
+    name: "Patholab.Cloud — Smart Diagnostic Core",
+    desc: "Next-generation cloud-based Laboratory Information Management System (LIMS) automating patient diagnostics, bidirectional analyzer interfacing, barcoding, digital report dispatch via WhatsApp/SMS, and NABL-compliant audit trails.",
+    logo: "/images/products/patholab-cloud-logo.png",
+    borderHover: "hover:border-emerald-500/40"
+  },
+  {
+    id: "teamhub",
+    name: "TeamHub — Workforce & Sprint Platform",
+    desc: "Centralized workforce operations platform with GPS-fenced biometric attendance, automated developer velocity analytics, milestone tracking, and seamless automated payroll processing.",
+    logo: "/images/products/teamhub-logo.png",
+    borderHover: "hover:border-blue-500/40"
+  },
+  {
+    id: "bungzo",
+    name: "Bungzo — Hyperlocal Delivery Engine",
+    desc: "All-in-one hyperlocal quick-commerce engine with sub-20 minute order dispatch, intelligent rider routing, live geospatial tracking, and frictionless checkout.",
+    logo: "/images/products/bungzo-logo.png",
+    borderHover: "hover:border-red-500/40"
+  },
+  {
+    id: "globizlibrary",
+    name: "GlobizLibrary — Academic RFID Core",
+    desc: "Comprehensive digital academic library management system managing over 250,000 cataloged titles with RFID kiosk checkouts, digital archives, and unified OPAC discovery.",
+    logo: "/images/products/globizlibrary-logo.png",
+    borderHover: "hover:border-orange-500/40"
+  },
+  {
+    id: "ims",
+    name: "Enterprise IMS — Inventory OS",
+    desc: "Enterprise multi-warehouse inventory tracking system with dynamic batch traceability, real-time reorder thresholds, barcode scanning, and multi-location ERP integration.",
+    icon: "boxes",
+    borderHover: "hover:border-indigo-500/40"
+  },
+  {
+    id: "listing",
+    name: "Globizhub Listing — Global B2B Marketplace",
+    desc: "High-throughput sovereign B2B marketplace and corporate directory platform empowering verified enterprise buyers, exporters, and manufacturers with automated lead routing.",
+    logo: "/images/products/listing-logo.png",
+    borderHover: "hover:border-amber-500/40"
+  }
+];
+
+// -------------------------------------------------------------
 // FAQs Data
 // -------------------------------------------------------------
 const ABOUT_FAQS = [
@@ -297,7 +320,7 @@ const ABOUT_FAQS = [
   },
   {
     q: "What official recognitions and accreditations does Globizhub hold?",
-    a: "Globizhub is recognized by Startup India (#startupindia) under the Department for Promotion of Industry and Internal Trade (DPIIT, Ministry of Commerce & Industry, Govt of India), incubated at Assam Startup Nest by the Government of Assam, registered with the Ministry of MSME, and holds triple international ISO certifications: ISO 9001:2015 (Quality Management), ISO/IEC 27001:2022 (Information Security), and ISO/IEC 20000-1:2018 (IT Service Management)."
+    a: "Globizhub is recognized by Startup India (#startupindia) under the Department for Promotion of Industry and Internal Trade (DPIIT, Ministry of Commerce & Industry, Govt of India), incubated at Assam Startup Nest, registered with the Ministry of MSME, and holds triple international ISO certifications: ISO 9001:2015 (Quality Management), ISO/IEC 27001:2022 (Information Security), and ISO/IEC 20000-1:2018 (IT Service Management)."
   },
   {
     q: "How does Globizhub guarantee data protection and regulatory compliance (HIPAA, GDPR, ISO)?",
@@ -305,7 +328,7 @@ const ABOUT_FAQS = [
   },
   {
     q: "What proprietary products has Globizhub developed?",
-    a: "Globizhub has developed and operates 5 proprietary enterprise platforms: Patholab.Cloud (intelligent cloud diagnostic LIMS processing over 500,000 specimens monthly), TeamHub (workforce operations and sprint velocity orchestration), Bungzo (hyperlocal quick-commerce and delivery logistics engine), GlobizLibrary (digital cataloging and automated academic RFID repository), and Enterprise IMS (multi-warehouse inventory and supply chain tracking)."
+    a: "Globizhub has developed and operates 6 proprietary enterprise platforms: Patholab.Cloud (intelligent cloud diagnostic LIMS), TeamHub (workforce operations and sprint velocity orchestration), Bungzo (hyperlocal quick-commerce and delivery logistics engine), GlobizLibrary (digital cataloging and automated academic RFID repository), Enterprise IMS (multi-warehouse inventory and supply chain tracking), and Globizhub Listing (global enterprise B2B marketplace)."
   },
   {
     q: "What engagement models do you offer to enterprises?",
@@ -315,7 +338,6 @@ const ABOUT_FAQS = [
 
 export default function AboutPage() {
   const [activeYear, setActiveYear] = useState<string>("2026");
-  const [activeCultureTab, setActiveCultureTab] = useState<"culture" | "impact">("culture");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [consultationOpen, setConsultationOpen] = useState<boolean>(false);
 
@@ -330,12 +352,29 @@ export default function AboutPage() {
       />
 
       {/* ======================================================== */}
-      {/* 1. HERO SECTION: Pitch Dark with Deep Ambient Glow        */}
+      {/* 1. HERO SECTION: Video Background with Cinematic Glow   */}
       {/* ======================================================== */}
-      <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden bg-radial from-[#0c1427] via-[#04060c] to-[#000000]">
+      <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden min-h-[90vh] flex items-center justify-center bg-black">
+        {/* Background Video from Pinterest Pin 664914332535047788 */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/about_hero_poster.jpg"
+            className="w-full h-full object-cover opacity-40 filter brightness-95 contrast-105"
+          >
+            <source src="/videos/about_hero_bg.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle Dark Vignette & Gradient Overlays for High Text Contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black pointer-events-none" />
+          <div className="absolute inset-0 bg-radial from-transparent via-black/45 to-black pointer-events-none" />
+        </div>
+
         {/* Ambient Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none z-[1]" />
+        <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none z-[1]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           {/* Subtitle Pill */}
@@ -344,7 +383,7 @@ export default function AboutPage() {
             <span>The Globizhub Story</span>
           </div>
 
-          {/* Master Headline (Appinventiv Benchmark Style) */}
+          {/* Master Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.15] mb-6">
             150+ Engineers. 200+ Enterprise Masterpieces.{" "}
             <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
@@ -357,10 +396,10 @@ export default function AboutPage() {
             We are an enterprise digital engineering powerhouse trusted by growth companies and enterprises to transform their boldest visions into market-leading realities. Armed with top-tier talent, deep AI expertise, and battle-tested frameworks, we don&apos;t just build software—we architect competitive advantages that scale.
           </p>
 
-          {/* 4 Hero Metric Cards with Distinct Soft Pastel Tints (Exact Appinventiv Style) */}
+          {/* 4 Hero Metric Cards with Distinct Soft Pastel Tints */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto mb-12">
             {/* Card 1: Purple */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#1b152b]/80 border border-purple-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+            <div className="p-6 sm:p-7 rounded-3xl bg-[#1b152b]/80 border border-purple-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
                 <span>25</span>
                 <span className="text-purple-400 text-2xl font-semibold">+</span>
@@ -371,7 +410,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 2: Green */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#12221b]/80 border border-emerald-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+            <div className="p-6 sm:p-7 rounded-3xl bg-[#12221b]/80 border border-emerald-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
                 <span>10</span>
                 <span className="text-emerald-400 text-2xl font-semibold">+</span>
@@ -382,7 +421,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 3: Blue */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#111f38]/80 border border-blue-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+            <div className="p-6 sm:p-7 rounded-3xl bg-[#111f38]/80 border border-blue-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
                 <span>15</span>
                 <span className="text-blue-400 text-2xl font-semibold">+</span>
@@ -393,7 +432,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 4: Yellow */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#292212]/80 border border-amber-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+            <div className="p-6 sm:p-7 rounded-3xl bg-[#292212]/80 border border-amber-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
                 <span>4</span>
                 <span className="text-amber-400 text-2xl font-semibold"> Hubs</span>
@@ -404,11 +443,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Hero Rolling Text-Swap CTA Button */}
+          {/* Hero Rolling Text-Swap CTA Button with Animated Glow */}
           <div className="flex justify-center">
             <button
               onClick={() => setConsultationOpen(true)}
-              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(17,99,251,0.35)] transition-all group"
+              type="button"
+              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(17,99,251,0.4)] transition-all group animate-btn-glow cursor-pointer"
             >
               <span className="text-original flex items-center gap-2">
                 <span>Consult Our Experts</span>
@@ -428,17 +468,11 @@ export default function AboutPage() {
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
+          {/* Section Header (Continuous Evolution & Subtitle Removed) */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">
-              Continuous Evolution
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
               A Journey of Engineering Excellence
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Explore the key milestones that shaped Globizhub India Pvt Ltd. from an ambitious startup into a premier enterprise digital transformation partner.
-            </p>
           </div>
 
           {/* Interactive Year Pill Scroller */}
@@ -449,7 +483,8 @@ export default function AboutPage() {
                 <button
                   key={m.year}
                   onClick={() => setActiveYear(m.year)}
-                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 ${
+                  type="button"
+                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 cursor-pointer ${
                     isActive
                       ? "bg-blue-600 text-white shadow-[0_0_20px_rgba(17,99,251,0.4)] scale-105"
                       : "bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5"
@@ -526,14 +561,12 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 3. RECOGNITION ROOTED IN RESULTS (Appinventiv Benchmark)  */}
+      {/* 3. RECOGNITION ROOTED IN RESULTS                         */}
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#000000] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Eyebrow removed */}
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3 block">
-              Statutory Trust &amp; Quality
-            </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Recognition Rooted in Results
             </h2>
@@ -542,7 +575,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Recognitions Grid */}
+          {/* Recognitions Grid (Verified & Active footer removed) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {RECOGNITIONS.map((rec, idx) => (
               <div
@@ -576,11 +609,6 @@ export default function AboutPage() {
                     {rec.desc}
                   </p>
                 </div>
-
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-blue-400 transition-colors">
-                  <span>Verified &amp; Active</span>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                </div>
               </div>
             ))}
           </div>
@@ -592,18 +620,14 @@ export default function AboutPage() {
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Eyebrow & Subtitle removed */}
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">
-              National Delivery Grid
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
               Our 4 Delivery &amp; Excellence Centers
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Strategically distributed across India&apos;s leading technology capitals, enabling 24/7 continuous engineering, sovereign compliance, and rapid client proximity.
-            </p>
           </div>
 
+          {/* Delivery Hubs (Badges like Global HQ & Coordinates removed) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {DELIVERY_CENTERS.map((hub, idx) => (
               <div
@@ -611,13 +635,8 @@ export default function AboutPage() {
                 className="p-7 rounded-3xl bg-[#0a0f1c] border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between shadow-xl group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-2xl bg-blue-600/15 border border-blue-500/30 text-blue-400 flex items-center justify-center">
-                      <Building2 className="w-5 h-5" />
-                    </div>
-                    <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold">
-                      {hub.badge}
-                    </span>
+                  <div className="w-10 h-10 rounded-2xl bg-blue-600/15 border border-blue-500/30 text-blue-400 flex items-center justify-center mb-5">
+                    <Building2 className="w-5 h-5" />
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-1">{hub.city}</h3>
@@ -626,14 +645,9 @@ export default function AboutPage() {
                     <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0 mt-0.5" />
                     <span>{hub.address}</span>
                   </div>
-                  <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-300 leading-relaxed">
                     {hub.details}
                   </p>
-                </div>
-
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span>{hub.coordinates}</span>
-                  <span className="text-emerald-400 font-sans font-semibold">Active Hub</span>
                 </div>
               </div>
             ))}
@@ -642,14 +656,12 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 5. OUR CORE OPERATING PRINCIPLES (Appinventiv Style)     */}
+      {/* 5. OUR CORE OPERATING PRINCIPLES                         */}
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#000000] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Ethos & Values Eyebrow removed */}
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-purple-400 mb-3 block">
-              Ethos &amp; Values
-            </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               How We Create Defensible Value
             </h2>
@@ -720,368 +732,73 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 6. TWO POWERHOUSE DIVISIONS: AI & DIGITAL/CLOUD          */}
+      {/* 6. OUR PROPRIETARY PRODUCTS: The Globizhub Suite        */}
       {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Division 1: Globizhub AI */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#12102e] to-[#0a0c16] border border-purple-500/30 relative overflow-hidden flex flex-col justify-between group shadow-2xl">
-              <div className="relative z-10">
-                <span className="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold uppercase tracking-wider mb-4">
-                  Center of AI Excellence
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
-                  Pioneer the AI Revolution through{" "}
-                  <span className="text-purple-400 italic font-extrabold">Globizhub AI</span>
-                </h3>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
-                  While others merely call third-party APIs, we architect sovereign intelligent ecosystems. Globizhub AI is our dedicated Center of Excellence, embedding private RAG systems, autonomous multi-agent reasoning, and multimodal computer vision into mission-critical enterprise workflows.
-                </p>
-              </div>
+      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative overflow-hidden">
+        {/* Header (Proprietary Enterprise Ecosystem removed, subtitle made small) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-14 text-center">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">
+            Products Engineered by Globizhub
+          </h2>
+          <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+            Beyond bespoke engineering, we build, scale, and operate 6 mission-critical proprietary platforms powering diagnostics, global trade, quick-commerce, workforce operations, academic research, and global supply chains.
+          </p>
+        </div>
 
-              <div className="relative z-10 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => setConsultationOpen(true)}
-                  className="swap-text-button px-6 py-3 bg-white text-slate-950 hover:bg-slate-100 font-bold text-xs sm:text-sm rounded-full transition-all group"
-                >
-                  <span className="text-original flex items-center gap-1.5">
-                    <span>Explore Globizhub AI Solutions</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                  <span className="text-hover flex items-center justify-center gap-1.5">
-                    <span>Discuss AI Roadmap</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </button>
-              </div>
-            </div>
+        {/* Continuous Left-to-Right Moving Product Cards */}
+        <div className="relative w-full overflow-hidden">
+          {/* Subtle Side Gradient Edge Fades */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#05070e] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#05070e] to-transparent z-10 pointer-events-none" />
 
-            {/* Division 2: Globizhub Digital & Cloud */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#0c1b2d] to-[#070e1a] border border-blue-500/30 relative overflow-hidden flex flex-col justify-between group shadow-2xl">
-              <div className="relative z-10">
-                <span className="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
-                  Enterprise Scale
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
-                  Scale Your Market Impact with{" "}
-                  <span className="text-blue-400 italic font-extrabold">Globizhub Cloud</span>
-                </h3>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
-                  Building exceptional digital platforms is only half the battle. Globizhub Cloud &amp; Digital completes your transformation by ensuring your systems scale seamlessly to millions of concurrent requests with sub-100ms latency, zero-trust cybersecurity, and automated FinOps optimization.
-                </p>
-              </div>
+          <div className="flex w-max gap-6 animate-marquee-continuous-reverse py-4">
+            {[...PROPRIETARY_PRODUCTS, ...PROPRIETARY_PRODUCTS].map((product, idx) => (
+              <div
+                key={idx}
+                className={`w-[300px] sm:w-[350px] shrink-0 p-6 sm:p-7 rounded-3xl bg-[#0a0f1d] border border-white/10 ${product.borderHover} transition-all duration-300 flex flex-col justify-between shadow-2xl group hover:-translate-y-1`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    {product.logo ? (
+                      <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/90 p-1 flex items-center justify-center shrink-0 shadow-sm">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={product.logo}
+                          alt={product.name}
+                          className="w-full h-full object-contain rounded-xl"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 border border-indigo-300/80 p-2 flex items-center justify-center text-white shrink-0 shadow-sm">
+                        <Boxes className="w-7 h-7 text-white stroke-[2.2]" />
+                      </div>
+                    )}
+                  </div>
 
-              <div className="relative z-10 flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => setConsultationOpen(true)}
-                  className="swap-text-button px-6 py-3 bg-blue-600 text-white hover:bg-blue-500 font-bold text-xs sm:text-sm rounded-full transition-all group shadow-lg"
-                >
-                  <span className="text-original flex items-center gap-1.5">
-                    <span>View Cloud Architecture Services</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                  <span className="text-hover flex items-center justify-center gap-1.5">
-                    <span>Schedule Tech Audit</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </button>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2.5 leading-snug">
+                    {product.name}
+                  </h3>
+
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    {product.desc}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ======================================================== */}
-      {/* 7. OUR PROPRIETARY PRODUCTS: The Globizhub Suite        */}
+      {/* 7. FREQUENTLY ASKED QUESTIONS                            */}
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#000000] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">
-              Proprietary Enterprise Ecosystem
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
-              Products Engineered by Globizhub
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Beyond bespoke engineering, we build, scale, and operate 5 mission-critical proprietary platforms powering diagnostics, quick-commerce, workforce operations, academic research, and global supply chains.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Product 1: Patholab.Cloud */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/90 p-1 flex items-center justify-center shrink-0 shadow-sm">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/products/patholab-cloud-logo.png"
-                      alt="Patholab.Cloud"
-                      className="w-full h-full object-contain rounded-xl"
-                    />
-                  </div>
-
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Patholab.Cloud — Smart Diagnostic Core
-                </h3>
-
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Next-generation cloud-based Laboratory Information Management System (LIMS) automating patient diagnostics, bidirectional analyzer interfacing, barcoding, digital report dispatch via WhatsApp/SMS, and NABL-compliant audit trails.
-                </p>
-
-                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>500,000+ patient test specimens processed monthly</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Sub-second analyzer sync with zero sample loss</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Automated QR verification and WhatsApp report dispatch</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                <a
-                  href="https://patholab.cloud"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
-                >
-                  <span>Explore Patholab.Cloud</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-                <span className="text-xs text-slate-500 font-semibold">350+ Labs Active</span>
-              </div>
-            </div>
-
-            {/* Product 2: TeamHub */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-blue-200/90 p-1.5 flex items-center justify-center shrink-0 shadow-sm">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/products/teamhub-logo.png"
-                      alt="TeamHub"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  TeamHub — Workforce &amp; Sprint Platform
-                </h3>
-
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Centralized workforce operations platform with GPS-fenced biometric attendance, automated developer velocity analytics, milestone tracking, and seamless automated payroll processing.
-                </p>
-
-                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>GPS-geofenced biometric attendance with face verification</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Automated developer velocity analytics &amp; sprint tracking</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Automated milestone payroll calculation &amp; disbursements</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                <Link
-                  href="/#products-showcase"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors"
-                >
-                  <span>Explore TeamHub OS</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </Link>
-                <span className="text-xs text-slate-500 font-semibold">100% Transparency</span>
-              </div>
-            </div>
-
-            {/* Product 3: Bungzo */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-red-200/90 p-1.5 flex items-center justify-center shrink-0 shadow-sm">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/products/bungzo-logo.png"
-                      alt="Bungzo"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Bungzo — Hyperlocal Delivery Engine
-                </h3>
-
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  All-in-one hyperlocal quick-commerce engine with sub-20 minute order dispatch, intelligent rider routing, live geospatial tracking, and frictionless checkout.
-                </p>
-
-                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
-                    <span>18-minute average dispatch routing &amp; live GPS telematics</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
-                    <span>99.4% order fulfillment SLA across dark stores</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
-                    <span>Automated UPI payment gateway integration &amp; instant settlement</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                <a
-                  href="https://bungzo.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-red-400 hover:text-red-300 transition-colors"
-                >
-                  <span>Explore Bungzo Platform</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-                <span className="text-xs text-slate-500 font-semibold">18-Min Dispatch</span>
-              </div>
-            </div>
-
-            {/* Product 4: GlobizLibrary */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-orange-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-orange-200/90 p-1.5 flex items-center justify-center shrink-0 shadow-sm">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/products/globizlibrary-logo.png"
-                      alt="GlobizLibrary"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  GlobizLibrary — Academic RFID Core
-                </h3>
-
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Comprehensive digital academic library management system managing over 250,000 cataloged titles with RFID kiosk checkouts, digital archives, and unified OPAC discovery.
-                </p>
-
-                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />
-                    <span>250,000+ cataloged academic titles and research papers</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />
-                    <span>RFID kiosk automated book issue and return stations</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />
-                    <span>Real-time OPAC full-text discovery and overdue ledgers</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                <Link
-                  href="/#products-showcase"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-orange-400 hover:text-orange-300 transition-colors"
-                >
-                  <span>Explore GlobizLibrary</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </Link>
-                <span className="text-xs text-slate-500 font-semibold">250K+ Titles</span>
-              </div>
-            </div>
-
-            {/* Product 5: Enterprise IMS */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-[#0a0f1d] border border-white/10 hover:border-indigo-500/40 transition-all duration-300 flex flex-col justify-between shadow-2xl group">
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 border border-indigo-300/80 p-2 flex items-center justify-center text-white shrink-0 shadow-sm">
-                    <Boxes className="w-7 h-7 text-white stroke-[2.2]" />
-                  </div>
-
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Enterprise IMS — Inventory OS
-                </h3>
-
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Enterprise multi-warehouse inventory tracking system with dynamic batch traceability, real-time reorder thresholds, barcode scanning, and multi-location ERP integration.
-                </p>
-
-                <div className="space-y-2 mb-8 text-xs sm:text-sm text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
-                    <span>1,200,000+ SKUs monitored across multi-node hubs</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
-                    <span>Dynamic safety-stock calculation &amp; automated purchase orders</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
-                    <span>99.9% physical audit stock accuracy and ERP sync</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                <Link
-                  href="/#products-showcase"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors"
-                >
-                  <span>Explore Enterprise IMS</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </Link>
-                <span className="text-xs text-slate-500 font-semibold">1.2M+ SKUs</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================== */}
-      {/* 8. FREQUENTLY ASKED QUESTIONS (Appinventiv Style Accordion) */}
-      {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">
-              Enterprise Inquiries
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+          {/* Enterprise Inquiries Eyebrow & Subtitle removed */}
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
               Frequently Asked Questions
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Everything you need to know about Globizhub India Pvt Ltd., our credentials, security standards, and partnership models.
-            </p>
           </div>
 
           <div className="space-y-4">
@@ -1094,7 +811,8 @@ export default function AboutPage() {
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 group"
+                    type="button"
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 group cursor-pointer"
                   >
                     <span className="text-sm sm:text-base font-bold text-white group-hover:text-blue-400 transition-colors">
                       {faq.q}
@@ -1119,32 +837,29 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 9. BOTTOM HIGH-IMPACT CALL TO ACTION BANNER              */}
+      {/* 8. BOTTOM CALL TO ACTION BANNER                          */}
       {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-[#000000] via-[#070b16] to-[#000000] relative overflow-hidden text-center">
+      <section className="py-20 sm:py-28 bg-gradient-to-b from-[#000000] via-[#070b16] to-[#000000] relative overflow-hidden text-center border-t border-white/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(17,99,251,0.18)_0,transparent_70%)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-            <span>Transform Your Business Trajectory</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+          {/* Transform Your Business Trajectory removed */}
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
             You&apos;re One Step Away From Engineering{" "}
             <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
               Measurable Market Impact.
             </span>
           </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-10 leading-relaxed">
             Discuss your technical architecture, digital roadmap, or custom software requirements with our principal solutions engineers.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => setConsultationOpen(true)}
-              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(17,99,251,0.4)] transition-all group"
+              type="button"
+              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(17,99,251,0.4)] transition-all group animate-btn-glow cursor-pointer"
             >
               <span className="text-original flex items-center gap-2">
                 <span>Discuss Your Technology Strategy</span>
@@ -1166,8 +881,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Universal Footer */}
-      <SiteFooter />
+      {/* Universal Footer with working consultation modal trigger */}
+      <SiteFooter onOpenConsultation={() => setConsultationOpen(true)} />
 
       {/* Consultation Modal */}
       <ConsultationModal

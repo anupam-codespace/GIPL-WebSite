@@ -399,38 +399,36 @@ export default function ServicesPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 4. BOTTOM ENTERPRISE CTA (WITH ANIMATED GLOWING BUTTON) */}
+      {/* 4. BOTTOM ENTERPRISE CTA (FULL-WIDTH SECTION)            */}
       {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-white relative border-t border-slate-200/80">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-[#081226] border border-slate-800 p-10 sm:p-14 text-center shadow-2xl relative overflow-hidden">
-            {/* Ambient background glow */}
-            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+      <section className="w-full py-24 sm:py-32 bg-[#050811] relative border-t border-slate-800 text-center overflow-hidden">
+        {/* Ambient background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none" />
 
-            <h2 className="relative z-10 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-              Ready to Build Your Next Breakthrough System?
-            </h2>
-            <p className="relative z-10 text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-9 leading-relaxed">
-              Speak directly with our senior cloud architects and AI engineers. Get an audited technical roadmap
-              for your product in under 48 hours.
-            </p>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Ready to Build Your Next Breakthrough System?
+          </h2>
+          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-9 leading-relaxed">
+            Speak directly with our senior cloud architects and AI engineers. Get an audited technical roadmap
+            for your product in under 48 hours.
+          </p>
 
-            {/* Glowing Consultation Button (Exact same glow as hero button) */}
-            <button
-              onClick={() => setConsultationOpen(true)}
-              type="button"
-              className="group relative z-10 inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm md:text-[15px] tracking-tight hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden animate-btn-glow"
-            >
-              <div className="relative h-5 overflow-hidden flex flex-col justify-center">
-                <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-slate-950 font-bold">
-                  Schedule Technical Roadmap Consultation
-                </span>
-                <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-slate-950 font-bold">
-                  Schedule Technical Roadmap Consultation
-                </span>
-              </div>
-            </button>
-          </div>
+          {/* Glowing Consultation Button */}
+          <button
+            onClick={() => setConsultationOpen(true)}
+            type="button"
+            className="group relative z-10 inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs sm:text-sm md:text-[15px] tracking-tight hover:scale-105 active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden animate-btn-glow"
+          >
+            <div className="relative h-5 overflow-hidden flex flex-col justify-center">
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-slate-950 font-bold">
+                Schedule Technical Roadmap Consultation
+              </span>
+              <span className="absolute top-full left-0 block transition-transform duration-300 ease-out group-hover:-translate-y-full whitespace-nowrap text-slate-950 font-bold">
+                Schedule Technical Roadmap Consultation
+              </span>
+            </div>
+          </button>
         </div>
       </section>
 
