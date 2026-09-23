@@ -383,55 +383,53 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
         {/* ======================================================== */}
         {activeMenu === "products" && (
           <div
-            className="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-[1040px] max-w-[96vw] bg-white rounded-3xl border border-slate-200 shadow-2xl p-7 animate-in fade-in slide-in-from-top-2 duration-200 z-50"
+            className="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-[960px] max-w-[96vw] bg-white rounded-3xl border border-slate-200/90 shadow-2xl p-6 sm:p-7 animate-in fade-in slide-in-from-top-2 duration-200 z-50"
             onMouseEnter={() => handleMouseEnter("products")}
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
               <div>
-                <h3 className="text-base font-bold text-slate-900">
-                  Proprietary Enterprise Platforms
+                <h3 className="text-[15px] font-bold text-slate-950 tracking-tight">
+                  Proprietary Enterprise Software Portfolio
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Production-grade SaaS &amp; intelligence platforms built and deployed by Globizhub.
+                <p className="text-xs text-slate-500 mt-0.5">
+                  Production-grade SaaS &amp; intelligence platforms built, engineered, and deployed by Globizhub.
                 </p>
               </div>
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+                className="text-xs font-semibold text-[#1163fb] hover:text-[#0c51d6] inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50/80 hover:bg-blue-100/80 transition-colors"
               >
                 <span>View 3D Showcase</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
               {/* Product 1: Patholab.Cloud */}
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-blue-50/40 border border-slate-200/70 hover:border-blue-300/80 transition-all duration-200 group flex items-start gap-3.5 hover:shadow-xs cursor-pointer"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-slate-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/images/products/patholab-cloud-logo.png"
-                        alt="Patholab.Cloud"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="px-2 py-0.5 text-[9px] font-bold bg-emerald-100 text-emerald-700 rounded-full">
-                      Diagnostic LIMS
+                <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-slate-200/90 p-1 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/products/patholab-cloud-logo.png"
+                    alt="Patholab.Cloud"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[14px] font-bold text-slate-900 group-hover:text-[#1163fb] transition-colors">
+                      Patholab.Cloud
                     </span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100" />
                   </div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    Patholab.Cloud
-                  </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                    Cloud diagnostic intelligence with bidirectional analyzer sync &amp; WhatsApp reports.
+                  <p className="text-[12px] text-slate-500 leading-relaxed mt-1">
+                    Cloud laboratory information system automating clinical diagnostics, analyzer sync, and patient reporting.
                   </p>
                 </div>
               </Link>
@@ -440,27 +438,25 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-blue-50/40 border border-slate-200/70 hover:border-blue-300/80 transition-all duration-200 group flex items-start gap-3.5 hover:shadow-xs cursor-pointer"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-blue-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/images/products/teamhub-logo.png"
-                        alt="TeamHub"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="px-2 py-0.5 text-[9px] font-bold bg-blue-100 text-blue-700 rounded-full">
-                      Workforce OS
+                <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-blue-200/90 p-1 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/products/teamhub-logo.png"
+                    alt="TeamHub"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[14px] font-bold text-slate-900 group-hover:text-[#1163fb] transition-colors">
+                      TeamHub
                     </span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100" />
                   </div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    TeamHub
-                  </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                    GPS-fenced biometric attendance, sprint tracking, and automated milestone payroll.
+                  <p className="text-[12px] text-slate-500 leading-relaxed mt-1">
+                    Enterprise workforce management platform featuring GPS biometric attendance, developer sprints, and payroll.
                   </p>
                 </div>
               </Link>
@@ -469,27 +465,25 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-blue-50/40 border border-slate-200/70 hover:border-blue-300/80 transition-all duration-200 group flex items-start gap-3.5 hover:shadow-xs cursor-pointer"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-red-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/images/products/bungzo-logo.png"
-                        alt="Bungzo"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="px-2 py-0.5 text-[9px] font-bold bg-red-100 text-red-700 rounded-full">
-                      Quick-Commerce
+                <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-red-200/90 p-1 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/products/bungzo-logo.png"
+                    alt="Bungzo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[14px] font-bold text-slate-900 group-hover:text-[#1163fb] transition-colors">
+                      Bungzo
                     </span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100" />
                   </div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    Bungzo
-                  </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                    Hyperlocal dispatch engine with sub-20 min routing &amp; live geospatial tracking.
+                  <p className="text-[12px] text-slate-500 leading-relaxed mt-1">
+                    High-speed hyperlocal quick-commerce delivery platform with real-time routing telematics and dispatch control.
                   </p>
                 </div>
               </Link>
@@ -498,27 +492,25 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-blue-50/40 border border-slate-200/70 hover:border-blue-300/80 transition-all duration-200 group flex items-start gap-3.5 hover:shadow-xs cursor-pointer"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-orange-200 p-0.5 flex items-center justify-center shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/images/products/globizlibrary-logo.png"
-                        alt="GlobizLibrary"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="px-2 py-0.5 text-[9px] font-bold bg-orange-100 text-orange-700 rounded-full">
-                      Academic RFID
+                <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-orange-200/90 p-1 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/products/globizlibrary-logo.png"
+                    alt="GlobizLibrary"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[14px] font-bold text-slate-900 group-hover:text-[#1163fb] transition-colors">
+                      GlobizLibrary
                     </span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100" />
                   </div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    GlobizLibrary
-                  </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                    Digital academic repository managing 250,000+ titles with RFID kiosk checkouts.
+                  <p className="text-[12px] text-slate-500 leading-relaxed mt-1">
+                    Digital academic repository and automated RFID cataloging system engineered for universities and research hubs.
                   </p>
                 </div>
               </Link>
@@ -527,22 +519,20 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-blue-50/40 border border-slate-200/70 hover:border-blue-300/80 transition-all duration-200 group flex items-start gap-3.5 hover:shadow-xs cursor-pointer"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 border border-indigo-400 p-1 flex items-center justify-center text-white shrink-0 shadow-xs">
-                      <Boxes className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="px-2 py-0.5 text-[9px] font-bold bg-indigo-100 text-indigo-700 rounded-full">
-                      Supply Chain
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 border border-indigo-400/80 p-1.5 flex items-center justify-center text-white shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                  <Boxes className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[14px] font-bold text-slate-900 group-hover:text-[#1163fb] transition-colors">
+                      Enterprise IMS
                     </span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100" />
                   </div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    Enterprise IMS
-                  </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                    Multi-warehouse inventory OS with automated reorder triggers and SKU auditing.
+                  <p className="text-[12px] text-slate-500 leading-relaxed mt-1">
+                    Multi-warehouse inventory OS with automated stock replenishment, batch tracking, and multi-location ERP sync.
                   </p>
                 </div>
               </Link>
@@ -551,30 +541,43 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               <Link
                 href="/#products-showcase"
                 onClick={() => setActiveMenu(null)}
-                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200/80 hover:border-blue-300 transition-all group flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-slate-50/70 hover:bg-blue-50/40 border border-slate-200/70 hover:border-blue-300/80 transition-all duration-200 group flex items-start gap-3.5 hover:shadow-xs cursor-pointer"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2.5">
-                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-slate-950 border border-slate-800 p-1 flex items-center justify-center shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/images/products/listing-logo-transparent.png"
-                        alt="Globizhub Listing"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="px-2 py-0.5 text-[9px] font-bold bg-amber-100 text-amber-800 rounded-full">
-                      B2B Trade
+                <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 p-1.5 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/products/listing-logo-transparent.png"
+                    alt="Globizhub Listing"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[14px] font-bold text-slate-900 group-hover:text-[#1163fb] transition-colors">
+                      Globizhub Listing
                     </span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100" />
                   </div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    Listing
-                  </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 mt-1">
-                    Global B2B trade marketplace &amp; supplier directory connecting verified businesses.
+                  <p className="text-[12px] text-slate-500 leading-relaxed mt-1">
+                    Global B2B trade marketplace and supplier directory connecting verified manufacturers with commercial buyers.
                   </p>
                 </div>
               </Link>
+            </div>
+
+            <div className="mt-4 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+              <span>Looking for custom enterprise deployments or API integrations?</span>
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveMenu(null);
+                  onOpenConsultation?.();
+                }}
+                className="font-bold text-[#1163fb] hover:text-[#0c51d6] inline-flex items-center gap-1 cursor-pointer"
+              >
+                <span>Consult Systems Architecture Team</span>
+                <ArrowRight className="w-3 h-3" />
+              </button>
             </div>
           </div>
         )}
