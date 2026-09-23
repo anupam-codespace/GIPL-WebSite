@@ -1,4 +1,3 @@
-# Globizhub India Private Limited
 
 ![Globizhub Platform Preview](./public/images/readme-showcase.png)
 
