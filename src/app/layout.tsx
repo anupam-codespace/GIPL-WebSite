@@ -213,6 +213,7 @@ const websiteJsonLd = {
 
 import { Suspense } from "react";
 import Analytics from "@/components/analytics/Analytics";
+import CalendlyWidget from "@/components/marketing/CalendlyWidget";
 
 export default function RootLayout({
   children,
@@ -253,6 +254,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <Analytics />
         </Suspense>
+        <CalendlyWidget />
         {children}
       </body>
     </html>
