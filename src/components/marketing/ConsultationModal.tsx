@@ -289,7 +289,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
           {/* Header */}
           <div className="pr-8 sm:pr-0 mb-4 sm:mb-5">
-            <h2 className="text-xl sm:text-2xl lg:text-[25px] font-extrabold text-[#0f172a] tracking-tight leading-snug">
+            <h2 id="consultation-modal-title" className="text-xl sm:text-2xl lg:text-[25px] font-extrabold text-[#0f172a] tracking-tight leading-snug">
               Let&apos;s discuss your project.
             </h2>
             <p className="text-slate-500 text-xs sm:text-[13px] mt-1 leading-normal">
@@ -372,14 +372,13 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                     className="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 sm:py-3 text-slate-800 text-xs sm:text-sm focus:outline-none focus:border-[#0052fe] focus:ring-1 focus:ring-[#0052fe] transition-all bg-white appearance-none cursor-pointer pr-9"
                   >
                     <option value="" disabled className="text-slate-400">
-                      Budget Range
+                      Budget Range (INR ₹)
                     </option>
-                    <option value="Under $5,000">&lt; $5,000</option>
-                    <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                    <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                    <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                    <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                    <option value="$100,000+">$100,000+</option>
+                    <option value="Under ₹50,000">&lt; ₹50,000</option>
+                    <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+                    <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 - ₹2,50,000</option>
+                    <option value="₹2,50,000 - ₹5,00,000">₹2,50,000 - ₹5,00,000</option>
+                    <option value="₹5,00,000+">₹5,00,000+</option>
                     <option value="Flexible / To Discuss">Flexible / To Discuss</option>
                   </select>
                   <ChevronDown className="w-4 h-4 text-slate-400 pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2" />

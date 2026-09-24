@@ -7,7 +7,7 @@ export default function ProposalWizard() {
   const [step, setStep] = useState(1);
   const [objective, setObjective] = useState("AI & Autonomous Agents");
   const [scope, setScope] = useState("Greenfield (From Scratch)");
-  const [budget, setBudget] = useState("$50,000 - $100,000");
+  const [budget, setBudget] = useState("₹1,00,000 - ₹2,50,000");
   const [timeline, setTimeline] = useState("Immediately (Within 2 weeks)");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -214,15 +214,15 @@ export default function ProposalWizard() {
 
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-700 tracking-wider mb-2">
-                    Estimated Budget Bracket (USD)
+                    Estimated Budget Bracket (INR ₹)
                   </label>
                   <div className="grid grid-cols-2 gap-3">
-                    {["$25,000 - $50,000", "$50,000 - $100,000", "$100,000 - $250,000", "$250,000+ (Enterprise)"].map(
+                    {["< ₹50,000", "₹50,000 - ₹1,00,000", "₹1,00,000 - ₹2,50,000", "₹2,50,000 - ₹5,00,000", "₹5,00,000+", "Flexible / To Discuss"].map(
                       (b) => (
                         <div
                           key={b}
                           onClick={() => setBudget(b)}
-                          className={`p-4 rounded-xl border text-center font-semibold text-xs sm:text-sm cursor-pointer transition-all ${
+                          className={`p-3.5 sm:p-4 rounded-xl border text-center font-semibold text-xs sm:text-sm cursor-pointer transition-all ${
                             budget === b
                               ? "bg-sky-50 border-sky-600 text-sky-800 shadow-sm"
                               : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"

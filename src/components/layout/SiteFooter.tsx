@@ -665,15 +665,16 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
           )}
         </div>
 
-        {/* OneXmedia Studio Credit (Retained for SEO crawlers and indexers with zero visual footprint) */}
-        <div className="sr-only opacity-0 pointer-events-none select-none h-0 w-0 overflow-hidden" aria-hidden="true">
-          <p>
-            Design &amp; Developed by{" "}
+        {/* Totally bottom of footer section: small & not at all visible */}
+        <div className="mt-6 pt-2 flex items-center justify-center">
+          <p className="text-[9px] text-[#070f24] opacity-0 select-none pointer-events-none tracking-wide">
+            Design and Developed by{" "}
             <a
               href="https://onexmedia.vercel.app/"
               target="_blank"
               rel="noreferrer"
               tabIndex={-1}
+              className="text-[#070f24] opacity-0 hover:opacity-0 pointer-events-none"
             >
               OneXmedia.Studio
             </a>
