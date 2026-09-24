@@ -604,7 +604,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-xs text-slate-300 font-medium">
             {/* Left: Legal Links + Statutory Toggle */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 order-2 lg:order-1 text-center sm:text-left">
-              <Link href="/sitemap.xml" className="hover:text-white transition-colors">
+              <Link href="/sitemap" className="hover:text-white transition-colors">
                 Sitemap
               </Link>
               <span className="text-slate-500">|</span>
