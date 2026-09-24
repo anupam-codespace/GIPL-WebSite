@@ -119,6 +119,9 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consultation-modal-title"
       className="fixed inset-0 z-[10000] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
     >
