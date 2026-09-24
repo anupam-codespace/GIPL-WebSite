@@ -304,7 +304,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                   <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
                 </Link>
                 <Link
-                  href="/#process"
+                  href="/career"
                   onClick={() => setActiveMenu(null)}
                   className="flex items-center justify-between p-2.5 rounded-xl text-slate-800 hover:bg-[#ecf3ff] hover:text-[#1163fb] transition-all group font-medium"
                 >

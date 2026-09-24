@@ -228,7 +228,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#process" className="hover:text-white transition-colors">
+                  <Link href="/career" className="hover:text-white transition-colors">
                     Careers
                   </Link>
                 </li>
