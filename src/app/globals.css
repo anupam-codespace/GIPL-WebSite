@@ -406,5 +406,24 @@ h1, h2, h3, h4, h5, h6 {
   border-left-color: rgba(59, 130, 246, 0.4);
 }
 
+/* Suppress default rectangular Calendly badge widget */
+.calendly-badge-widget {
+  display: none !important;
+}
+
+/* Floating animation for corner schedule button */
+@keyframes schedule-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-schedule-float {
+  animation: schedule-float 3s ease-in-out infinite;
+}
+
 
 

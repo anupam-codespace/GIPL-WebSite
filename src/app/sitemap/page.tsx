@@ -338,12 +338,12 @@ const SITEMAP_DATA: SitemapCategory[] = [
       },
       {
         title: "Client Case Studies & Technical Guides",
-        href: "/#case-studies",
+        href: "/industries",
         sublinks: [
-          { title: "Patholab.Cloud Deployment at 350+ Centers", href: "/#case-studies" },
-          { title: "Hyperlocal Quick-Commerce Telematics Engine", href: "/#case-studies" },
+          { title: "Patholab.Cloud Deployment at 350+ Centers", href: "/industries" },
+          { title: "Hyperlocal Quick-Commerce Telematics Engine", href: "/industries" },
           { title: "Multi-Tenant Cloud Architecture Blueprint", href: "/services" },
-          { title: "Enterprise FAQs & Architectural Scoping", href: "/#faq" },
+          { title: "Enterprise Architectural Scoping & FAQs", href: "/about#faqs" },
         ],
       },
     ],

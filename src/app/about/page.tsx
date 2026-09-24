@@ -513,11 +513,11 @@ export default function AboutPage() {
             >
               <span className="text-original flex items-center gap-2">
                 <span>Consult Our Experts</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
               <span className="text-hover flex items-center justify-center gap-2">
                 <span>Discuss Your Vision</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </button>
 
@@ -634,8 +634,51 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Recognitions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile Auto-Scrolling Marquee (Flows Right to Left) */}
+          <div className="block md:hidden relative overflow-hidden w-full py-2">
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+            <div className="animate-marquee flex items-stretch gap-4 w-max">
+              {[...RECOGNITIONS, ...RECOGNITIONS].map((rec, idx) => (
+                <div
+                  key={idx}
+                  className="w-[280px] p-6 rounded-2xl bg-[#090d16] border border-white/10 flex flex-col justify-between shrink-0 shadow-lg"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <div className="h-10 w-auto flex items-center">
+                        <Image
+                          src={rec.logo}
+                          alt={rec.name}
+                          width={110}
+                          height={44}
+                          className="object-contain h-10 max-w-[110px]"
+                        />
+                      </div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-slate-300">
+                        {rec.badge}
+                      </span>
+                    </div>
+
+                    <div className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider mb-1">
+                      {rec.type}
+                    </div>
+                    <h3 className="text-base font-bold text-white mb-1.5">{rec.name}</h3>
+                    <div className="text-[11px] text-slate-400 mb-3 font-medium">
+                      {rec.authority}
+                    </div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {rec.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop/Tablet Grid View */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {RECOGNITIONS.map((rec, idx) => (
               <div
                 key={idx}
@@ -930,13 +973,7 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Column: Marketing Typography & Store Badges */}
-              <div className="lg:col-span-7 flex flex-col justify-center text-left">
-                {/* Eyebrow Pill */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-xs font-semibold text-emerald-300 mb-6 backdrop-blur-md w-fit">
-                  <Smartphone className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Available on iOS App Store &amp; Google Play Store</span>
-                </div>
-
+              <div className="w-full lg:col-span-7 flex flex-col justify-center text-left">
                 {/* Master Headline (Poster-Style Impact) */}
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] mb-4">
                   Patholab.Cloud,{" "}
@@ -951,9 +988,6 @@ export default function AboutPage() {
                     <span>₹2.5</span>
                     <span className="text-xs sm:text-sm font-semibold text-white">/ Patient Registration</span>
                   </div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30">
-                    Lowest in the Marketplace
-                  </span>
                 </div>
 
                 {/* Marketing Lines */}
@@ -1039,8 +1073,8 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Right Column: Mobile App Frame Mockup */}
-              <div className="lg:col-span-5 flex items-center justify-center relative mt-6 lg:mt-0 pb-6 lg:pb-0">
+              {/* Right Column: Mobile App Frame Mockup (Hidden on mobile and small devices) */}
+              <div className="hidden lg:flex lg:col-span-5 items-center justify-center relative mt-6 lg:mt-0 pb-6 lg:pb-0">
                 {/* Glow behind phone */}
                 <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
 
@@ -1151,11 +1185,11 @@ export default function AboutPage() {
             >
               <span className="text-original flex items-center gap-2">
                 <span>Discuss Your Technology Strategy</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
               <span className="text-hover flex items-center justify-center gap-2">
                 <span>Schedule Consultation</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </button>
 

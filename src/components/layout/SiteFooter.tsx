@@ -219,12 +219,12 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
               >
                 <li>
                   <Link href="/about" className="hover:text-white transition-colors">
-                    About
+                    About Globizhub
                   </Link>
                 </li>
                 <li>
-                  <Link href="#process" className="hover:text-white transition-colors">
-                    Core Team
+                  <Link href="/about" className="hover:text-white transition-colors">
+                    Leadership &amp; Team
                   </Link>
                 </li>
                 <li>
@@ -233,28 +233,23 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#process" className="hover:text-white transition-colors">
-                    CSR & Foundation
+                  <Link href="/services" className="hover:text-white transition-colors">
+                    Our Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="#process" className="hover:text-white transition-colors">
-                    How We Work
+                  <Link href="/industries" className="hover:text-white transition-colors">
+                    Industry Solutions
                   </Link>
                 </li>
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
-                    Awards & Recognition
+                  <Link href="/corporate-policies" className="hover:text-white transition-colors">
+                    Corporate Policies &amp; ESG
                   </Link>
                 </li>
                 <li>
-                  <Link href="#faq" className="hover:text-white transition-colors">
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy#security" className="hover:text-white transition-colors">
-                    Compliances
+                  <Link href="/data-security" className="hover:text-white transition-colors">
+                    Data Security &amp; Compliances
                   </Link>
                 </li>
               </ul>
@@ -374,7 +369,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 </li>
                 <li className="pt-1">
                   <Link
-                    href="#products"
+                    href="/#products-showcase"
                     className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
                     <span>View More</span>
@@ -405,38 +400,38 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 }`}
               >
                 <li>
-                  <Link href="#tech-stack" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Artificial Intelligence
                   </Link>
                 </li>
                 <li>
-                  <Link href="#tech-stack" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     RPA & Automation
                   </Link>
                 </li>
                 <li>
-                  <Link href="#tech-stack" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     IoT (Internet of Things)
                   </Link>
                 </li>
                 <li>
-                  <Link href="#tech-stack" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     AR/VR Solutions
                   </Link>
                 </li>
                 <li>
-                  <Link href="#tech-stack" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Blockchain
                   </Link>
                 </li>
                 <li>
-                  <Link href="#tech-stack" className="hover:text-white transition-colors">
+                  <Link href="/services" className="hover:text-white transition-colors">
                     Cybersecurity & Zero Trust
                   </Link>
                 </li>
                 <li className="pt-1">
                   <Link
-                    href="#tech-stack"
+                    href="/services"
                     className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
                     <span>View More</span>
@@ -467,38 +462,38 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                 }`}
               >
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
+                  <Link href="/industries" className="hover:text-white transition-colors">
                     Healthcare & Diagnostics
                   </Link>
                 </li>
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
+                  <Link href="/industries" className="hover:text-white transition-colors">
                     Finance & FinTech
                   </Link>
                 </li>
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
+                  <Link href="/industries" className="hover:text-white transition-colors">
                     Automotive & Fleet
                   </Link>
                 </li>
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
+                  <Link href="/industries" className="hover:text-white transition-colors">
                     Education & EdTech
                   </Link>
                 </li>
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
+                  <Link href="/industries" className="hover:text-white transition-colors">
                     Energy & Utilities
                   </Link>
                 </li>
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
+                  <Link href="/industries" className="hover:text-white transition-colors">
                     eCommerce & Retail
                   </Link>
                 </li>
                 <li className="pt-1">
                   <Link
-                    href="#case-studies"
+                    href="/industries"
                     className="text-sky-400 hover:text-sky-200 font-semibold text-xs sm:text-[13px] inline-flex items-center gap-1.5 transition-colors group"
                   >
                     <span>View More</span>
@@ -534,12 +529,7 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#case-studies" className="hover:text-white transition-colors">
-                    Guides & Whitepapers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#testimonials" className="hover:text-white transition-colors">
+                  <Link href="/about" className="hover:text-white transition-colors">
                     Client Testimonials
                   </Link>
                 </li>
@@ -551,6 +541,17 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
                   Contact Us
                 </h4>
                 <div className="space-y-2.5 text-xs sm:text-[13px] text-slate-300">
+                  <div>
+                    <span className="block text-slate-400 font-normal text-[11px] mb-0.5">
+                      Client &amp; Technical Support:
+                    </span>
+                    <a
+                      href="mailto:support@globizhub.com"
+                      className="text-white hover:text-sky-300 font-semibold transition-colors break-all"
+                    >
+                      support@globizhub.com
+                    </a>
+                  </div>
                   <div>
                     <span className="block text-slate-400 font-normal text-[11px] mb-0.5">
                       General Enquiries:

@@ -58,7 +58,8 @@ import {
   Tag,
   Radio,
   Smile,
-  ShieldCheck
+  ShieldCheck,
+  ArrowUpRight
 } from "lucide-react";
 import GlobizhubLogo from "@/components/ui/GlobizhubLogo";
 
@@ -271,7 +272,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                   <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
                 </Link>
                 <Link
-                  href="/#process"
+                  href="/about"
                   onClick={() => setActiveMenu(null)}
                   className="flex items-center justify-between p-2.5 rounded-xl text-slate-800 hover:bg-[#ecf3ff] hover:text-[#1163fb] transition-all group font-medium"
                 >
@@ -282,7 +283,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                   <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
                 </Link>
                 <Link
-                  href="/#process"
+                  href="/services"
                   onClick={() => setActiveMenu(null)}
                   className="flex items-center justify-between p-2.5 rounded-xl text-slate-800 hover:bg-[#ecf3ff] hover:text-[#1163fb] transition-all group font-medium"
                 >
@@ -293,7 +294,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                   <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
                 </Link>
                 <Link
-                  href="/#case-studies"
+                  href="/industries"
                   onClick={() => setActiveMenu(null)}
                   className="flex items-center justify-between p-2.5 rounded-xl text-slate-800 hover:bg-[#ecf3ff] hover:text-[#1163fb] transition-all group font-medium"
                 >
@@ -315,35 +316,24 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                   <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
                 </Link>
                 <Link
-                  href="/#process"
+                  href="/corporate-policies"
                   onClick={() => setActiveMenu(null)}
                   className="flex items-center justify-between p-2.5 rounded-xl text-slate-800 hover:bg-[#ecf3ff] hover:text-[#1163fb] transition-all group font-medium"
                 >
                   <div className="flex items-center gap-2.5">
-                    <HeartHandshake className="w-4 h-4 text-[#1163fb]" />
-                    <span>CSR &amp; Foundation</span>
+                    <Shield className="w-4 h-4 text-[#1163fb]" />
+                    <span>Corporate Policies &amp; ESG</span>
                   </div>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
                 </Link>
                 <Link
-                  href="/#faq"
-                  onClick={() => setActiveMenu(null)}
-                  className="flex items-center justify-between p-2.5 rounded-xl text-slate-800 hover:bg-[#ecf3ff] hover:text-[#1163fb] transition-all group font-medium"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <HelpCircle className="w-4 h-4 text-[#1163fb]" />
-                    <span>Enterprise FAQs</span>
-                  </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
-                </Link>
-                <Link
-                  href="/terms"
+                  href="/data-security"
                   onClick={() => setActiveMenu(null)}
                   className="flex items-center justify-between p-2.5 rounded-xl text-slate-800 hover:bg-[#ecf3ff] hover:text-[#1163fb] transition-all group font-medium"
                 >
                   <div className="flex items-center gap-2.5">
                     <ShieldCheck className="w-4 h-4 text-[#1163fb]" />
-                    <span>Terms &amp; Governance</span>
+                    <span>Data Security &amp; Compliances</span>
                   </div>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#1163fb] group-hover:translate-x-0.5 transition-all" />
                 </Link>
@@ -369,9 +359,10 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                     setActiveMenu(null);
                     onOpenConsultation?.();
                   }}
-                  className="w-full py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-colors text-center"
+                  className="w-full py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all text-center inline-flex items-center justify-center gap-1.5 group/btn cursor-pointer"
                 >
-                  Consult Our Team →
+                  <span>Consult Our Team</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </button>
               </div>
             </div>
@@ -960,7 +951,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                       Whitepapers &amp; Frameworks
                     </h5>
                     <Link
-                      href="/#case-studies"
+                      href="/blog"
                       onClick={() => setActiveMenu(null)}
                       className="block p-3 rounded-2xl bg-slate-50 hover:bg-blue-50/50 border border-slate-200/80 transition-all group"
                     >
@@ -972,7 +963,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                       </p>
                     </Link>
                     <Link
-                      href="/#case-studies"
+                      href="/blog"
                       onClick={() => setActiveMenu(null)}
                       className="block p-3 rounded-2xl bg-slate-50 hover:bg-blue-50/50 border border-slate-200/80 transition-all group"
                     >
@@ -1002,12 +993,12 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                     </p>
                   </div>
                   <Link
-                    href="/#case-studies"
+                    href="/industries"
                     onClick={() => setActiveMenu(null)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors group/link"
                   >
                     <span>Explore All Case Studies</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                   </Link>
                 </div>
               </div>
@@ -1045,10 +1036,12 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
             {mobileAccordion === "about" && (
               <div className="pl-4 py-2 space-y-2 text-sm text-slate-600 border-l border-slate-200 ml-2">
                 <Link href="/about" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600 font-semibold">About Globizhub</Link>
-                <Link href="/#process" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Leadership Team</Link>
-                <Link href="/#process" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">How We Work</Link>
-                <Link href="/#case-studies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Client Portfolio</Link>
-                <Link href="/terms" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Terms &amp; Use</Link>
+                <Link href="/about" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Leadership Team</Link>
+                <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">How We Work</Link>
+                <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Client Portfolio</Link>
+                <Link href="/career" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Careers &amp; Culture</Link>
+                <Link href="/corporate-policies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Corporate Policies &amp; ESG</Link>
+                <Link href="/data-security" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Data Security &amp; Compliances</Link>
               </div>
             )}
           </div>
@@ -1073,7 +1066,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Bungzo</Link>
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">GlobizLibrary</Link>
                 <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Enterprise IMS</Link>
-                <Link href="/#products-showcase" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Listing</Link>
+                <Link href="https://listing.globizhub.com/" target="_blank" rel="noreferrer" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Listing</Link>
               </div>
             )}
           </div>
@@ -1119,12 +1112,12 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
             {mobileAccordion === "industries" && (
               <div className="pl-4 py-2 space-y-2 text-sm text-slate-600 border-l border-slate-200 ml-2">
                 <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 text-blue-600 font-semibold hover:text-blue-700">Explore All Industries →</Link>
-                <Link href="/#case-studies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Healthcare &amp; Life Sciences</Link>
-                <Link href="/#case-studies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">FinTech &amp; Banking</Link>
-                <Link href="/#case-studies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">eCommerce &amp; Retail</Link>
-                <Link href="/#case-studies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Supply Chain &amp; Logistics</Link>
-                <Link href="/#case-studies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Education &amp; EdTech</Link>
-                <Link href="/#case-studies" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Manufacturing &amp; Energy</Link>
+                <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Healthcare &amp; Life Sciences</Link>
+                <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">FinTech &amp; Banking</Link>
+                <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">eCommerce &amp; Retail</Link>
+                <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Supply Chain &amp; Logistics</Link>
+                <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Education &amp; EdTech</Link>
+                <Link href="/industries" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Manufacturing &amp; Energy</Link>
               </div>
             )}
           </div>
@@ -1146,7 +1139,7 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               <div className="pl-4 py-2 space-y-2 text-sm text-slate-600 border-l border-slate-200 ml-2">
                 <Link href="/blog" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Featured Blogs &amp; Articles</Link>
                 <Link href="/blog" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Engineering Guides</Link>
-                <Link href="/terms" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Terms &amp; Use</Link>
+                <Link href="/privacy" onClick={() => setMobileOpen(false)} className="block py-1 hover:text-blue-600">Privacy &amp; Terms</Link>
               </div>
             )}
           </div>
@@ -1156,9 +1149,10 @@ export default function SiteHeader({ onOpenSearch, onOpenConsultation }: SiteHea
               setMobileOpen(false);
               onOpenConsultation?.();
             }}
-            className="w-full mt-3 py-3 rounded-full bg-slate-950 text-white font-bold text-center text-sm shadow-md cursor-pointer"
+            className="w-full mt-3 py-3 rounded-full bg-slate-950 text-white font-bold text-center text-sm shadow-md cursor-pointer inline-flex items-center justify-center gap-2 group/btn"
           >
-            Contact Us →
+            <span>Contact Us</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
           </button>
         </div>
       )}
