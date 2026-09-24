@@ -74,7 +74,7 @@ const SITEMAP_DATA: SitemapCategory[] = [
         sublinks: [
           { title: "Executive Leadership & Board", href: "/about" },
           { title: "Careers & Open Engineering Positions", href: "/career" },
-          { title: "Life at Globizhub & CSR Initiatives", href: "/about#culture" },
+          { title: "Company Journey & Engineering Heritage", href: "/about#journey" },
         ],
       },
       {

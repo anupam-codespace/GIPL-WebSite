@@ -43,6 +43,25 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
   if (!isOpen) return null;
 
+  // Open Calendly popup widget
+  const handleBookCall = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (typeof window !== "undefined" && window.Calendly?.initPopupWidget) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/globizhub-support?hide_gdpr_banner=1",
+      });
+    } else if (typeof window !== "undefined") {
+      window.open(
+        "https://calendly.com/globizhub-support?hide_gdpr_banner=1",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -233,15 +252,14 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
             {/* Dashed line extending down and connecting to Book a Call pill button */}
             <div className="relative pt-3 pl-3">
               <div className="absolute left-[21px] top-0 bottom-6 w-5 border-l-2 border-b-2 border-dashed border-white/50 rounded-bl-xl" />
-              <a
-                href="https://calendly.com/globizhub-support/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={handleBookCall}
                 className="relative ml-8 inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-white text-[#0052fe] hover:bg-slate-50 font-bold text-xs sm:text-sm shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer group"
               >
                 <span>Book a Call</span>
                 <ArrowUpRight className="w-4 h-4 text-[#0052fe] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+              </button>
             </div>
           </div>
 
@@ -289,15 +307,14 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
 
               {/* Direct Booking Option in Success State */}
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a
-                  href="https://calendly.com/globizhub-support/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-2.5 rounded-full bg-[#0052fe] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm inline-flex items-center gap-1.5 shadow-md transition-all"
+                <button
+                  type="button"
+                  onClick={handleBookCall}
+                  className="px-6 py-2.5 rounded-full bg-[#0052fe] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm inline-flex items-center gap-1.5 shadow-md transition-all cursor-pointer"
                 >
-                  <span>Book a 30-min Call Now</span>
+                  <span>Book a Call Now</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </button>
                 <button
                   type="button"
                   onClick={onClose}
@@ -429,27 +446,26 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                 </div>
               )}
 
-              {/* Row 6: Submit Button & Book a Call Button (User specified: Book a Call after Submit button) */}
-              <div className="pt-2 flex flex-col items-center justify-center gap-2.5">
+              {/* Row 6: Submit Button & Book a Call Button (Placed beside Submit button, optimized across multiple devices) */}
+              <div className="pt-2 flex flex-row items-center justify-center gap-3 sm:gap-4 max-w-sm mx-auto w-full">
                 {/* Submit Pill Button (Cornflower blue matching reference UI) */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-40 sm:w-44 py-2.5 sm:py-3 rounded-full bg-[#6a8ff7] hover:bg-[#567ef5] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer text-center active:scale-95 disabled:opacity-50"
+                  className="flex-1 py-2.5 sm:py-3 rounded-full bg-[#6a8ff7] hover:bg-[#567ef5] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer text-center active:scale-95 disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit"}
                 </button>
 
-                {/* Prominent Book a Call button right after Submit button (especially important for mobile) */}
-                <a
-                  href="https://calendly.com/globizhub-support/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-6 py-2 rounded-full border border-blue-200 bg-blue-50/70 hover:bg-blue-100/90 text-[#0052fe] font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.02] active:scale-95"
+                {/* Book a Call Button directly beside Submit button */}
+                <button
+                  type="button"
+                  onClick={handleBookCall}
+                  className="flex-1 py-2.5 sm:py-3 rounded-full border border-blue-200 bg-blue-50/70 hover:bg-blue-100/90 text-[#0052fe] font-bold text-xs sm:text-sm shadow-sm transition-all hover:scale-[1.02] active:scale-95 text-center flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <span>Book a Call</span>
                   <ArrowUpRight className="w-4 h-4 text-[#0052fe]" />
-                </a>
+                </button>
               </div>
             </form>
           )}

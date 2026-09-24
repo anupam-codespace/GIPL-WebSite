@@ -345,71 +345,15 @@ const ALLIED_VERTICALS = [
 ];
 
 // -------------------------------------------------------------
-// Why Choose Us Pillars
+// About Hero Metric Ribbons (Moving Left to Right)
 // -------------------------------------------------------------
-const WHY_CHOOSE_US = [
-  {
-    title: "Silicon-Grade Engineering & 99.9% Uptime",
-    stat: "99.9%",
-    statLabel: "Guaranteed SLA",
-    desc: "We don't build disposable prototypes. Every line of code is architected for zero-defect resilience, sub-second API latency, automated CI/CD regression tests, and high-concurrency enterprise load.",
-    icon: ShieldCheck,
-    borderHover: "hover:border-blue-500/40"
-  },
-  {
-    title: "150+ Top 1% Dedicated In-House Squads",
-    stat: "150+",
-    statLabel: "Full-Time Specialists",
-    desc: "Zero outsourced third-party contractors. Our full-time software architects, AI researchers, and certified cloud engineers act as high-velocity extensions of your executive leadership team.",
-    icon: Users,
-    borderHover: "hover:border-emerald-500/40"
-  },
-  {
-    title: "Triple ISO Certified & Sovereign Security",
-    stat: "3× ISO",
-    statLabel: "Audited Certifications",
-    desc: "Certified ISO 9001:2015, ISO/IEC 27001:2022, and ISO/IEC 20000-1:2018 with DPIIT accreditation. We enforce AES-256 encryption, zero-trust RBAC, and HIPAA/GDPR regulatory compliance.",
-    icon: Award,
-    borderHover: "hover:border-purple-500/40"
-  },
-  {
-    title: "100% Sprint Transparency & ROI Accountability",
-    stat: "100%",
-    statLabel: "Transparent Code Velocity",
-    desc: "Real-time Slack & Jira sync, direct GitHub/GitLab access, and bi-weekly milestone demonstrations. Every technical feature connects directly to your commercial business targets.",
-    icon: TrendingUp,
-    borderHover: "hover:border-amber-500/40"
-  }
-];
-
-// -------------------------------------------------------------
-// Our Culture Pillars
-// -------------------------------------------------------------
-const CULTURE_PILLARS = [
-  {
-    title: "Extreme Ownership & Autonomy",
-    desc: "We trust our engineers to make architectural decisions, innovate fearlessly, and take genuine pride in their craft. No micromanagement, only radical accountability.",
-    icon: Target,
-    color: "text-blue-400"
-  },
-  {
-    title: "Continuous Upskilling & 10% AI R&D",
-    desc: "Dedicated sandbox time for exploration, internal open-source contributions, weekly tech talks, and sponsored cloud & AI certifications to stay at the technological frontier.",
-    icon: Zap,
-    color: "text-amber-400"
-  },
-  {
-    title: "Symbiotic Harmony & Work-Life Balance",
-    desc: "We believe sustainable pace yields the best code. We reject toxic crunch culture in favor of predictable sprint velocity, flexible hybrid work, and mental wellness support.",
-    icon: Smile,
-    color: "text-emerald-400"
-  },
-  {
-    title: "Diversity, Inclusivity & Merit-First Growth",
-    desc: "Equal opportunities across India's premier delivery hubs. We celebrate diverse voices, regional backgrounds, and promote solely based on impact, talent, and teamwork.",
-    icon: Heart,
-    color: "text-pink-400"
-  }
+const ABOUT_METRICS = [
+  { number: "25", suffix: "+", label: "Industries Mastered" },
+  { number: "10", suffix: "+", label: "Enterprise Accreditations & Certifications" },
+  { number: "15", suffix: "+", label: "Global Markets Served" },
+  { number: "4", suffix: " Hubs", label: "Excellence & Delivery Centers" },
+  { number: "99.9", suffix: "%", label: "Enterprise System SLA & Uptime" },
+  { number: "200", suffix: "+", label: "Enterprise Platforms Engineered" },
 ];
 
 // -------------------------------------------------------------
@@ -520,8 +464,6 @@ export default function AboutPage() {
           {/* Subtle Dark Vignette & Gradient Overlays for High Text Contrast */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/70 pointer-events-none" />
-          {/* Subtle Sci-Fi Engineering Micro-Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf80a_1px,transparent_1px),linear-gradient(to_bottom,#38bdf80a_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
         </div>
 
         {/* Ambient Glows */}
@@ -529,119 +471,36 @@ export default function AboutPage() {
         <div className="absolute bottom-10 right-1/4 w-[600px] h-[450px] bg-blue-600/20 rounded-full blur-[150px] pointer-events-none z-[1]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          {/* Animated Ecosystem Status Pill */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-sky-400/30 text-sky-200 text-xs sm:text-sm font-medium tracking-wide shadow-[0_0_25px_rgba(56,189,248,0.25)] backdrop-blur-xl mb-8 group hover:border-sky-400/60 transition-all">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
-            </span>
-            <span className="font-semibold text-slate-100">Globizhub Engineering Ecosystem</span>
-            <span className="text-slate-400">•</span>
-            <span className="text-sky-300 font-mono text-[11px] sm:text-xs">Est. 2018</span>
-            <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
-          </div>
-
-          {/* Master Headline */}
+          {/* Master Headline: Built on Trust & Scaled for Enterprises */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.12] mb-6">
-            150+ Engineers. 200+ Enterprise Masterpieces.{" "}
+            Built on Trust.{" "}
             <span className="relative inline-block bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(56,189,248,0.35)]">
-              One Vision.
+              Engineered for Enterprise Scale.
             </span>
           </h1>
 
-          {/* High-Impact Mission Statement */}
+          {/* High-Trust Mission Statement */}
           <p className="text-base sm:text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto font-normal leading-relaxed mb-12 drop-shadow-sm">
-            We are an enterprise digital engineering powerhouse trusted by growth companies and enterprises to transform their boldest visions into market-leading realities. Armed with top-tier talent, deep AI expertise, and battle-tested frameworks, we don&apos;t just build software—we architect competitive advantages that scale.
+            Globizhub is an enterprise digital engineering partner trusted by industry leaders and ambitious founders to build resilient digital systems, sovereign AI platforms, and high-concurrency cloud infrastructure. Governed by triple ISO certifications, uncompromising data security, and long-term delivery commitment, we engineer software you can trust with your critical operations.
           </p>
 
-          {/* 4 Interactive Glassmorphic Metric Pods with Live Telemetry */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto mb-12">
-            {/* Pod 1: Industries Mastered (Cyan) */}
-            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-cyan-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(6,182,212,0.25)] overflow-hidden text-left cursor-default">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
-                  <Boxes className="w-5 h-5" />
+          {/* Infinite Smooth Left-to-Right Moving Metrics Ribbon (Web Version) */}
+          <div className="w-full overflow-hidden py-3 relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] mb-12">
+            <div className="flex w-max gap-5 sm:gap-6 animate-marquee-continuous-reverse hover:[animation-play-state:paused]">
+              {[...ABOUT_METRICS, ...ABOUT_METRICS].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="w-[260px] sm:w-[280px] shrink-0 rounded-2xl p-6 bg-slate-950/80 border border-white/10 hover:border-cyan-400/50 backdrop-blur-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] text-left group"
+                >
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-2 flex items-baseline tracking-tight">
+                    <span>{item.number}</span>
+                    <span className="text-cyan-400 text-2xl sm:text-3xl font-bold ml-1">{item.suffix}</span>
+                  </div>
+                  <div className="text-sm font-bold text-slate-100 group-hover:text-cyan-300 transition-colors leading-snug">
+                    {item.label}
+                  </div>
                 </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-bold uppercase">
-                  Sector Depth
-                </span>
-              </div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
-                <span>25</span>
-                <span className="text-cyan-400 text-2xl sm:text-3xl font-bold ml-1">+</span>
-              </div>
-              <div className="text-sm font-bold text-slate-100">Industries Mastered</div>
-              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
-                <span className="truncate">Fintech, Health, IoT, SaaS</span>
-              </div>
-            </div>
-
-            {/* Pod 2: Accreditations & Certifications (Emerald) */}
-            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-emerald-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(16,185,129,0.25)] overflow-hidden text-left cursor-default">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-bold uppercase">
-                  Security Standard
-                </span>
-              </div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
-                <span>10</span>
-                <span className="text-emerald-400 text-2xl sm:text-3xl font-bold ml-1">+</span>
-              </div>
-              <div className="text-sm font-bold text-slate-100">Accreditations &amp; Certs</div>
-              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                <span className="truncate">DPIIT &amp; Triple ISO Audited</span>
-              </div>
-            </div>
-
-            {/* Pod 3: Global Markets Served (Blue) */}
-            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-blue-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(59,130,246,0.25)] overflow-hidden text-left cursor-default">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-11 h-11 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
-                  <Globe2 className="w-5 h-5" />
-                </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 font-bold uppercase">
-                  Global Reach
-                </span>
-              </div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
-                <span>15</span>
-                <span className="text-blue-400 text-2xl sm:text-3xl font-bold ml-1">+</span>
-              </div>
-              <div className="text-sm font-bold text-slate-100">Global Markets Served</div>
-              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shrink-0" />
-                <span className="truncate">India, GCC, UK &amp; US Clients</span>
-              </div>
-            </div>
-
-            {/* Pod 4: Excellence & Delivery Centers (Amber) */}
-            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-amber-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(245,158,11,0.25)] overflow-hidden text-left cursor-default">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20 font-bold uppercase">
-                  Delivery Hubs
-                </span>
-              </div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
-                <span>4</span>
-                <span className="text-amber-400 text-2xl sm:text-3xl font-bold ml-1">Hubs</span>
-              </div>
-              <div className="text-sm font-bold text-slate-100">Excellence &amp; Delivery</div>
-              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shrink-0" />
-                <span className="truncate">BLR • GAU • MAA • DEL</span>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -997,149 +856,7 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 7. WHY CHOOSE US SECTION                                 */}
-      {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#000000] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3 block">
-              The Globizhub Advantage
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
-              Why Choose Globizhub?
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-              We combine the velocity and craft of an elite product squad with the scale, security, and sovereign compliance of a global technology leader.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {WHY_CHOOSE_US.map((pillar, idx) => {
-              const IconC = pillar.icon;
-              return (
-                <div
-                  key={idx}
-                  className={`p-8 sm:p-10 rounded-3xl bg-[#090d18] border border-white/10 ${pillar.borderHover} transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1 relative overflow-hidden`}
-                >
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 text-blue-400 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <IconC className="w-6 h-6" />
-                      </div>
-                      <div className="text-right">
-                        <div className="text-xl sm:text-2xl font-extrabold font-mono text-emerald-400">
-                          {pillar.stat}
-                        </div>
-                        <div className="text-[11px] font-semibold text-slate-400">
-                          {pillar.statLabel}
-                        </div>
-                      </div>
-                    </div>
-
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                      {pillar.title}
-                    </h3>
-
-                    <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                      {pillar.desc}
-                    </p>
-                  </div>
-
-                  <div className="relative z-10 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-blue-400">
-                    <span>Audited Enterprise Standard</span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================== */}
-      {/* 8. OUR CULTURE SECTION                                   */}
-      {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-purple-400 mb-3 block">
-              Life at Globizhub
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
-              Our Culture: Crafted by Curious Minds
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-              We believe world-changing software begins with an empowered, inclusive engineering culture where radical trust, continuous learning, and work-life harmony thrive.
-            </p>
-          </div>
-
-          {/* High-Impact Culture Banner with Team Photo */}
-          <div className="relative w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-12 group">
-            <div className="relative aspect-[16/7] sm:aspect-[21/9] w-full min-h-[260px]">
-              <Image
-                src="/images/footer_team.jpg"
-                alt="Globizhub Engineering Team & Culture"
-                fill
-                className="object-cover object-center group-hover:scale-102 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
-
-              <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-                <div className="max-w-xl">
-                  <div className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">
-                    Symbiotic Engineering Collective
-                  </div>
-                  <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight mb-2">
-                    Empowered Engineers. Relentless Innovation. Zero Bureaucracy.
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 line-clamp-2">
-                    Across Bengaluru, Guwahati, Chennai, and Delhi-NCR, our squads collaborate across flat hierarchies to build systems that define industries.
-                  </p>
-                </div>
-
-                <button
-                  onClick={() => setConsultationOpen(true)}
-                  type="button"
-                  className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs sm:text-sm backdrop-blur-md transition-all cursor-pointer shrink-0"
-                >
-                  Join Our Team
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* 4 Culture Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {CULTURE_PILLARS.map((cult, idx) => {
-              const CultIcon = cult.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 sm:p-7 rounded-3xl bg-[#090d18] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1"
-                >
-                  <div>
-                    <div className={`w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${cult.color} mb-5 group-hover:scale-110 transition-transform`}>
-                      <CultIcon className="w-5 h-5" />
-                    </div>
-
-                    <h4 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
-                      {cult.title}
-                    </h4>
-
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      {cult.desc}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================== */}
-      {/* 9. OUR PROPRIETARY PRODUCTS: The Globizhub Suite        */}
+      {/* 7. OUR PROPRIETARY PRODUCTS: The Globizhub Suite        */}
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#000000] relative overflow-hidden">
         {/* Header */}
