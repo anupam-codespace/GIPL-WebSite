@@ -664,6 +664,21 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
             </div>
           )}
         </div>
+
+        {/* OneXmedia Studio Credit (Retained for SEO crawlers and indexers with zero visual footprint) */}
+        <div className="sr-only opacity-0 pointer-events-none select-none h-0 w-0 overflow-hidden" aria-hidden="true">
+          <p>
+            Design &amp; Developed by{" "}
+            <a
+              href="https://onexmedia.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              tabIndex={-1}
+            >
+              OneXmedia.Studio
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -331,7 +331,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
             {/* Button 2: Glass Pill Button */}
             <Link
-              href="#case-studies"
+              href="#products-showcase"
               className="rounded-full border border-white/25 bg-white/[0.08] hover:bg-white/[0.18] text-white font-medium text-sm sm:text-base px-7 sm:px-8 py-3.5 sm:py-4 backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               See Our Works

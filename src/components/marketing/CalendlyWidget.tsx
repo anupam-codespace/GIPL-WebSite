@@ -72,13 +72,13 @@ export default function CalendlyWidget() {
   };
 
   return (
-    <aside
+      <aside
       aria-label="Schedule Consultation Floating Action"
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 pointer-events-auto select-none"
+      className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-50 pointer-events-auto select-none"
     >
       <div className="relative group animate-schedule-float">
         {/* Subtle glow effect behind button */}
-        <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-blue-500/30 via-indigo-500/30 to-fuchsia-500/30 blur-md opacity-75 group-hover:opacity-100 transition duration-300 pointer-events-none" />
+        <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-500/35 via-indigo-500/35 to-fuchsia-500/35 blur-lg opacity-80 group-hover:opacity-100 transition duration-300 pointer-events-none" />
 
         {/* Floating Circular Action Button */}
         <button
@@ -86,15 +86,15 @@ export default function CalendlyWidget() {
           onClick={handleOpenCalendly}
           aria-label="Schedule a consultation with Globizhub"
           title="Schedule time with us"
-          className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white shadow-[0_12px_36px_rgba(0,0,0,0.35)] border-2 border-white hover:border-blue-400 p-2 sm:p-2.5 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95 group-hover:shadow-[0_16px_44px_rgba(37,99,235,0.45)]"
+          className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white shadow-[0_10px_35px_rgba(0,0,0,0.35)] border-2 border-white hover:border-blue-400 p-1.5 sm:p-2 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-108 active:scale-95 group-hover:shadow-[0_16px_40px_rgba(37,99,235,0.45)]"
         >
           {/* Logo with clean contain rendering */}
           <div className="relative w-full h-full flex items-center justify-center">
             <Image
               src="/images/schedule-bubble-logo.png"
               alt="Schedule time with us"
-              width={56}
-              height={56}
+              width={64}
+              height={64}
               className="w-full h-full object-contain pointer-events-none transition-transform duration-300 group-hover:scale-105"
               priority
             />
@@ -108,7 +108,7 @@ export default function CalendlyWidget() {
         </button>
 
         {/* Desktop Tooltip */}
-        <div className="absolute right-full mr-3.5 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl bg-slate-900/95 border border-white/15 text-white text-xs font-semibold whitespace-nowrap shadow-2xl backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:flex items-center gap-1.5">
+        <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl bg-slate-900/95 border border-white/15 text-white text-xs font-semibold whitespace-nowrap shadow-2xl backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:flex items-center gap-1.5">
           <span>Schedule Consultation</span>
           <span className="text-[10px] text-blue-400 font-bold">● Live</span>
           {/* Tooltip caret */}

@@ -448,8 +448,8 @@ export default function AboutPage() {
       {/* ======================================================== */}
       {/* 1. HERO SECTION: Video Background with Cinematic Glow   */}
       {/* ======================================================== */}
-      <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-32 overflow-hidden min-h-[92vh] flex items-center justify-center bg-black">
-        {/* Background Video from Pinterest Pin 793407659399243567 */}
+      <section className="relative pt-24 sm:pt-28 lg:pt-36 pb-16 sm:pb-16 lg:pb-20 overflow-hidden min-h-[85vh] sm:min-h-[88vh] lg:min-h-[90vh] flex items-center justify-center bg-black">
+        {/* Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <video
             autoPlay
@@ -461,42 +461,42 @@ export default function AboutPage() {
           >
             <source src="/videos/about_hero_bg.mp4" type="video/mp4" />
           </video>
-          {/* Subtle Dark Vignette & Gradient Overlays for High Text Contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/85 pointer-events-none" />
+          {/* Dark Vignette & Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-transparent to-black/90 pointer-events-none" />
           <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/70 pointer-events-none" />
         </div>
 
         {/* Ambient Glows */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none z-[1] animate-pulse" />
-        <div className="absolute bottom-10 right-1/4 w-[600px] h-[450px] bg-blue-600/20 rounded-full blur-[150px] pointer-events-none z-[1]" />
+        <div className="absolute top-1/4 left-1/4 w-[220px] sm:w-[500px] h-[220px] sm:h-[500px] bg-cyan-500/20 rounded-full blur-[80px] sm:blur-[140px] pointer-events-none z-[1] animate-pulse" />
+        <div className="absolute bottom-10 right-1/4 w-[250px] sm:w-[600px] h-[220px] sm:h-[450px] bg-blue-600/20 rounded-full blur-[80px] sm:blur-[150px] pointer-events-none z-[1]" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          {/* Master Headline: Built on Trust & Scaled for Enterprises */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.12] mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center w-full">
+          {/* Master Headline */}
+          <h1 className="text-[1.85rem] xs:text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto mb-3.5 sm:mb-5 leading-[1.18] sm:leading-[1.12]">
             Built on Trust.{" "}
-            <span className="relative inline-block bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(56,189,248,0.35)]">
+            <span className="relative inline bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(56,189,248,0.35)]">
               Engineered for Enterprise Scale.
             </span>
           </h1>
 
-          {/* High-Trust Mission Statement */}
-          <p className="text-base sm:text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto font-normal leading-relaxed mb-12 drop-shadow-sm">
+          {/* Mission Statement */}
+          <p className="text-xs sm:text-base lg:text-lg text-slate-200/90 max-w-2xl lg:max-w-3xl mx-auto font-normal leading-relaxed mb-5 sm:mb-8 px-2 sm:px-0">
             Globizhub is an enterprise digital engineering partner trusted by industry leaders and ambitious founders to build resilient digital systems, sovereign AI platforms, and high-concurrency cloud infrastructure. Governed by triple ISO certifications, uncompromising data security, and long-term delivery commitment, we engineer software you can trust with your critical operations.
           </p>
 
-          {/* Infinite Smooth Left-to-Right Moving Metrics Ribbon (Web Version) */}
-          <div className="w-full overflow-hidden py-3 relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] mb-12">
-            <div className="flex w-max gap-5 sm:gap-6 animate-marquee-continuous-reverse hover:[animation-play-state:paused]">
+          {/* Metrics Ribbon */}
+          <div className="w-full overflow-hidden py-2 sm:py-3 relative [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] mb-5 sm:mb-9">
+            <div className="flex w-max gap-3 sm:gap-6 animate-marquee-continuous-reverse hover:[animation-play-state:paused]">
               {[...ABOUT_METRICS, ...ABOUT_METRICS].map((item, idx) => (
                 <div
                   key={idx}
-                  className="w-[260px] sm:w-[280px] shrink-0 rounded-2xl p-6 bg-slate-950/80 border border-white/10 hover:border-cyan-400/50 backdrop-blur-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] text-left group"
+                  className="w-[160px] xs:w-[185px] sm:w-[240px] lg:w-[270px] shrink-0 rounded-xl sm:rounded-2xl p-3 sm:p-5 bg-slate-950/85 border border-white/10 hover:border-cyan-400/50 backdrop-blur-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] text-left group"
                 >
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-2 flex items-baseline tracking-tight">
+                  <div className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-1 sm:mb-1.5 flex items-baseline tracking-tight">
                     <span>{item.number}</span>
-                    <span className="text-cyan-400 text-2xl sm:text-3xl font-bold ml-1">{item.suffix}</span>
+                    <span className="text-cyan-400 text-base sm:text-2xl lg:text-3xl font-bold ml-1">{item.suffix}</span>
                   </div>
-                  <div className="text-sm font-bold text-slate-100 group-hover:text-cyan-300 transition-colors leading-snug">
+                  <div className="text-[11px] sm:text-xs lg:text-sm font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors leading-snug line-clamp-2">
                     {item.label}
                   </div>
                 </div>
@@ -505,25 +505,19 @@ export default function AboutPage() {
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-[290px] xs:max-w-xs sm:max-w-none mx-auto">
             <button
               onClick={() => setConsultationOpen(true)}
               type="button"
-              className="swap-text-button px-9 py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(37,99,235,0.45)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:scale-105 active:scale-[0.98] transition-all group cursor-pointer inline-flex items-center gap-2"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 sm:px-9 py-3 sm:py-3.5 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(37,99,235,0.45)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:scale-105 active:scale-[0.98] transition-all cursor-pointer group"
             >
-              <span className="text-original flex items-center gap-2">
-                <span>Consult Our Experts</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
-              <span className="text-hover flex items-center justify-center gap-2">
-                <span>Discuss Your Vision</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
+              <span>Consult Our Experts</span>
+              <ArrowUpRight className="w-4 h-4 sm:w-[18px] sm:h-[18px] shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
 
             <a
               href="#journey"
-              className="px-8 py-4 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base rounded-full border border-white/20 hover:border-white/35 backdrop-blur-xl transition-all cursor-pointer inline-flex items-center gap-2 group hover:scale-105"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 sm:py-3.5 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base rounded-full border border-white/20 hover:border-white/35 backdrop-blur-xl transition-all cursor-pointer group hover:scale-105"
             >
               <span>Explore Our Journey</span>
               <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -1177,25 +1171,19 @@ export default function AboutPage() {
             Discuss your technical architecture, digital roadmap, or custom software requirements with our principal solutions engineers.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <button
               onClick={() => setConsultationOpen(true)}
               type="button"
-              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] transition-all group cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 sm:px-9 py-3.5 sm:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base rounded-full shadow-[0_0_28px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.65)] hover:scale-105 active:scale-[0.98] transition-all cursor-pointer group"
             >
-              <span className="text-original flex items-center gap-2">
-                <span>Discuss Your Technology Strategy</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
-              <span className="text-hover flex items-center justify-center gap-2">
-                <span>Schedule Consultation</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
+              <span>Discuss Your Technology Strategy</span>
+              <ArrowUpRight className="w-4 h-4 sm:w-[18px] sm:h-[18px] shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
 
             <Link
               href="/blog"
-              className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-sm sm:text-base transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold text-sm sm:text-base transition-all hover:scale-105"
             >
               Explore Engineering Blog
             </Link>

@@ -177,7 +177,7 @@ const organizationJsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Sales & Consulting",
-    email: "hello@globizhub.com",
+    email: "admin@globizhub.com",
     availableLanguage: "English",
   },
   hasOfferCatalog: {
