@@ -13,7 +13,6 @@ import {
   MapPin,
   TrendingUp,
   Target,
-  Cpu,
   Boxes,
   Code2,
   Laptop,
@@ -44,9 +43,9 @@ interface Milestone {
   year: string;
   title: string;
   description: string;
-  badge: string;
+  badge?: string;
   highlights: string[];
-  stats: string;
+  stats?: string;
   image: string;
 }
 
@@ -54,7 +53,6 @@ const MILESTONES: Milestone[] = [
   {
     year: "2018",
     title: "The Genesis & Incorporation",
-    badge: "Foundation Year",
     description:
       "Globizhub India Pvt Ltd. was incorporated with an uncompromising mission: to architect enterprise-grade software with silicon-grade reliability. With an initial core team of 8 visionary engineers in Guwahati and Bengaluru, we delivered our first multi-tenant healthcare application in under 90 days.",
     highlights: [
@@ -62,13 +60,11 @@ const MILESTONES: Milestone[] = [
       "First healthcare diagnostic software deployed",
       "Dual development hubs established in Bengaluru & Guwahati"
     ],
-    stats: "8 Founding Engineers • 100% On-Time Delivery",
     image: "/images/hero_tech_bg.jpg"
   },
   {
     year: "2019",
     title: "Healthcare & Logistics Breakthrough",
-    badge: "Market Traction",
     description:
       "Crossed 40+ production deployments across clinical pathology, diagnostic laboratories, and supply chain logistics. We instituted rigorous automated CI/CD pipelines, lowering production rollbacks to less than 0.1% and cementing our reputation as a trusted engineering vendor.",
     highlights: [
@@ -76,13 +72,11 @@ const MILESTONES: Milestone[] = [
       "Architected specialized cold-chain logistics telemetry",
       "Expanded engineering squad to 30+ full-stack specialists"
     ],
-    stats: "40+ Deployments • 99.8% System Reliability",
     image: "/images/industry_healthcare.jpg"
   },
   {
     year: "2020",
     title: "Cloud Resilience & Pandemic Support",
-    badge: "Hyper-Scale Cloud",
     description:
       "During the global pandemic, Globizhub stood as a critical technology backbone. We scaled cloud healthcare systems to handle a 700% surge in real-time diagnostic reporting and tele-consultations with zero downtime across 15 states in India.",
     highlights: [
@@ -90,13 +84,11 @@ const MILESTONES: Milestone[] = [
       "Engineered automated barcode sample tracking for labs",
       "Transitioned to distributed zero-trust remote engineering"
     ],
-    stats: "1.2M+ Patient Reports Handled • 0 Downtime",
     image: "/images/hero_architecture.jpg"
   },
   {
     year: "2021",
     title: "Startup India & Technology Recognition",
-    badge: "Accreditation",
     description:
       "Formally recognized and accredited by Startup India (#startupindia) under the Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce & Industry, Govt of India, and incubated at Assam Startup Nest under the flagship Advantage Assam initiative.",
     highlights: [
@@ -104,13 +96,11 @@ const MILESTONES: Milestone[] = [
       "Incubated & recognized by Assam Startup Nest",
       "Ministry of MSME Enterprise Accreditation"
     ],
-    stats: "DPIIT Certified • MSME Registered",
     image: "/images/assam_startup_logo_transparent.png"
   },
   {
     year: "2022",
     title: "Launch of Patholab.cloud & Bungzo",
-    badge: "SaaS Ecosystem",
     description:
       "Launched our proprietary flagship SaaS products: Patholab.cloud (intelligent laboratory information management system) and Bungzo (modern society and gated-community ERP platform), creating scalable recurring value for thousands of daily active users.",
     highlights: [
@@ -118,13 +108,11 @@ const MILESTONES: Milestone[] = [
       "Bungzo adopted across premium residential societies",
       "Integrated automated WhatsApp & SMS notification gateways"
     ],
-    stats: "350+ Labs Live • 25,000+ Daily Residents Managed",
     image: "/images/patholab_preview.jpg"
   },
   {
     year: "2023",
     title: "Triple ISO Quality & Security Certification",
-    badge: "Global ISO Standards",
     description:
       "Achieved triple international ISO certifications after rigorous third-party enterprise audits: ISO 9001:2015 for Quality Management, ISO/IEC 27001:2022 for Information Security Management, and ISO/IEC 20000-1:2018 for IT Service Management.",
     highlights: [
@@ -132,13 +120,11 @@ const MILESTONES: Milestone[] = [
       "Certified ISO/IEC 27001:2022 (Information Security)",
       "Certified ISO/IEC 20000-1:2018 (IT Service Management)"
     ],
-    stats: "Triple ISO Certified • Zero Security Non-Conformances",
     image: "/images/iso_27001_certified_badge.png"
   },
   {
     year: "2024",
     title: "Delivery Expansion: Chennai & Delhi-NCR",
-    badge: "Delivery Expansion",
     description:
       "Inaugurated dedicated Cloud & DevOps delivery center in Chennai's OMR IT corridor and our Corporate Strategy & Enterprise office in Sector 62, Noida (Delhi-NCR). Team expanded to 150+ engineers, data architects, and certified cloud professionals.",
     highlights: [
@@ -146,13 +132,11 @@ const MILESTONES: Milestone[] = [
       "Established Delhi-NCR Corporate & Strategic Office",
       "Crossed 200+ bespoke enterprise software deliveries"
     ],
-    stats: "4 Delivery Centers • 150+ Full-Time Engineers",
     image: "/images/footer_team.jpg"
   },
   {
     year: "2025",
     title: "Globizhub AI Lab & Agentic Workflows",
-    badge: "AI Frontier",
     description:
       "Launched the Globizhub AI Lab, delivering private enterprise RAG systems, autonomous agentic workflows, and multimodal computer vision models for diagnostic radiology, automated quality inspection, and intelligent document extraction.",
     highlights: [
@@ -160,13 +144,11 @@ const MILESTONES: Milestone[] = [
       "Deployed autonomous customer experience agent squads",
       "Expanded client footprint to GCC, UK, and North America"
     ],
-    stats: "30+ AI Systems Deployed • 4× Operational ROI",
     image: "/images/tech_alignment_orbs.jpg"
   },
   {
     year: "2026",
     title: "Next-Gen Enterprise Engineering",
-    badge: "Global Impact",
     description:
       "Today, Globizhub India Pvt Ltd. stands as a premier digital engineering partner for global enterprises. Operating across 4 delivery centers, we fuse agile product thinking, sovereign cloud architectures, and autonomous AI systems to build tomorrow's digital economy.",
     highlights: [
@@ -174,7 +156,6 @@ const MILESTONES: Milestone[] = [
       "Serving clients in 15+ countries across 25+ industries",
       "Pioneering autonomous enterprise operations and AI governance"
     ],
-    stats: "200+ Enterprise Deployments • 99.9% Uptime SLA",
     image: "/images/glass_growth_arrow.jpg"
   }
 ];
@@ -664,12 +645,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Milestone Details */}
               <div className="lg:col-span-7">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-4">
                   <span className="text-4xl sm:text-6xl font-extrabold text-blue-500 font-mono">
                     {currentMilestone.year}
-                  </span>
-                  <span className="px-3.5 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-400 text-xs font-semibold">
-                    {currentMilestone.badge}
                   </span>
                 </div>
 
@@ -682,19 +660,13 @@ export default function AboutPage() {
                 </p>
 
                 {/* Highlights List */}
-                <div className="space-y-2.5 mb-6">
+                <div className="space-y-2.5">
                   {currentMilestone.highlights.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
                       <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </div>
                   ))}
-                </div>
-
-                {/* Bottom Metric Pill */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-xs sm:text-sm font-semibold text-slate-300">
-                  <TrendingUp className="w-4 h-4 text-emerald-400" />
-                  <span>{currentMilestone.stats}</span>
                 </div>
               </div>
 
@@ -815,80 +787,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ======================================================== */}
-      {/* 5. OUR CORE OPERATING PRINCIPLES                         */}
-      {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#000000] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
-              How We Create Defensible Value
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base">
-              The foundational principles that guide every architectural blueprint, code commit, and client partnership.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Principle 1 */}
-            <div className="p-8 rounded-3xl bg-[#0a0e1a] border border-white/10 hover:border-purple-500/40 transition-all duration-300 shadow-xl group flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
-                  We Keep Our Eye On The ROI
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  Every solution we build begins with a solid business case. We connect each technical feature to its measurable ROI, set concrete performance targets, and track them from day one. By refining user journeys and tuning cloud infrastructure, we cut waste and lift conversions.
-                </p>
-              </div>
-              <div className="text-xs font-semibold text-purple-400 flex items-center gap-1.5">
-                <span>Measurable Commercial Impact</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* Principle 2 */}
-            <div className="p-8 rounded-3xl bg-[#0a0e1a] border border-white/10 hover:border-blue-500/40 transition-all duration-300 shadow-xl group flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-blue-500/15 border border-blue-500/30 text-blue-400 flex items-center justify-center mb-6">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                  We Own Responsibilities
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  We employ the latest infrastructure, tech stacks, management processes, and security measures gained from a diverse portfolio across 25+ industries. We take complete ownership from architecture to 24/7 cloud reliability without shifting accountability.
-                </p>
-              </div>
-              <div className="text-xs font-semibold text-blue-400 flex items-center gap-1.5">
-                <span>End-to-End SLA Accountability</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* Principle 3 */}
-            <div className="p-8 rounded-3xl bg-[#0a0e1a] border border-white/10 hover:border-emerald-500/40 transition-all duration-300 shadow-xl group flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-6">
-                  <Cpu className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">
-                  We Work Tirelessly
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                  In an inclusive, progressive, and symbiotic engineering environment. Our culture inspires impactful innovations, continuous skill development, and work-life balance, allowing our teams to solve complex algorithmic and architectural challenges with joy.
-                </p>
-              </div>
-              <div className="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
-                <span>Engineering Excellence Culture</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ======================================================== */}
       {/* 6. OUR DIVISIONS & ALLIED BUSINESS VERTICALS (WHITE BG)   */}
