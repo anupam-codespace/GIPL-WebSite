@@ -504,8 +504,8 @@ export default function AboutPage() {
       {/* ======================================================== */}
       {/* 1. HERO SECTION: Video Background with Cinematic Glow   */}
       {/* ======================================================== */}
-      <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden min-h-[90vh] flex items-center justify-center bg-black">
-        {/* Background Video from Pinterest Pin 664914332535047788 */}
+      <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-32 overflow-hidden min-h-[92vh] flex items-center justify-center bg-black">
+        {/* Background Video from Pinterest Pin 793407659399243567 */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <video
             autoPlay
@@ -513,86 +513,144 @@ export default function AboutPage() {
             muted
             playsInline
             poster="/images/about_hero_poster.jpg"
-            className="w-full h-full object-cover opacity-40 filter brightness-95 contrast-105"
+            className="w-full h-full object-cover opacity-85 filter brightness-115 contrast-125 saturate-125"
           >
             <source src="/videos/about_hero_bg.mp4" type="video/mp4" />
           </video>
           {/* Subtle Dark Vignette & Gradient Overlays for High Text Contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black pointer-events-none" />
-          <div className="absolute inset-0 bg-radial from-transparent via-black/45 to-black pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/70 pointer-events-none" />
+          {/* Subtle Sci-Fi Engineering Micro-Grid */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf80a_1px,transparent_1px),linear-gradient(to_bottom,#38bdf80a_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
         </div>
 
         {/* Ambient Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none z-[1]" />
-        <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none z-[1]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none z-[1] animate-pulse" />
+        <div className="absolute bottom-10 right-1/4 w-[600px] h-[450px] bg-blue-600/20 rounded-full blur-[150px] pointer-events-none z-[1]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          {/* Animated Ecosystem Status Pill */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-sky-400/30 text-sky-200 text-xs sm:text-sm font-medium tracking-wide shadow-[0_0_25px_rgba(56,189,248,0.25)] backdrop-blur-xl mb-8 group hover:border-sky-400/60 transition-all">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+            </span>
+            <span className="font-semibold text-slate-100">Globizhub Engineering Ecosystem</span>
+            <span className="text-slate-400">•</span>
+            <span className="text-sky-300 font-mono text-[11px] sm:text-xs">Est. 2018</span>
+            <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+          </div>
+
           {/* Master Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.15] mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.12] mb-6">
             150+ Engineers. 200+ Enterprise Masterpieces.{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+            <span className="relative inline-block bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(56,189,248,0.35)]">
               One Vision.
             </span>
           </h1>
 
           {/* High-Impact Mission Statement */}
-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto font-normal leading-relaxed mb-12 drop-shadow-sm">
             We are an enterprise digital engineering powerhouse trusted by growth companies and enterprises to transform their boldest visions into market-leading realities. Armed with top-tier talent, deep AI expertise, and battle-tested frameworks, we don&apos;t just build software—we architect competitive advantages that scale.
           </p>
 
-          {/* 4 Hero Metric Cards with Distinct Soft Pastel Tints */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto mb-12">
-            {/* Card 1: Purple */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#1b152b]/80 border border-purple-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
-              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
+          {/* 4 Interactive Glassmorphic Metric Pods with Live Telemetry */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto mb-12">
+            {/* Pod 1: Industries Mastered (Cyan) */}
+            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-cyan-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(6,182,212,0.25)] overflow-hidden text-left cursor-default">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                  <Boxes className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-bold uppercase">
+                  Sector Depth
+                </span>
+              </div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
                 <span>25</span>
-                <span className="text-purple-400 text-2xl font-semibold">+</span>
+                <span className="text-cyan-400 text-2xl sm:text-3xl font-bold ml-1">+</span>
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-300">
-                Industries Mastered
+              <div className="text-sm font-bold text-slate-100">Industries Mastered</div>
+              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+                <span className="truncate">Fintech, Health, IoT, SaaS</span>
               </div>
             </div>
 
-            {/* Card 2: Green */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#12221b]/80 border border-emerald-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
-              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
+            {/* Pod 2: Accreditations & Certifications (Emerald) */}
+            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-emerald-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(16,185,129,0.25)] overflow-hidden text-left cursor-default">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-bold uppercase">
+                  Security Standard
+                </span>
+              </div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
                 <span>10</span>
-                <span className="text-emerald-400 text-2xl font-semibold">+</span>
+                <span className="text-emerald-400 text-2xl sm:text-3xl font-bold ml-1">+</span>
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-300">
-                Accreditations &amp; Certifications
+              <div className="text-sm font-bold text-slate-100">Accreditations &amp; Certs</div>
+              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="truncate">DPIIT &amp; Triple ISO Audited</span>
               </div>
             </div>
 
-            {/* Card 3: Blue */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#111f38]/80 border border-blue-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
-              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
+            {/* Pod 3: Global Markets Served (Blue) */}
+            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-blue-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(59,130,246,0.25)] overflow-hidden text-left cursor-default">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-11 h-11 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                  <Globe2 className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 font-bold uppercase">
+                  Global Reach
+                </span>
+              </div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
                 <span>15</span>
-                <span className="text-blue-400 text-2xl font-semibold">+</span>
+                <span className="text-blue-400 text-2xl sm:text-3xl font-bold ml-1">+</span>
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-300">
-                Global Markets Served
+              <div className="text-sm font-bold text-slate-100">Global Markets Served</div>
+              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shrink-0" />
+                <span className="truncate">India, GCC, UK &amp; US Clients</span>
               </div>
             </div>
 
-            {/* Card 4: Yellow */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#292212]/80 border border-amber-500/20 text-left transition-transform hover:-translate-y-1 duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
-              <div className="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-baseline gap-1">
-                <span>4</span>
-                <span className="text-amber-400 text-2xl font-semibold"> Hubs</span>
+            {/* Pod 4: Excellence & Delivery Centers (Amber) */}
+            <div className="group relative rounded-3xl p-6 sm:p-7 bg-slate-950/70 border border-white/10 hover:border-amber-400/50 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(245,158,11,0.25)] overflow-hidden text-left cursor-default">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20 font-bold uppercase">
+                  Delivery Hubs
+                </span>
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-300">
-                Excellence &amp; Delivery Centers
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1.5 flex items-baseline tracking-tight">
+                <span>4</span>
+                <span className="text-amber-400 text-2xl sm:text-3xl font-bold ml-1">Hubs</span>
+              </div>
+              <div className="text-sm font-bold text-slate-100">Excellence &amp; Delivery</div>
+              <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shrink-0" />
+                <span className="truncate">BLR • GAU • MAA • DEL</span>
               </div>
             </div>
           </div>
 
-          {/* Hero Rolling Text-Swap CTA Button */}
-          <div className="flex justify-center">
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => setConsultationOpen(true)}
               type="button"
-              className="swap-text-button px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm sm:text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] transition-all group cursor-pointer"
+              className="swap-text-button px-9 py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base rounded-full shadow-[0_0_30px_rgba(37,99,235,0.45)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:scale-105 active:scale-[0.98] transition-all group cursor-pointer inline-flex items-center gap-2"
             >
               <span className="text-original flex items-center gap-2">
                 <span>Consult Our Experts</span>
@@ -603,6 +661,14 @@ export default function AboutPage() {
                 <ArrowRight className="w-4 h-4" />
               </span>
             </button>
+
+            <a
+              href="#journey"
+              className="px-8 py-4 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base rounded-full border border-white/20 hover:border-white/35 backdrop-blur-xl transition-all cursor-pointer inline-flex items-center gap-2 group hover:scale-105"
+            >
+              <span>Explore Our Journey</span>
+              <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+            </a>
           </div>
         </div>
       </section>
