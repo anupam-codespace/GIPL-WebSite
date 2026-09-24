@@ -665,15 +665,15 @@ export default function SiteFooter({ onOpenConsultation }: SiteFooterProps) {
           )}
         </div>
 
-        {/* Totally bottom of footer section: subtle contrast (1.2x bg) and fully clickable */}
+        {/* Totally bottom of footer section: black color font & clickable */}
         <div className="mt-6 pt-2 flex items-center justify-center">
-          <p className="text-[10px] text-white/[0.08] tracking-wider font-light">
+          <p className="text-[10px] text-black tracking-wider font-light">
             Design and Developed by{" "}
             <a
               href="https://onexmedia.vercel.app/"
               target="_blank"
               rel="noreferrer"
-              className="text-white/[0.12] hover:text-white/50 transition-colors duration-200 underline underline-offset-2 decoration-white/[0.08] hover:decoration-white/40 cursor-pointer"
+              className="text-black hover:underline cursor-pointer"
             >
               OneXmedia.Studio
             </a>
