@@ -27,7 +27,10 @@ import {
   Award,
   Zap,
   Smile,
-  Heart
+  Heart,
+  Smartphone,
+  Sparkles,
+  ExternalLink
 } from "lucide-react";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
@@ -1227,7 +1230,173 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 10. FREQUENTLY ASKED QUESTIONS                           */}
+      {/* 10. PATHOLAB.CLOUD MOBILE APP (APP STORE & PLAY STORE)   */}
+      {/* ======================================================== */}
+      <section className="py-20 sm:py-28 bg-[#000000] relative overflow-hidden">
+        {/* Ambient Glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[350px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[350px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Main Wide Poster Card Container */}
+          <div className="relative rounded-[2.5rem] bg-gradient-to-br from-[#0c1c28] via-[#081320] to-[#040810] border border-emerald-500/25 p-8 sm:p-12 lg:p-16 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden">
+            {/* Background Ambient Radial Highlights */}
+            <div className="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              {/* Left Column: Marketing Typography & Store Badges */}
+              <div className="lg:col-span-7 flex flex-col justify-center text-left">
+                {/* Eyebrow Pill */}
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-xs font-semibold text-emerald-300 mb-6 backdrop-blur-md w-fit">
+                  <Smartphone className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Available on iOS App Store &amp; Google Play Store</span>
+                </div>
+
+                {/* Master Headline (Poster-Style Impact) */}
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12] mb-4">
+                  Patholab.Cloud,{" "}
+                  <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent italic font-serif">
+                    your partner in diagnostics.
+                  </span>
+                </h2>
+
+                {/* Advertising Hook: ₹2.5 Per Patient Registration */}
+                <div className="flex flex-wrap items-center gap-3 mb-5">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-extrabold text-base sm:text-lg shadow-inner">
+                    <span>₹2.5</span>
+                    <span className="text-xs sm:text-sm font-semibold text-white">/ Patient Registration</span>
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30">
+                    Lowest in the Marketplace
+                  </span>
+                </div>
+
+                {/* Marketing Lines */}
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+                  Experience India&apos;s fastest cloud-based LIMS engine. Automate patient registrations, bidirectional analyzer interfacing, sample barcoding, and dispatch diagnostic reports instantly on WhatsApp &amp; SMS with zero sample loss.
+                </p>
+
+                {/* Key Benefit Checkmarks */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8 text-xs sm:text-sm text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Instant automated WhatsApp report dispatch</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Sub-second bidirectional analyzer sync</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>350+ active diagnostic laboratories live</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>NABL-compliant digital QR verification</span>
+                  </div>
+                </div>
+
+                {/* Store Download Badges */}
+                <div className="flex flex-wrap items-center gap-3.5">
+                  {/* Apple App Store Badge */}
+                  <a
+                    href="https://patholab.cloud"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-black hover:bg-slate-900 border border-white/20 text-white transition-all duration-200 hover:scale-105 shadow-xl group cursor-pointer"
+                  >
+                    <svg className="w-6 h-6 fill-current text-white shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.61 1.34-.55.63-.99 1.68-.86 2.7.99.08 2.02-.49 2.55-1.19z" />
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-[10px] uppercase tracking-wider text-slate-400 font-medium leading-none mb-1">
+                        Download on the
+                      </div>
+                      <div className="text-sm font-bold text-white leading-none">
+                        App Store
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* Google Play Store Badge */}
+                  <a
+                    href="https://patholab.cloud"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-black hover:bg-slate-900 border border-white/20 text-white transition-all duration-200 hover:scale-105 shadow-xl group cursor-pointer"
+                  >
+                    <svg className="w-6 h-6 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none">
+                      <path d="M3.609 1.814L13.793 12 3.61 22.186A2.22 2.22 0 0 1 3 20.612V3.388c0-.616.223-1.19.609-1.574z" fill="#00E676" />
+                      <path d="M17.207 8.586L13.793 12l3.414 3.414 3.904-2.231a1.36 1.36 0 0 0 0-2.366l-3.904-2.232z" fill="#FFD600" />
+                      <path d="M3.609 1.814L13.793 12 17.207 8.586 5.86 2.103c-.707-.404-1.55-.411-2.251-.289z" fill="#00B0FF" />
+                      <path d="M13.793 12L3.609 22.186c.701.122 1.544.115 2.251-.289l11.347-6.483L13.793 12z" fill="#FF3D00" />
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-[10px] uppercase tracking-wider text-slate-400 font-medium leading-none mb-1">
+                        Get it on
+                      </div>
+                      <div className="text-sm font-bold text-white leading-none">
+                        Google Play
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* Direct Web Portal Link */}
+                  <a
+                    href="https://patholab.cloud"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-emerald-400 font-bold text-xs sm:text-sm transition-all duration-200 hover:scale-105 cursor-pointer"
+                  >
+                    <span>Launch Web App</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Mobile App Frame Mockup */}
+              <div className="lg:col-span-5 flex items-center justify-center relative mt-6 lg:mt-0 pb-6 lg:pb-0">
+                {/* Glow behind phone */}
+                <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
+
+                {/* Floating Metric Pill 1 (Top Left) */}
+                <div className="absolute top-4 sm:top-6 -left-1 sm:-left-4 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#0b1522]/95 border border-emerald-500/30 text-white shadow-2xl backdrop-blur-md animate-float-orb-1">
+                  <Sparkles className="w-4 h-4 text-emerald-400" />
+                  <div className="text-left">
+                    <div className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Active Volume</div>
+                    <div className="text-xs font-bold text-emerald-300">500,000+ Tests/Mo</div>
+                  </div>
+                </div>
+
+                {/* Floating Metric Pill 2 (Bottom Right) */}
+                <div className="absolute bottom-6 sm:bottom-8 right-1 sm:-right-2 z-20 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#0b1522]/95 border border-blue-500/30 text-white shadow-2xl backdrop-blur-md animate-float-orb-2">
+                  <ShieldCheck className="w-4 h-4 text-blue-400" />
+                  <div className="text-left">
+                    <div className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Verified Rate</div>
+                    <div className="text-xs font-bold text-cyan-300">₹2.5 / Patient</div>
+                  </div>
+                </div>
+
+                {/* Phone Image */}
+                <div className="relative z-10 w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[320px] transition-transform duration-500 hover:scale-105">
+                  <Image
+                    src="/images/products/patholab-phone-transparent.png"
+                    alt="Patholab.Cloud Mobile App on iOS App Store & Google Play"
+                    width={320}
+                    height={655}
+                    className="w-full h-auto object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.9)]"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================== */}
+      {/* 11. FREQUENTLY ASKED QUESTIONS                           */}
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
