@@ -391,8 +391,8 @@ export default function DataSecurityPage() {
                     </p>
                     <p className="text-sm text-slate-600">
                       Email:{" "}
-                      <a href="mailto:security@globizhub.com" className="text-blue-600 hover:underline font-medium">
-                        security@globizhub.com
+                      <a href="mailto:support@globizhub.com" className="text-blue-600 hover:underline font-medium">
+                        support@globizhub.com
                       </a>
                     </p>
                     <p className="text-sm text-slate-600">

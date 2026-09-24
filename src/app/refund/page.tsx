@@ -280,7 +280,7 @@ export default function RefundPolicyPage() {
 
                 <div className="space-y-4">
                   {[
-                    "Requests must be submitted via email to billing@globizhub.com with project reference and invoice numbers.",
+                    "Requests must be submitted via email to admin@globizhub.com with project reference and invoice numbers.",
                     "Cancellations must state the clear operational or technical rationale for the request.",
                     "Clients must have maintained account compliance without outstanding undisputed invoices.",
                     "Mutual reconciliation meetings will be scheduled within five (5) business days to review deliverable status.",

@@ -364,14 +364,14 @@ export default function CorporatePoliciesPage() {
                     </p>
                     <p className="text-sm text-slate-600">
                       Email:{" "}
-                      <a href="mailto:governance@globizhub.com" className="text-blue-600 hover:underline font-medium">
-                        governance@globizhub.com
+                      <a href="mailto:admin@globizhub.com" className="text-blue-600 hover:underline font-medium">
+                        admin@globizhub.com
                       </a>
                     </p>
                     <p className="text-sm text-slate-600">
-                      POSH Inquiries:{" "}
-                      <a href="mailto:posh@globizhub.com" className="text-blue-600 hover:underline font-medium">
-                        posh@globizhub.com
+                      POSH &amp; Compliance Inquiries:{" "}
+                      <a href="mailto:support@globizhub.com" className="text-blue-600 hover:underline font-medium">
+                        support@globizhub.com
                       </a>
                     </p>
                   </div>
