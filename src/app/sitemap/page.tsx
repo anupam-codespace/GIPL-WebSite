@@ -4,7 +4,6 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import {
   Search,
-  ExternalLink,
   ChevronRight,
   ArrowRight,
   Globe,
@@ -12,8 +11,6 @@ import {
   Cpu,
   Layers,
   ShieldCheck,
-  FileCode,
-  Sparkles,
   PhoneCall,
   CheckCircle2,
   X,
@@ -376,7 +373,6 @@ const SITEMAP_DATA: SitemapCategory[] = [
           { title: "Assam Startup Nest Incubation Verification", href: "/about#accreditations" },
           { title: "Triple ISO Certified (ISO 9001, 27001, 20000-1)", href: "/about#accreditations" },
           { title: "Ministry of MSME Enterprise Accreditation", href: "/about#accreditations" },
-          { title: "XML Machine-Readable Sitemap (/sitemap.xml)", href: "/sitemap.xml" },
         ],
       },
     ],
@@ -387,18 +383,6 @@ export default function HtmlSitemapPage() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-
-  // Calculate total links across all categories
-  const totalLinkCount = useMemo(() => {
-    let count = 0;
-    SITEMAP_DATA.forEach((cat) => {
-      cat.links.forEach((link) => {
-        count += 1;
-        if (link.sublinks) count += link.sublinks.length;
-      });
-    });
-    return count;
-  }, []);
 
   // Filter categories and links according to search query and selected category tab
   const filteredData = useMemo(() => {
@@ -462,41 +446,24 @@ export default function HtmlSitemapPage() {
 
           {/* Hero Section with Signature Yellow Marker Highlight (Exact Appinventiv Style) */}
           <header className="mb-10 sm:mb-12">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b border-slate-200">
-              <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-black tracking-tight text-slate-950 mb-3 leading-tight">
-                  <span className="relative inline-block z-0">
-                    <span
-                      className="absolute bottom-1 sm:bottom-2 left-0 right-0 h-3 sm:h-4 bg-[#FFE600] -z-10 rounded-[2px]"
-                      aria-hidden="true"
-                    />
-                    Site Map
-                  </span>
-                </h1>
-                <p className="text-slate-600 text-base sm:text-lg font-normal">
-                  Find your way around our website.
-                </p>
-              </div>
-
-              {/* Quick XML Sitemap Badge */}
-              <div className="flex items-center gap-3">
-                <a
-                  href="/sitemap.xml"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-700 transition-colors border border-slate-200 shadow-xs"
-                >
-                  <FileCode className="w-3.5 h-3.5 text-[#1163fb]" />
-                  <span>View Machine XML Sitemap</span>
-                  <ExternalLink className="w-3 h-3 text-slate-400" />
-                </a>
-              </div>
+            <div className="pb-8 border-b border-slate-200">
+              <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-black tracking-tight text-slate-950 mb-3 leading-tight">
+                <span className="relative inline-block z-0">
+                  <span
+                    className="absolute bottom-1 sm:bottom-2 left-0 right-0 h-3 sm:h-4 bg-[#FFE600] -z-10 rounded-[2px]"
+                    aria-hidden="true"
+                  />
+                  Site Map
+                </span>
+              </h1>
+              <p className="text-slate-600 text-base sm:text-lg font-normal">
+                Find your way around our website.
+              </p>
             </div>
 
-            {/* Interactive Search & Live Filter Bar */}
-            <div className="mt-8 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-              {/* Search Input */}
-              <div className="relative flex-1 max-w-md">
+            {/* Interactive Search Bar */}
+            <div className="mt-8 flex items-center justify-between gap-4">
+              <div className="relative w-full max-w-lg">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <input
                   type="text"
@@ -514,16 +481,6 @@ export default function HtmlSitemapPage() {
                     <X className="w-3.5 h-3.5" />
                   </button>
                 )}
-              </div>
-
-              {/* Total Index Count Pill */}
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200/80 self-start md:self-auto">
-                <Sparkles className="w-3.5 h-3.5 text-[#fc7754]" />
-                <span>
-                  {searchQuery
-                    ? `Found matches across ${filteredData.length} sections`
-                    : `${totalLinkCount}+ Verified Destination Links`}
-                </span>
               </div>
             </div>
 
