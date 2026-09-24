@@ -317,4 +317,94 @@ h1, h2, h3, h4, h5, h6 {
   animation: button-glow-blue-pulse 3.2s ease-in-out infinite;
 }
 
+/* ======================================================== */
+/* Notched Corner Card (Concave Cutout)                    */
+/* ======================================================== */
+.notched-card {
+  position: relative;
+  border-radius: 32px;
+  border-bottom-right-radius: 0 !important;
+}
+
+.notch-corner-white {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 74px;
+  height: 74px;
+  background: #ffffff;
+  border-top-left-radius: 28px;
+  border-top: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color 0.3s ease;
+}
+
+.notch-corner-white::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 0 0, transparent 23px, #ffffff 24px);
+}
+
+.notch-corner-white::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -24px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 0 0, transparent 23px, #ffffff 24px);
+}
+
+.group:hover .notch-corner-white {
+  border-top-color: #1163FB;
+  border-left-color: #1163FB;
+}
+
+.notch-corner-dark {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 74px;
+  height: 74px;
+  background: #06080d;
+  border-top-left-radius: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color 0.3s ease;
+}
+
+.notch-corner-dark::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 0 0, transparent 23px, #06080d 24px);
+}
+
+.notch-corner-dark::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -24px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 0 0, transparent 23px, #06080d 24px);
+}
+
+.group:hover .notch-corner-dark {
+  border-top-color: rgba(59, 130, 246, 0.4);
+  border-left-color: rgba(59, 130, 246, 0.4);
+}
+
+
 

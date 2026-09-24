@@ -880,7 +880,8 @@ export default function AboutPage() {
             {[...CORE_DIVISIONS, ...CORE_DIVISIONS, ...CORE_DIVISIONS, ...CORE_DIVISIONS].map((div, idx) => (
               <div
                 key={`div-${idx}`}
-                className="w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none"
+                onClick={() => setConsultationOpen(true)}
+                className="notched-card w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 min-h-[350px] rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none cursor-pointer relative"
               >
                 <div>
                   {/* Top Bar: Number Badge & Tagline (No AI icons) */}
@@ -899,20 +900,28 @@ export default function AboutPage() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pr-4">
                     {div.desc}
                   </p>
                 </div>
 
-                {/* Explore Capabilities Button (styled like Services catalog Book Consultation) */}
-                <button
-                  onClick={() => setConsultationOpen(true)}
-                  type="button"
-                  className="w-full mt-7 py-3 px-5 rounded-2xl bg-slate-900 group-hover:bg-[#1163FB] text-white text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center justify-between group/btn cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(17,99,251,0.25)]"
+                {/* Bottom Row: Text Label on Left, Notch & Circular Button on Right */}
+                <div className="pt-6 flex items-center justify-between">
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#1163FB] transition-colors">
+                    Explore Capabilities
+                  </span>
+                </div>
+
+                {/* The Notch Cutout */}
+                <div className="notch-corner-white" />
+
+                {/* The Circular Action Button */}
+                <div
+                  className="absolute bottom-1.5 right-1.5 w-14 h-14 rounded-full bg-slate-900 group-hover:bg-[#1163FB] text-white flex items-center justify-center transition-all duration-300 shadow-md group-hover:shadow-[0_8px_20px_rgba(17,99,251,0.35)] group-hover:scale-105 z-20"
+                  aria-hidden="true"
                 >
-                  <span>Explore Capabilities</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                </button>
+                  <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
               </div>
             ))}
           </div>
@@ -939,7 +948,8 @@ export default function AboutPage() {
             {[...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS].map((item, idx) => (
               <div
                 key={`allied-${idx}`}
-                className="w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none"
+                onClick={() => setConsultationOpen(true)}
+                className="notched-card w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 min-h-[350px] rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none cursor-pointer relative"
               >
                 <div>
                   {/* Top Bar: Number Badge & Tag (No AI icons) */}
@@ -958,20 +968,28 @@ export default function AboutPage() {
                   </h4>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pr-4">
                     {item.desc}
                   </p>
                 </div>
 
-                {/* Explore Capabilities Button (styled like Services catalog Book Consultation) */}
-                <button
-                  onClick={() => setConsultationOpen(true)}
-                  type="button"
-                  className="w-full mt-7 py-3 px-5 rounded-2xl bg-slate-900 group-hover:bg-[#1163FB] text-white text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center justify-between group/btn cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(17,99,251,0.25)]"
+                {/* Bottom Row: Text Label on Left, Notch & Circular Button on Right */}
+                <div className="pt-6 flex items-center justify-between">
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#1163FB] transition-colors">
+                    Explore Capabilities
+                  </span>
+                </div>
+
+                {/* The Notch Cutout */}
+                <div className="notch-corner-white" />
+
+                {/* The Circular Action Button */}
+                <div
+                  className="absolute bottom-1.5 right-1.5 w-14 h-14 rounded-full bg-slate-900 group-hover:bg-[#1163FB] text-white flex items-center justify-center transition-all duration-300 shadow-md group-hover:shadow-[0_8px_20px_rgba(17,99,251,0.35)] group-hover:scale-105 z-20"
+                  aria-hidden="true"
                 >
-                  <span>Explore Capabilities</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                </button>
+                  <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
               </div>
             ))}
           </div>

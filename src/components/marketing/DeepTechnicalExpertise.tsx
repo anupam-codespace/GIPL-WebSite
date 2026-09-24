@@ -131,26 +131,41 @@ export default function DeepTechnicalExpertise({
             <div
               key={item.id}
               onClick={onOpenConsultation}
-              className="group cursor-pointer flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#0c1017]/80 hover:bg-[#121722] border border-white/[0.08] hover:border-blue-500/40 transition-all duration-300 shadow-sm hover:shadow-[0_8px_30px_rgba(17,99,251,0.12)] hover:-translate-y-1"
+              className="notched-card group cursor-pointer flex flex-col justify-between p-7 sm:p-8 min-h-[350px] bg-[#0c1017]/85 hover:bg-[#121722] border border-white/[0.08] hover:border-blue-500/40 transition-all duration-300 shadow-sm hover:shadow-[0_16px_40px_rgba(17,99,251,0.18)] hover:-translate-y-1.5 relative select-none"
             >
               <div>
                 {/* Icon Container */}
-                <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] group-hover:border-[#1163FB]/40 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105">
+                <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] group-hover:border-[#1163FB]/40 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105">
                   {item.icon}
                 </div>
 
                 {/* Title */}
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <h3 className="text-xl sm:text-[22px] font-bold text-white tracking-tight group-hover:text-[#1163FB] transition-colors duration-200">
-                    {item.title}
-                  </h3>
-                  <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-[#1163FB] transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0 opacity-0 group-hover:opacity-100" />
-                </div>
+                <h3 className="text-xl sm:text-[22px] font-bold text-white tracking-tight group-hover:text-[#1163FB] transition-colors duration-200 mb-3">
+                  {item.title}
+                </h3>
 
                 {/* Description */}
-                <p className="text-[14px] sm:text-[15px] text-slate-400 font-normal leading-relaxed">
+                <p className="text-[14px] sm:text-[15px] text-slate-400 font-normal leading-relaxed pr-4">
                   {item.description}
                 </p>
+              </div>
+
+              {/* Bottom Row: Action Label on Left */}
+              <div className="pt-6 flex items-center justify-between">
+                <span className="text-xs sm:text-sm font-semibold text-slate-300 group-hover:text-[#1163FB] transition-colors">
+                  Architectural Scope
+                </span>
+              </div>
+
+              {/* The Dark Notch Cutout */}
+              <div className="notch-corner-dark" />
+
+              {/* The Circular Action Button */}
+              <div
+                className="absolute bottom-1.5 right-1.5 w-14 h-14 rounded-full bg-slate-800/80 group-hover:bg-[#1163FB] border border-white/10 group-hover:border-[#1163FB] text-white flex items-center justify-center transition-all duration-300 shadow-md group-hover:shadow-[0_8px_25px_rgba(17,99,251,0.45)] group-hover:scale-105 z-20"
+                aria-hidden="true"
+              >
+                <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </div>
           ))}
