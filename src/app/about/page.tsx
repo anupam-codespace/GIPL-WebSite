@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
+  ArrowUpRight,
   ShieldCheck,
   CheckCircle2,
   ChevronDown,
@@ -279,115 +280,86 @@ const RECOGNITIONS = [
 ];
 
 // -------------------------------------------------------------
-// Core Operating Divisions (01 to 05 - Fills Left to Right)
+// Core Operating Divisions (01 to 05)
 // -------------------------------------------------------------
 const CORE_DIVISIONS = [
   {
     num: "01",
     name: "IT Products",
     tagline: "Proprietary SaaS & Platforms",
-    desc: "Architecting high-throughput multi-tenant SaaS systems, intelligent diagnostic LIMS, and automated ERP engines built for zero sample loss and enterprise scale.",
-    icon: Boxes,
-    borderHover: "hover:border-blue-500/50",
-    badgeColor: "text-blue-400 bg-blue-500/10 border-blue-500/20"
+    desc: "Architecting high-throughput multi-tenant SaaS systems, intelligent diagnostic LIMS, and automated ERP engines built for zero sample loss and enterprise scale."
   },
   {
     num: "02",
     name: "IT Services",
     tagline: "Custom Software & Cloud",
-    desc: "Delivering bespoke full-stack engineering, sovereign cloud infrastructure, autonomous AI agents, legacy system modernization, and 24/7 Site Reliability.",
-    icon: Code2,
-    borderHover: "hover:border-sky-500/50",
-    badgeColor: "text-sky-400 bg-sky-500/10 border-sky-500/20"
+    desc: "Delivering bespoke full-stack engineering, sovereign cloud infrastructure, autonomous AI agents, legacy system modernization, and 24/7 Site Reliability."
   },
   {
     num: "03",
     name: "IoT Solutions",
     tagline: "Connected Telemetry & Sensors",
-    desc: "Industrial telemetry sensors, edge computing firmware, bidirectional medical analyzer interfaces, cold-chain monitoring, and real-time geospatial tracking.",
-    icon: Cpu,
-    borderHover: "hover:border-emerald-500/50",
-    badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
+    desc: "Industrial telemetry sensors, edge computing firmware, bidirectional medical analyzer interfaces, cold-chain monitoring, and real-time geospatial tracking."
   },
   {
     num: "04",
     name: "Hardware",
     tagline: "Embedded Infrastructure & Kiosks",
-    desc: "Specialized embedded PCB design, automated RFID check-in stations, diagnostic hardware integration, and rugged sovereign hardware infrastructure.",
-    icon: Laptop,
-    borderHover: "hover:border-amber-500/50",
-    badgeColor: "text-amber-400 bg-amber-500/10 border-amber-500/20"
+    desc: "Specialized embedded PCB design, automated RFID check-in stations, diagnostic hardware integration, and rugged sovereign hardware infrastructure."
   },
   {
     num: "05",
     name: "Digital Marketing",
     tagline: "Programmatic Brand & Growth",
-    desc: "Enterprise data-driven customer acquisition, conversion rate optimization, programmatic technical SEO, global B2B outreach, and brand velocity.",
-    icon: TrendingUp,
-    borderHover: "hover:border-purple-500/50",
-    badgeColor: "text-purple-400 bg-purple-500/10 border-purple-500/20"
+    desc: "Enterprise data-driven customer acquisition, conversion rate optimization, programmatic technical SEO, global B2B outreach, and brand velocity."
   }
 ];
 
 // -------------------------------------------------------------
-// Allied Business Verticals (Small Boxes)
+// Allied Business Verticals (01 to 07)
 // -------------------------------------------------------------
 const ALLIED_VERTICALS = [
   {
+    num: "01",
     name: "Business Listing",
     tag: "B2B Directory",
-    desc: "Global verified corporate discovery directory connecting certified manufacturers and suppliers with enterprise buyers.",
-    icon: Globe2,
-    iconColor: "text-blue-400",
-    borderHover: "hover:border-blue-500/40"
+    desc: "Global verified corporate discovery directory connecting certified manufacturers and suppliers with enterprise buyers across high-demand industrial sectors."
   },
   {
+    num: "02",
     name: "Freight Forwarding & Logistics",
     tag: "Multimodal Cargo",
-    desc: "End-to-end maritime, aviation, and surface freight routing with automated customs compliance and port orchestration.",
-    icon: Truck,
-    iconColor: "text-sky-400",
-    borderHover: "hover:border-sky-500/40"
+    desc: "End-to-end maritime, aviation, and surface freight routing with automated customs compliance, predictive transit tracking, and port orchestration."
   },
   {
+    num: "03",
     name: "Courier & Express",
     tag: "Last-Mile Delivery",
-    desc: "Hyperlocal and cross-regional courier logistics with automated dispatch, sub-24h distribution, and live GPS proof of delivery.",
-    icon: PackageCheck,
-    iconColor: "text-emerald-400",
-    borderHover: "hover:border-emerald-500/40"
+    desc: "Hyperlocal and cross-regional courier logistics with automated dispatch, sub-24h distribution networks, and live GPS proof of delivery."
   },
   {
+    num: "04",
     name: "Import & Export",
     tag: "International Trade",
-    desc: "Sovereign cross-border commodity trade execution, tariff risk compliance, bonded warehousing, and bilateral fulfillment.",
-    icon: ArrowLeftRight,
-    iconColor: "text-amber-400",
-    borderHover: "hover:border-amber-500/40"
+    desc: "Sovereign cross-border commodity trade execution, tariff risk compliance, bonded warehousing, and bilateral supply-chain fulfillment."
   },
   {
+    num: "05",
     name: "Leather Products Manufacturing",
     tag: "Export Craftsmanship",
-    desc: "Specialized precision manufacturing of premium handcrafted industrial and luxury leather goods adhering to international export norms.",
-    icon: Briefcase,
-    iconColor: "text-orange-400",
-    borderHover: "hover:border-orange-500/40"
+    desc: "Specialized precision manufacturing of premium handcrafted industrial and luxury leather goods adhering to strict international export norms."
   },
   {
+    num: "06",
     name: "E&M Fashion Brand",
     tag: "Apparel & Lifestyle",
-    desc: "Contemporary designer lifestyle apparel brand combining modern aesthetic design with ethical and sustainable textile manufacturing.",
-    icon: Shirt,
-    iconColor: "text-pink-400",
-    borderHover: "hover:border-pink-500/40"
+    desc: "Contemporary designer lifestyle apparel brand combining modern aesthetic design, premium materials, and ethical, sustainable textile manufacturing."
   },
   {
+    num: "07",
     name: "Private Labs & Diagnostics",
     tag: "Clinical Healthcare",
-    desc: "NABL-aligned private diagnostic pathology network powered by automated analyzer interfacing and instant WhatsApp report delivery.",
-    icon: FlaskConical,
-    iconColor: "text-teal-400",
-    borderHover: "hover:border-teal-500/40"
+    desc: "NABL-aligned private diagnostic pathology network powered by automated analyzer interfacing and instant WhatsApp report delivery."
   }
 ];
 
@@ -919,112 +891,124 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 6. OUR DIVISIONS (01 - 05) & ALLIED ENTERPRISE VERTICALS  */}
+      {/* 6. OUR DIVISIONS & ALLIED BUSINESS VERTICALS (WHITE BG)   */}
       {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Divisions Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">
-              Enterprise Operating Verticals
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+      <section className="py-20 sm:py-28 bg-white border-y border-slate-200/80 relative overflow-hidden">
+        {/* Main Divisions Header */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-14">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950 mb-4">
               Our Divisions
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Spearheading multi-disciplinary technological transformation across software products, high-throughput cloud engineering, intelligent hardware, and brand velocity.
             </p>
           </div>
+        </div>
 
-          {/* 5 Numbered Division Boxes (Fills Left to Right) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5 mb-16 sm:mb-20">
-            {CORE_DIVISIONS.map((div) => {
-              const IconComponent = div.icon;
-              return (
-                <div
-                  key={div.num}
-                  className={`group relative p-6 sm:p-7 rounded-3xl bg-[#0a0f1d] border border-white/10 ${div.borderHover} transition-all duration-300 flex flex-col justify-between shadow-xl hover:-translate-y-1.5 hover:shadow-2xl overflow-hidden`}
-                >
-                  {/* Subtle Top Ambient Gradient */}
-                  <div className="absolute -top-12 -right-12 w-28 h-28 bg-white/[0.02] rounded-full blur-xl group-hover:bg-blue-500/10 transition-colors pointer-events-none" />
+        {/* Row 1: Our Divisions - Moving Left to Right (animate-marquee-reverse) */}
+        <div className="relative w-full overflow-hidden mb-16 sm:mb-20">
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-                  <div>
-                    {/* Top Row: Sequential Monospace Number & Icon Badge */}
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-500/60 group-hover:text-blue-400 transition-colors tracking-tight">
-                        {div.num}
-                      </span>
-                      <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border ${div.badgeColor} shadow-inner`}>
-                        <IconComponent className="w-5 h-5" />
-                      </div>
-                    </div>
-
-                    {/* Division Title & Tagline */}
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-blue-300 transition-colors">
-                      {div.name}
-                    </h3>
-                    <div className="text-[11px] font-semibold text-blue-400/90 mb-3 uppercase tracking-wider">
+          <div className="animate-marquee-reverse flex items-stretch gap-6 py-3">
+            {[...CORE_DIVISIONS, ...CORE_DIVISIONS, ...CORE_DIVISIONS, ...CORE_DIVISIONS].map((div, idx) => (
+              <div
+                key={`div-${idx}`}
+                className="w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none"
+              >
+                <div>
+                  {/* Top Bar: Number Badge & Tagline (No AI icons) */}
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="inline-block text-xs font-mono font-bold text-[#1163FB] bg-blue-50 border border-blue-100 px-3.5 py-1.5 rounded-full">
+                      {div.num}
+                    </span>
+                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
                       {div.tagline}
-                    </div>
-
-                    {/* Concise Summary */}
-                    <p className="text-xs text-slate-300 leading-relaxed mb-6">
-                      {div.desc}
-                    </p>
+                    </span>
                   </div>
 
-                  {/* Bottom Indicator */}
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-semibold text-slate-400 group-hover:text-blue-400 transition-colors">
-                    <span>Explore Capabilities</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                  {/* Division Title */}
+                  <h3 className="text-xl font-bold text-slate-950 mb-3 group-hover:text-[#1163FB] transition-colors leading-snug">
+                    {div.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    {div.desc}
+                  </p>
                 </div>
-              );
-            })}
-          </div>
 
-          {/* Allied Business Verticals Header */}
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">
-              Diversified Ecosystem
-            </span>
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3">
+                {/* Explore Capabilities Button (styled like Services catalog Book Consultation) */}
+                <button
+                  onClick={() => setConsultationOpen(true)}
+                  type="button"
+                  className="w-full mt-7 py-3 px-5 rounded-2xl bg-slate-900 group-hover:bg-[#1163FB] text-white text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center justify-between group/btn cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(17,99,251,0.25)]"
+                >
+                  <span>Explore Capabilities</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Allied Business Verticals Header */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-14">
+          <div className="text-center max-w-3xl mx-auto">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950 mb-4">
               Allied Ventures &amp; Business Verticals
             </h3>
-            <p className="text-slate-400 text-xs sm:text-sm">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Extending our engineering rigour into specialized global logistics, international trade, clinical laboratories, and lifestyle brands.
             </p>
           </div>
+        </div>
 
-          {/* 7 Small Boxes */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3.5 sm:gap-4">
-            {ALLIED_VERTICALS.map((item, idx) => {
-              const IconComp = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className={`p-4 sm:p-5 rounded-2xl bg-[#080c18] border border-white/10 ${item.borderHover} hover:bg-white/[0.02] transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1`}
-                >
-                  <div>
-                    <div className={`w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center ${item.iconColor} mb-3.5 group-hover:scale-110 transition-transform`}>
-                      <IconComp className="w-4 h-4" />
-                    </div>
+        {/* Row 2: Allied Ventures - Moving Right to Left (animate-marquee) */}
+        <div className="relative w-full overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-                    <h4 className="text-xs sm:text-sm font-bold text-white mb-1 leading-snug group-hover:text-blue-300 transition-colors">
-                      {item.name}
-                    </h4>
-
-                    <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
+          <div className="animate-marquee flex items-stretch gap-6 py-3">
+            {[...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS].map((item, idx) => (
+              <div
+                key={`allied-${idx}`}
+                className="w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none"
+              >
+                <div>
+                  {/* Top Bar: Number Badge & Tag (No AI icons) */}
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="inline-block text-xs font-mono font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3.5 py-1.5 rounded-full">
+                      {item.num}
+                    </span>
+                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
                       {item.tag}
-                    </div>
-
-                    <p className="text-[11px] text-slate-300 leading-relaxed line-clamp-3">
-                      {item.desc}
-                    </p>
+                    </span>
                   </div>
+
+                  {/* Vertical Title */}
+                  <h4 className="text-xl font-bold text-slate-950 mb-3 group-hover:text-[#1163FB] transition-colors leading-snug">
+                    {item.name}
+                  </h4>
+
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
                 </div>
-              );
-            })}
+
+                {/* Explore Capabilities Button (styled like Services catalog Book Consultation) */}
+                <button
+                  onClick={() => setConsultationOpen(true)}
+                  type="button"
+                  className="w-full mt-7 py-3 px-5 rounded-2xl bg-slate-900 group-hover:bg-[#1163FB] text-white text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center justify-between group/btn cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(17,99,251,0.25)]"
+                >
+                  <span>Explore Capabilities</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
