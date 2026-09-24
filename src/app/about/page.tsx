@@ -13,7 +13,21 @@ import {
   TrendingUp,
   Target,
   Cpu,
-  Boxes
+  Boxes,
+  Code2,
+  Laptop,
+  Globe2,
+  Truck,
+  PackageCheck,
+  ArrowLeftRight,
+  Briefcase,
+  Shirt,
+  FlaskConical,
+  Users,
+  Award,
+  Zap,
+  Smile,
+  Heart
 } from "lucide-react";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
@@ -162,7 +176,7 @@ const MILESTONES: Milestone[] = [
 ];
 
 // -------------------------------------------------------------
-// Delivery Centers Data (Cleaned of Global HQ and Coordinates)
+// Delivery Centers Data
 // -------------------------------------------------------------
 const DELIVERY_CENTERS = [
   {
@@ -200,7 +214,7 @@ const DELIVERY_CENTERS = [
 ];
 
 // -------------------------------------------------------------
-// Recognitions & Accreditations Data (Cleaned)
+// Recognitions & Accreditations Data
 // -------------------------------------------------------------
 const RECOGNITIONS = [
   {
@@ -258,6 +272,187 @@ const RECOGNITIONS = [
     desc: "Certified for world-class IT service delivery, incident response SLA governance, and mission-critical cloud system availability.",
     logo: "/images/iso_20000_certified_badge.png",
     type: "Service Excellence"
+  }
+];
+
+// -------------------------------------------------------------
+// Core Operating Divisions (01 to 05 - Fills Left to Right)
+// -------------------------------------------------------------
+const CORE_DIVISIONS = [
+  {
+    num: "01",
+    name: "IT Products",
+    tagline: "Proprietary SaaS & Platforms",
+    desc: "Architecting high-throughput multi-tenant SaaS systems, intelligent diagnostic LIMS, and automated ERP engines built for zero sample loss and enterprise scale.",
+    icon: Boxes,
+    borderHover: "hover:border-blue-500/50",
+    badgeColor: "text-blue-400 bg-blue-500/10 border-blue-500/20"
+  },
+  {
+    num: "02",
+    name: "IT Services",
+    tagline: "Custom Software & Cloud",
+    desc: "Delivering bespoke full-stack engineering, sovereign cloud infrastructure, autonomous AI agents, legacy system modernization, and 24/7 Site Reliability.",
+    icon: Code2,
+    borderHover: "hover:border-sky-500/50",
+    badgeColor: "text-sky-400 bg-sky-500/10 border-sky-500/20"
+  },
+  {
+    num: "03",
+    name: "IoT Solutions",
+    tagline: "Connected Telemetry & Sensors",
+    desc: "Industrial telemetry sensors, edge computing firmware, bidirectional medical analyzer interfaces, cold-chain monitoring, and real-time geospatial tracking.",
+    icon: Cpu,
+    borderHover: "hover:border-emerald-500/50",
+    badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
+  },
+  {
+    num: "04",
+    name: "Hardware",
+    tagline: "Embedded Infrastructure & Kiosks",
+    desc: "Specialized embedded PCB design, automated RFID check-in stations, diagnostic hardware integration, and rugged sovereign hardware infrastructure.",
+    icon: Laptop,
+    borderHover: "hover:border-amber-500/50",
+    badgeColor: "text-amber-400 bg-amber-500/10 border-amber-500/20"
+  },
+  {
+    num: "05",
+    name: "Digital Marketing",
+    tagline: "Programmatic Brand & Growth",
+    desc: "Enterprise data-driven customer acquisition, conversion rate optimization, programmatic technical SEO, global B2B outreach, and brand velocity.",
+    icon: TrendingUp,
+    borderHover: "hover:border-purple-500/50",
+    badgeColor: "text-purple-400 bg-purple-500/10 border-purple-500/20"
+  }
+];
+
+// -------------------------------------------------------------
+// Allied Business Verticals (Small Boxes)
+// -------------------------------------------------------------
+const ALLIED_VERTICALS = [
+  {
+    name: "Business Listing",
+    tag: "B2B Directory",
+    desc: "Global verified corporate discovery directory connecting certified manufacturers and suppliers with enterprise buyers.",
+    icon: Globe2,
+    iconColor: "text-blue-400",
+    borderHover: "hover:border-blue-500/40"
+  },
+  {
+    name: "Freight Forwarding & Logistics",
+    tag: "Multimodal Cargo",
+    desc: "End-to-end maritime, aviation, and surface freight routing with automated customs compliance and port orchestration.",
+    icon: Truck,
+    iconColor: "text-sky-400",
+    borderHover: "hover:border-sky-500/40"
+  },
+  {
+    name: "Courier & Express",
+    tag: "Last-Mile Delivery",
+    desc: "Hyperlocal and cross-regional courier logistics with automated dispatch, sub-24h distribution, and live GPS proof of delivery.",
+    icon: PackageCheck,
+    iconColor: "text-emerald-400",
+    borderHover: "hover:border-emerald-500/40"
+  },
+  {
+    name: "Import & Export",
+    tag: "International Trade",
+    desc: "Sovereign cross-border commodity trade execution, tariff risk compliance, bonded warehousing, and bilateral fulfillment.",
+    icon: ArrowLeftRight,
+    iconColor: "text-amber-400",
+    borderHover: "hover:border-amber-500/40"
+  },
+  {
+    name: "Leather Products Manufacturing",
+    tag: "Export Craftsmanship",
+    desc: "Specialized precision manufacturing of premium handcrafted industrial and luxury leather goods adhering to international export norms.",
+    icon: Briefcase,
+    iconColor: "text-orange-400",
+    borderHover: "hover:border-orange-500/40"
+  },
+  {
+    name: "E&M Fashion Brand",
+    tag: "Apparel & Lifestyle",
+    desc: "Contemporary designer lifestyle apparel brand combining modern aesthetic design with ethical and sustainable textile manufacturing.",
+    icon: Shirt,
+    iconColor: "text-pink-400",
+    borderHover: "hover:border-pink-500/40"
+  },
+  {
+    name: "Private Labs & Diagnostics",
+    tag: "Clinical Healthcare",
+    desc: "NABL-aligned private diagnostic pathology network powered by automated analyzer interfacing and instant WhatsApp report delivery.",
+    icon: FlaskConical,
+    iconColor: "text-teal-400",
+    borderHover: "hover:border-teal-500/40"
+  }
+];
+
+// -------------------------------------------------------------
+// Why Choose Us Pillars
+// -------------------------------------------------------------
+const WHY_CHOOSE_US = [
+  {
+    title: "Silicon-Grade Engineering & 99.9% Uptime",
+    stat: "99.9%",
+    statLabel: "Guaranteed SLA",
+    desc: "We don't build disposable prototypes. Every line of code is architected for zero-defect resilience, sub-second API latency, automated CI/CD regression tests, and high-concurrency enterprise load.",
+    icon: ShieldCheck,
+    borderHover: "hover:border-blue-500/40"
+  },
+  {
+    title: "150+ Top 1% Dedicated In-House Squads",
+    stat: "150+",
+    statLabel: "Full-Time Specialists",
+    desc: "Zero outsourced third-party contractors. Our full-time software architects, AI researchers, and certified cloud engineers act as high-velocity extensions of your executive leadership team.",
+    icon: Users,
+    borderHover: "hover:border-emerald-500/40"
+  },
+  {
+    title: "Triple ISO Certified & Sovereign Security",
+    stat: "3× ISO",
+    statLabel: "Audited Certifications",
+    desc: "Certified ISO 9001:2015, ISO/IEC 27001:2022, and ISO/IEC 20000-1:2018 with DPIIT accreditation. We enforce AES-256 encryption, zero-trust RBAC, and HIPAA/GDPR regulatory compliance.",
+    icon: Award,
+    borderHover: "hover:border-purple-500/40"
+  },
+  {
+    title: "100% Sprint Transparency & ROI Accountability",
+    stat: "100%",
+    statLabel: "Transparent Code Velocity",
+    desc: "Real-time Slack & Jira sync, direct GitHub/GitLab access, and bi-weekly milestone demonstrations. Every technical feature connects directly to your commercial business targets.",
+    icon: TrendingUp,
+    borderHover: "hover:border-amber-500/40"
+  }
+];
+
+// -------------------------------------------------------------
+// Our Culture Pillars
+// -------------------------------------------------------------
+const CULTURE_PILLARS = [
+  {
+    title: "Extreme Ownership & Autonomy",
+    desc: "We trust our engineers to make architectural decisions, innovate fearlessly, and take genuine pride in their craft. No micromanagement, only radical accountability.",
+    icon: Target,
+    color: "text-blue-400"
+  },
+  {
+    title: "Continuous Upskilling & 10% AI R&D",
+    desc: "Dedicated sandbox time for exploration, internal open-source contributions, weekly tech talks, and sponsored cloud & AI certifications to stay at the technological frontier.",
+    icon: Zap,
+    color: "text-amber-400"
+  },
+  {
+    title: "Symbiotic Harmony & Work-Life Balance",
+    desc: "We believe sustainable pace yields the best code. We reject toxic crunch culture in favor of predictable sprint velocity, flexible hybrid work, and mental wellness support.",
+    icon: Smile,
+    color: "text-emerald-400"
+  },
+  {
+    title: "Diversity, Inclusivity & Merit-First Growth",
+    desc: "Equal opportunities across India's premier delivery hubs. We celebrate diverse voices, regional backgrounds, and promote solely based on impact, talent, and teamwork.",
+    icon: Heart,
+    color: "text-pink-400"
   }
 ];
 
@@ -461,7 +656,7 @@ export default function AboutPage() {
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header (Continuous Evolution & Subtitle Removed) */}
+          {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
               A Journey of Engineering Excellence
@@ -479,7 +674,7 @@ export default function AboutPage() {
                   type="button"
                   className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 cursor-pointer ${
                     isActive
-                      ? "bg-blue-600 text-white shadow-[0_0_20px_rgba(17,99,251,0.4)] scale-105"
+                      ? "bg-blue-600 text-white shadow-md scale-105"
                       : "bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5"
                   }`}
                 >
@@ -558,7 +753,6 @@ export default function AboutPage() {
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#000000] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Eyebrow removed */}
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Recognition Rooted in Results
@@ -568,7 +762,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Recognitions Grid (Verified & Active footer removed) */}
+          {/* Recognitions Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {RECOGNITIONS.map((rec, idx) => (
               <div
@@ -613,14 +807,12 @@ export default function AboutPage() {
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Eyebrow & Subtitle removed */}
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
               Our 4 Delivery &amp; Excellence Centers
             </h2>
           </div>
 
-          {/* Delivery Hubs (Badges like Global HQ & Coordinates removed) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {DELIVERY_CENTERS.map((hub, idx) => (
               <div
@@ -653,7 +845,6 @@ export default function AboutPage() {
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-[#000000] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Ethos & Values Eyebrow removed */}
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               How We Create Defensible Value
@@ -725,10 +916,263 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 6. OUR PROPRIETARY PRODUCTS: The Globizhub Suite        */}
+      {/* 6. OUR DIVISIONS (01 - 05) & ALLIED ENTERPRISE VERTICALS  */}
       {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative overflow-hidden">
-        {/* Header (Proprietary Enterprise Ecosystem removed, subtitle made small) */}
+      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Main Divisions Header */}
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">
+              Enterprise Operating Verticals
+            </span>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+              Our Divisions
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Spearheading multi-disciplinary technological transformation across software products, high-throughput cloud engineering, intelligent hardware, and brand velocity.
+            </p>
+          </div>
+
+          {/* 5 Numbered Division Boxes (Fills Left to Right) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5 mb-16 sm:mb-20">
+            {CORE_DIVISIONS.map((div) => {
+              const IconComponent = div.icon;
+              return (
+                <div
+                  key={div.num}
+                  className={`group relative p-6 sm:p-7 rounded-3xl bg-[#0a0f1d] border border-white/10 ${div.borderHover} transition-all duration-300 flex flex-col justify-between shadow-xl hover:-translate-y-1.5 hover:shadow-2xl overflow-hidden`}
+                >
+                  {/* Subtle Top Ambient Gradient */}
+                  <div className="absolute -top-12 -right-12 w-28 h-28 bg-white/[0.02] rounded-full blur-xl group-hover:bg-blue-500/10 transition-colors pointer-events-none" />
+
+                  <div>
+                    {/* Top Row: Sequential Monospace Number & Icon Badge */}
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-500/60 group-hover:text-blue-400 transition-colors tracking-tight">
+                        {div.num}
+                      </span>
+                      <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border ${div.badgeColor} shadow-inner`}>
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                    </div>
+
+                    {/* Division Title & Tagline */}
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-blue-300 transition-colors">
+                      {div.name}
+                    </h3>
+                    <div className="text-[11px] font-semibold text-blue-400/90 mb-3 uppercase tracking-wider">
+                      {div.tagline}
+                    </div>
+
+                    {/* Concise Summary */}
+                    <p className="text-xs text-slate-300 leading-relaxed mb-6">
+                      {div.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Indicator */}
+                  <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-semibold text-slate-400 group-hover:text-blue-400 transition-colors">
+                    <span>Explore Capabilities</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Allied Business Verticals Header */}
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">
+              Diversified Ecosystem
+            </span>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3">
+              Allied Ventures &amp; Business Verticals
+            </h3>
+            <p className="text-slate-400 text-xs sm:text-sm">
+              Extending our engineering rigour into specialized global logistics, international trade, clinical laboratories, and lifestyle brands.
+            </p>
+          </div>
+
+          {/* 7 Small Boxes */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3.5 sm:gap-4">
+            {ALLIED_VERTICALS.map((item, idx) => {
+              const IconComp = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className={`p-4 sm:p-5 rounded-2xl bg-[#080c18] border border-white/10 ${item.borderHover} hover:bg-white/[0.02] transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1`}
+                >
+                  <div>
+                    <div className={`w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center ${item.iconColor} mb-3.5 group-hover:scale-110 transition-transform`}>
+                      <IconComp className="w-4 h-4" />
+                    </div>
+
+                    <h4 className="text-xs sm:text-sm font-bold text-white mb-1 leading-snug group-hover:text-blue-300 transition-colors">
+                      {item.name}
+                    </h4>
+
+                    <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                      {item.tag}
+                    </div>
+
+                    <p className="text-[11px] text-slate-300 leading-relaxed line-clamp-3">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================== */}
+      {/* 7. WHY CHOOSE US SECTION                                 */}
+      {/* ======================================================== */}
+      <section className="py-20 sm:py-28 bg-[#000000] relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3 block">
+              The Globizhub Advantage
+            </span>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+              Why Choose Globizhub?
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              We combine the velocity and craft of an elite product squad with the scale, security, and sovereign compliance of a global technology leader.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {WHY_CHOOSE_US.map((pillar, idx) => {
+              const IconC = pillar.icon;
+              return (
+                <div
+                  key={idx}
+                  className={`p-8 sm:p-10 rounded-3xl bg-[#090d18] border border-white/10 ${pillar.borderHover} transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1 relative overflow-hidden`}
+                >
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 text-blue-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <IconC className="w-6 h-6" />
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xl sm:text-2xl font-extrabold font-mono text-emerald-400">
+                          {pillar.stat}
+                        </div>
+                        <div className="text-[11px] font-semibold text-slate-400">
+                          {pillar.statLabel}
+                        </div>
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                      {pillar.title}
+                    </h3>
+
+                    <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                      {pillar.desc}
+                    </p>
+                  </div>
+
+                  <div className="relative z-10 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-blue-400">
+                    <span>Audited Enterprise Standard</span>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================== */}
+      {/* 8. OUR CULTURE SECTION                                   */}
+      {/* ======================================================== */}
+      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-purple-400 mb-3 block">
+              Life at Globizhub
+            </span>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+              Our Culture: Crafted by Curious Minds
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              We believe world-changing software begins with an empowered, inclusive engineering culture where radical trust, continuous learning, and work-life harmony thrive.
+            </p>
+          </div>
+
+          {/* High-Impact Culture Banner with Team Photo */}
+          <div className="relative w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-12 group">
+            <div className="relative aspect-[16/7] sm:aspect-[21/9] w-full min-h-[260px]">
+              <Image
+                src="/images/footer_team.jpg"
+                alt="Globizhub Engineering Team & Culture"
+                fill
+                className="object-cover object-center group-hover:scale-102 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80" />
+
+              <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+                <div className="max-w-xl">
+                  <div className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">
+                    Symbiotic Engineering Collective
+                  </div>
+                  <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight mb-2">
+                    Empowered Engineers. Relentless Innovation. Zero Bureaucracy.
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 line-clamp-2">
+                    Across Bengaluru, Guwahati, Chennai, and Delhi-NCR, our squads collaborate across flat hierarchies to build systems that define industries.
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setConsultationOpen(true)}
+                  type="button"
+                  className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs sm:text-sm backdrop-blur-md transition-all cursor-pointer shrink-0"
+                >
+                  Join Our Team
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* 4 Culture Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {CULTURE_PILLARS.map((cult, idx) => {
+              const CultIcon = cult.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 sm:p-7 rounded-3xl bg-[#090d18] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1"
+                >
+                  <div>
+                    <div className={`w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${cult.color} mb-5 group-hover:scale-110 transition-transform`}>
+                      <CultIcon className="w-5 h-5" />
+                    </div>
+
+                    <h4 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                      {cult.title}
+                    </h4>
+
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {cult.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================== */}
+      {/* 9. OUR PROPRIETARY PRODUCTS: The Globizhub Suite        */}
+      {/* ======================================================== */}
+      <section className="py-20 sm:py-28 bg-[#000000] relative overflow-hidden">
+        {/* Header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-14 text-center">
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">
             Products Engineered by Globizhub
@@ -741,8 +1185,8 @@ export default function AboutPage() {
         {/* Continuous Left-to-Right Moving Product Cards */}
         <div className="relative w-full overflow-hidden">
           {/* Subtle Side Gradient Edge Fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#05070e] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#05070e] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#000000] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#000000] to-transparent z-10 pointer-events-none" />
 
           <div className="flex w-max gap-6 animate-marquee-continuous-reverse py-4">
             {[...PROPRIETARY_PRODUCTS, ...PROPRIETARY_PRODUCTS].map((product, idx) => (
@@ -783,11 +1227,10 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 7. FREQUENTLY ASKED QUESTIONS                            */}
+      {/* 10. FREQUENTLY ASKED QUESTIONS                           */}
       {/* ======================================================== */}
-      <section className="py-20 sm:py-28 bg-[#000000] relative">
+      <section className="py-20 sm:py-28 bg-[#05070e] border-y border-white/5 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Enterprise Inquiries Eyebrow & Subtitle removed */}
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
               Frequently Asked Questions
@@ -830,13 +1273,12 @@ export default function AboutPage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 8. BOTTOM CALL TO ACTION BANNER                          */}
+      {/* 11. BOTTOM CALL TO ACTION BANNER                         */}
       {/* ======================================================== */}
       <section className="py-20 sm:py-28 bg-gradient-to-b from-[#000000] via-[#070b16] to-[#000000] relative overflow-hidden text-center border-t border-white/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(17,99,251,0.18)_0,transparent_70%)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Transform Your Business Trajectory removed */}
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
             You&apos;re One Step Away From Engineering{" "}
             <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
