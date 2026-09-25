@@ -847,6 +847,7 @@ export default function AboutPage() {
               const isEM = item.name === "E&M Fashion Brand";
               const isLogistics = item.name === "Freight Forwarding & Logistics";
               const isLeather = item.name === "Leather Products Manufacturing";
+              const isImportExport = item.name === "Import & Export";
               return (
                 <div
                   key={`allied-${idx}`}
@@ -857,6 +858,8 @@ export default function AboutPage() {
                       router.push("/freight-forwarding-logistics");
                     } else if (isLeather) {
                       router.push("/leather-products-manufacturing");
+                    } else if (isImportExport) {
+                      router.push("/import-export");
                     } else {
                       setConsultationOpen(true);
                     }
@@ -894,6 +897,8 @@ export default function AboutPage() {
                         ? "Explore Logistics Page →"
                         : isLeather
                         ? "Explore Leather Page →"
+                        : isImportExport
+                        ? "Explore Trade Page →"
                         : "Explore Capabilities"}
                     </span>
                   </div>
