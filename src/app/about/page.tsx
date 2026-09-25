@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -431,6 +432,7 @@ const ABOUT_FAQS = [
 ];
 
 export default function AboutPage() {
+  const router = useRouter();
   const [activeYear, setActiveYear] = useState<string>("2026");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [consultationOpen, setConsultationOpen] = useState<boolean>(false);
@@ -824,7 +826,7 @@ export default function AboutPage() {
         </div>
 
         {/* Allied Business Verticals Header */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-14">
+        <div id="allied-ventures" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-14 scroll-mt-28">
           <div className="text-center max-w-3xl mx-auto">
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-950 mb-4">
               Allied Ventures &amp; Business Verticals
@@ -841,40 +843,48 @@ export default function AboutPage() {
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
           <div className="animate-marquee flex items-stretch gap-6 py-3">
-            {[...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS].map((item, idx) => (
-              <div
-                key={`allied-${idx}`}
-                onClick={() => setConsultationOpen(true)}
-                className="notched-card w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 min-h-[350px] rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none cursor-pointer relative"
-              >
-                <div>
-                  {/* Top Bar: Number Badge & Tag (No AI icons) */}
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="inline-block text-xs font-mono font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3.5 py-1.5 rounded-full">
-                      {item.num}
-                    </span>
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-                      {item.tag}
-                    </span>
+            {[...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS].map((item, idx) => {
+              const isEM = item.name === "E&M Fashion Brand";
+              return (
+                <div
+                  key={`allied-${idx}`}
+                  onClick={() => {
+                    if (isEM) {
+                      router.push("/em-fashion-brand");
+                    } else {
+                      setConsultationOpen(true);
+                    }
+                  }}
+                  className="notched-card w-[320px] sm:w-[360px] md:w-[380px] shrink-0 p-7 sm:p-8 min-h-[350px] rounded-3xl bg-white border border-slate-200/90 hover:border-[#1163FB] transition-all duration-300 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(17,99,251,0.12)] group select-none cursor-pointer relative"
+                >
+                  <div>
+                    {/* Top Bar: Number Badge & Tag (No AI icons) */}
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="inline-block text-xs font-mono font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3.5 py-1.5 rounded-full">
+                        {item.num}
+                      </span>
+                      <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                        {item.tag}
+                      </span>
+                    </div>
+
+                    {/* Vertical Title */}
+                    <h4 className="text-xl font-bold text-slate-950 mb-3 group-hover:text-[#1163FB] transition-colors leading-snug">
+                      {item.name}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pr-4">
+                      {item.desc}
+                    </p>
                   </div>
 
-                  {/* Vertical Title */}
-                  <h4 className="text-xl font-bold text-slate-950 mb-3 group-hover:text-[#1163FB] transition-colors leading-snug">
-                    {item.name}
-                  </h4>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pr-4">
-                    {item.desc}
-                  </p>
-                </div>
-
-                {/* Bottom Row: Text Label on Left, Notch & Circular Button on Right */}
-                <div className="pt-6 flex items-center justify-between">
-                  <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#1163FB] transition-colors">
-                    Explore Capabilities
-                  </span>
-                </div>
+                  {/* Bottom Row: Text Label on Left, Notch & Circular Button on Right */}
+                  <div className="pt-6 flex items-center justify-between">
+                    <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#1163FB] transition-colors">
+                      {isEM ? "Explore Brand Page →" : "Explore Capabilities"}
+                    </span>
+                  </div>
 
                 {/* The Notch Cutout */}
                 <div className="notch-corner-white" />
@@ -887,8 +897,9 @@ export default function AboutPage() {
                   <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
         </div>
       </section>
 
