@@ -845,12 +845,15 @@ export default function AboutPage() {
           <div className="animate-marquee flex items-stretch gap-6 py-3">
             {[...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS].map((item, idx) => {
               const isEM = item.name === "E&M Fashion Brand";
+              const isLogistics = item.name === "Freight Forwarding & Logistics";
               return (
                 <div
                   key={`allied-${idx}`}
                   onClick={() => {
                     if (isEM) {
                       router.push("/em-fashion-brand");
+                    } else if (isLogistics) {
+                      router.push("/freight-forwarding-logistics");
                     } else {
                       setConsultationOpen(true);
                     }
@@ -882,7 +885,11 @@ export default function AboutPage() {
                   {/* Bottom Row: Text Label on Left, Notch & Circular Button on Right */}
                   <div className="pt-6 flex items-center justify-between">
                     <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#1163FB] transition-colors">
-                      {isEM ? "Explore Brand Page →" : "Explore Capabilities"}
+                      {isEM
+                        ? "Explore Brand Page →"
+                        : isLogistics
+                        ? "Explore Logistics Page →"
+                        : "Explore Capabilities"}
                     </span>
                   </div>
 
