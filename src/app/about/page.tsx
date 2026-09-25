@@ -846,6 +846,7 @@ export default function AboutPage() {
             {[...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS, ...ALLIED_VERTICALS].map((item, idx) => {
               const isEM = item.name === "E&M Fashion Brand";
               const isLogistics = item.name === "Freight Forwarding & Logistics";
+              const isLeather = item.name === "Leather Products Manufacturing";
               return (
                 <div
                   key={`allied-${idx}`}
@@ -854,6 +855,8 @@ export default function AboutPage() {
                       router.push("/em-fashion-brand");
                     } else if (isLogistics) {
                       router.push("/freight-forwarding-logistics");
+                    } else if (isLeather) {
+                      router.push("/leather-products-manufacturing");
                     } else {
                       setConsultationOpen(true);
                     }
@@ -889,6 +892,8 @@ export default function AboutPage() {
                         ? "Explore Brand Page →"
                         : isLogistics
                         ? "Explore Logistics Page →"
+                        : isLeather
+                        ? "Explore Leather Page →"
                         : "Explore Capabilities"}
                     </span>
                   </div>
