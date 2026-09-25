@@ -9,7 +9,7 @@
 
 Official enterprise web portal and digital ecosystem for **Globizhub India Private Limited (GIPL)**, an ISO-certified technology engineering and systems architecture conglomerate based in Bengaluru, Karnataka and Guwahati, Assam.
 
----
+----
 
 ## Executive Overview
 
