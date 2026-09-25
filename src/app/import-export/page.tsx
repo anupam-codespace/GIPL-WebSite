@@ -32,15 +32,10 @@ export default function ImportExportPage() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
 
-  // Dedicated Trade Enquiry Form State
+  // Dedicated Trade Enquiry Form State (Strictly 3 fields: Name, Phone, Email)
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailId, setEmailId] = useState("");
-  const [tradeDirection, setTradeDirection] = useState("Export from India (Outbound)");
-  const [commodity, setCommodity] = useState("");
-  const [originDestination, setOriginDestination] = useState("");
-  const [volume, setVolume] = useState("Full Container Load (FCL - 20ft / 40ft)");
-  const [tradeNotes, setTradeNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -67,12 +62,7 @@ export default function ImportExportPage() {
           leadType: "vertical",
           pageName: "Import & Export",
           pageSection: "Allied Verticals · Import & Export",
-          tradeDirection,
-          commodity,
-          originDestination,
-          volume,
-          subject: `Import & Export Inquiry - ${tradeDirection}`,
-          message: `Trade Intent: ${tradeDirection}\nCommodity: ${commodity}\nTrade Route: ${originDestination}\nVolume: ${volume}\nSpecifications: ${tradeNotes}`,
+          subject: "Import & Export Trade Inquiry",
           source: "import_export_page",
         }),
       });
@@ -93,11 +83,6 @@ export default function ImportExportPage() {
     setFullName("");
     setPhoneNumber("");
     setEmailId("");
-    setTradeDirection("Export from India (Outbound)");
-    setCommodity("");
-    setOriginDestination("");
-    setVolume("Full Container Load (FCL - 20ft / 40ft)");
-    setTradeNotes("");
     setSubmitted(false);
     setErrorMessage("");
     setEnquiryModalOpen(false);
@@ -387,7 +372,8 @@ export default function ImportExportPage() {
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-8 text-center">
               Sovereign Trade Execution Capabilities
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {/* Desktop Grid */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
               <div className="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-[#1163FB] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-5 shadow-sm">
                   <FileCheck className="w-6 h-6" />
@@ -422,6 +408,60 @@ export default function ImportExportPage() {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Direct connection with Globizhub’s Maritime and Air Freight networks: bonded warehousing, customs clearance, and global door delivery.
                 </p>
+              </div>
+            </div>
+
+            {/* Mobile Continuous Slow Left-to-Right Travelling Animation */}
+            <div className="block md:hidden overflow-hidden -mx-4 px-4 py-2">
+              <div className="animate-mobile-ltr gap-4 py-2">
+                {[
+                  {
+                    icon: FileCheck,
+                    title: "DGFT & Tariff Advisory",
+                    desc: "Importer-Exporter Code (IEC) compliance, export incentive optimization (RoDTEP / RoSCTL), and expert HS code tariff classification.",
+                  },
+                  {
+                    icon: Landmark,
+                    title: "Trade Finance & LC Settlement",
+                    desc: "Management of Irrevocable Letters of Credit, Documents Against Payment (DP/DA), escrow agreements, and FX currency risk hedging.",
+                  },
+                  {
+                    icon: Globe2,
+                    title: "Multimodal Freight Integration",
+                    desc: "Direct connection with Globizhub’s Maritime and Air Freight networks: bonded warehousing, customs clearance, and global door delivery.",
+                  },
+                  // Duplicated for seamless infinite loop
+                  {
+                    icon: FileCheck,
+                    title: "DGFT & Tariff Advisory",
+                    desc: "Importer-Exporter Code (IEC) compliance, export incentive optimization (RoDTEP / RoSCTL), and expert HS code tariff classification.",
+                  },
+                  {
+                    icon: Landmark,
+                    title: "Trade Finance & LC Settlement",
+                    desc: "Management of Irrevocable Letters of Credit, Documents Against Payment (DP/DA), escrow agreements, and FX currency risk hedging.",
+                  },
+                  {
+                    icon: Globe2,
+                    title: "Multimodal Freight Integration",
+                    desc: "Direct connection with Globizhub’s Maritime and Air Freight networks: bonded warehousing, customs clearance, and global door delivery.",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="w-[280px] shrink-0 p-6 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm"
+                  >
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-4 shadow-sm">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -543,34 +583,6 @@ export default function ImportExportPage() {
                 )}
 
                 <form onSubmit={handleEnquirySubmit} className="space-y-4">
-                  {/* Trade Direction Selector */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Trade Direction
-                    </label>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
-                      {[
-                        "Export from India (Outbound)",
-                        "Import to India (Inbound)",
-                        "Third-Country Cross Trade",
-                        "Bilateral Commodity Contract",
-                      ].map((dir) => (
-                        <button
-                          key={dir}
-                          type="button"
-                          onClick={() => setTradeDirection(dir)}
-                          className={`p-2 rounded-xl text-left font-medium border transition-all ${
-                            tradeDirection === dir
-                              ? "bg-slate-950 text-white border-slate-950 shadow-sm"
-                              : "bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300"
-                          }`}
-                        >
-                          {dir}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Name */}
                   <div>
                     <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
@@ -618,73 +630,6 @@ export default function ImportExportPage() {
                       onChange={(e) => setEmailId(e.target.value)}
                       placeholder="trade@internationalcorp.com"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all"
-                    />
-                  </div>
-
-                  {/* Commodity & Route */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                        Commodity / Goods
-                      </label>
-                      <input
-                        type="text"
-                        value={commodity}
-                        onChange={(e) => setCommodity(e.target.value)}
-                        placeholder="e.g. Basmati Rice / Steel Coils"
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                        Origin / Destination
-                      </label>
-                      <input
-                        type="text"
-                        value={originDestination}
-                        onChange={(e) => setOriginDestination(e.target.value)}
-                        placeholder="e.g. JNPT Mumbai to Jebel Ali"
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Volume / Quantity */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Estimated Volume
-                    </label>
-                    <select
-                      value={volume}
-                      onChange={(e) => setVolume(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all bg-white"
-                    >
-                      <option value="Trial Shipment (1 - 2 FCL Containers)">
-                        Trial Shipment (1 - 2 FCL Containers)
-                      </option>
-                      <option value="Commercial Volume (5 - 20 FCL Containers)">
-                        Commercial Volume (5 - 20 FCL Containers)
-                      </option>
-                      <option value="Bulk Vessel Charter (> 5,000 Metric Tons)">
-                        Bulk Vessel Charter (&gt; 5,000 Metric Tons)
-                      </option>
-                      <option value="Less than Container Load (LCL Consolidation)">
-                        Less than Container Load (LCL Consolidation)
-                      </option>
-                    </select>
-                  </div>
-
-                  {/* Notes / Specifications */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Trade Notes &amp; Regulatory Requirements
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={tradeNotes}
-                      onChange={(e) => setTradeNotes(e.target.value)}
-                      placeholder="Specify LC payment terms, inspection authority (SGS/BV), target delivery schedule, or HS tariff codes..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all resize-none"
                     />
                   </div>
 

@@ -30,13 +30,10 @@ export default function FreightLogisticsPage() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
 
-  // Dedicated Freight Enquiry Form State
+  // Dedicated Freight Enquiry Form State (Strictly 3 fields: Name, Phone, Email)
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailId, setEmailId] = useState("");
-  const [freightMode, setFreightMode] = useState("Multimodal (Air / Ocean / Road)");
-  const [originDestination, setOriginDestination] = useState("");
-  const [cargoNotes, setCargoNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -63,10 +60,7 @@ export default function FreightLogisticsPage() {
           leadType: "vertical",
           pageName: "Freight Forwarding & Logistics",
           pageSection: "Allied Verticals · Freight Forwarding & Logistics",
-          freightMode,
-          originDestination,
-          subject: `Freight Forwarding Inquiry - ${freightMode}`,
-          message: `Freight Mode: ${freightMode}\nOrigin & Destination: ${originDestination}\nCargo Details: ${cargoNotes}`,
+          subject: "Freight Forwarding & Logistics Inquiry",
           source: "freight_logistics_page",
         }),
       });
@@ -87,9 +81,6 @@ export default function FreightLogisticsPage() {
     setFullName("");
     setPhoneNumber("");
     setEmailId("");
-    setFreightMode("Multimodal (Air / Ocean / Road)");
-    setOriginDestination("");
-    setCargoNotes("");
     setSubmitted(false);
     setErrorMessage("");
     setEnquiryModalOpen(false);
@@ -385,7 +376,8 @@ export default function FreightLogisticsPage() {
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-8 text-center">
               Integrated Supply Chain Capabilities
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {/* Desktop Grid */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
               <div className="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-[#1163FB] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-5 shadow-sm">
                   <FileCheck2 className="w-6 h-6" />
@@ -420,6 +412,60 @@ export default function FreightLogisticsPage() {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Comprehensive institute cargo clauses (A) coverage protecting freight against maritime perils, port damage, and transit risks with rapid claims settlement.
                 </p>
+              </div>
+            </div>
+
+            {/* Mobile Continuous Slow Left-to-Right Travelling Animation */}
+            <div className="block md:hidden overflow-hidden -mx-4 px-4 py-2">
+              <div className="animate-mobile-ltr gap-4 py-2">
+                {[
+                  {
+                    icon: FileCheck2,
+                    title: "Customs & Regulatory Compliance",
+                    desc: "Dedicated in-house customs brokers managing bill of entry documentation, duty optimization, tariff HS code classification, and automated EDI filing.",
+                  },
+                  {
+                    icon: Compass,
+                    title: "Live Telemetry & Cargo Tracking",
+                    desc: "24/7 web and mobile telemetry monitoring container GPS coordinates, temperature variances, door openings, and predictive arrival milestones.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "Marine & Transit Cargo Insurance",
+                    desc: "Comprehensive institute cargo clauses (A) coverage protecting freight against maritime perils, port damage, and transit risks with rapid claims settlement.",
+                  },
+                  // Duplicated for seamless infinite loop
+                  {
+                    icon: FileCheck2,
+                    title: "Customs & Regulatory Compliance",
+                    desc: "Dedicated in-house customs brokers managing bill of entry documentation, duty optimization, tariff HS code classification, and automated EDI filing.",
+                  },
+                  {
+                    icon: Compass,
+                    title: "Live Telemetry & Cargo Tracking",
+                    desc: "24/7 web and mobile telemetry monitoring container GPS coordinates, temperature variances, door openings, and predictive arrival milestones.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "Marine & Transit Cargo Insurance",
+                    desc: "Comprehensive institute cargo clauses (A) coverage protecting freight against maritime perils, port damage, and transit risks with rapid claims settlement.",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="w-[280px] shrink-0 p-6 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm"
+                  >
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-4 shadow-sm">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -541,34 +587,6 @@ export default function FreightLogisticsPage() {
                 )}
 
                 <form onSubmit={handleEnquirySubmit} className="space-y-4">
-                  {/* Freight Mode Selector */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Selected Freight Mode
-                    </label>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
-                      {[
-                        "Air Cargo Express",
-                        "Ocean Container (FCL/LCL)",
-                        "Surface Road Trucking",
-                        "Multimodal Integrated",
-                      ].map((mode) => (
-                        <button
-                          key={mode}
-                          type="button"
-                          onClick={() => setFreightMode(mode)}
-                          className={`p-2 rounded-xl text-left font-medium border transition-all ${
-                            freightMode === mode
-                              ? "bg-slate-950 text-white border-slate-950 shadow-sm"
-                              : "bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300"
-                          }`}
-                        >
-                          {mode}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Name */}
                   <div>
                     <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
@@ -616,34 +634,6 @@ export default function FreightLogisticsPage() {
                       onChange={(e) => setEmailId(e.target.value)}
                       placeholder="supplychain@yourcompany.com"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all"
-                    />
-                  </div>
-
-                  {/* Origin & Destination */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Origin &amp; Destination Ports / Cities
-                    </label>
-                    <input
-                      type="text"
-                      value={originDestination}
-                      onChange={(e) => setOriginDestination(e.target.value)}
-                      placeholder="e.g. Nhava Sheva (INNSA) to Port of Rotterdam (NLRTM)"
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all"
-                    />
-                  </div>
-
-                  {/* Cargo Notes */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Cargo Description, Weight &amp; Volume
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={cargoNotes}
-                      onChange={(e) => setCargoNotes(e.target.value)}
-                      placeholder="Describe goods, estimated weight (kg/tons), dimensions (CBM), hazard classification, or timeline..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all resize-none"
                     />
                   </div>
 

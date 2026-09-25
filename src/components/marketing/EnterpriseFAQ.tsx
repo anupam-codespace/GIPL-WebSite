@@ -11,34 +11,40 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    id: "realistic-photos",
-    question: "How realistic will the photos look?",
+    id: "who-is-globizhub",
+    question: "Who is Globizhub India Private Limited?",
     answer:
-      "Our algorithm physically calculates the refraction of light through glass, depth of field, and shadow fall. The final image takes into account the texture of your product's material, making it indistinguishable from professional studio photography.",
+      "Globizhub is a DPIIT-recognized enterprise technology company headquartered in India. We engineer scalable AI systems, custom software, cloud infrastructure, and manage sovereign business verticals across healthcare, supply chain, and global commerce.",
   },
   {
-    id: "complex-prompts",
-    question: "Do I need to be able to write complex prompts?",
+    id: "services-and-products",
+    question: "What core technology services and software products do you offer?",
     answer:
-      "Not at all. Our intuitive interface allows you to select styles, lighting setups, and environments visually. You can also upload reference moodboards and our AI will automatically infer the optimal rendering parameters without requiring prompt engineering.",
+      "We provide end-to-end custom software engineering, cloud architecture, and AI automation. We also develop proprietary SaaS platforms including Patholab.Cloud (Healthcare LIMS), TeamHub (Enterprise HRMS), Bungzo (ERP), and Enterprise IMS.",
   },
   {
-    id: "entire-product-line",
-    question: "Can I process an entire product line at once?",
+    id: "allied-verticals",
+    question: "What are Globizhub's Allied Business Verticals?",
     answer:
-      "Yes, our batch processing engine allows you to upload hundreds of SKU models or image angles simultaneously, maintaining unified lighting consistency, color accuracy, and brand guidelines across your entire collection.",
+      "Beyond digital engineering, Globizhub operates four specialized commercial divisions: E&M Fashion Brand (lifestyle apparel), Freight Forwarding & Logistics (multimodal air, sea & road cargo), Leather Products Manufacturing (export atelier), and Cross-Border Import & Export.",
   },
   {
-    id: "requirements-original-photo",
-    question: "What are the requirements for the original product photo?",
+    id: "certifications-accreditations",
+    question: "What certifications and accreditations does Globizhub hold?",
     answer:
-      "Any clean photo taken on a smartphone or camera under even lighting works seamlessly. Our segmentation pipeline isolates your product with sub-pixel edge detection, removes unwanted reflections, and recreates realistic shadows.",
+      "Globizhub is recognized by Startup India (DPIIT), registered with MSME, and certified under ISO 9001:2015 (Quality), ISO/IEC 27001:2022 (Information Security), and ISO 20000-1:2018 (IT Service Management).",
   },
   {
-    id: "enterprise-security",
-    question: "How does Globizhub ensure enterprise security and IP ownership?",
+    id: "delivery-centers",
+    question: "Where are Globizhub's development centers and offices located?",
     answer:
-      "All models and infrastructure are deployed in isolated private VPCs with AES-256 encryption. We guarantee complete intellectual property (IP) transfer, zero training on client data, and compliance with ISO 27001, SOC2, and HIPAA.",
+      "We operate a distributed national delivery grid with offices in Bengaluru (Headquarters), Guwahati (Regional Center), Chennai (Tech Center), and Delhi (Corporate Office).",
+  },
+  {
+    id: "ip-security",
+    question: "How do you protect client data and intellectual property (IP)?",
+    answer:
+      "Every engagement includes strict NDAs, complete IP transfer on delivery, and zero training on client proprietary data. Systems are deployed with AES-256 encryption in compliance with global ISO 27001 security standards.",
   },
 ];
 

@@ -27,11 +27,10 @@ export default function EMFashionBrandPage() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
 
-  // Dedicated E&M Fashion Enquiry Form State
+  // Dedicated E&M Fashion Enquiry Form State (Strictly 3 fields: Name, Phone, Email)
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailId, setEmailId] = useState("");
-  const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -58,7 +57,6 @@ export default function EMFashionBrandPage() {
           leadType: "vertical",
           pageName: "E&M Fashion Brand",
           pageSection: "Allied Verticals · E&M Fashion Brand",
-          message: notes.trim(),
           subject: "E&M Fashion Brand - Brand Partnership Inquiry",
           source: "em_fashion_brand_page",
         }),
@@ -80,7 +78,6 @@ export default function EMFashionBrandPage() {
     setFullName("");
     setPhoneNumber("");
     setEmailId("");
-    setNotes("");
     setSubmitted(false);
     setErrorMessage("");
     setEnquiryModalOpen(false);
@@ -189,8 +186,8 @@ export default function EMFashionBrandPage() {
               </span>
             </div>
 
-            {/* 6 Capabilities Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* 6 Capabilities Cards - Desktop Grid */}
+            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Card 1 */}
               <div className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-[#1163FB] hover:shadow-lg transition-all duration-300">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-5 shadow-sm">
@@ -267,6 +264,90 @@ export default function EMFashionBrandPage() {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Direct synergy with Globizhub’s Multimodal Freight and Courier networks: automated customs handling, international air cargo, and door-to-door retail delivery worldwide.
                 </p>
+              </div>
+            </div>
+
+            {/* Mobile Continuous Slow Left-to-Right Travelling Animation */}
+            <div className="block md:hidden overflow-hidden -mx-4 px-4 py-2">
+              <div className="animate-mobile-ltr gap-4 py-2">
+                {[
+                  {
+                    icon: Scissors,
+                    title: "01. Design & Tech-Pack Architecture",
+                    desc: "Transform raw sketches, mood boards, and aesthetic concepts into production-grade spec sheets, 3D digital garment renders, precision measurements, and grading charts.",
+                  },
+                  {
+                    icon: Sparkles,
+                    title: "02. Certified Ethical Fabric Sourcing",
+                    desc: "Direct mill partnerships providing certified organic cotton, mulberry silk, breathable natural linen, viscose, and recycled textiles compliant with GOTS and OEKO-TEX norms.",
+                  },
+                  {
+                    icon: Layers,
+                    title: "03. Precision Sampling & Fit Iteration",
+                    desc: "Rapid prototyping turnaround within 7 to 14 days. Iterate on physical samples, draping, bespoke hardware, and seam finishes before initiating bulk production.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "04. Low-MOQ Flexible Manufacturing",
+                    desc: "Launch without devastating inventory risk. We support agile low minimum order quantities (MOQ) for pilot collections, seamlessly scaling into mass production runs.",
+                  },
+                  {
+                    icon: Sparkle,
+                    title: "05. Custom Trims & Branded Packaging",
+                    desc: "Bespoke woven tags, debossed leather patches, engraved buttons, recyclable polybags, and retail-ready unboxing elements designed to elevate your brand positioning.",
+                  },
+                  {
+                    icon: Globe2,
+                    title: "06. Bonded Warehousing & Export Logistics",
+                    desc: "Direct synergy with Globizhub’s Multimodal Freight and Courier networks: automated customs handling, international air cargo, and door-to-door retail delivery worldwide.",
+                  },
+                  // Duplicated for seamless infinite loop
+                  {
+                    icon: Scissors,
+                    title: "01. Design & Tech-Pack Architecture",
+                    desc: "Transform raw sketches, mood boards, and aesthetic concepts into production-grade spec sheets, 3D digital garment renders, precision measurements, and grading charts.",
+                  },
+                  {
+                    icon: Sparkles,
+                    title: "02. Certified Ethical Fabric Sourcing",
+                    desc: "Direct mill partnerships providing certified organic cotton, mulberry silk, breathable natural linen, viscose, and recycled textiles compliant with GOTS and OEKO-TEX norms.",
+                  },
+                  {
+                    icon: Layers,
+                    title: "03. Precision Sampling & Fit Iteration",
+                    desc: "Rapid prototyping turnaround within 7 to 14 days. Iterate on physical samples, draping, bespoke hardware, and seam finishes before initiating bulk production.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "04. Low-MOQ Flexible Manufacturing",
+                    desc: "Launch without devastating inventory risk. We support agile low minimum order quantities (MOQ) for pilot collections, seamlessly scaling into mass production runs.",
+                  },
+                  {
+                    icon: Sparkle,
+                    title: "05. Custom Trims & Branded Packaging",
+                    desc: "Bespoke woven tags, debossed leather patches, engraved buttons, recyclable polybags, and retail-ready unboxing elements designed to elevate your brand positioning.",
+                  },
+                  {
+                    icon: Globe2,
+                    title: "06. Bonded Warehousing & Export Logistics",
+                    desc: "Direct synergy with Globizhub’s Multimodal Freight and Courier networks: automated customs handling, international air cargo, and door-to-door retail delivery worldwide.",
+                  },
+                ].map((cap, idx) => (
+                  <div
+                    key={idx}
+                    className="w-[280px] shrink-0 p-6 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm"
+                  >
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-4 shadow-sm">
+                      <cap.icon className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                      {cap.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {cap.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -453,19 +534,7 @@ export default function EMFashionBrandPage() {
                     />
                   </div>
 
-                  {/* Notes / Brand Vision */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Notes &amp; Requirements
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={notes}
-                      onChange={(e) => setNotes(e.target.value)}
-                      placeholder="Describe your clothing line concept, fabric preference, estimated volume, or brand launch timeline..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all resize-none"
-                    />
-                  </div>
+
 
                   {/* Submit Button */}
                   <button

@@ -190,6 +190,10 @@ const organizationJsonLd = {
       { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "GlobizLibrary — Academic RFID Repository" } },
       { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "Enterprise IMS — Inventory & Supply Chain OS" } },
       { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "Globizhub Listing — B2B Trade Marketplace" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "E&M Fashion Brand — Turnkey Lifestyle Apparel & Brand Incubation", url: `${siteUrl}/em-fashion-brand` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Freight Forwarding & Logistics — Multimodal Air, Ocean & Road Freight", url: `${siteUrl}/freight-forwarding-logistics` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Leather Products Manufacturing — Master Atelier Handcrafted Leather Goods", url: `${siteUrl}/leather-products-manufacturing` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cross-Border Import & Export — Bilateral Trade & Sovereign Execution", url: `${siteUrl}/import-export` } },
     ],
   },
 };

@@ -2,651 +2,596 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import {
-  Search,
-  ChevronRight,
-  ArrowRight,
-  Globe,
-  Building2,
-  Cpu,
-  Layers,
-  ShieldCheck,
-  PhoneCall,
-  CheckCircle2,
-  X,
-} from "lucide-react";
+import { Search, X, ChevronRight } from "lucide-react";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import ConsultationModal from "@/components/marketing/ConsultationModal";
 
-interface SitemapLink {
+interface SitemapItem {
   title: string;
   href: string;
-  badge?: string;
-  description?: string;
   sublinks?: { title: string; href: string }[];
 }
 
-interface SitemapCategory {
+interface SitemapSection {
   id: string;
   heading: string;
   categoryHref?: string;
-  accentColor: string; // coral #fc7754 or royal blue #1163fb
-  links: SitemapLink[];
+  items: SitemapItem[];
 }
 
-const SITEMAP_DATA: SitemapCategory[] = [
+const DIRECTORY_DATA: SitemapSection[] = [
   {
     id: "company",
-    heading: "COMPANY & CORE HUBS",
+    heading: "Company & Corporate Overview",
     categoryHref: "/about",
-    accentColor: "#fc7754",
-    links: [
+    items: [
       {
-        title: "HOME",
+        title: "Home",
         href: "/",
-        description: "Official landing page & enterprise overview",
         sublinks: [
-          { title: "Hero & Value Proposition", href: "/#hero" },
+          { title: "Hero & Executive Overview", href: "/#hero" },
           { title: "Engineering Impact Metrics", href: "/#impact" },
           { title: "Enterprise Technology Services", href: "/#services" },
           { title: "Proprietary Software Showcase", href: "/#products-showcase" },
           { title: "Client Success Testimonials", href: "/#testimonials" },
+          { title: "Frequently Asked Questions", href: "/#faq" },
           { title: "Enterprise Consultation CTA", href: "/#consultation" },
         ],
       },
       {
-        title: "ABOUT GLOBIZHUB",
+        title: "About Globizhub",
         href: "/about",
-        description: "Company history, milestones, and engineering ethos",
         sublinks: [
-          { title: "Corporate Background & Foundation", href: "/about" },
-          { title: "A Journey of Engineering Excellence (2018 - 2026)", href: "/about#journey" },
-          { title: "Recognition & Accreditations (DPIIT, MSME, ISO)", href: "/about#accreditations" },
-          { title: "National Delivery Grid (4 Development Hubs)", href: "/about#hubs" },
+          { title: "Corporate Background & Ethos", href: "/about" },
+          { title: "Engineering Heritage (2018 – 2026)", href: "/about#journey" },
+          { title: "National Delivery Grid (4 Hubs)", href: "/about#hubs" },
+          { title: "Accreditations & Recognitions", href: "/about#accreditations" },
+          { title: "Engineering Principles & Culture", href: "/about#culture" },
           { title: "Why Choose Globizhub", href: "/about#why-choose-us" },
-          { title: "Engineering Culture & Principles", href: "/about#culture" },
         ],
       },
       {
-        title: "LEADERSHIP & TALENT",
-        href: "/about",
+        title: "National Delivery Grid",
+        href: "/about#hubs",
         sublinks: [
-          { title: "Executive Leadership & Board", href: "/about" },
-          { title: "Careers & Open Engineering Positions", href: "/career" },
-          { title: "Company Journey & Engineering Heritage", href: "/about#journey" },
-        ],
-      },
-      {
-        title: "CONTACT & CONSULTATIONS",
-        href: "/#consultation",
-        description: "Connect with our principal architects and consultants",
-        sublinks: [
-          { title: "Book Technical Architecture Consultation", href: "/#consultation" },
-          { title: "Bengaluru Head Office", href: "/about#hubs" },
+          { title: "Bengaluru Corporate Headquarters", href: "/about#hubs" },
           { title: "Guwahati Regional Delivery Center", href: "/about#hubs" },
           { title: "Chennai Cloud & SRE Center", href: "/about#hubs" },
-          { title: "Delhi-NCR Enterprise Strategy Office", href: "/about#hubs" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "products",
-    heading: "PROPRIETARY PRODUCTS & PLATFORMS",
-    categoryHref: "/#products-showcase",
-    accentColor: "#1163fb",
-    links: [
-      {
-        title: "Patholab.Cloud",
-        href: "/#products-showcase",
-        badge: "Healthcare SaaS",
-        description: "Intelligent Diagnostic Laboratory Information Management OS",
-        sublinks: [
-          { title: "LIMS Analyzer Machine Telemetry", href: "/#products-showcase" },
-          { title: "Automated Barcode Sample Tracking", href: "/#products-showcase" },
-          { title: "WhatsApp & SMS Patient Reporting Gateway", href: "/#products-showcase" },
-          { title: "350+ Clinical Labs Live Deployments", href: "/#products-showcase" },
+          { title: "Delhi-NCR Enterprise Strategy Hub", href: "/about#hubs" },
         ],
       },
       {
-        title: "TeamHub",
-        href: "/#products-showcase",
-        badge: "Workforce OS",
-        description: "Enterprise Workforce Attendance, Biometrics & Sprint Engine",
+        title: "Careers & Open Positions",
+        href: "/career",
         sublinks: [
-          { title: "GPS & Facial Biometrics Attendance", href: "/#products-showcase" },
-          { title: "Automated Payroll & Tax Compliance Engine", href: "/#products-showcase" },
-          { title: "Developer Agile Sprint Tracker", href: "/#products-showcase" },
+          { title: "Engineering Roles & Opportunities", href: "/career" },
+          { title: "Life at Globizhub", href: "/about#culture" },
         ],
       },
       {
-        title: "Bungzo",
-        href: "/#products-showcase",
-        badge: "ERP & Telematics",
-        description: "Gated Society ERP & Hyperlocal Delivery Telematics Platform",
+        title: "Contact & Consultations",
+        href: "/#consultation",
         sublinks: [
-          { title: "Gated Community Resident Portal", href: "/#products-showcase" },
-          { title: "Visitor Gate Pass & Security Telematics", href: "/#products-showcase" },
-          { title: "Hyperlocal Quick-Commerce Dispatch Router", href: "/#products-showcase" },
-        ],
-      },
-      {
-        title: "GlobizLibrary",
-        href: "/#products-showcase",
-        badge: "EdTech Platform",
-        description: "Automated RFID Cataloging & Digital Academic Repository",
-        sublinks: [
-          { title: "RFID Shelf Management & Stock Telemetry", href: "/#products-showcase" },
-          { title: "Automated Issue/Return Self-Check Kiosks", href: "/#products-showcase" },
-          { title: "University Research Indexing Engine", href: "/#products-showcase" },
-        ],
-      },
-      {
-        title: "Enterprise IMS",
-        href: "/#products-showcase",
-        badge: "Supply Chain",
-        description: "Multi-Warehouse Inventory OS & Automated Replenishment",
-        sublinks: [
-          { title: "Multi-Location Inventory Balancing", href: "/#products-showcase" },
-          { title: "Automated Low-Stock Trigger Reorders", href: "/#products-showcase" },
-          { title: "Batch & Expiry Date Analytics", href: "/#products-showcase" },
-        ],
-      },
-      {
-        title: "Globizhub Listing",
-        href: "/#products-showcase",
-        badge: "B2B Marketplace",
-        description: "Global B2B Trade Directory & Verified Supplier Network",
-        sublinks: [
-          { title: "Verified Manufacturer Profiles", href: "/#products-showcase" },
-          { title: "Direct RFQ & Commercial Inquiries", href: "/#products-showcase" },
-          { title: "Global Cross-Border Trade Telemetry", href: "/#products-showcase" },
+          { title: "Schedule Architecture Discovery", href: "/#consultation" },
+          { title: "Direct WhatsApp Support", href: "https://wa.me/918402010207" },
         ],
       },
     ],
   },
   {
     id: "services",
-    heading: "SERVICES & CAPABILITIES",
+    heading: "Enterprise Technology Services",
     categoryHref: "/services",
-    accentColor: "#fc7754",
-    links: [
+    items: [
       {
-        title: "Product & Engineering",
+        title: "Custom Software Engineering",
         href: "/services",
         sublinks: [
-          { title: "Product Design & UI/UX Experience", href: "/services" },
-          { title: "Web Application Development (Next.js / React)", href: "/services" },
-          { title: "Mobile App Development (iOS Swift & Android)", href: "/services" },
-          { title: "Enterprise Software & Bespoke ERP Engineering", href: "/services" },
-          { title: "Quality Assurance & Automated Security Testing", href: "/services" },
-          { title: "DevOps, SRE & Cloud Native Infrastructure", href: "/services" },
+          { title: "High-Throughput Microservices & APIs", href: "/services" },
+          { title: "Enterprise Web Applications (Next.js / React)", href: "/services" },
+          { title: "Legacy System Modernization", href: "/services" },
         ],
       },
       {
-        title: "Digital Transformation & AI",
+        title: "Cloud Architecture & DevOps",
         href: "/services",
         sublinks: [
-          { title: "Autonomous AI Agents & LangGraph Squads", href: "/services" },
-          { title: "Generative AI, Enterprise LLMs & Private RAG", href: "/services" },
-          { title: "Legacy System Modernization & Microservices", href: "/services" },
-          { title: "Cloud Architecture & Zero-Downtime Migration", href: "/services" },
-          { title: "Cybersecurity & Zero-Trust Architecture", href: "/services" },
-          { title: "IoT Sensors & Connected Telematics", href: "/services" },
+          { title: "Multi-Cloud & Zero-Downtime Migration", href: "/services" },
+          { title: "Kubernetes & Container Orchestration", href: "/services" },
+          { title: "Site Reliability Engineering (SRE)", href: "/services" },
+          { title: "FinOps & Cloud Cost Optimization", href: "/services" },
         ],
       },
       {
-        title: "Consulting, Data & Strategy",
+        title: "Artificial Intelligence & Automation",
         href: "/services",
         sublinks: [
-          { title: "Strategic Technical Consulting & CTO Advisory", href: "/services" },
-          { title: "Big Data Pipelines & Distributed Streaming ETL", href: "/services" },
-          { title: "Business Intelligence, KPI Dashboards & Telemetry", href: "/services" },
-          { title: "Dedicated Engineering Squads & Staff Augmentation", href: "/services" },
-          { title: "Cloud Cost Optimization & FinOps", href: "/services" },
-          { title: "IT Audit, Due Diligence & System Architecture", href: "/services" },
+          { title: "Autonomous AI Agents & Multi-Agent Workflows", href: "/services" },
+          { title: "Enterprise LLMs, RAG & Vector Knowledge", href: "/services" },
+          { title: "Predictive Telematics & Big Data Analytics", href: "/services" },
+        ],
+      },
+      {
+        title: "Enterprise Mobile Applications",
+        href: "/services",
+        sublinks: [
+          { title: "iOS Swift & Native Apple Engineering", href: "/services" },
+          { title: "Android Kotlin & Flutter Systems", href: "/services" },
+          { title: "Offline-First Enterprise Sync", href: "/services" },
+        ],
+      },
+      {
+        title: "Enterprise UI/UX Design Systems",
+        href: "/services",
+        sublinks: [
+          { title: "Multi-Brand Design Systems & Tokens", href: "/services" },
+          { title: "Usability Testing & Accessibility (WCAG 2.1)", href: "/services" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "products",
+    heading: "Proprietary Software Platforms",
+    categoryHref: "/#products-showcase",
+    items: [
+      {
+        title: "Patholab.Cloud",
+        href: "/#products-showcase",
+        sublinks: [
+          { title: "Diagnostic Laboratory Information OS (LIMS)", href: "/#products-showcase" },
+          { title: "Analyzer Machine Direct Telemetry Interfacing", href: "/#products-showcase" },
+          { title: "Automated Barcode Sample Tracking", href: "/#products-showcase" },
+          { title: "WhatsApp & SMS Patient Reporting Gateway", href: "/#products-showcase" },
+        ],
+      },
+      {
+        title: "TeamHub",
+        href: "/#products-showcase",
+        sublinks: [
+          { title: "Enterprise Workforce & HRMS Automation OS", href: "/#products-showcase" },
+          { title: "GPS & Facial Biometrics Attendance Telemetry", href: "/#products-showcase" },
+          { title: "Automated Payroll & Statutory Tax Engine", href: "/#products-showcase" },
+          { title: "Developer Agile Sprint & Task Tracker", href: "/#products-showcase" },
+        ],
+      },
+      {
+        title: "Bungzo",
+        href: "/#products-showcase",
+        sublinks: [
+          { title: "Gated Society ERP & Visitor Gate Telematics", href: "/#products-showcase" },
+          { title: "Hyperlocal Quick-Commerce Dispatch Router", href: "/#products-showcase" },
+          { title: "Real-Time Driver Fleet Management", href: "/#products-showcase" },
+        ],
+      },
+      {
+        title: "GlobizLibrary",
+        href: "/#products-showcase",
+        sublinks: [
+          { title: "RFID Automated Academic Library Cataloging", href: "/#products-showcase" },
+          { title: "Self-Checkout Kiosk Software & RFID Gates", href: "/#products-showcase" },
+          { title: "Digital Research & Journal Repository", href: "/#products-showcase" },
+        ],
+      },
+      {
+        title: "Enterprise IMS",
+        href: "/#products-showcase",
+        sublinks: [
+          { title: "Multi-Warehouse Inventory & Supply Chain OS", href: "/#products-showcase" },
+          { title: "Automated Reorder Triggers & Stock Telemetry", href: "/#products-showcase" },
+        ],
+      },
+      {
+        title: "Globizhub Listing",
+        href: "/#products-showcase",
+        sublinks: [
+          { title: "Sovereign B2B Directory & Verified Supplier Network", href: "/#products-showcase" },
+          { title: "Direct RFQ & Commercial Matchmaking", href: "/#products-showcase" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "verticals",
+    heading: "Allied Business Verticals",
+    categoryHref: "/about#allied-ventures",
+    items: [
+      {
+        title: "E&M Fashion Brand",
+        href: "/em-fashion-brand",
+        sublinks: [
+          { title: "Overview & Fashion Brand Engineering", href: "/em-fashion-brand" },
+          { title: "Build Your Own Brand (Turnkey Enablement)", href: "/em-fashion-brand" },
+          { title: "Design & Tech-Pack Architecture", href: "/em-fashion-brand" },
+          { title: "Certified Ethical Fabric Sourcing (GOTS/OEKO-TEX)", href: "/em-fashion-brand" },
+          { title: "Low-MOQ Flexible Manufacturing", href: "/em-fashion-brand" },
+          { title: "Fashion Venture Direct Enquiry", href: "/em-fashion-brand" },
+        ],
+      },
+      {
+        title: "Freight Forwarding & Logistics",
+        href: "/freight-forwarding-logistics",
+        sublinks: [
+          { title: "Multimodal Cargo Logistics Overview", href: "/freight-forwarding-logistics" },
+          { title: "1. Air Freight & Aviation Cargo Express", href: "/freight-forwarding-logistics" },
+          { title: "2. Ocean Freight & Deepwater Marine Shipping", href: "/freight-forwarding-logistics" },
+          { title: "3. Road Freight & Interstate Highway Transport", href: "/freight-forwarding-logistics" },
+          { title: "Customs EDI & Regulatory Compliance", href: "/freight-forwarding-logistics" },
+          { title: "Live Telemetry & Cargo Tracking", href: "/freight-forwarding-logistics" },
+          { title: "Freight Forwarding Quotation Request", href: "/freight-forwarding-logistics" },
+        ],
+      },
+      {
+        title: "Leather Products Manufacturing",
+        href: "/leather-products-manufacturing",
+        sublinks: [
+          { title: "Heritage Leathercraft & Export Atelier", href: "/leather-products-manufacturing" },
+          { title: "1. Luxury Bags, Briefcases & Travel Duffels", href: "/leather-products-manufacturing" },
+          { title: "2. Handcrafted Wallets & Everyday Essentials", href: "/leather-products-manufacturing" },
+          { title: "3. Full-Grain Belts & Solid Brass Goods", href: "/leather-products-manufacturing" },
+          { title: "LWG Gold / Silver Tannery Compliance", href: "/leather-products-manufacturing" },
+          { title: "Agile Low-MOQ Sampling & Private Label", href: "/leather-products-manufacturing" },
+          { title: "Direct Leather Manufacturing Enquiry", href: "/leather-products-manufacturing" },
+        ],
+      },
+      {
+        title: "Cross-Border Import & Export",
+        href: "/import-export",
+        sublinks: [
+          { title: "Sovereign Trade Operations Overview", href: "/import-export" },
+          { title: "1. Outbound Export from India", href: "/import-export" },
+          { title: "2. Inbound Commodity Import to India", href: "/import-export" },
+          { title: "3. Cross-Trade & Third-Country Transit", href: "/import-export" },
+          { title: "DGFT Regulatory & ICEGATE EDI Advisory", href: "/import-export" },
+          { title: "Letters of Credit (LC) & Trade Finance", href: "/import-export" },
+          { title: "Direct International Trade Enquiry", href: "/import-export" },
         ],
       },
     ],
   },
   {
     id: "industries",
-    heading: "INDUSTRIES WE TRANSFORM",
+    heading: "Industry Solutions",
     categoryHref: "/industries",
-    accentColor: "#1163fb",
-    links: [
+    items: [
       {
-        title: "Healthcare & Diagnostics",
+        title: "Healthcare & Life Sciences",
         href: "/industries#healthcare",
-        description: "Clinical diagnostic LIMS, tele-medicine, and imaging AI",
         sublinks: [
-          { title: "Laboratory Information Systems (LIMS)", href: "/industries#healthcare" },
-          { title: "Electronic Health Records (EHR)", href: "/industries#healthcare" },
-          { title: "Diagnostic Machine Telemetry", href: "/industries#healthcare" },
+          { title: "Diagnostic Laboratories & Tele-Pathology", href: "/industries#healthcare" },
+          { title: "Electronic Health Records (EHR) & HIPAA Systems", href: "/industries#healthcare" },
         ],
       },
       {
-        title: "Supply Chain & Logistics",
+        title: "Supply Chain, Freight & Maritime",
         href: "/industries#logistics",
-        description: "Cold-chain monitoring, GPS telematics, and warehouse ERP",
         sublinks: [
-          { title: "Cold-Chain IoT Sensor Logging", href: "/industries#logistics" },
-          { title: "Real-Time Fleet Dispatch Telemetry", href: "/industries#logistics" },
-          { title: "Automated Consignment Barcoding", href: "/industries#logistics" },
+          { title: "Cold-Chain IoT Telemetry & Sensor Tracking", href: "/industries#logistics" },
+          { title: "Bonded Warehouse & Port Drayage", href: "/industries#logistics" },
         ],
       },
       {
-        title: "FinTech & Banking",
+        title: "Banking, Financial Services & FinTech",
         href: "/industries#finance",
-        description: "Payment gateways, lending workflows, and automated reconciliation",
         sublinks: [
-          { title: "Multi-Currency Payment Gateways", href: "/industries#finance" },
+          { title: "Multi-Currency Payment Gateways & UPI", href: "/industries#finance" },
           { title: "Automated Ledger Reconciliation", href: "/industries#finance" },
-          { title: "Lending Origination Workflows", href: "/industries#finance" },
         ],
       },
       {
-        title: "eCommerce & Omnichannel Retail",
+        title: "Retail & Omnichannel E-Commerce",
         href: "/industries#ecommerce",
-        description: "Headless commerce, multi-vendor marketplaces, and loyalty engines",
         sublinks: [
           { title: "High-Throughput Checkout Engines", href: "/industries#ecommerce" },
-          { title: "Multi-Vendor Marketplace Backends", href: "/industries#ecommerce" },
-          { title: "Inventory Multi-Channel Sync", href: "/industries#ecommerce" },
+          { title: "Multi-Vendor Marketplace Infrastructure", href: "/industries#ecommerce" },
         ],
       },
       {
-        title: "Real Estate & Smart Communities",
+        title: "Higher Education & EdTech",
+        href: "/industries#education",
+        sublinks: [
+          { title: "Automated RFID Library Catalogs", href: "/industries#education" },
+          { title: "Student Information Systems (SIS)", href: "/industries#education" },
+        ],
+      },
+      {
+        title: "Smart Communities & Real Estate",
         href: "/industries#real-estate",
-        description: "Society ERP, gated community visitor systems, and billing",
         sublinks: [
-          { title: "Maintenance Billing & Payment Portals", href: "/industries#real-estate" },
-          { title: "Automated Visitor Gate Control", href: "/industries#real-estate" },
-          { title: "Asset Management & Preventive Maintenance", href: "/industries#real-estate" },
-        ],
-      },
-      {
-        title: "Additional Industry Verticals",
-        href: "/industries",
-        sublinks: [
-          { title: "On-Demand Hyperlocal Services", href: "/industries#on-demand" },
-          { title: "Wearables & IoT Telemetry", href: "/industries#wearables" },
-          { title: "Fitness & Wellness Applications", href: "/industries#fitness" },
-          { title: "Restaurant & Cloud Kitchen POS", href: "/industries#restaurant" },
-          { title: "Automotive & Fleet Telematics", href: "/industries#automotive" },
-          { title: "Education & Academic LMS", href: "/industries#education" },
-          { title: "Manufacturing & Industry 4.0", href: "/industries#manufacturing" },
-          { title: "Energy, Utilities & Smart Grid", href: "/industries#energy" },
-          { title: "Media, OTT & Digital Publishing", href: "/industries#media" },
-          { title: "Agriculture & AgriTech Sensors", href: "/industries#agriculture" },
-          { title: "Aviation & Flight Telemetry", href: "/industries#aviation" },
-          { title: "Government & Public Sector (DPIIT Incubated)", href: "/industries#government" },
+          { title: "Gated Community ERP & Access Control", href: "/industries#real-estate" },
+          { title: "Maintenance Billing & Telematics", href: "/industries#real-estate" },
         ],
       },
     ],
   },
   {
-    id: "divisions",
-    heading: "OUR DIVISIONS & ALLIED VENTURES",
-    categoryHref: "/about#divisions",
-    accentColor: "#fc7754",
-    links: [
+    id: "accreditations",
+    heading: "Accreditations & Certifications",
+    categoryHref: "/about#accreditations",
+    items: [
       {
-        title: "Enterprise Operating Divisions",
-        href: "/about#divisions",
+        title: "Startup India (DPIIT Recognized)",
+        href: "/about#accreditations",
         sublinks: [
-          { title: "01 IT Products (Proprietary SaaS Solutions)", href: "/about#divisions" },
-          { title: "02 IT Services (Bespoke Software & Cloud)", href: "/about#divisions" },
-          { title: "03 IoT Solutions (Industrial Sensors & Telemetry)", href: "/about#divisions" },
-          { title: "04 Hardware Engineering (Embedded Systems & Edge)", href: "/about#divisions" },
-          { title: "05 Digital Marketing (Performance Brand & SEO)", href: "/about#divisions" },
+          { title: "Certificate DIPP33507 Verification", href: "/about#accreditations" },
+          { title: "Assam Startup Nest Incubation", href: "/about#accreditations" },
         ],
       },
       {
-        title: "Allied Business Verticals",
-        href: "/about#allied-ventures",
+        title: "Ministry of MSME Government of India",
+        href: "/about#accreditations",
         sublinks: [
-          { title: "Business Listing & B2B Trade Directory", href: "/about#allied-ventures" },
-          { title: "Freight Forwarding & Global Logistics", href: "/about#allied-ventures" },
-          { title: "Express Courier & Domestic Dispatch", href: "/about#allied-ventures" },
-          { title: "Import & Export Trading Operations", href: "/about#allied-ventures" },
-          { title: "Leather Products Manufacturing", href: "/about#allied-ventures" },
-          { title: "E&M Fashion Brand & Lifestyle", href: "/about#allied-ventures" },
-          { title: "Private Pathology & Clinical Diagnostic Labs", href: "/about#allied-ventures" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "resources",
-    heading: "RESOURCES, BLOG & CASE STUDIES",
-    categoryHref: "/blog",
-    accentColor: "#1163fb",
-    links: [
-      {
-        title: "Engineering Blog & Tech Insights",
-        href: "/blog",
-        sublinks: [
-          { title: "All Articles & Engineering Releases", href: "/blog" },
-          { title: "Building Autonomous AI Agents for Enterprises", href: "/blog" },
-          { title: "De-Monolithing Legacy Systems into Microservices", href: "/blog" },
-          { title: "The Startup MVP Engineering Playbook", href: "/blog" },
-          { title: "Cloud Security Posture Management Guide", href: "/blog" },
-          { title: "Diagnostic Laboratory Telemetry Case Study", href: "/blog" },
+          { title: "UDYAM Enterprise Registration", href: "/about#accreditations" },
         ],
       },
       {
-        title: "Client Case Studies & Technical Guides",
-        href: "/industries",
+        title: "International Quality Standards (ISO)",
+        href: "/about#accreditations",
         sublinks: [
-          { title: "Patholab.Cloud Deployment at 350+ Centers", href: "/industries" },
-          { title: "Hyperlocal Quick-Commerce Telematics Engine", href: "/industries" },
-          { title: "Multi-Tenant Cloud Architecture Blueprint", href: "/services" },
-          { title: "Enterprise Architectural Scoping & FAQs", href: "/about#faqs" },
+          { title: "ISO 9001:2015 (Quality Management System)", href: "/about#accreditations" },
+          { title: "ISO/IEC 27001:2022 (Information Security)", href: "/about#accreditations" },
+          { title: "ISO 20000-1:2018 (IT Service Management)", href: "/about#accreditations" },
         ],
       },
     ],
   },
   {
     id: "legal",
-    heading: "LEGAL, COMPLIANCE & POLICIES",
+    heading: "Legal, Security & Corporate Policies",
     categoryHref: "/terms",
-    accentColor: "#fc7754",
-    links: [
+    items: [
       {
-        title: "Corporate Legal Governance",
+        title: "Terms & Conditions",
         href: "/terms",
         sublinks: [
-          { title: "Terms of Use & Master Services Agreement", href: "/terms" },
-          { title: "Privacy Policy (GDPR / Indian DPDP Compliant)", href: "/privacy" },
-          { title: "Refund & Cancellation Policy", href: "/refund" },
-          { title: "Data Security, Encryption & NDA Assurance", href: "/data-security" },
-          { title: "Corporate Governance & Ethical Standards", href: "/corporate-policies" },
+          { title: "Master Services Agreement (MSA)", href: "/terms" },
+          { title: "User Rights & Permitted Use", href: "/terms" },
         ],
       },
       {
-        title: "Accreditations & Statutory Records",
-        href: "/about#accreditations",
+        title: "Privacy Policy",
+        href: "/privacy",
         sublinks: [
-          { title: "DPIIT #startupindia Recognition (DIPP33507)", href: "/about#accreditations" },
-          { title: "Assam Startup Nest Incubation Verification", href: "/about#accreditations" },
-          { title: "Triple ISO Certified (ISO 9001, 27001, 20000-1)", href: "/about#accreditations" },
-          { title: "Ministry of MSME Enterprise Accreditation", href: "/about#accreditations" },
+          { title: "Data Collection & DPDP Compliance", href: "/privacy" },
+          { title: "Cookie Directives & Consent", href: "/privacy" },
+        ],
+      },
+      {
+        title: "Refund & Cancellation Policy",
+        href: "/refund",
+        sublinks: [
+          { title: "Enterprise Software Billing", href: "/refund" },
+          { title: "Service Termination Terms", href: "/refund" },
+        ],
+      },
+      {
+        title: "Data Security Architecture",
+        href: "/data-security",
+        sublinks: [
+          { title: "AES-256 Cloud Encryption Standards", href: "/data-security" },
+          { title: "Strict NDA & Client IP Protection", href: "/data-security" },
+        ],
+      },
+      {
+        title: "Corporate Governance & Ethics",
+        href: "/corporate-policies",
+        sublinks: [
+          { title: "Anti-Bribery & Ethical Conduct", href: "/corporate-policies" },
+          { title: "Whistleblower & Grievance Mechanism", href: "/corporate-policies" },
+        ],
+      },
+      {
+        title: "Search Index & Technical Files",
+        href: "/sitemap.xml",
+        sublinks: [
+          { title: "XML Sitemap Feed (sitemap.xml)", href: "/sitemap.xml" },
+          { title: "Search Engine Crawler Directives (robots.txt)", href: "/robots.txt" },
         ],
       },
     ],
   },
 ];
 
-export default function HtmlSitemapPage() {
+export default function AppleStyleSitemapPage() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
-  // Filter categories and links according to search query and selected category tab
+  // Filter sections and links based on search input
   const filteredData = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
+    if (!q) return DIRECTORY_DATA;
 
-    return SITEMAP_DATA.filter((cat) => {
-      if (selectedCategory !== "all" && cat.id !== selectedCategory) {
-        return false;
-      }
-      return true;
-    })
-      .map((cat) => {
-        if (!q) return cat;
+    return DIRECTORY_DATA.map((section) => {
+      const filteredItems = section.items
+        .map((item) => {
+          const matchTitle = item.title.toLowerCase().includes(q);
+          const matchedSublinks = item.sublinks?.filter((sub) =>
+            sub.title.toLowerCase().includes(q)
+          );
 
-        // Filter links within this category
-        const filteredLinks = cat.links
-          .map((link) => {
-            const matchesTitle = link.title.toLowerCase().includes(q);
-            const matchesDesc = link.description?.toLowerCase().includes(q) || false;
-            const matchesBadge = link.badge?.toLowerCase().includes(q) || false;
+          if (matchTitle || (matchedSublinks && matchedSublinks.length > 0)) {
+            return {
+              ...item,
+              sublinks: matchedSublinks && matchedSublinks.length > 0 ? matchedSublinks : item.sublinks,
+            };
+          }
+          return null;
+        })
+        .filter(Boolean) as SitemapItem[];
 
-            const filteredSublinks = link.sublinks?.filter((sub) =>
-              sub.title.toLowerCase().includes(q)
-            );
+      return {
+        ...section,
+        items: filteredItems,
+      };
+    }).filter((section) => section.items.length > 0);
+  }, [searchQuery]);
 
-            if (matchesTitle || matchesDesc || matchesBadge || (filteredSublinks && filteredSublinks.length > 0)) {
-              return {
-                ...link,
-                sublinks: filteredSublinks || link.sublinks,
-              };
-            }
-            return null;
-          })
-          .filter(Boolean) as SitemapLink[];
-
-        return {
-          ...cat,
-          links: filteredLinks,
-        };
-      })
-      .filter((cat) => cat.links.length > 0);
-  }, [searchQuery, selectedCategory]);
+  const totalLinksCount = useMemo(() => {
+    let count = 0;
+    DIRECTORY_DATA.forEach((sec) => {
+      sec.items.forEach((item) => {
+        count += 1;
+        if (item.sublinks) count += item.sublinks.length;
+      });
+    });
+    return count;
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#FFE600] selection:text-black">
-      {/* Global Header */}
+    <div className="min-h-screen bg-white text-slate-800 font-['Plus_Jakarta_Sans',sans-serif]">
+      {/* Global Navigation Header */}
       <SiteHeader onOpenConsultation={() => setConsultationOpen(true)} />
 
-      {/* Main Container */}
-      <main className="pt-32 sm:pt-36 pb-20 sm:pb-28">
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumb (< Home / Site Map) */}
-          <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 mb-6 sm:mb-8 font-medium">
-            <span className="text-[#0092ff] text-base leading-none select-none">‹</span>
-            <Link href="/" className="text-[#0092ff] hover:underline transition-colors">
+      {/* Breadcrumb Navigation - Styled like Apple's Top Navigation */}
+      <div className="pt-24 border-b border-slate-200 bg-slate-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <nav className="flex items-center text-xs text-slate-500 font-medium">
+            <Link href="/" className="hover:text-slate-900 transition-colors">
               Home
             </Link>
-            <span className="text-slate-400">/</span>
-            <span className="text-slate-700 font-semibold">Site Map</span>
+            <ChevronRight className="w-3.5 h-3.5 mx-2 text-slate-400 shrink-0" />
+            <span className="text-slate-900 font-semibold">Site Map</span>
           </nav>
+        </div>
+      </div>
 
-          {/* Hero Section with Signature Yellow Marker Highlight (Exact Appinventiv Style) */}
-          <header className="mb-10 sm:mb-12">
-            <div className="pb-8 border-b border-slate-200">
-              <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-black tracking-tight text-slate-950 mb-3 leading-tight">
-                <span className="relative inline-block z-0">
-                  <span
-                    className="absolute bottom-1 sm:bottom-2 left-0 right-0 h-3 sm:h-4 bg-[#FFE600] -z-10 rounded-[2px]"
-                    aria-hidden="true"
-                  />
-                  Site Map
-                </span>
+      {/* Main Sitemap Content Canvas */}
+      <main className="py-10 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Block: Clean Apple-Style Typography */}
+          <div className="border-b border-slate-200 pb-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-950 mb-3">
+                Site Map
               </h1>
-              <p className="text-slate-600 text-base sm:text-lg font-normal">
-                Find your way around our website.
+              <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+                Complete directory of web pages, enterprise software platforms, sovereign allied business verticals, and statutory compliance documentation across Globizhub India Private Limited.
               </p>
             </div>
 
-            {/* Interactive Search Bar */}
-            <div className="mt-8 flex items-center justify-between gap-4">
-              <div className="relative w-full max-w-lg">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            {/* Subtle Search Bar */}
+            <div className="w-full md:w-80 shrink-0">
+              <div className="relative">
+                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search pages, services, industries, or policies..."
-                  className="w-full pl-11 pr-10 py-3 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-[#1163fb] focus:bg-white text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all shadow-xs"
+                  placeholder="Filter site directory..."
+                  className="w-full pl-9 pr-9 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:bg-white focus:border-slate-400 transition-all"
                 />
                 {searchQuery && (
                   <button
+                    type="button"
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
-                    aria-label="Clear Search"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer"
+                    aria-label="Clear filter"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
                 )}
               </div>
+              <div className="mt-1.5 flex items-center justify-between text-[11px] text-slate-400 px-1">
+                <span>{searchQuery ? `Showing filtered matches` : `${totalLinksCount} indexed links`}</span>
+                <Link href="/sitemap.xml" className="text-blue-600 hover:underline">
+                  XML Feed
+                </Link>
+              </div>
             </div>
+          </div>
 
-            {/* Category Filter Pills (Appinventiv Style Quick Tabs) */}
-            <div className="flex items-center gap-2 overflow-x-auto pt-4 pb-2 no-scrollbar">
-              {[
-                { id: "all", label: "All Categories" },
-                { id: "company", label: "Company" },
-                { id: "products", label: "Products" },
-                { id: "services", label: "Services" },
-                { id: "industries", label: "Industries" },
-                { id: "divisions", label: "Divisions & Ventures" },
-                { id: "resources", label: "Resources" },
-                { id: "legal", label: "Legal & Compliance" },
-              ].map((pill) => {
-                const isActive = selectedCategory === pill.id;
-                return (
-                  <button
-                    key={pill.id}
-                    onClick={() => setSelectedCategory(pill.id)}
-                    className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-                      isActive
-                        ? "bg-[#1163fb] text-white shadow-sm"
-                        : "bg-slate-100 hover:bg-slate-200 text-slate-700"
-                    }`}
-                  >
-                    {pill.label}
-                  </button>
-                );
-              })}
-            </div>
-          </header>
-
-          {/* ======================================================== */}
-          {/* SITEMAP CONTENT GRID (Exact Appinventiv Structure)       */}
-          {/* ======================================================== */}
+          {/* Directory Sections in Clean Multi-Column Grid */}
           {filteredData.length === 0 ? (
-            <div className="py-20 text-center bg-slate-50 rounded-3xl border border-slate-200 my-8">
-              <Search className="w-8 h-8 text-slate-400 mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-slate-800 mb-1">
-                No matching pages or links found
-              </h3>
-              <p className="text-sm text-slate-500 mb-4">
-                We couldn&apos;t find anything matching &ldquo;{searchQuery}&rdquo;. Try another keyword.
+            <div className="py-20 text-center border border-dashed border-slate-200 rounded-2xl my-8">
+              <p className="text-slate-600 text-sm mb-3">
+                No matching pages or links found for &ldquo;{searchQuery}&rdquo;.
               </p>
               <button
-                onClick={() => {
-                  setSearchQuery("");
-                  setSelectedCategory("all");
-                }}
-                className="px-4 py-2 rounded-xl bg-[#1163fb] text-white text-xs font-bold hover:bg-[#0c51d6] transition-colors"
+                type="button"
+                onClick={() => setSearchQuery("")}
+                className="text-xs font-semibold text-blue-600 hover:underline cursor-pointer"
               >
-                Clear Search Filter
+                Clear filter
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 items-start">
-              {filteredData.map((category) => (
-                <div
-                  key={category.id}
-                  className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col h-full"
-                >
-                  {/* Category Header with Appinventiv Warm Accent Color */}
-                  <div className="pb-4 mb-6 border-b border-slate-100 flex items-center justify-between">
-                    {category.categoryHref ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+              {filteredData.map((section) => (
+                <div key={section.id} className="space-y-6">
+                  {/* Category Header with Clean Apple-Style 1px Divider */}
+                  <div className="border-b border-slate-200 pb-2">
+                    {section.categoryHref ? (
                       <Link
-                        href={category.categoryHref}
-                        className="text-[17px] font-black tracking-wider transition-colors hover:underline"
-                        style={{ color: category.accentColor }}
+                        href={section.categoryHref}
+                        className="text-xs font-bold uppercase tracking-wider text-slate-950 hover:text-blue-600 transition-colors block"
                       >
-                        {category.heading}
+                        {section.heading}
                       </Link>
                     ) : (
-                      <span
-                        className="text-[17px] font-black tracking-wider"
-                        style={{ color: category.accentColor }}
-                      >
-                        {category.heading}
-                      </span>
+                      <h2 className="text-xs font-bold uppercase tracking-wider text-slate-950">
+                        {section.heading}
+                      </h2>
                     )}
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">
-                      {category.links.length}
-                    </span>
                   </div>
 
                   {/* Links List */}
-                  <ul className="space-y-6 flex-1">
-                    {category.links.map((link, idx) => (
-                      <li key={idx} className="group/item">
-                        {/* Parent Link Heading */}
-                        <div className="flex items-center gap-2 mb-1">
-                          <Link
-                            href={link.href}
-                            className="text-[15px] font-bold text-slate-900 hover:text-[#0092ff] transition-colors leading-snug"
-                          >
-                            {link.title}
-                          </Link>
-                          {link.badge && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#1163fb] border border-blue-200/60">
-                              {link.badge}
-                            </span>
-                          )}
-                        </div>
+                  <div className="space-y-4">
+                    {section.items.map((item, idx) => (
+                      <div key={idx} className="space-y-1">
+                        <Link
+                          href={item.href}
+                          className="text-[13px] font-semibold text-slate-900 hover:text-blue-600 hover:underline transition-colors block leading-snug"
+                        >
+                          {item.title}
+                        </Link>
 
-                        {link.description && (
-                          <p className="text-[12px] text-slate-500 mb-2 leading-relaxed">
-                            {link.description}
-                          </p>
-                        )}
-
-                        {/* Submenu List with Appinventiv's Signature Dash Prefix */}
-                        {link.sublinks && link.sublinks.length > 0 && (
-                          <ul className="pl-5 mt-2 space-y-1.5 border-l-2 border-slate-100">
-                            {link.sublinks.map((sub, sIdx) => (
-                              <li key={sIdx} className="relative group/sub flex items-center">
+                        {/* Indented Sublinks */}
+                        {item.sublinks && item.sublinks.length > 0 && (
+                          <ul className="pl-3 space-y-1 border-l border-slate-200 my-1.5">
+                            {item.sublinks.map((sub, sIdx) => (
+                              <li key={sIdx}>
                                 <Link
                                   href={sub.href}
-                                  className="text-[13px] text-slate-600 hover:text-[#0092ff] transition-all py-0.5 block font-medium group-hover/sub:translate-x-1"
+                                  className="text-[12px] text-slate-600 hover:text-slate-950 hover:underline transition-colors block py-0.5 leading-relaxed"
                                 >
-                                  <span className="inline-block w-2.5 h-[1px] bg-slate-300 mr-2 align-middle group-hover/sub:bg-[#0092ff]" />
-                                  <span>{sub.title}</span>
+                                  {sub.title}
                                 </Link>
                               </li>
                             ))}
                           </ul>
                         )}
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
             </div>
           )}
 
-          {/* ======================================================== */}
-          {/* BOTTOM CONSULTATION CALLOUT (Exact Appinventiv Style)     */}
-          {/* ======================================================== */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-[#fff6db] border border-amber-200/80 flex flex-col lg:flex-row items-center justify-between gap-6 mt-16 shadow-xs">
-            <div className="space-y-1.5 text-center lg:text-left">
-              <h3 className="text-lg sm:text-xl font-bold text-[#0f0f0f]">
-                Didn&apos;t find what you&apos;re looking for? Let us know your technical requirements.
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-700">
-                Our principal software architects and digital consultants are available for a confidential discovery session.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-              <Link
-                href="/services"
-                className="px-5 py-3 rounded-2xl border border-amber-300 hover:border-amber-400 bg-white hover:bg-amber-50 text-slate-900 text-xs sm:text-sm font-bold transition-all shadow-xs"
-              >
-                Explore All Capabilities →
+          {/* Understated Directory Footer Note */}
+          <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <p>
+              Globizhub India Private Limited · DPIIT Recognized Startup · ISO 9001, ISO 27001 &amp; ISO 20000 Certified
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy" className="hover:text-slate-900 hover:underline">
+                Privacy Policy
               </Link>
-              <button
-                onClick={() => setConsultationOpen(true)}
-                className="px-6 py-3 rounded-2xl bg-[#1163fb] hover:bg-[#0c51d6] text-white text-xs sm:text-sm font-bold transition-all shadow-md active:scale-95 cursor-pointer flex items-center gap-2"
-              >
-                <PhoneCall className="w-4 h-4 shrink-0" />
-                <span>Schedule Free Consultation</span>
-              </button>
+              <span>·</span>
+              <Link href="/terms" className="hover:text-slate-900 hover:underline">
+                Terms of Service
+              </Link>
+              <span>·</span>
+              <Link href="/sitemap.xml" className="hover:text-slate-900 hover:underline">
+                XML Sitemap
+              </Link>
             </div>
           </div>
         </div>
       </main>
 
-      {/* Site Global Footer */}
+      {/* Global Footer */}
       <SiteFooter onOpenConsultation={() => setConsultationOpen(true)} />
 
       {/* Consultation Modal */}

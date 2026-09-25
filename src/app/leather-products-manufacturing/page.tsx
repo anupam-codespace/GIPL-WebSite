@@ -28,13 +28,10 @@ export default function LeatherManufacturingPage() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
 
-  // Dedicated Leather Enquiry Form State
+  // Dedicated Leather Enquiry Form State (Strictly 3 fields: Name, Phone, Email)
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailId, setEmailId] = useState("");
-  const [productCategory, setProductCategory] = useState("Luxury Bags & Luggage");
-  const [orderQuantity, setOrderQuantity] = useState("Sample / Pilot Batch (25 - 100 units)");
-  const [specifications, setSpecifications] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -61,10 +58,7 @@ export default function LeatherManufacturingPage() {
           leadType: "vertical",
           pageName: "Leather Products Manufacturing",
           pageSection: "Allied Verticals · Leather Products Manufacturing",
-          productCategory,
-          orderQuantity,
-          subject: `Leather Products Manufacturing Inquiry - ${productCategory}`,
-          message: `Product Category: ${productCategory}\nEstimated Volume: ${orderQuantity}\nCustom Specifications: ${specifications}`,
+          subject: "Leather Products Manufacturing Inquiry",
           source: "leather_manufacturing_page",
         }),
       });
@@ -85,9 +79,6 @@ export default function LeatherManufacturingPage() {
     setFullName("");
     setPhoneNumber("");
     setEmailId("");
-    setProductCategory("Luxury Bags & Luggage");
-    setOrderQuantity("Sample / Pilot Batch (25 - 100 units)");
-    setSpecifications("");
     setSubmitted(false);
     setErrorMessage("");
     setEnquiryModalOpen(false);
@@ -139,39 +130,6 @@ export default function LeatherManufacturingPage() {
               <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-6 max-w-xl">
                 Precision handcrafted leather goods, sovereign export craftsmanship, and turnkey private-label manufacturing adhering to rigorous European and global export standards.
               </p>
-            </div>
-
-            {/* Right Column: Craftsmanship Certifications Card (Desktop) */}
-            <div className="hidden lg:flex flex-col gap-3 min-w-[280px]">
-              <div className="rounded-2xl border border-white/20 bg-black/50 backdrop-blur-md p-5 text-white shadow-2xl">
-                <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2.5">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-amber-400 font-bold">
-                    Export Standards
-                  </span>
-                  <span className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    CERTIFIED ATELIER
-                  </span>
-                </div>
-                <div className="space-y-2.5 text-xs text-slate-300">
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Tannery Rating:</span>
-                    <span className="font-semibold text-white">LWG Gold / Silver</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Chemical Norms:</span>
-                    <span className="font-semibold text-emerald-400">REACH &amp; RoHS 100%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Hardware Grade:</span>
-                    <span className="font-semibold text-white">Solid Brass &amp; 316L SS</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Quality Protocol:</span>
-                    <span className="font-semibold text-white">Zero-Defect AQL 1.5</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -377,7 +335,9 @@ export default function LeatherManufacturingPage() {
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-8 text-center">
               Comprehensive OEM &amp; Private-Label Solutions
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            
+            {/* Desktop Grid */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
               <div className="p-7 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-[#1163FB] transition-all">
                 <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-5 shadow-sm">
                   <Award className="w-6 h-6" />
@@ -412,6 +372,60 @@ export default function LeatherManufacturingPage() {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Direct synergy with Globizhub’s Multimodal Freight and Courier networks: bonded warehousing, customs clearance, and global air/ocean distribution worldwide.
                 </p>
+              </div>
+            </div>
+
+            {/* Mobile Continuous Slow Left-to-Right Travelling Animation */}
+            <div className="block md:hidden overflow-hidden -mx-4 px-4 py-2">
+              <div className="animate-mobile-ltr gap-4 py-2">
+                {[
+                  {
+                    icon: Award,
+                    title: "LWG & REACH Compliance",
+                    desc: "All leathers are sourced from Leather Working Group (LWG) certified tanneries adhering to strict effluent treatment and zero hazardous chemical norms.",
+                  },
+                  {
+                    icon: Layers,
+                    title: "Agile MOQs & Prototyping",
+                    desc: "Rapid 10-day physical sampling turnaround with low minimum order quantities (MOQs) starting from 25 to 50 units for boutique pilot runs.",
+                  },
+                  {
+                    icon: Globe2,
+                    title: "Direct Global Export Fulfillment",
+                    desc: "Direct synergy with Globizhub’s Multimodal Freight and Courier networks: bonded warehousing, customs clearance, and global air/ocean distribution worldwide.",
+                  },
+                  // Duplicated for seamless infinite loop
+                  {
+                    icon: Award,
+                    title: "LWG & REACH Compliance",
+                    desc: "All leathers are sourced from Leather Working Group (LWG) certified tanneries adhering to strict effluent treatment and zero hazardous chemical norms.",
+                  },
+                  {
+                    icon: Layers,
+                    title: "Agile MOQs & Prototyping",
+                    desc: "Rapid 10-day physical sampling turnaround with low minimum order quantities (MOQs) starting from 25 to 50 units for boutique pilot runs.",
+                  },
+                  {
+                    icon: Globe2,
+                    title: "Direct Global Export Fulfillment",
+                    desc: "Direct synergy with Globizhub’s Multimodal Freight and Courier networks: bonded warehousing, customs clearance, and global air/ocean distribution worldwide.",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="w-[280px] shrink-0 p-6 rounded-3xl bg-slate-50 border border-slate-200/90 shadow-sm"
+                  >
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#1163FB] mb-4 shadow-sm">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -533,34 +547,6 @@ export default function LeatherManufacturingPage() {
                 )}
 
                 <form onSubmit={handleEnquirySubmit} className="space-y-4">
-                  {/* Category Selector */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Product Category
-                    </label>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
-                      {[
-                        "Luxury Bags & Luggage",
-                        "Wallets & Small Goods",
-                        "Belts & Solid Brass Goods",
-                        "Corporate Bespoke Gifting",
-                      ].map((cat) => (
-                        <button
-                          key={cat}
-                          type="button"
-                          onClick={() => setProductCategory(cat)}
-                          className={`p-2 rounded-xl text-left font-medium border transition-all ${
-                            productCategory === cat
-                              ? "bg-slate-950 text-white border-slate-950 shadow-sm"
-                              : "bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300"
-                          }`}
-                        >
-                          {cat}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Name */}
                   <div>
                     <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
@@ -608,45 +594,6 @@ export default function LeatherManufacturingPage() {
                       onChange={(e) => setEmailId(e.target.value)}
                       placeholder="buyer@luxurybrand.com"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all"
-                    />
-                  </div>
-
-                  {/* Estimated Quantity */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Estimated Production Quantity
-                    </label>
-                    <select
-                      value={orderQuantity}
-                      onChange={(e) => setOrderQuantity(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all bg-white"
-                    >
-                      <option value="Sample / Pilot Batch (25 - 100 units)">
-                        Sample / Pilot Batch (25 - 100 units)
-                      </option>
-                      <option value="Commercial Production (100 - 500 units)">
-                        Commercial Production (100 - 500 units)
-                      </option>
-                      <option value="High-Volume Export (500 - 2,500+ units)">
-                        High-Volume Export (500 - 2,500+ units)
-                      </option>
-                      <option value="Corporate Bespoke Order">
-                        Corporate Bespoke Order
-                      </option>
-                    </select>
-                  </div>
-
-                  {/* Specifications & Notes */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                      Leather Specs &amp; Custom Requirements
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={specifications}
-                      onChange={(e) => setSpecifications(e.target.value)}
-                      placeholder="Specify leather type (vegetable tanned, full-grain), color pantone, hardware finish (brass/silver), debossing requirements, or target delivery date..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#1163FB] focus:ring-2 focus:ring-blue-100 text-sm text-slate-900 outline-none transition-all resize-none"
                     />
                   </div>
 
