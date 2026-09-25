@@ -13,15 +13,12 @@ import {
   Landmark,
   Coins,
   Warehouse,
-  Ship,
   Sparkles,
   Mail,
   Send,
   X,
   Phone,
   Layers,
-  Wheat,
-  Cog,
   Boxes,
 } from "lucide-react";
 import SiteHeader from "@/components/layout/SiteHeader";
@@ -135,39 +132,6 @@ export default function ImportExportPage() {
                 Sovereign cross-border commodity trade execution, tariff risk compliance, structured trade finance, and bilateral supply-chain fulfillment across global corridors.
               </p>
             </div>
-
-            {/* Right Column: Sovereign Trade Protocol Card (Desktop) */}
-            <div className="hidden lg:flex flex-col gap-3 min-w-[280px]">
-              <div className="rounded-2xl border border-white/20 bg-black/50 backdrop-blur-md p-5 text-white shadow-2xl">
-                <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2.5">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold">
-                    Trade Governance
-                  </span>
-                  <span className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    SOVEREIGN COMPLIANT
-                  </span>
-                </div>
-                <div className="space-y-2.5 text-xs text-slate-300">
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Export Jurisdiction:</span>
-                    <span className="font-semibold text-white">DGFT / CBIC India</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Financial Instruments:</span>
-                    <span className="font-semibold text-emerald-400">Irrevocable LC &amp; DP/DA</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Tariff Optimization:</span>
-                    <span className="font-semibold text-white">100% FTA &amp; HS Accuracy</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Quality Inspection:</span>
-                    <span className="font-semibold text-white">SGS / Bureau Veritas Aligned</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -197,10 +161,6 @@ export default function ImportExportPage() {
             {/* Division 1: Agricultural Commodities & Organic Spices Export */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-800 mb-3">
-                  <Wheat className="w-4 h-4" />
-                  <span>Sector 01 · Agro-Commodities &amp; Spices Export</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   1. Agricultural Commodities, Grains &amp; Organic Spices
                 </h3>
@@ -267,10 +227,6 @@ export default function ImportExportPage() {
 
               {/* Content: Industrial Goods */}
               <div className="lg:col-span-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono font-bold text-[#1163FB] mb-3">
-                  <Cog className="w-4 h-4" />
-                  <span>Sector 02 · Industrial Materials &amp; Metals</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   2. Industrial Raw Materials &amp; Precision Components
                 </h3>
@@ -311,10 +267,6 @@ export default function ImportExportPage() {
             {/* Division 3: Deepwater Bonded Port Terminals & Global Corridors */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-800 mb-3">
-                  <Ship className="w-4 h-4" />
-                  <span>Sector 03 · Bonded Terminal Orchestration</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   3. Bonded Free-Trade Zones &amp; Bilateral Corridors
                 </h3>

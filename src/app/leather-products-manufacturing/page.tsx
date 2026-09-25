@@ -6,8 +6,6 @@ import Image from "next/image";
 import {
   ArrowLeft,
   Check,
-  Scissors,
-  Briefcase,
   Layers,
   ShieldCheck,
   Globe2,
@@ -18,7 +16,6 @@ import {
   Sparkles,
   Award,
   Feather,
-  Hammer,
 } from "lucide-react";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
@@ -160,10 +157,6 @@ export default function LeatherManufacturingPage() {
             {/* Category 1: Luxury Leather Bags, Duffels & Briefcases */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-mono font-bold text-amber-800 mb-3">
-                  <Briefcase className="w-4 h-4" />
-                  <span>Category 01 · Travel &amp; Executive Luggage</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   1. Luxury Bags, Executive Briefcases &amp; Travel Duffels
                 </h3>
@@ -230,10 +223,6 @@ export default function LeatherManufacturingPage() {
 
               {/* Content: Small Leather Goods */}
               <div className="lg:col-span-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-mono font-bold text-amber-800 mb-3">
-                  <Scissors className="w-4 h-4" />
-                  <span>Category 02 · Wallets, Belts &amp; Desk Accoutrements</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   2. Precision Small Leather Goods &amp; Accessories
                 </h3>
@@ -274,10 +263,6 @@ export default function LeatherManufacturingPage() {
             {/* Category 3: Master Leathercraft Atelier & Manufacturing Process */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-mono font-bold text-amber-800 mb-3">
-                  <Hammer className="w-4 h-4" />
-                  <span>Category 03 · Master Atelier &amp; Production Flow</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   3. The Master Atelier: From Raw Hide to Finished Export
                 </h3>

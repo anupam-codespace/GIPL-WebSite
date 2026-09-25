@@ -92,7 +92,7 @@ export default function EMFashionBrandPage() {
       <SiteHeader onOpenConsultation={() => setConsultationOpen(true)} />
 
       {/* ======================================================== */}
-      {/* 1. SMALL RECTANGULAR HERO SECTION WITH PINTEREST BG       */}
+      {/* 1. SMALL RECTANGULAR HERO SECTION                         */}
       {/* ======================================================== */}
       <section className="pt-28 pb-10 sm:pt-32 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Back Button */}
@@ -119,7 +119,7 @@ export default function EMFashionBrandPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/80 to-black/60 backdrop-blur-[1px]" />
 
           <div className="relative z-10 p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-            {/* Left Column: Vertical Identity & Details */}
+            {/* Vertical Identity & Details */}
             <div className="max-w-2xl">
               {/* Title */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4 leading-tight">
@@ -130,21 +130,6 @@ export default function EMFashionBrandPage() {
               <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-6 max-w-xl">
                 Contemporary lifestyle apparel, ethical fabric manufacturing, and turnkey private-label brand engineering powered by Globizhub’s sovereign logistics infrastructure.
               </p>
-            </div>
-
-            {/* Right Column: Pinterest Moodboard Card (Desktop) */}
-            <div className="hidden lg:flex flex-col items-center">
-              <div className="rounded-2xl overflow-hidden border border-white/25 shadow-2xl bg-black/40 backdrop-blur-md p-2">
-                <iframe
-                  src="https://assets.pinterest.com/ext/embed.html?id=441000988535478632"
-                  height="295"
-                  width="345"
-                  frameBorder="0"
-                  scrolling="no"
-                  title="E&M Fashion Brand Design Board"
-                  className="rounded-xl overflow-hidden"
-                />
-              </div>
             </div>
           </div>
         </div>

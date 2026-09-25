@@ -6,9 +6,6 @@ import Image from "next/image";
 import {
   ArrowLeft,
   Check,
-  Plane,
-  Ship,
-  Truck,
   Globe2,
   ShieldCheck,
   Clock,
@@ -133,39 +130,6 @@ export default function FreightLogisticsPage() {
                 Global multimodal cargo transit across flight, ship, and road. Powered by automated customs compliance, predictive route telemetry, and bonded terminal orchestration.
               </p>
             </div>
-
-            {/* Right Column: Live Telemetry Indicator Card (Desktop) */}
-            <div className="hidden lg:flex flex-col gap-3 min-w-[280px]">
-              <div className="rounded-2xl border border-white/20 bg-black/50 backdrop-blur-md p-5 text-white shadow-2xl">
-                <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2.5">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-sky-400 font-bold">
-                    Network Metrics
-                  </span>
-                  <span className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    LIVE DISPATCH
-                  </span>
-                </div>
-                <div className="space-y-2.5 text-xs text-slate-300">
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Global Hub Ports:</span>
-                    <span className="font-semibold text-white">150+ Harbors</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Air Cargo Corridors:</span>
-                    <span className="font-semibold text-white">95+ International</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Interstate Trucking:</span>
-                    <span className="font-semibold text-white">Sub-24h Express</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Customs Clearance:</span>
-                    <span className="font-semibold text-emerald-400">100% EDI Compliant</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -197,10 +161,6 @@ export default function FreightLogisticsPage() {
             {/* ------------------------------------------------------ */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono font-bold text-[#1163FB] mb-3">
-                  <Plane className="w-4 h-4" />
-                  <span>Mode 01 · Aviation Air Cargo</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   1. Air Freight &amp; Aviation Cargo Express
                 </h3>
@@ -269,10 +229,6 @@ export default function FreightLogisticsPage() {
 
               {/* Content: Ocean Freight */}
               <div className="lg:col-span-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono font-bold text-[#1163FB] mb-3">
-                  <Ship className="w-4 h-4" />
-                  <span>Mode 02 · Ocean &amp; Maritime Freight</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   2. Ocean Freight &amp; Deepwater Marine Shipping
                 </h3>
@@ -315,10 +271,6 @@ export default function FreightLogisticsPage() {
             {/* ------------------------------------------------------ */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono font-bold text-[#1163FB] mb-3">
-                  <Truck className="w-4 h-4" />
-                  <span>Mode 03 · Surface Overland Haulage</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                   3. Road Freight &amp; Interstate Highway Transport
                 </h3>
