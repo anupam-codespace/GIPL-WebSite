@@ -45,6 +45,9 @@ export default function ProposalWizard() {
             company,
             budgetBracket: budget,
             projectBrief: brief,
+            leadType: "general",
+            pageName: "Proposal Wizard",
+            pageSection: "Interactive Proposal Wizard",
             source: "proposal_wizard",
           }),
         });

@@ -55,6 +55,9 @@ export default function EMFashionBrandPage() {
           fullName: fullName.trim(),
           phoneNumber: phoneNumber.trim(),
           email: emailId.trim(),
+          leadType: "vertical",
+          pageName: "E&M Fashion Brand",
+          pageSection: "Allied Verticals · E&M Fashion Brand",
           message: notes.trim(),
           subject: "E&M Fashion Brand - Brand Partnership Inquiry",
           source: "em_fashion_brand_page",
@@ -121,12 +124,6 @@ export default function EMFashionBrandPage() {
           <div className="relative z-10 p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             {/* Left Column: Vertical Identity & Details */}
             <div className="max-w-2xl">
-              {/* Category Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-mono font-bold text-sky-300 uppercase tracking-widest mb-4">
-                <Sparkles className="w-3 h-3 text-sky-400" />
-                <span>Allied Ventures &amp; Business Verticals · Vertical 06</span>
-              </div>
-
               {/* Title */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4 leading-tight">
                 E&amp;M Fashion Brand
@@ -136,22 +133,6 @@ export default function EMFashionBrandPage() {
               <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-6 max-w-xl">
                 Contemporary lifestyle apparel, ethical fabric manufacturing, and turnkey private-label brand engineering powered by Globizhub’s sovereign logistics infrastructure.
               </p>
-
-              {/* Badges / Pill Tags */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-medium text-slate-300">
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Apparel &amp; Lifestyle
-                </span>
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Build Your Own Brand
-                </span>
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Sustainable Textiles
-                </span>
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Global Supply Chain
-                </span>
-              </div>
             </div>
 
             {/* Right Column: Pinterest Moodboard Card (Desktop) */}
@@ -167,9 +148,6 @@ export default function EMFashionBrandPage() {
                   className="rounded-xl overflow-hidden"
                 />
               </div>
-              <span className="text-[10px] text-slate-400 mt-2 font-mono tracking-wider">
-                Official E&amp;M Lifestyle Aesthetics Board
-              </span>
             </div>
           </div>
         </div>
@@ -182,9 +160,6 @@ export default function EMFashionBrandPage() {
         <div className="max-w-7xl mx-auto">
           {/* Section Introduction */}
           <div className="max-w-3xl mb-12 sm:mb-16">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#1163FB] bg-blue-50 border border-blue-200/80 px-3.5 py-1.5 rounded-full inline-block mb-3">
-              Venture Overview · Lifestyle &amp; Apparel
-            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 mb-6">
               Where Enterprise Rigour Meets High-Aesthetic Fashion
             </h2>
@@ -308,34 +283,14 @@ export default function EMFashionBrandPage() {
                 priority
                 className="object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
               />
-              {/* Editorial Caption Bar */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 sm:p-8 text-white flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                <div>
-                  <span className="text-[10px] font-mono tracking-widest uppercase text-sky-400 font-semibold block mb-1">
-                    Atelier Spotlight
-                  </span>
-                  <p className="text-base sm:text-lg font-bold leading-snug">
-                    Inside the E&amp;M Fashion Design &amp; Prototyping Studio
-                  </p>
-                  <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                    Where bespoke pattern-making and master draping integrate directly with Globizhub’s sovereign supply-chain network.
-                  </p>
-                </div>
-                <span className="text-[11px] font-mono text-slate-400 self-start sm:self-auto shrink-0 bg-white/10 px-3 py-1 rounded-full border border-white/15">
-                  Production Facility · Studio 06
-                </span>
-              </div>
             </div>
           </div>
 
           {/* ======================================================== */}
-          {/* 5. CONTACT & PARTNERSHIP DETAILS (WITH APPROVED EMAIL)   */}
+          {/* 5. CONTACT & PARTNERSHIP DETAILS                         */}
           {/* ======================================================== */}
-          <div className="bg-slate-50 rounded-3xl border border-slate-200/90 p-8 sm:p-12 mb-12 sm:mb-16">
+          <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 mb-12 sm:mb-16">
             <div className="max-w-3xl">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-slate-700 bg-slate-200/80 px-3 py-1 rounded-full inline-block mb-3">
-                Direct Venture Inquiry
-              </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                 Partner with E&amp;M Fashion Brand
               </h3>
@@ -343,8 +298,8 @@ export default function EMFashionBrandPage() {
                 Whether you are launching an independent apparel collection, seeking certified sustainable fabric manufacturing, or exploring wholesale white-label distribution, our dedicated fashion venture leads are ready to collaborate. For executive partnership proposals and technical consultations, contact us directly via email at:
               </p>
 
-              {/* Email ID Display with Clickable Mailto Link */}
-              <div className="inline-flex flex-wrap items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              {/* Email ID Display with Clickable Mailto Link - single support email */}
+              <div className="inline-flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#1163FB] flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
@@ -352,13 +307,6 @@ export default function EMFashionBrandPage() {
                   <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
                     Executive Fashion Venture Inquiries
                   </p>
-                  <a
-                    href="mailto:admin@globizhub.com"
-                    className="text-sm sm:text-base font-bold text-slate-950 hover:text-[#1163FB] transition-colors underline decoration-slate-300 hover:decoration-[#1163FB]"
-                  >
-                    admin@globizhub.com
-                  </a>
-                  <span className="text-xs text-slate-400 mx-2">|</span>
                   <a
                     href="mailto:support@globizhub.com"
                     className="text-sm sm:text-base font-bold text-slate-950 hover:text-[#1163FB] transition-colors underline decoration-slate-300 hover:decoration-[#1163FB]"
@@ -415,7 +363,7 @@ export default function EMFashionBrandPage() {
               >
                 <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.475-.15-.675.15-.2.301-.776.979-.951 1.179-.176.2-.351.226-.652.076-.301-.15-1.272-.469-2.424-1.496-.897-.8-1.503-1.788-1.68-2.088-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.176.2-.301.301-.501.101-.2.05-.376-.025-.526-.076-.151-.676-1.63-.927-2.232-.244-.588-.493-.508-.676-.517-.175-.01-.376-.01-.577-.01-.201 0-.527.075-.802.376-.275.301-1.053 1.029-1.053 2.509 0 1.48 1.078 2.909 1.229 3.11.15.201 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.229 1.377.196 1.895.119.578-.086 1.78-.727 2.031-1.43.251-.702.251-1.304.176-1.43-.075-.125-.276-.2-.577-.35zM12.04 21.785h-.008a9.86 9.86 0 0 1-5.027-1.378l-.36-.214-3.738.98 1-3.644-.236-.374a9.86 9.86 0 0 1-1.512-5.263C2.16 6.446 6.587 2.02 12.043 2.02c2.64 0 5.123 1.028 6.985 2.894a9.83 9.83 0 0 1 2.892 6.974c0 5.45-4.427 9.9-9.88 9.9zM12.04 0C5.4 0 .004 5.397.004 12.036c0 2.121.554 4.191 1.608 6.014L0 24l6.155-1.614a12.01 12.01 0 0 0 5.885 1.53h.005c6.636 0 12.033-5.397 12.033-12.037 0-3.217-1.252-6.242-3.53-8.52A11.96 11.96 0 0 0 12.04 0z" />
               </svg>
-              <span>Chat on WhatsApp (8402010207)</span>
+              <span>Chat on WhatsApp</span>
             </a>
           </div>
         </div>
@@ -441,9 +389,6 @@ export default function EMFashionBrandPage() {
 
             {!submitted ? (
               <div>
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#1163FB] bg-blue-50 px-3 py-1 rounded-full inline-block mb-2">
-                  E&amp;M Fashion Brand · Venture Enquiry
-                </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-950 mb-1">
                   Enquire About E&amp;M Fashion
                 </h3>
@@ -551,7 +496,7 @@ export default function EMFashionBrandPage() {
                         rel="noopener noreferrer"
                         className="text-[#25D366] hover:underline font-bold"
                       >
-                        Chat directly on WhatsApp (8402010207)
+                        Chat directly on WhatsApp
                       </a>
                     </p>
                   </div>

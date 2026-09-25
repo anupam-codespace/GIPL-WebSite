@@ -101,6 +101,9 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
           subject,
           message,
           ndaRequested,
+          leadType: "general",
+          pageName: "General Project Consultation",
+          pageSection: "Let's discuss your project",
           source: "consultation_modal",
         }),
       });

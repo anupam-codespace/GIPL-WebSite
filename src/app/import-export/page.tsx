@@ -64,6 +64,13 @@ export default function ImportExportPage() {
           fullName: fullName.trim(),
           phoneNumber: phoneNumber.trim(),
           email: emailId.trim(),
+          leadType: "vertical",
+          pageName: "Import & Export",
+          pageSection: "Allied Verticals · Import & Export",
+          tradeDirection,
+          commodity,
+          originDestination,
+          volume,
           subject: `Import & Export Inquiry - ${tradeDirection}`,
           message: `Trade Intent: ${tradeDirection}\nCommodity: ${commodity}\nTrade Route: ${originDestination}\nVolume: ${volume}\nSpecifications: ${tradeNotes}`,
           source: "import_export_page",
@@ -132,14 +139,7 @@ export default function ImportExportPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/80 to-black/60 backdrop-blur-[1px]" />
 
           <div className="relative z-10 p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-            {/* Left Column: Vertical Identity & Badges */}
             <div className="max-w-2xl">
-              {/* Category Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-mono font-bold text-emerald-300 uppercase tracking-widest mb-4">
-                <Sparkles className="w-3 h-3 text-emerald-400" />
-                <span>Allied Ventures &amp; Business Verticals · Vertical 04</span>
-              </div>
-
               {/* Title */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4 leading-tight">
                 Import &amp; Export
@@ -149,25 +149,6 @@ export default function ImportExportPage() {
               <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-6 max-w-xl">
                 Sovereign cross-border commodity trade execution, tariff risk compliance, structured trade finance, and bilateral supply-chain fulfillment across global corridors.
               </p>
-
-              {/* Badges / Pill Tags */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-medium text-slate-300">
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  DGFT &amp; IEC Registered
-                </span>
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Bonded Terminal Warehousing
-                </span>
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Trade Finance &amp; Letter of Credit (LC)
-                </span>
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Tariff &amp; HS Code Governance
-                </span>
-                <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm">
-                  Bilateral Bilateral Corridors
-                </span>
-              </div>
             </div>
 
             {/* Right Column: Sovereign Trade Protocol Card (Desktop) */}
@@ -213,9 +194,6 @@ export default function ImportExportPage() {
         <div className="max-w-7xl mx-auto">
           {/* Executive Overview */}
           <div className="max-w-3xl mb-14 sm:mb-20">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#1163FB] bg-blue-50 border border-blue-200/80 px-3.5 py-1.5 rounded-full inline-block mb-3">
-              Cross-Border Trade Matrix
-            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 mb-6">
               Sovereign Trade Execution Engineered for Global Commerce
             </h2>
@@ -284,14 +262,6 @@ export default function ImportExportPage() {
                     priority
                     className="object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-5 text-white">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-300 font-bold block mb-0.5">
-                      Origin Quality Inspection
-                    </span>
-                    <p className="text-sm sm:text-base font-bold">
-                      Export Warehouse with Certified Basmati Rice, Turmeric &amp; Spices
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -307,14 +277,6 @@ export default function ImportExportPage() {
                     fill
                     className="object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-5 text-white">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-sky-300 font-bold block mb-0.5">
-                      Industrial Supply Chain
-                    </span>
-                    <p className="text-sm sm:text-base font-bold">
-                      Steel Coils, Structural Metals &amp; Precision CNC Engineered Export Goods
-                    </p>
-                  </div>
                 </div>
               </div>
 
@@ -413,14 +375,6 @@ export default function ImportExportPage() {
                     fill
                     className="object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-5 text-white">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-300 font-bold block mb-0.5">
-                      Bilateral Harbor Gateway
-                    </span>
-                    <p className="text-sm sm:text-base font-bold">
-                      Deepwater Quayside Container Staging &amp; Bonded Maritime Clearance
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -473,13 +427,10 @@ export default function ImportExportPage() {
           </div>
 
           {/* ======================================================== */}
-          {/* 5. CONTACT & PARTNERSHIP DETAILS (WITH APPROVED EMAIL)   */}
+          {/* 5. CONTACT & PARTNERSHIP DETAILS                         */}
           {/* ======================================================== */}
-          <div className="bg-slate-50 rounded-3xl border border-slate-200/90 p-8 sm:p-12 mb-12 sm:mb-16">
+          <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 mb-12 sm:mb-16">
             <div className="max-w-3xl">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-slate-700 bg-slate-200/80 px-3 py-1 rounded-full inline-block mb-3">
-                Global Trade Desk
-              </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-4">
                 Execute International Trade with Globizhub
               </h3>
@@ -487,8 +438,8 @@ export default function ImportExportPage() {
                 Whether you are exploring bulk agricultural sourcing, procuring industrial metals, or seeking sovereign compliance advisory for cross-border commodity trade, our international trade directors are at your disposal. Contact our trade desk via email:
               </p>
 
-              {/* Email ID Display with Clickable Mailto Link */}
-              <div className="inline-flex flex-wrap items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              {/* Email ID Display with Clickable Mailto Link - single support email */}
+              <div className="inline-flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#1163FB] flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
@@ -496,13 +447,6 @@ export default function ImportExportPage() {
                   <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
                     International Trade &amp; Commodity Inquiries
                   </p>
-                  <a
-                    href="mailto:admin@globizhub.com"
-                    className="text-sm sm:text-base font-bold text-slate-950 hover:text-[#1163FB] transition-colors underline decoration-slate-300 hover:decoration-[#1163FB]"
-                  >
-                    admin@globizhub.com
-                  </a>
-                  <span className="text-xs text-slate-400 mx-2">|</span>
                   <a
                     href="mailto:support@globizhub.com"
                     className="text-sm sm:text-base font-bold text-slate-950 hover:text-[#1163FB] transition-colors underline decoration-slate-300 hover:decoration-[#1163FB]"
@@ -559,7 +503,7 @@ export default function ImportExportPage() {
               >
                 <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.475-.15-.675.15-.2.301-.776.979-.951 1.179-.176.2-.351.226-.652.076-.301-.15-1.272-.469-2.424-1.496-.897-.8-1.503-1.788-1.68-2.088-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.176.2-.301.301-.501.101-.2.05-.376-.025-.526-.076-.151-.676-1.63-.927-2.232-.244-.588-.493-.508-.676-.517-.175-.01-.376-.01-.577-.01-.201 0-.527.075-.802.376-.275.301-1.053 1.029-1.053 2.509 0 1.48 1.078 2.909 1.229 3.11.15.201 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.229 1.377.196 1.895.119.578-.086 1.78-.727 2.031-1.43.251-.702.251-1.304.176-1.43-.075-.125-.276-.2-.577-.35zM12.04 21.785h-.008a9.86 9.86 0 0 1-5.027-1.378l-.36-.214-3.738.98 1-3.644-.236-.374a9.86 9.86 0 0 1-1.512-5.263C2.16 6.446 6.587 2.02 12.043 2.02c2.64 0 5.123 1.028 6.985 2.894a9.83 9.83 0 0 1 2.892 6.974c0 5.45-4.427 9.9-9.88 9.9zM12.04 0C5.4 0 .004 5.397.004 12.036c0 2.121.554 4.191 1.608 6.014L0 24l6.155-1.614a12.01 12.01 0 0 0 5.885 1.53h.005c6.636 0 12.033-5.397 12.033-12.037 0-3.217-1.252-6.242-3.53-8.52A11.96 11.96 0 0 0 12.04 0z" />
               </svg>
-              <span>Chat on WhatsApp (8402010207)</span>
+              <span>Chat on WhatsApp</span>
             </a>
           </div>
         </div>
@@ -585,9 +529,6 @@ export default function ImportExportPage() {
 
             {!submitted ? (
               <div>
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#1163FB] bg-blue-50 px-3 py-1 rounded-full inline-block mb-2">
-                  Bilateral Commodity Trade Inquiry
-                </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-950 mb-1">
                   Enquire for Import &amp; Export
                 </h3>
@@ -776,7 +717,7 @@ export default function ImportExportPage() {
                         rel="noopener noreferrer"
                         className="text-[#25D366] hover:underline font-bold"
                       >
-                        Chat directly on WhatsApp (8402010207)
+                        Chat directly on WhatsApp
                       </a>
                     </p>
                   </div>
